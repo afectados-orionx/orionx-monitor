@@ -1,0 +1,241 @@
+{
+ "fuente": "Captura de la API pública de OrionX hecha por un afectado unas 30 horas después del cierre, publicada el 8-sep-2026 (informe 'OrionX: las billeteras y el último libro'). Transcrito a mano el 8-sep-2026; verificar contra la captura original si un dato importa.",
+ "ultima_operacion": "2026-09-03 14:14:06 hora de Chile",
+ "mercados_listados": 69,
+ "mercados_sin_operaciones": 20,
+ "operaciones_capturadas": 4760,
+ "volumen_24h_clp": 40100000,
+ "volumen_24h_usd": 44563,
+ "mercados_con_volumen_24h": 14,
+ "profundidad_niveles": 5,
+ "usd_implicito_nota": "El USD implícito usa la última operación USDT/CLP de OrionX: 900 pesos por dólar. La brecha compara con el precio externo del 8-sep, cinco días después, así que no mide lo que alguien perdió.",
+ "libro_xrpclp": {
+  "mejor_compra": 1100,
+  "mejor_venta": 1350,
+  "spread_pct": 22.73,
+  "operaciones_capturadas": 100,
+  "volumen_capturado_clp": 16334544
+ },
+ "mercados": [
+  {
+   "mercado": "XAUTCLP",
+   "moneda": "XAUT",
+   "ultimo_precio_clp": 4853822.0,
+   "usd_implicito": 5393.1356,
+   "spot_referencia_08_09_usd": 4363.21,
+   "brecha_pct": 23.6,
+   "spread_pct": 869.79,
+   "ultima_operacion": "30-08-2026"
+  },
+  {
+   "mercado": "CHACLP",
+   "moneda": "CHA",
+   "ultimo_precio_clp": 1.0,
+   "usd_implicito": 0.0011,
+   "spot_referencia_08_09_usd": null,
+   "brecha_pct": null,
+   "spread_pct": 100.0,
+   "ultima_operacion": "03-09-2026"
+  },
+  {
+   "mercado": "ADACLP",
+   "moneda": "ADA",
+   "ultimo_precio_clp": 100.0,
+   "usd_implicito": 0.1111,
+   "spot_referencia_08_09_usd": 0.2213,
+   "brecha_pct": -49.8,
+   "spread_pct": 96.36,
+   "ultima_operacion": "02-09-2026"
+  },
+  {
+   "mercado": "BCHCLP",
+   "moneda": "BCH",
+   "ultimo_precio_clp": 245000.0,
+   "usd_implicito": 272.2222,
+   "spot_referencia_08_09_usd": 257.09,
+   "brecha_pct": 5.9,
+   "spread_pct": 40.62,
+   "ultima_operacion": "24-08-2026"
+  },
+  {
+   "mercado": "SOLCLP",
+   "moneda": "SOL",
+   "ultimo_precio_clp": 109500.0,
+   "usd_implicito": 121.6667,
+   "spot_referencia_08_09_usd": 103.13,
+   "brecha_pct": 18.0,
+   "spread_pct": 31.89,
+   "ultima_operacion": "03-09-2026"
+  },
+  {
+   "mercado": "AVAXCLP",
+   "moneda": "AVAX",
+   "ultimo_precio_clp": 6850.0,
+   "usd_implicito": 7.6111,
+   "spot_referencia_08_09_usd": null,
+   "brecha_pct": null,
+   "spread_pct": 25.14,
+   "ultima_operacion": "27-08-2026"
+  },
+  {
+   "mercado": "XRPCLP",
+   "moneda": "XRP",
+   "ultimo_precio_clp": 1100.0,
+   "usd_implicito": 1.2222,
+   "spot_referencia_08_09_usd": 1.42,
+   "brecha_pct": -13.9,
+   "spread_pct": 22.73,
+   "ultima_operacion": "03-09-2026"
+  },
+  {
+   "mercado": "BNBCLP",
+   "moneda": "BNB",
+   "ultimo_precio_clp": 657539.0,
+   "usd_implicito": 730.5989,
+   "spot_referencia_08_09_usd": 748.8,
+   "brecha_pct": -2.4,
+   "spread_pct": 21.53,
+   "ultima_operacion": "03-09-2026"
+  },
+  {
+   "mercado": "ETHCLP",
+   "moneda": "ETH",
+   "ultimo_precio_clp": 2021500.0,
+   "usd_implicito": 2246.1111,
+   "spot_referencia_08_09_usd": 2481.07,
+   "brecha_pct": -9.5,
+   "spread_pct": 13.78,
+   "ultima_operacion": "03-09-2026"
+  },
+  {
+   "mercado": "DASHCLP",
+   "moneda": "DASH",
+   "ultimo_precio_clp": 39000.0,
+   "usd_implicito": 43.3333,
+   "spot_referencia_08_09_usd": 62.15,
+   "brecha_pct": -30.3,
+   "spread_pct": 11.38,
+   "ultima_operacion": "02-09-2026"
+  },
+  {
+   "mercado": "DAICLP",
+   "moneda": "DAI",
+   "ultimo_precio_clp": 920.0,
+   "usd_implicito": 1.0222,
+   "spot_referencia_08_09_usd": 1.0,
+   "brecha_pct": 2.2,
+   "spread_pct": 10.0,
+   "ultima_operacion": "21-08-2026"
+  },
+  {
+   "mercado": "EOSCLP",
+   "moneda": "EOS",
+   "ultimo_precio_clp": 97.0,
+   "usd_implicito": 0.1078,
+   "spot_referencia_08_09_usd": 0.0807,
+   "brecha_pct": 33.5,
+   "spread_pct": 9.72,
+   "ultima_operacion": "21-08-2026"
+  },
+  {
+   "mercado": "USDCCLP",
+   "moneda": "USDC",
+   "ultimo_precio_clp": 990.0,
+   "usd_implicito": 1.1,
+   "spot_referencia_08_09_usd": 1.0,
+   "brecha_pct": 10.0,
+   "spread_pct": 9.39,
+   "ultima_operacion": "03-09-2026"
+  },
+  {
+   "mercado": "DOTCLP",
+   "moneda": "DOT",
+   "ultimo_precio_clp": 790.0,
+   "usd_implicito": 0.8778,
+   "spot_referencia_08_09_usd": 1.23,
+   "brecha_pct": -28.6,
+   "spread_pct": 8.0,
+   "ultima_operacion": "01-09-2026"
+  },
+  {
+   "mercado": "TRXCLP",
+   "moneda": "TRX",
+   "ultimo_precio_clp": 320.0,
+   "usd_implicito": 0.3556,
+   "spot_referencia_08_09_usd": 0.3387,
+   "brecha_pct": 5.0,
+   "spread_pct": 5.26,
+   "ultima_operacion": "01-09-2026"
+  },
+  {
+   "mercado": "USDTCLP",
+   "moneda": "USDT",
+   "ultimo_precio_clp": 900.0,
+   "usd_implicito": 1.0,
+   "spot_referencia_08_09_usd": 0.9998,
+   "brecha_pct": 0.0,
+   "spread_pct": 3.44,
+   "ultima_operacion": "03-09-2026"
+  },
+  {
+   "mercado": "LTCCLP",
+   "moneda": "LTC",
+   "ultimo_precio_clp": 43000.0,
+   "usd_implicito": 47.7778,
+   "spot_referencia_08_09_usd": 54.16,
+   "brecha_pct": -11.8,
+   "spread_pct": 2.38,
+   "ultima_operacion": "03-09-2026"
+  },
+  {
+   "mercado": "POLCLP",
+   "moneda": "POL",
+   "ultimo_precio_clp": 96.0,
+   "usd_implicito": 0.1067,
+   "spot_referencia_08_09_usd": 0.1262,
+   "brecha_pct": -15.4,
+   "spread_pct": 2.13,
+   "ultima_operacion": "01-09-2026"
+  },
+  {
+   "mercado": "XLMCLP",
+   "moneda": "XLM",
+   "ultimo_precio_clp": 172.0,
+   "usd_implicito": 0.1911,
+   "spot_referencia_08_09_usd": 0.1887,
+   "brecha_pct": 1.3,
+   "spread_pct": 1.18,
+   "ultima_operacion": "02-09-2026"
+  },
+  {
+   "mercado": "BTCCLP",
+   "moneda": "BTC",
+   "ultimo_precio_clp": 71500001.0,
+   "usd_implicito": 79444.4456,
+   "spot_referencia_08_09_usd": 78370.0,
+   "brecha_pct": 1.4,
+   "spread_pct": 0.0,
+   "ultima_operacion": "03-09-2026"
+  },
+  {
+   "mercado": "EURTCLP",
+   "moneda": "EURT",
+   "ultimo_precio_clp": 40.0,
+   "usd_implicito": 0.0444,
+   "spot_referencia_08_09_usd": null,
+   "brecha_pct": null,
+   "spread_pct": null,
+   "ultima_operacion": "25-04-2026"
+  },
+  {
+   "mercado": "LUKCLP",
+   "moneda": "LUK",
+   "ultimo_precio_clp": 1.0,
+   "usd_implicito": 0.0011,
+   "spot_referencia_08_09_usd": null,
+   "brecha_pct": null,
+   "spread_pct": null,
+   "ultima_operacion": "18-08-2026"
+  }
+ ]
+}

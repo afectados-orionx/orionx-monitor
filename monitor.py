@@ -102,8 +102,8 @@ def main():
         if p and not fila.get("error") and p.get("saldo") is not None:
             d = (s or 0) - p["saldo"]; dt_usdt = (fila.get("tokens") or {}).get("USDT", 0) - (p.get("tokens") or {}).get("USDT", 0)
             partes = []
-            if abs(d) > 1e-9: partes.append(f"{'+' if d > 0 else ''}{d:,.6f} {fila['moneda']} (saldo {s:,.6f})")
-            if abs(dt_usdt) > 1e-6: partes.append(f"{'+' if dt_usdt > 0 else ''}{dt_usdt:,.2f} USDT")
+            if abs(d) >= 0.001: partes.append(f"{'+' if d > 0 else ''}{d:,.6f} {fila['moneda']} (saldo {s:,.6f})")
+            if abs(dt_usdt) >= 0.5: partes.append(f"{'+' if dt_usdt > 0 else ''}{dt_usdt:,.2f} USDT")
             if not partes and fila.get("tx") and p.get("tx") and fila["tx"] != p["tx"]: partes.append(f"nuevas transacciones ({p['tx']} → {fila['tx']}) sin cambio de saldo")
             if partes:
                 ev = {"fecha": ahora, "red": w["red"], "direccion": w["direccion"], "etiqueta": w["etiqueta"], "detalle": "; ".join(partes), "saldo_antes": p["saldo"], "saldo_despues": s}

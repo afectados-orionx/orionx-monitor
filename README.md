@@ -2,7 +2,7 @@
 
 **Página en vivo: https://afectados-orionx.github.io/orionx-monitor/**
 
-Muestra saldo, valor en pesos y última actividad de las billeteras vinculadas a OrionX en Bitcoin, XRP, Tron, Litecoin, Ethereum, BSC y Polygon, y registra cada movimiento con fecha y hora. Se actualiza sola cada hora. Lo mantienen clientes afectados por el cierre del 3 de septiembre de 2026; no tiene relación con la empresa.
+Muestra saldo, valor en pesos y última actividad de las billeteras vinculadas a OrionX en Bitcoin, XRP, Tron, Litecoin, Ethereum, BSC y Polygon, y registra cada movimiento con fecha y hora. Se actualiza sola cada hora. Tiene cinco pestañas: **Resumen** (en lenguaje simple), **Billeteras vigiladas**, **Atribuciones** (todas las direcciones atribuidas a OrionX por afectados, con nivel de confianza, tipo de evidencia y nuestra verificación en cadena), **Precios al cierre** (última operación de cada mercado en OrionX el 3 de septiembre de 2026) y **Movimientos**. Lo mantienen clientes afectados por el cierre del 3 de septiembre de 2026; no tiene relación con la empresa.
 
 Todo es verificable: cada dirección enlaza a su explorador público y `billeteras.json` anota qué transacción la vincula a OrionX.
 
@@ -24,13 +24,16 @@ Para recibir las billeteras nuevas que se agreguen aquí, en tu copia pulsa **Sy
 
 Solo se agregan direcciones con una transacción pública que las ancle a OrionX (un retiro que la empresa te pagó, un depósito que le hiciste, o una salida desde una billetera ya confirmada). Abre un **Issue** en este repositorio con: red, dirección, el hash de esa transacción y una frase de qué es. No pongas datos personales.
 
-Si sabes editar JSON, puedes proponer el cambio directamente en `billeteras.json` con un Pull Request. Campos: `red` (BTC, XRP, TRX, LTC, ETH, BSC, POLYGON), `direccion`, `etiqueta`, `tipo` (`orionx`, `desvio`, `querella`), `vigilar` (true/false), `nota`.
+Si sabes editar JSON, puedes proponer el cambio directamente en `billeteras.json` con un Pull Request. Campos: `red` (BTC, XRP, TRX, LTC, ETH, BSC, POLYGON), `direccion`, `etiqueta`, `tipo`, `vigilar` (true/false), `nota`. Tipos: `orionx` (billetera de la empresa, confirmada o con transacción directa con una confirmada), `atribuida` (saldo relevante con liga solo indirecta; se vigila pero no se afirma que sea de OrionX), `desvio` (destino de fondos salidos de OrionX), `querella` (citada en la querella), `puente` (recolección o paso histórico de fondos).
+
+**Criterio para pasar de "atribuida" o "en evaluación" a `orionx`:** una transacción pública directa con una billetera ya confirmada, o una etiqueta pública en un explorador (xrpscan, etherscan). `atribuciones.json` guarda todas las direcciones propuestas con su confianza, evidencia y estado; la pestaña Atribuciones lo muestra. Las que no cumplen el criterio quedan ahí en evaluación y no entran a `billeteras.json`, para no meter ruido en la investigación.
 
 ## Cómo funciona
 
 - `monitor.py` (Python, sin dependencias) consulta mempool.space, xrpscan, tronscan, blockcypher y nodos RPC públicos, más precios de CoinGecko. Compara con el `data.json` anterior y anota los cambios en `historial.jsonl`.
 - `.github/workflows/monitor.yml` lo ejecuta cada hora en GitHub Actions y guarda el resultado en el repositorio.
-- `index.html` lee `data.json` y dibuja la página. No hay servidor ni base de datos.
+- `index.html` lee `data.json` (monitor), `atribuciones.json` (direcciones propuestas y su verificación) y `precios_cierre.json` (último libro de órdenes, transcrito del informe de un afectado) y dibuja la página. No hay servidor ni base de datos.
+- Los movimientos menores a 0,001 unidades (o 0,5 USDT) no se registran: suelen ser redondeos de las APIs.
 - Si una API falla, se conserva el último dato y la página lo indica. Las APIs gratuitas aguantan sin problema una consulta por hora; no bajes el cron a menos de 30 minutos.
 
 Probarlo en tu computador:
