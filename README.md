@@ -22,6 +22,8 @@ Para recibir las billeteras nuevas que se agreguen aquí, en tu copia pulsa **Sy
 
 ## Aportar una billetera
 
+Si reconoces una dirección del monitor como tuya (por ejemplo, un retiro propio), avisa y se retira. Las direcciones retiradas quedan en `descartadas.json` con el motivo, para no volver a agregarlas.
+
 Solo se agregan direcciones con una transacción pública que las ancle a OrionX (un retiro que la empresa te pagó, un depósito que le hiciste, o una salida desde una billetera ya confirmada). Abre un **Issue** en este repositorio con: red, dirección, el hash de esa transacción y una frase de qué es. No pongas datos personales.
 
 Si sabes editar JSON, puedes proponer el cambio directamente en `billeteras.json` con un Pull Request. Campos: `red` (BTC, XRP, TRX, LTC, ETH, BSC, POLYGON), `direccion`, `etiqueta`, `tipo`, `vigilar` (true/false), `nota`. Tipos: `orionx` (billetera de la empresa, confirmada o con transacción directa con una confirmada), `atribuida` (saldo relevante con liga solo indirecta; se vigila pero no se afirma que sea de OrionX), `desvio` (destino de fondos salidos de OrionX), `querella` (citada en la querella), `puente` (recolección o paso histórico de fondos).
