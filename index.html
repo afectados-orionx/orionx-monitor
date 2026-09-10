@@ -173,12 +173,13 @@ fetch('data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
   document.getElementById('act').textContent='Última actualización: '+d.actualizado+(d.errores?.length?` · ${d.errores.length} consulta(s) con error (se muestra el último dato conocido)`:'');
   const or=d.billeteras.filter(b=>b.tipo==='orionx'),dv=d.billeteras.filter(b=>b.tipo==='desvio'),qr=d.billeteras.filter(b=>b.tipo==='querella');
   const sum=a=>a.reduce((s,b)=>s+(b.valor_clp||0),0);
-  const hoy=Date.now(),ev7=d.eventos.filter(e=>hoy-new Date(e.fecha.replace(' UTC','Z').replace(' ','T'))<7*864e5).length;
+  const ev=d.eventos.filter(e=>Math.abs((e.saldo_despues??0)-(e.saldo_antes??0))>=0.001||e.saldo_despues==null);
+  const hoy=Date.now(),ev7=ev.filter(e=>hoy-new Date(e.fecha.replace(' UTC','Z').replace(' ','T'))<7*864e5).length;
   document.getElementById('cards').innerHTML=[
     ['Localizable hoy',clp(d.total_clp),'≈ US$ '+Math.round(d.total_usd).toLocaleString('es-CL')+' en '+d.billeteras.length+' direcciones'],
     ['En billeteras de OrionX',clp(sum(or)),`${or.length} direcciones`],
     ['En destinos de desvío',clp(sum(dv)),`${dv.length} direcciones sin mover`],
-    ['Movimientos últimos 7 días',ev7,d.eventos.length?'último: '+d.eventos[0].fecha:'ninguno registrado']
+    ['Movimientos últimos 7 días',ev7,ev.length?'último: '+ev[0].fecha:'ninguno relevante registrado']
   ].map(c=>`<div class="card"><div class="k">${c[0]}</div><div class="v">${c[1]}</div><div class="d">${c[2]}</div></div>`).join('');
   const TIPO={orionx:'OrionX',desvio:'Desvío',querella:'Querella',puente:'Puente',atribuida:'En verificación'};
   const tb=document.querySelector('#tabla tbody');
@@ -192,7 +193,6 @@ fetch('data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
       <td class="nota">${b.ultima||'—'}</td></tr>`}).join('')||'<tr><td colspan="6" class="nota">Sin resultados para ese filtro.</td></tr>'};
   filtros(document.getElementById('f-bill'),[{nombre:'Red',clave:'Red',valores:[...new Set(d.billeteras.map(b=>b.red))]},{nombre:'Tipo',clave:'Tipo',valores:[...new Set(d.billeteras.map(b=>TIPO[b.tipo]||b.tipo))]}],pinta);
   pinta();
-  const ev=d.eventos.filter(e=>Math.abs((e.saldo_despues??0)-(e.saldo_antes??0))>=0.001||e.saldo_despues==null);
   document.getElementById('eventos').innerHTML=ev.length?ev.map(e=>`<div><time>${e.fecha}</time><span class="chip">${e.red}</span><b>${e.etiqueta}</b> · ${e.detalle}</div>`).join(''):'<div class="nota">Ningún movimiento relevante desde que empezó el monitor.</div>';
 }).catch(e=>{document.getElementById('act').textContent='No se pudo cargar data.json: '+e});
 // atribuciones
