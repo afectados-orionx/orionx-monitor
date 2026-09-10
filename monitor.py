@@ -2,6 +2,7 @@
 """Monitor de billeteras vinculadas a OrionX. Solo librería estándar.
 Lee billeteras.json, consulta exploradores públicos, compara con data.json anterior,
 registra movimientos en historial.jsonl, reescribe data.json y avisa por Discord (env DISCORD_WEBHOOK) si hubo cambios.
+Un movimiento cuenta si vale al menos UMBRAL_USD dólares (por defecto 1) al precio del momento, en cualquier moneda.
 """
 import json, os, sys, time, datetime as dt, urllib.request, urllib.parse
 from pathlib import Path
@@ -14,6 +15,8 @@ USDT = {"ETH": "0xdac17f958d2ee523a2206206994597c13d831ec7", "BSC": "0x55d398326
 USDT_DEC = {"ETH": 6, "BSC": 18, "POLYGON": 6}
 NATIVO = {"BTC": "BTC", "XRP": "XRP", "TRX": "TRX", "LTC": "LTC", "ETH": "ETH", "BSC": "BNB", "POLYGON": "POL"}
 COINGECKO = {"BTC": "bitcoin", "XRP": "ripple", "TRX": "tron", "LTC": "litecoin", "ETH": "ethereum", "BNB": "binancecoin", "POL": "polygon-ecosystem-token", "USDT": "tether"}
+UMBRAL_USD = float(os.environ.get("UMBRAL_USD", "1"))   # un movimiento cuenta si vale al menos esto en dólares (≈1.000 CLP)
+MIN_UNIDADES = {"BTC": 0.00001, "ETH": 0.0005, "BNB": 0.001, "LTC": 0.01, "XRP": 0.5, "TRX": 5, "POL": 5}   # respaldo si CoinGecko no responde
 EXPLORER = {"BTC": "https://mempool.space/address/{a}", "XRP": "https://xrpscan.com/account/{a}", "TRX": "https://tronscan.org/#/address/{a}",
             "LTC": "https://litecoinspace.org/address/{a}", "ETH": "https://etherscan.io/address/{a}", "BSC": "https://bscscan.com/address/{a}", "POLYGON": "https://polygonscan.com/address/{a}"}
 
@@ -101,12 +104,18 @@ def main():
         p = prev.get((w["red"], w["direccion"]))
         if p and not fila.get("error") and p.get("saldo") is not None:
             d = (s or 0) - p["saldo"]; dt_usdt = (fila.get("tokens") or {}).get("USDT", 0) - (p.get("tokens") or {}).get("USDT", 0)
+            # umbral en dólares (UMBRAL_USD, por defecto 1): vale igual para BTC que para XRP. Sin precio, se usa un mínimo en unidades.
+            usd_d = abs(d) * pr["usd"] if pr.get("usd") else None
+            usd_t = abs(dt_usdt) * px.get("USDT", {}).get("usd", 1.0)
             partes = []
-            if abs(d) >= 0.001: partes.append(f"{'+' if d > 0 else ''}{d:,.6f} {fila['moneda']} (saldo {s:,.6f})")
-            if abs(dt_usdt) >= 0.5: partes.append(f"{'+' if dt_usdt > 0 else ''}{dt_usdt:,.2f} USDT")
-            if not partes and fila.get("tx") and p.get("tx") and fila["tx"] != p["tx"]: partes.append(f"nuevas transacciones ({p['tx']} → {fila['tx']}) sin cambio de saldo")
+            if (usd_d >= UMBRAL_USD) if usd_d is not None else (abs(d) >= MIN_UNIDADES.get(fila["moneda"], 0.001)):
+                partes.append(f"{'+' if d > 0 else ''}{d:,.8f} {fila['moneda']} (≈US$ {usd_d:,.2f}; saldo {s:,.6f})" if usd_d is not None else f"{'+' if d > 0 else ''}{d:,.8f} {fila['moneda']} (saldo {s:,.6f})")
+            if usd_t >= UMBRAL_USD: partes.append(f"{'+' if dt_usdt > 0 else ''}{dt_usdt:,.2f} USDT")
+            if not partes and fila.get("tx") and p.get("tx") and fila["tx"] != p["tx"]:
+                partes.append(f"nuevas transacciones ({p['tx']} → {fila['tx']}) " + ("sin cambio de saldo" if not d and not dt_usdt else f"con cambio de saldo menor a US$ {UMBRAL_USD:g}"))
             if partes:
-                ev = {"fecha": ahora, "red": w["red"], "direccion": w["direccion"], "etiqueta": w["etiqueta"], "detalle": "; ".join(partes), "saldo_antes": p["saldo"], "saldo_despues": s}
+                ev = {"fecha": ahora, "red": w["red"], "direccion": w["direccion"], "etiqueta": w["etiqueta"], "detalle": "; ".join(partes), "saldo_antes": p["saldo"], "saldo_despues": s,
+                      "valor_usd": round((usd_d or 0) + usd_t, 2)}
                 eventos.append(ev)
         filas.append(fila); time.sleep(0.7)
     hist = HERE / "historial.jsonl"

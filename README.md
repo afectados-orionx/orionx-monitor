@@ -35,7 +35,7 @@ Si sabes editar JSON, puedes proponer el cambio directamente en `billeteras.json
 - `monitor.py` (Python, sin dependencias) consulta mempool.space, xrpscan, tronscan, blockcypher y nodos RPC públicos, más precios de CoinGecko. Compara con el `data.json` anterior y anota los cambios en `historial.jsonl`.
 - `.github/workflows/monitor.yml` lo ejecuta cada hora en GitHub Actions y guarda el resultado en el repositorio.
 - `index.html` lee `data.json` (monitor), `atribuciones.json` (direcciones propuestas y su verificación) y `precios_cierre.json` (último libro de órdenes, transcrito del informe de un afectado) y dibuja la página. No hay servidor ni base de datos.
-- Los movimientos menores a 0,001 unidades (o 0,5 USDT) no se registran: suelen ser redondeos de las APIs.
+- Un movimiento se registra si vale al menos **US$ 1** (≈1.000 CLP) al precio del momento, en cualquier moneda (variable de entorno `UMBRAL_USD` para cambiarlo). Así se detectan también retiros goteados en microtransacciones: como se compara el saldo entre un chequeo y el siguiente, muchas transferencias pequeñas dentro de la hora se suman. Si CoinGecko no responde, se usa un mínimo en unidades por moneda. Los cambios menores suelen ser redondeos de las APIs. Si cambia el número de transacciones sin que el saldo pase el umbral, igual se anota.
 - Si una API falla, se conserva el último dato y la página lo indica. Las APIs gratuitas aguantan sin problema una consulta por hora; no bajes el cron a menos de 30 minutos.
 
 Probarlo en tu computador:

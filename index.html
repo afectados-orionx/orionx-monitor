@@ -100,7 +100,7 @@ footer{color:var(--mut);font-size:12.5px;margin-top:28px;line-height:1.6;border-
       <li><b>Billeteras vigiladas</b>: la lista que se revisa cada hora, con saldo actual y última actividad. Cada dirección enlaza al explorador público para que la verifiques tú.</li>
       <li><b>Atribuciones</b>: todas las direcciones que distintos afectados han atribuido a OrionX, con qué tan firme es cada atribución y en qué se apoya. Solo las confirmadas pasan a la lista vigilada.</li>
       <li><b>Precios al cierre</b>: a qué precio se hizo la última operación de cada moneda en OrionX el 3 de septiembre. Sirve para el debate sobre cómo valorizar lo que cada uno tenía.</li>
-      <li><b>Movimientos</b>: cada cambio de saldo detectado entre un chequeo y el siguiente.</li>
+      <li><b>Movimientos</b>: cada cambio de saldo de al menos US$ 1 detectado entre un chequeo y el siguiente.</li>
     </ol>
   </div>
   <div class="box warn">
@@ -142,7 +142,7 @@ footer{color:var(--mut);font-size:12.5px;margin-top:28px;line-height:1.6;border-
 </section>
 
 <section id="t-movimientos" hidden>
-  <p class="nota">Cambios de saldo entre un chequeo y el siguiente. El más reciente primero. Movimientos menores a 0,001 unidades no se listan porque suelen ser redondeos de la API.</p>
+  <p class="nota">Cambios de saldo entre un chequeo y el siguiente. El más reciente primero. Se registra todo cambio de saldo que valga al menos US$ 1 (≈1.000 CLP) al precio del momento, en cualquier moneda, para detectar también retiros en microtransacciones. Los cambios menores suelen ser redondeos de la API y no se listan.</p>
   <div class="ev" id="eventos"></div>
 </section>
 
@@ -173,7 +173,7 @@ fetch('data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
   document.getElementById('act').textContent='Última actualización: '+d.actualizado+(d.errores?.length?` · ${d.errores.length} consulta(s) con error (se muestra el último dato conocido)`:'');
   const or=d.billeteras.filter(b=>b.tipo==='orionx'),dv=d.billeteras.filter(b=>b.tipo==='desvio'),qr=d.billeteras.filter(b=>b.tipo==='querella');
   const sum=a=>a.reduce((s,b)=>s+(b.valor_clp||0),0);
-  const ev=d.eventos.filter(e=>Math.abs((e.saldo_despues??0)-(e.saldo_antes??0))>=0.001||e.saldo_despues==null);
+  const ev=d.eventos.filter(e=>e.valor_usd!=null||Math.abs((e.saldo_despues??0)-(e.saldo_antes??0))>=0.001||e.saldo_despues==null);
   const hoy=Date.now(),ev7=ev.filter(e=>hoy-new Date(e.fecha.replace(' UTC','Z').replace(' ','T'))<7*864e5).length;
   document.getElementById('cards').innerHTML=[
     ['Localizable hoy',clp(d.total_clp),'≈ US$ '+Math.round(d.total_usd).toLocaleString('es-CL')+' en '+d.billeteras.length+' direcciones'],
