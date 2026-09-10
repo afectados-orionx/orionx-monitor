@@ -1,37 +1,37 @@
 {
- "actualizado": "2026-09-10 21:16 UTC",
+ "actualizado": "2026-09-10 22:17 UTC",
  "precios": {
   "BTC": {
-   "clp": 72866252,
-   "usd": 77238
+   "clp": 72788772,
+   "usd": 77156
   },
   "XRP": {
-   "clp": 1278.62,
-   "usd": 1.36
+   "clp": 1277.16,
+   "usd": 1.35
   },
   "TRX": {
-   "clp": 319.99,
-   "usd": 0.339193
+   "clp": 321.45,
+   "usd": 0.340739
   },
   "LTC": {
-   "clp": 49444,
-   "usd": 52.41
+   "clp": 49552,
+   "usd": 52.52
   },
   "ETH": {
-   "clp": 2321029,
-   "usd": 2460.29
+   "clp": 2319305,
+   "usd": 2458.46
   },
   "BNB": {
-   "clp": 674150,
-   "usd": 714.6
+   "clp": 674539,
+   "usd": 715.01
   },
   "POL": {
-   "clp": 88.0,
-   "usd": 0.093279
+   "clp": 87.99,
+   "usd": 0.093267
   },
   "USDT": {
-   "clp": 943.12,
-   "usd": 0.999709
+   "clp": 943.16,
+   "usd": 0.999747
   }
  },
  "billeteras": [
@@ -48,8 +48,8 @@
    "tokens": {},
    "tx": 41477,
    "ultima": "2026-09-03 16:48 UTC",
-   "valor_clp": 96031092.22171807,
-   "valor_usd": 101792.65843152
+   "valor_clp": 95928980.62929888,
+   "valor_usd": 101684.58989024
   },
   {
    "red": "BTC",
@@ -64,8 +64,8 @@
    "tokens": {},
    "tx": 327,
    "ultima": "2026-08-31 14:15 UTC",
-   "valor_clp": 255212141.44884768,
-   "valor_usd": 270524.07445392
+   "valor_clp": 254940769.77572447,
+   "valor_usd": 270236.87159904
   },
   {
    "red": "BTC",
@@ -96,8 +96,8 @@
    "tokens": {},
    "tx": 2,
    "ultima": "2026-08-06 15:57 UTC",
-   "valor_clp": 1340739036.8,
-   "valor_usd": 1421179.2
+   "valor_clp": 1339313404.8,
+   "valor_usd": 1419670.4
   },
   {
    "red": "BTC",
@@ -144,8 +144,8 @@
    "tokens": {},
    "tx": 6588,
    "ultima": "2026-01-12 05:46 UTC",
-   "valor_clp": 2056.1258068399998,
-   "valor_usd": 2.1869915200000003
+   "valor_clp": 2053.77800712,
+   "valor_usd": 2.1709107000000003
   },
   {
    "red": "XRP",
@@ -160,8 +160,8 @@
    "tokens": {},
    "tx": 61273520,
    "ultima": "2026-09-09 12:02 UTC",
-   "valor_clp": 4753501.45155508,
-   "valor_usd": 5056.04634224
+   "valor_clp": 4748073.63709944,
+   "valor_usd": 5018.8695309
   },
   {
    "red": "XRP",
@@ -176,8 +176,8 @@
    "tokens": {},
    "tx": 7,
    "ultima": "2025-08-29 03:46 UTC",
-   "valor_clp": 1367.2219729,
-   "valor_usd": 1.4542412000000002
+   "valor_clp": 1365.6608022000003,
+   "valor_usd": 1.4435482500000003
   },
   {
    "red": "XRP",
@@ -192,8 +192,8 @@
    "tokens": {},
    "tx": 100943928,
    "ultima": "2026-07-29 17:22 UTC",
-   "valor_clp": 1278.6225572399999,
-   "valor_usd": 1.3600027200000002
+   "valor_clp": 1277.1625543200003,
+   "valor_usd": 1.3500027
   },
   {
    "red": "XRP",
@@ -208,8 +208,8 @@
    "tokens": {},
    "tx": 105935604,
    "ultima": "2026-08-29 23:23 UTC",
-   "valor_clp": 744102027.0949439,
-   "valor_usd": 791461.698432
+   "valor_clp": 743252369.6833919,
+   "valor_usd": 785642.12712
   },
   {
    "red": "TRX",
@@ -226,8 +226,9 @@
    },
    "tx": 137970,
    "ultima": "2026-09-08 12:01 UTC",
-   "valor_clp": 82022521.70352069,
-   "valor_usd": 86944.75926073865
+   "error": "https://apilist.tronscanapi.com/api/transaction?address=THR3: HTTP Error 502: Bad Gateway",
+   "valor_clp": 82379086.67168899,
+   "valor_usd": 87322.30931063023
   },
   {
    "red": "LTC",
@@ -242,8 +243,8 @@
    "tokens": {},
    "tx": 12280,
    "ultima": "2026-08-31 22:53 UTC",
-   "valor_clp": 28982870.93650892,
-   "valor_usd": 30721.4680402563
+   "valor_clp": 29046177.91129136,
+   "valor_usd": 30785.947366423603
   },
   {
    "red": "ETH",
@@ -260,8 +261,8 @@
    },
    "tx": 21746,
    "ultima": "21746 tx enviadas (nonce)",
-   "valor_clp": 25528411.988064792,
-   "valor_usd": 27060.11203545851
+   "valor_clp": 25510672.38215156,
+   "valor_usd": 27041.274351092212
   },
   {
    "red": "BSC",
@@ -278,8 +279,8 @@
    },
    "tx": 46073,
    "ultima": "46073 tx enviadas (nonce)",
-   "valor_clp": 9130270.788565187,
-   "valor_usd": 9678.102587784553
+   "valor_clp": 9133013.872242473,
+   "valor_usd": 9680.972923426898
   },
   {
    "red": "POLYGON",
@@ -296,8 +297,8 @@
    },
    "tx": 3564,
    "ultima": "3564 tx enviadas (nonce)",
-   "valor_clp": 18365728.11527627,
-   "valor_usd": 19467.52140998103
+   "valor_clp": 18364326.67581523,
+   "valor_usd": 19465.793099601822
   },
   {
    "red": "BTC",
@@ -449,8 +450,8 @@
    "tokens": {},
    "tx": 61262392,
    "ultima": "2026-09-08 03:14 UTC",
-   "valor_clp": 226409520.49258268,
-   "valor_usd": 240819.74931560003
+   "valor_clp": 226150993.4087586,
+   "valor_usd": 239049.01586475002
   },
   {
    "red": "XRP",
@@ -466,8 +467,8 @@
    "tokens": {},
    "tx": 61254192,
    "ultima": "2026-08-29 21:53 UTC",
-   "valor_clp": 24819697.908552535,
-   "valor_usd": 26399.390871120002
+   "valor_clp": 24791357.38599972,
+   "valor_usd": 26205.27770295
   },
   {
    "red": "XRP",
@@ -483,8 +484,8 @@
    "tokens": {},
    "tx": 100438259,
    "ultima": "2026-08-26 12:41 UTC",
-   "valor_clp": 159578405.97586256,
-   "valor_usd": 169735.05195224003
+   "valor_clp": 159396190.40538445,
+   "valor_usd": 168487.00009965003
   },
   {
    "red": "ETH",
@@ -502,8 +503,8 @@
    },
    "tx": 959,
    "ultima": "959 tx enviadas (nonce)",
-   "valor_clp": 232102.90232102902,
-   "valor_usd": 246.02900246029
+   "valor_clp": 231930.502319305,
+   "valor_usd": 245.84600245846002
   },
   {
    "red": "ETH",
@@ -521,8 +522,8 @@
    },
    "tx": 74,
    "ultima": "74 tx enviadas (nonce)",
-   "valor_clp": 54158985.4167549,
-   "valor_usd": 57408.62786924508
+   "valor_clp": 54161268.99074988,
+   "valor_usd": 57410.79584716509
   },
   {
    "red": "ETH",
@@ -559,8 +560,8 @@
    },
    "tx": 51,
    "ultima": "51 tx enviadas (nonce)",
-   "valor_clp": 36122.953225817066,
-   "valor_usd": 38.29031890249776
+   "valor_clp": 36096.12203527128,
+   "valor_usd": 38.26183799838013
   },
   {
    "red": "ETH",
@@ -578,8 +579,8 @@
    },
    "tx": 34,
    "ultima": "34 tx enviadas (nonce)",
-   "valor_clp": 204065.0877893441,
-   "valor_usd": 216.30892799583523
+   "valor_clp": 203913.51354733817,
+   "valor_usd": 216.14803422386836
   },
   {
    "red": "ETH",
@@ -597,8 +598,8 @@
    },
    "tx": 1,
    "ultima": "1 tx enviadas (nonce)",
-   "valor_clp": 321297911.25885916,
-   "valor_usd": 340575.7681002736
+   "valor_clp": 321089083.51186866,
+   "valor_usd": 340353.92099796707
   },
   {
    "red": "ETH",
@@ -616,8 +617,8 @@
    },
    "tx": 0,
    "ultima": "0 tx enviadas (nonce)",
-   "valor_clp": 235812790.80365038,
-   "valor_usd": 249961.48306906677
+   "valor_clp": 235637635.1932097,
+   "valor_usd": 249775.55803014192
   },
   {
    "red": "ETH",
@@ -635,8 +636,8 @@
    },
    "tx": 215,
    "ultima": "215 tx enviadas (nonce)",
-   "valor_clp": 38740932.232712895,
-   "valor_usd": 41065.375815138395
+   "valor_clp": 38712156.47749545,
+   "valor_usd": 41034.83078493569
   }
  ],
  "eventos": [
@@ -659,7 +660,9 @@
    "saldo_despues": 3717.681133
   }
  ],
- "errores": [],
- "total_clp": 3666162839.5516486,
- "total_usd": 3890356.7174713816
+ "errores": [
+  "TRX THR3KSqTNpEx: https://apilist.tronscanapi.com/api/transaction?address=THR3: HTTP Error 502: Bad Gateway"
+ ],
+ "total_clp": 3663032198.1514363,
+ "total_usd": 3879370.7748552454
 }
