@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Monitor OrionX</title>
 <meta name="description" content="Dónde están hoy los fondos vinculados a OrionX: billeteras vigiladas cada hora, atribuciones con nivel de confianza y precios del día del cierre. Mantenido por afectados.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
 <style>
 :root{--bg:#f5f6f8;--card:#fff;--tx:#1a1d21;--mut:#5c6470;--line:#e2e5ea;--acc:#0b6e4f;--acc-bg:#e6f4ee;--warn:#b45309;--warn-bg:#fdf1e2;--bad:#b91c1c;--bad-bg:#fbe9e9;--info:#1d4ed8;--info-bg:#e8eefb;--chip:#eef1f5;--soft:#f9fafb}
 @media (prefers-color-scheme:dark){:root{--bg:#0f1216;--card:#171b21;--tx:#e6e8eb;--mut:#9aa3ad;--line:#2a313a;--acc:#4cc38a;--acc-bg:#12281f;--warn:#f59e0b;--warn-bg:#2c2110;--bad:#f87171;--bad-bg:#2c1414;--info:#7ea2ff;--info-bg:#141c30;--chip:#222a33;--soft:#12161b}}
@@ -153,12 +154,13 @@ footer{color:var(--mut);font-size:12.5px;margin-top:28px;line-height:1.6;border-
 </footer>
 </main>
 <script>
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fmt=(n,d=6)=>n==null?'—':Number(n).toLocaleString('es-CL',{maximumFractionDigits:d});
 const clp=n=>n==null?'—':'$'+Math.round(n).toLocaleString('es-CL');
 const pct=n=>n==null?'—':`<span class="${n<0?'neg':'pos'}">${n>0?'+':''}${fmt(n,1)} %</span>`;
 const corto=a=>a.length>22?a.slice(0,10)+'…'+a.slice(-6):a;
 const EXPL={BTC:a=>`https://mempool.space/address/${a}`,XRP:a=>`https://xrpscan.com/account/${a}`,ETH:a=>`https://etherscan.io/address/${a}`,TRX:a=>`https://tronscan.org/#/address/${a}`,LTC:a=>`https://litecoinspace.org/address/${a}`,BSC:a=>`https://bscscan.com/address/${a}`,POLYGON:a=>`https://polygonscan.com/address/${a}`};
-const addr=(red,a,url)=>`<span class="addr" title="${a}"><a href="${url||EXPL[red]?.(a)||'#'}" target="_blank" rel="noopener">${corto(a)}</a><button class="copy" data-c="${a}" title="Copiar dirección completa">copiar</button></span>`;
+const addr=(red,a,url)=>`<span class="addr" title="${esc(a)}"><a href="${esc(url||EXPL[red]?.(a)||'#')}" target="_blank" rel="noopener">${esc(corto(a))}</a><button class="copy" data-c="${esc(a)}" title="Copiar dirección completa">copiar</button></span>`;
 document.addEventListener('click',e=>{const b=e.target.closest('.copy');if(!b)return;navigator.clipboard?.writeText(b.dataset.c).then(()=>{b.textContent='copiado';setTimeout(()=>b.textContent='copiar',1200)})});
 // pestañas
 const tabs=[...document.querySelectorAll('#tabs button')];
@@ -166,46 +168,47 @@ function mostrar(t){tabs.forEach(b=>b.setAttribute('aria-selected',b.dataset.t==
 tabs.forEach(b=>b.onclick=()=>mostrar(b.dataset.t));
 mostrar(tabs.some(b=>b.dataset.t===location.hash.slice(1))?location.hash.slice(1):'resumen');
 // filtros genéricos
-function filtros(el,grupos,onchange){let sel={};el.innerHTML=grupos.map(g=>`<span class="nota" style="align-self:center;margin-right:2px">${g.nombre}:</span>`+g.valores.map(v=>`<button data-g="${g.clave}" data-v="${v}" aria-pressed="false">${v}</button>`).join('')+'<span style="width:10px"></span>').join('');
+function filtros(el,grupos,onchange){let sel={};el.innerHTML=grupos.map(g=>`<span class="nota" style="align-self:center;margin-right:2px">${esc(g.nombre)}:</span>`+g.valores.map(v=>`<button data-g="${esc(g.clave)}" data-v="${esc(v)}" aria-pressed="false">${esc(v)}</button>`).join('')+'<span style="width:10px"></span>').join('');
   el.onclick=e=>{const b=e.target.closest('button');if(!b)return;const on=b.getAttribute('aria-pressed')==='true';el.querySelectorAll(`button[data-g="${b.dataset.g}"]`).forEach(x=>x.setAttribute('aria-pressed','false'));if(!on){b.setAttribute('aria-pressed','true');sel[b.dataset.g]=b.dataset.v}else delete sel[b.dataset.g];onchange(sel)}}
 // datos del monitor
 fetch('data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
-  document.getElementById('act').textContent='Última actualización: '+d.actualizado+(d.errores?.length?` · ${d.errores.length} consulta(s) con error (se muestra el último dato conocido)`:'');
+  document.getElementById('act').textContent='Última actualización: '+d.actualizado+(d.errores?.length?` · ${d.errores.length} consulta(s) con error (se muestra el último dato conocido)`:'')+(d.precios_antiguos?' · precios sin actualizar (CoinGecko no respondió; se usan los anteriores)':'');
   const or=d.billeteras.filter(b=>b.tipo==='orionx'),dv=d.billeteras.filter(b=>b.tipo==='desvio'),qr=d.billeteras.filter(b=>b.tipo==='querella');
   const sum=a=>a.reduce((s,b)=>s+(b.valor_clp||0),0);
-  const ev=d.eventos.filter(e=>e.valor_usd!=null||Math.abs((e.saldo_despues??0)-(e.saldo_antes??0))>=0.001||e.saldo_despues==null);
+  const ev=d.eventos.filter(e=>e.valor_usd!=null);   // monitor.py ya decidió el umbral; aquí solo se muestra
   const hoy=Date.now(),ev7=ev.filter(e=>hoy-new Date(e.fecha.replace(' UTC','Z').replace(' ','T'))<7*864e5).length;
   document.getElementById('cards').innerHTML=[
     ['Localizable hoy',clp(d.total_clp),'≈ US$ '+Math.round(d.total_usd).toLocaleString('es-CL')+' en '+d.billeteras.length+' direcciones'],
     ['En billeteras de OrionX',clp(sum(or)),`${or.length} direcciones`],
     ['En destinos de desvío',clp(sum(dv)),`${dv.length} direcciones sin mover`],
     ['Movimientos últimos 7 días',ev7,ev.length?'último: '+ev[0].fecha:'ninguno relevante registrado']
-  ].map(c=>`<div class="card"><div class="k">${c[0]}</div><div class="v">${c[1]}</div><div class="d">${c[2]}</div></div>`).join('');
+  ].map(c=>`<div class="card"><div class="k">${esc(c[0])}</div><div class="v">${esc(c[1])}</div><div class="d">${esc(c[2])}</div></div>`).join('');
   const TIPO={orionx:'OrionX',desvio:'Desvío',querella:'Querella',puente:'Puente',atribuida:'En verificación'};
   const tb=document.querySelector('#tabla tbody');
   const pinta=(sel={})=>{tb.innerHTML=d.billeteras.filter(b=>(!sel.Red||b.red===sel.Red)&&(!sel.Tipo||TIPO[b.tipo]===sel.Tipo)).map(b=>{
-    const toks=Object.entries(b.tokens||{}).map(([k,v])=>`<div class="nota">${fmt(v,2)} ${k}</div>`).join('');
-    return `<tr class="${b.vigilar?'prio':''}"><td><span class="chip ${b.tipo}">${TIPO[b.tipo]||b.tipo}</span><div class="nota">${b.red}</div></td>
+    const toks=Object.entries(b.tokens||{}).map(([k,v])=>`<div class="nota">${fmt(v,2)} ${esc(k)}</div>`).join('');
+    return `<tr class="${b.vigilar?'prio':''}"><td><span class="chip ${esc(b.tipo)}">${esc(TIPO[b.tipo]||b.tipo)}</span><div class="nota">${esc(b.red)}</div></td>
       <td>${addr(b.red,b.direccion,b.explorer)}${b.vigilar?'<div class="eye">● vigilancia prioritaria</div>':''}</td>
-      <td><b>${b.etiqueta}</b><div class="nota">${b.nota||''}</div>${b.error?`<div class="err">Error de consulta: ${b.error}</div>`:''}</td>
-      <td class="num">${fmt(b.saldo)} ${b.moneda}${toks}</td>
+      <td><b>${esc(b.etiqueta)}</b><div class="nota">${esc(b.nota||'')}</div>${b.error?`<div class="err">Error de consulta: ${esc(b.error)}</div>`:''}</td>
+      <td class="num">${fmt(b.saldo)} ${esc(b.moneda)}${toks}</td>
       <td class="num">${clp(b.valor_clp)}</td>
-      <td class="nota">${b.ultima||'—'}</td></tr>`}).join('')||'<tr><td colspan="6" class="nota">Sin resultados para ese filtro.</td></tr>'};
+      <td class="nota">${esc(b.ultima||'—')}</td></tr>`}).join('')||'<tr><td colspan="6" class="nota">Sin resultados para ese filtro.</td></tr>'};
   filtros(document.getElementById('f-bill'),[{nombre:'Red',clave:'Red',valores:[...new Set(d.billeteras.map(b=>b.red))]},{nombre:'Tipo',clave:'Tipo',valores:[...new Set(d.billeteras.map(b=>TIPO[b.tipo]||b.tipo))]}],pinta);
   pinta();
-  document.getElementById('eventos').innerHTML=ev.length?ev.map(e=>`<div><time>${e.fecha}</time><span class="chip">${e.red}</span><b>${e.etiqueta}</b> · ${e.detalle}</div>`).join(''):'<div class="nota">Ningún movimiento relevante desde que empezó el monitor.</div>';
+  document.getElementById('eventos').innerHTML=ev.length?ev.map(e=>`<div><time>${esc(e.fecha)}</time><span class="chip">${esc(e.red)}</span><b>${esc(e.etiqueta)}</b> · ${esc(e.detalle)}</div>`).join(''):'<div class="nota">Ningún movimiento relevante desde que empezó el monitor.</div>';
 }).catch(e=>{document.getElementById('act').textContent='No se pudo cargar data.json: '+e});
-// atribuciones
-fetch('atribuciones.json?t='+Date.now()).then(r=>r.json()).then(a=>{
+// atribuciones (desde la fuente única direcciones.json; incluye las descartadas)
+fetch('direcciones.json?t='+Date.now()).then(r=>r.json()).then(src=>{
+  const a={fuente:src.fuente,direcciones:src.direcciones.filter(x=>x.rol!=null||x.descartada)};
   document.getElementById('atr-fuente').textContent='Fuente: '+a.fuente;
   const ESTADO={monitor:['Vigilada','confirmada'],evaluacion:['En evaluación','media'],relacionada:['Relacionada','baja'],descartada:['Descartada','baja']};
   const tb=document.querySelector('#tabla-atr tbody');
   const pinta=(sel={})=>{tb.innerHTML=a.direcciones.filter(x=>(!sel.Red||x.red===sel.Red)&&(!sel.Confianza||x.confianza===sel.Confianza)&&(!sel.Estado||ESTADO[x.estado][0]===sel.Estado)).map(x=>`<tr>
-    <td>${x.red}</td><td>${addr(x.red,x.direccion)}<div class="nota">${x.nota_original||''}</div></td>
-    <td style="min-width:150px">${x.rol}${x.seccion==='relacionada'?'<div class="nota">puente o contraparte</div>':''}</td>
-    <td><span class="chip ${x.confianza}">${x.confianza}</span></td><td class="nota">${x.evidencia}</td>
-    <td class="nota" style="white-space:nowrap">${x.verificada?'<span class="ok">✓ en cadena</span>':'<span class="no">✗ no verificada</span>'}<br>${x.liga_confirmada?'<span class="ok">✓ liga directa</span>':(x.liga_indirecta?'<span class="no">~ liga indirecta</span>':'<span class="no">– sin liga</span>')}${x.etiqueta_publica?`<br><span class="ok">✓ etiqueta "${x.etiqueta_publica}"</span>`:''}</td>
-    <td class="num">${x.saldo_observado!=null?fmt(x.saldo_observado,4)+' '+x.moneda:'—'}</td>
+    <td>${esc(x.red)}</td><td>${addr(x.red,x.direccion)}<div class="nota">${esc(x.nota_original||'')}</div>${x.estado==='descartada'&&x.motivo?`<div class="nota">Descartada: ${esc(x.motivo)}</div>`:''}</td>
+    <td style="min-width:150px">${esc(x.rol||'—')}${x.seccion==='relacionada'?'<div class="nota">puente o contraparte</div>':''}</td>
+    <td>${x.confianza?`<span class="chip ${esc(x.confianza)}">${esc(x.confianza)}</span>`:'—'}</td><td class="nota">${esc(x.evidencia||'—')}</td>
+    <td class="nota" style="white-space:nowrap">${x.verificada?'<span class="ok">✓ en cadena</span>':'<span class="no">✗ no verificada</span>'}<br>${x.liga_confirmada?'<span class="ok">✓ liga directa</span>':(x.liga_indirecta?'<span class="no">~ liga indirecta</span>':'<span class="no">– sin liga</span>')}${x.etiqueta_publica?`<br><span class="ok">✓ etiqueta "${esc(x.etiqueta_publica)}"</span>`:''}</td>
+    <td class="num">${x.saldo_observado!=null?fmt(x.saldo_observado,4)+' '+esc(x.moneda):'—'}</td>
     <td><span class="chip ${ESTADO[x.estado][1]}">${ESTADO[x.estado][0]}</span></td></tr>`).join('')||'<tr><td colspan="8" class="nota">Sin resultados para ese filtro.</td></tr>'};
   filtros(document.getElementById('f-atr'),[{nombre:'Red',clave:'Red',valores:[...new Set(a.direcciones.map(x=>x.red))]},{nombre:'Confianza',clave:'Confianza',valores:['confirmada','alta','media','baja']},{nombre:'Estado',clave:'Estado',valores:[...new Set(a.direcciones.map(x=>ESTADO[x.estado][0]))]}],pinta);
   pinta();
@@ -217,13 +220,13 @@ fetch('precios_cierre.json?t='+Date.now()).then(r=>r.json()).then(p=>{
     ['Mercados listados',p.mercados_listados,`${p.mercados_sin_operaciones} sin operaciones registradas`],
     ['Volumen últimas 24 h',clp(p.volumen_24h_clp),`≈ US$ ${p.volumen_24h_usd.toLocaleString('es-CL')} en ${p.mercados_con_volumen_24h} mercados`],
     ['Operaciones capturadas',p.operaciones_capturadas.toLocaleString('es-CL'),'hasta 100 por mercado, lo que devolvió la API']
-  ].map(c=>`<div class="card"><div class="k">${c[0]}</div><div class="v">${c[1]}</div><div class="d">${c[2]}</div></div>`).join('');
+  ].map(c=>`<div class="card"><div class="k">${esc(c[0])}</div><div class="v">${esc(c[1])}</div><div class="d">${esc(c[2])}</div></div>`).join('');
   const orden=['BTC','ETH','USDT','USDC','DAI','XRP','LTC','TRX','DOT','POL','BNB','SOL'];
   const ms=[...p.mercados].sort((x,y)=>(orden.indexOf(x.moneda)+1||99)-(orden.indexOf(y.moneda)+1||99));
-  document.querySelector('#tabla-px tbody').innerHTML=ms.map(m=>`<tr><td><b>${m.moneda}</b> <span class="nota">/ CLP</span></td>
+  document.querySelector('#tabla-px tbody').innerHTML=ms.map(m=>`<tr><td><b>${esc(m.moneda)}</b> <span class="nota">/ CLP</span></td>
     <td class="num">${m.ultimo_precio_clp!=null?'$'+fmt(m.ultimo_precio_clp,4):'—'}</td><td class="num">${m.usd_implicito!=null?fmt(m.usd_implicito,4):'—'}</td>
     <td class="num">${m.spot_referencia_08_09_usd!=null?fmt(m.spot_referencia_08_09_usd,4):'—'}</td><td class="num">${pct(m.brecha_pct)}</td>
-    <td class="num">${m.spread_pct!=null?fmt(m.spread_pct,2)+' %':'—'}</td><td class="nota">${m.ultima_operacion}</td></tr>`).join('');
+    <td class="num">${m.spread_pct!=null?fmt(m.spread_pct,2)+' %':'—'}</td><td class="nota">${esc(m.ultima_operacion)}</td></tr>`).join('');
   document.getElementById('px-fuente').textContent='Fuente: '+p.fuente+' '+p.usd_implicito_nota;
 }).catch(()=>{document.querySelector('#tabla-px tbody').innerHTML='<tr><td colspan="7" class="nota">Sin datos de precios.</td></tr>'});
 </script>

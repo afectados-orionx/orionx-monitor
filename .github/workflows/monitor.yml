@@ -11,9 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # necesario para 'git pull --rebase' antes del push
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - name: Consultar billeteras
+      - name: Consultar direcciones
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python monitor.py
@@ -22,5 +24,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data.json historial.jsonl
-          git diff --cached --quiet || git commit -m "monitor: $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git diff --cached --quiet && exit 0
+          git commit -m "monitor: $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git pull --rebase --autostash origin main   # no fallar si un PR se mergeó entre corridas
           git push
