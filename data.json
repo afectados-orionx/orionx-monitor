@@ -1,39 +1,40 @@
 {
- "actualizado": "2026-09-11 02:19 UTC",
+ "actualizado": "2026-09-11 03:08 UTC",
  "precios": {
   "BTC": {
-   "usd": 76896,
-   "clp": 72366557
+   "clp": 72192381,
+   "usd": 76711
   },
   "XRP": {
-   "clp": 1263.93,
+   "clp": 1259.55,
    "usd": 1.34
   },
   "TRX": {
-   "clp": 320.59,
-   "usd": 0.340652
+   "clp": 320.1,
+   "usd": 0.340138
   },
   "LTC": {
-   "usd": 52.74,
-   "clp": 49632
+   "clp": 49627,
+   "usd": 52.73
   },
   "ETH": {
-   "clp": 2306143,
-   "usd": 2450.48
+   "clp": 2298622,
+   "usd": 2442.48
   },
   "BNB": {
-   "clp": 670378,
-   "usd": 712.33
+   "clp": 668441,
+   "usd": 710.28
   },
   "POL": {
-   "clp": 86.72,
-   "usd": 0.092144
+   "clp": 86.95,
+   "usd": 0.092395
   },
   "USDT": {
-   "usd": 0.999689,
-   "clp": 940.81
+   "clp": 940.81,
+   "usd": 0.999694
   }
  },
+ "precios_antiguos": false,
  "billeteras": [
   {
    "red": "BTC",
@@ -48,8 +49,8 @@
    "tokens": {},
    "tx": 41477,
    "ultima": "2026-09-03 16:48 UTC",
-   "valor_clp": 95372539.66397528,
-   "valor_usd": 101341.93353984
+   "valor_clp": 95142991.53902423,
+   "valor_usd": 101098.12036744
   },
   {
    "red": "BTC",
@@ -64,8 +65,8 @@
    "tokens": {},
    "tx": 327,
    "ultima": "2026-08-31 14:15 UTC",
-   "valor_clp": 253461972.7833689,
-   "valor_usd": 269326.22840064
+   "valor_clp": 252851925.89981303,
+   "valor_usd": 268678.27074024
   },
   {
    "red": "BTC",
@@ -96,8 +97,8 @@
    "tokens": {},
    "tx": 2,
    "ultima": "2026-08-06 15:57 UTC",
-   "valor_clp": 1331544648.8,
-   "valor_usd": 1414886.4
+   "valor_clp": 1328339810.3999999,
+   "valor_usd": 1411482.4
   },
   {
    "red": "BTC",
@@ -144,7 +145,7 @@
    "tokens": {},
    "tx": 6588,
    "ultima": "2026-01-12 05:46 UTC",
-   "valor_clp": 2032.5030822600002,
+   "valor_clp": 2025.4596831,
    "valor_usd": 2.1548298800000003
   },
   {
@@ -160,7 +161,7 @@
    "tokens": {},
    "tx": 61273520,
    "ultima": "2026-09-09 12:02 UTC",
-   "valor_clp": 4698888.71569662,
+   "valor_clp": 4682605.2723297,
    "valor_usd": 4981.69271956
   },
   {
@@ -176,7 +177,7 @@
    "tokens": {},
    "tx": 7,
    "ultima": "2025-08-29 03:46 UTC",
-   "valor_clp": 1351.51402935,
+   "valor_clp": 1346.8305172500002,
    "valor_usd": 1.4328553000000002
   },
   {
@@ -192,7 +193,7 @@
    "tokens": {},
    "tx": 100943928,
    "ultima": "2026-07-29 17:22 UTC",
-   "valor_clp": 1263.9325278600002,
+   "valor_clp": 1259.5525191,
    "valor_usd": 1.3400026800000002
   },
   {
@@ -208,7 +209,7 @@
    "tokens": {},
    "tx": 105935604,
    "ultima": "2026-08-29 23:23 UTC",
-   "valor_clp": 735553076.837616,
+   "valor_clp": 733004104.6029599,
    "valor_usd": 779822.5558079999
   },
   {
@@ -226,8 +227,8 @@
    },
    "tx": 137970,
    "ultima": "2026-09-08 12:01 UTC",
-   "valor_clp": 82159410.06308053,
-   "valor_usd": 87300.83136570036
+   "valor_clp": 82039796.65575644,
+   "valor_usd": 87175.38007202497
   },
   {
    "red": "LTC",
@@ -242,17 +243,17 @@
    "tokens": {},
    "tx": 12280,
    "ultima": "2026-08-31 22:53 UTC",
-   "valor_clp": 29093071.96668576,
-   "valor_usd": 30914.906018758204
+   "valor_clp": 29090141.08822361,
+   "valor_usd": 30909.0442618339
   },
   {
    "red": "ETH",
-   "direccion": "0x5528D82423d91da8E8FE8066FAb15cc014ebd5e2",
+   "direccion": "0x5528d82423d91da8e8fe8066fab15cc014ebd5e2",
    "etiqueta": "OrionX: billetera caliente EVM (Ethereum)",
    "tipo": "orionx",
    "vigilar": true,
    "nota": "Misma dirección en Ethereum, BSC y Polygon. Fondeada por Binance Hot Wallet 12 en 2021.",
-   "explorer": "https://etherscan.io/address/0x5528D82423d91da8E8FE8066FAb15cc014ebd5e2",
+   "explorer": "https://etherscan.io/address/0x5528d82423d91da8e8fe8066fab15cc014ebd5e2",
    "moneda": "ETH",
    "saldo": 10.328089223338612,
    "tokens": {
@@ -260,17 +261,17 @@
    },
    "tx": 21746,
    "ultima": "21746 tx enviadas (nonce)",
-   "valor_clp": 25370855.402210727,
-   "valor_usd": 26958.760470223657
+   "valor_clp": 25293177.843161996,
+   "valor_usd": 26876.14400892542
   },
   {
    "red": "BSC",
-   "direccion": "0x5528D82423d91da8E8FE8066FAb15cc014ebd5e2",
+   "direccion": "0x5528d82423d91da8e8fe8066fab15cc014ebd5e2",
    "etiqueta": "OrionX: billetera caliente EVM (BSC)",
    "tipo": "orionx",
    "vigilar": true,
    "nota": "46.073 tx. Última actividad 4-sep-2026.",
-   "explorer": "https://bscscan.com/address/0x5528D82423d91da8E8FE8066FAb15cc014ebd5e2",
+   "explorer": "https://bscscan.com/address/0x5528d82423d91da8e8fe8066fab15cc014ebd5e2",
    "moneda": "BNB",
    "saldo": 6.536616784241724,
    "tokens": {
@@ -278,17 +279,17 @@
    },
    "tx": 46073,
    "ultima": "46073 tx enviadas (nonce)",
-   "valor_clp": 9094045.049595475,
-   "valor_usd": 9663.164297810215
+   "valor_clp": 9081383.622884398,
+   "valor_usd": 9649.789275871046
   },
   {
    "red": "POLYGON",
-   "direccion": "0x5528D82423d91da8E8FE8066FAb15cc014ebd5e2",
+   "direccion": "0x5528d82423d91da8e8fe8066fab15cc014ebd5e2",
    "etiqueta": "OrionX: billetera caliente EVM (Polygon)",
    "tipo": "orionx",
    "vigilar": true,
    "nota": "158.777 POL + USDT.",
-   "explorer": "https://polygonscan.com/address/0x5528D82423d91da8E8FE8066FAb15cc014ebd5e2",
+   "explorer": "https://polygonscan.com/address/0x5528d82423d91da8e8fe8066fab15cc014ebd5e2",
    "moneda": "POL",
    "saldo": 158777.1564879176,
    "tokens": {
@@ -296,8 +297,8 @@
    },
    "tx": 3564,
    "ultima": "3564 tx enviadas (nonce)",
-   "valor_clp": 18151732.675974973,
-   "valor_usd": 19287.216171315322
+   "valor_clp": 18188251.421967193,
+   "valor_usd": 19327.092529106772
   },
   {
    "red": "BTC",
@@ -449,7 +450,7 @@
    "tokens": {},
    "tx": 61262392,
    "ultima": "2026-09-08 03:14 UTC",
-   "valor_clp": 223808313.05328408,
+   "valor_clp": 223032731.80181175,
    "valor_usd": 237278.28241390001
   },
   {
@@ -466,7 +467,7 @@
    "tokens": {},
    "tx": 61254192,
    "ultima": "2026-08-29 21:53 UTC",
-   "valor_clp": 24534545.66451081,
+   "valor_clp": 24449524.096852347,
    "valor_usd": 26011.16453478
   },
   {
@@ -483,7 +484,7 @@
    "tokens": {},
    "tx": 100438259,
    "ultima": "2026-08-26 12:41 UTC",
-   "valor_clp": 157745017.8044079,
+   "valor_clp": 157198371.09297344,
    "valor_usd": 167238.94824706
   },
   {
@@ -502,8 +503,8 @@
    },
    "tx": 959,
    "ultima": "959 tx enviadas (nonce)",
-   "valor_clp": 230614.302306143,
-   "valor_usd": 245.04800245048003
+   "valor_clp": 229862.20229862203,
+   "valor_usd": 244.24800244248001
   },
   {
    "red": "ETH",
@@ -521,8 +522,8 @@
    },
    "tx": 74,
    "ultima": "74 tx enviadas (nonce)",
-   "valor_clp": 54026265.0313327,
-   "valor_usd": 57407.40738178777
+   "valor_clp": 54026209.567862086,
+   "valor_usd": 57407.635421890816
   },
   {
    "red": "ETH",
@@ -559,8 +560,8 @@
    },
    "tx": 51,
    "ultima": "51 tx enviadas (nonce)",
-   "valor_clp": 35891.27741232249,
-   "valor_usd": 38.13764258042455
+   "valor_clp": 35774.22556539969,
+   "valor_usd": 38.0131358957573
   },
   {
    "red": "ETH",
@@ -578,8 +579,8 @@
    },
    "tx": 34,
    "ultima": "34 tx enviadas (nonce)",
-   "valor_clp": 202756.3092704923,
-   "valor_usd": 215.44643187398003
+   "valor_clp": 202095.0622437366,
+   "valor_usd": 214.74307112221229
   },
   {
    "red": "ETH",
@@ -597,8 +598,8 @@
    },
    "tx": 1,
    "ultima": "1 tx enviadas (nonce)",
-   "valor_clp": 319387830.11039484,
-   "valor_usd": 339377.5126411639
+   "valor_clp": 318469785.1281495,
+   "valor_usd": 338401.20026914845
   },
   {
    "red": "ETH",
@@ -616,8 +617,8 @@
    },
    "tx": 0,
    "ultima": "0 tx enviadas (nonce)",
-   "valor_clp": 234300397.29029784,
-   "valor_usd": 248964.80294237132
+   "valor_clp": 233536275.85983133,
+   "valor_usd": 248152.01588696218
   },
   {
    "red": "ETH",
@@ -635,31 +636,11 @@
    },
    "tx": 215,
    "ultima": "215 tx enviadas (nonce)",
-   "valor_clp": 38492465.93051737,
-   "valor_usd": 40901.63442309751
+   "valor_clp": 38366930.863328956,
+   "valor_usd": 40768.10423596787
   }
  ],
  "eventos": [
-  {
-   "fecha": "2026-09-11 00:27 UTC",
-   "red": "TRX",
-   "direccion": "THR3KSqTNpExXrN7We3DGoiF3nJJCZJW35",
-   "etiqueta": "OrionX: billetera caliente Tron / USDT",
-   "detalle": "nuevas transacciones (137968 → 137970) sin cambio de saldo",
-   "saldo_antes": 244108.994539,
-   "saldo_despues": 244108.994539,
-   "valor_usd": 0.0
-  },
-  {
-   "fecha": "2026-09-10 23:15 UTC",
-   "red": "TRX",
-   "direccion": "THR3KSqTNpExXrN7We3DGoiF3nJJCZJW35",
-   "etiqueta": "OrionX: billetera caliente Tron / USDT",
-   "detalle": "nuevas transacciones (137970 → 137968) sin cambio de saldo",
-   "saldo_antes": 244108.994539,
-   "saldo_despues": 244108.994539,
-   "valor_usd": 0.0
-  },
   {
    "fecha": "2026-09-09 00:24 UTC",
    "red": "TRX",
@@ -680,6 +661,6 @@
   }
  ],
  "errores": [],
- "total_clp": 3637268986.681578,
- "total_usd": 3862167.001140773
+ "total_clp": 3627266380.089757,
+ "total_usd": 3855759.7726900317
 }
