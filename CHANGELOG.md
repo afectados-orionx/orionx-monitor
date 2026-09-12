@@ -1,5 +1,39 @@
 # Changelog
 
+## 2026-09-11 (noche): destinos en Binance y Bitfinex desde el circuito Ethereum
+
+Fuente: barrido de todas las salidas de ETH, USDT y USDC de las 20 direcciones
+Ethereum del monitor, agrupadas por destino y clasificadas según el siguiente
+salto (informe `orionx-rastreo/binance_destinos/` en el repo de trabajo del
+grupo; se publicará aquí una versión sin direcciones de depósito de clientes).
+
+Agregadas (7, todas con transacción directa con una dirección confirmada):
+
+- `0x5557e7ee…` **orionx**: billetera caliente anterior (2018-2021); traspasó
+  497 ETH a la caliente actual en 7 tx (ene-feb 2021).
+- `0x3f8f72ff…` **orionx**: recolector principal hacia la central
+  (6.750 ETH + 969 k USDT + 234 k USDC, 2021-2026).
+- `0xe93a2ab5…` **desvío**: depósito de Binance (barre a Binance 14); recibió
+  108 ETH + 26,8 M USDT + 1,08 M USDC en 298 transferencias desde caliente,
+  central y operativa (nov-2024 a ago-2026). Titular por establecer.
+- `0x398781cc…` **desvío**: depósito de Binance; 8,85 M USDT desde la caliente
+  en 68 tx desde el 5-ago-2025.
+- `0x003740c4…` **desvío**: depósito de Bitfinex (etiqueta comunitaria,
+  confianza media); 223 ETH + 8,22 M USDT desde la caliente, 2024-2026.
+- `0x4def7506…` y `0xad1618f3…` **atribuidas** (confianza media): destinos sin
+  etiqueta que recibieron 14,0 M y 9,85 M USDT desde la caliente y los
+  reenvían a racimos de direcciones con sufijo repetido.
+
+Descartada (editada, no borrada):
+
+- `0x36da0bfe…` (estaba "relacionada"): mueve miles de millones de USDT/USDC,
+  recibe de Circle y barre a depósitos de Binance y Coinbase. Es
+  infraestructura de stablecoins, no una billetera de OrionX.
+
+Nota de redacción: los depósitos de exchange se etiquetan por lo que son
+(depósito de Binance/Bitfinex) y su titular solo lo puede establecer el
+exchange ante un oficio de la Fiscalía. Ningún registro afirma quién es.
+
 ## 2026-09-11 — Revisión de la fuente única y falsas alertas de Tron
 
 Revisión de la versión "fuente única" antes de publicarla:
