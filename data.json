@@ -1,37 +1,37 @@
 {
- "actualizado": "2026-09-12 00:25 UTC",
+ "actualizado": "2026-09-12 01:16 UTC",
  "precios": {
   "BTC": {
-   "usd": 77282,
-   "clp": 72796317
+   "clp": 72862031,
+   "usd": 77352
   },
   "XRP": {
-   "clp": 1279.21,
+   "clp": 1281.47,
    "usd": 1.36
   },
   "TRX": {
-   "clp": 319.0,
-   "usd": 0.338652
+   "clp": 319.23,
+   "usd": 0.3389
   },
   "LTC": {
-   "clp": 50145,
-   "usd": 53.23
+   "clp": 50379,
+   "usd": 53.48
   },
   "ETH": {
-   "clp": 2369938,
-   "usd": 2515.97
+   "clp": 2369195,
+   "usd": 2515.18
   },
   "BNB": {
-   "clp": 685499,
-   "usd": 727.74
+   "clp": 685985,
+   "usd": 728.25
   },
   "POL": {
-   "clp": 91.8,
-   "usd": 0.097458
+   "clp": 91.58,
+   "usd": 0.097221
   },
   "USDT": {
    "clp": 941.85,
-   "usd": 0.999882
+   "usd": 0.999883
   }
  },
  "precios_antiguos": false,
@@ -49,8 +49,8 @@
    "tokens": {},
    "tx": 41477,
    "ultima": "2026-09-03 16:48 UTC",
-   "valor_clp": 95938924.25300568,
-   "valor_usd": 101850.64642928
+   "valor_clp": 96025529.32766023,
+   "valor_usd": 101942.90006207999
   },
   {
    "red": "BTC",
@@ -65,8 +65,8 @@
    "tokens": {},
    "tx": 327,
    "ultima": "2026-08-31 14:15 UTC",
-   "valor_clp": 254967195.94084728,
-   "valor_usd": 270678.18330288
+   "valor_clp": 255197357.50676903,
+   "valor_usd": 270923.35647168
   },
   {
    "red": "BTC",
@@ -97,8 +97,8 @@
    "tokens": {},
    "tx": 2,
    "ultima": "2026-08-06 15:57 UTC",
-   "valor_clp": 1339452232.8,
-   "valor_usd": 1421988.7999999998
+   "valor_clp": 1340661370.3999999,
+   "valor_usd": 1423276.7999999998
   },
   {
    "red": "BTC",
@@ -145,7 +145,7 @@
    "tokens": {},
    "tx": 6588,
    "ultima": "2026-01-12 05:46 UTC",
-   "valor_clp": 2057.07457522,
+   "valor_clp": 2060.70884054,
    "valor_usd": 2.1869915200000003
   },
   {
@@ -161,7 +161,7 @@
    "tokens": {},
    "tx": 61273520,
    "ultima": "2026-09-09 12:02 UTC",
-   "valor_clp": 4755694.88342414,
+   "valor_clp": 4764096.84278698,
    "valor_usd": 5056.04634224
   },
   {
@@ -177,7 +177,7 @@
    "tokens": {},
    "tx": 7,
    "ultima": "2025-08-29 03:46 UTC",
-   "valor_clp": 1367.8528569500002,
+   "valor_clp": 1370.2694636500003,
    "valor_usd": 1.4542412000000002
   },
   {
@@ -193,7 +193,7 @@
    "tokens": {},
    "tx": 100943928,
    "ultima": "2026-07-29 17:22 UTC",
-   "valor_clp": 1279.21255842,
+   "valor_clp": 1281.47256294,
    "valor_usd": 1.3600027200000002
   },
   {
@@ -209,7 +209,7 @@
    "tokens": {},
    "tx": 105935604,
    "ultima": "2026-08-29 23:23 UTC",
-   "valor_clp": 744445381.802352,
+   "valor_clp": 745760604.9188639,
    "valor_usd": 791461.698432
   },
   {
@@ -227,8 +227,8 @@
    },
    "tx": 137970,
    "ultima": "2026-09-08 12:01 UTC",
-   "valor_clp": 81775588.5014389,
-   "valor_usd": 86813.41353600443
+   "valor_clp": 81831733.57018287,
+   "valor_usd": 86873.95671255361
   },
   {
    "red": "LTC",
@@ -243,8 +243,8 @@
    "tokens": {},
    "tx": 12280,
    "ultima": "2026-08-31 22:53 UTC",
-   "valor_clp": 29393780.09690235,
-   "valor_usd": 31202.1321080489
+   "valor_clp": 29530945.208930973,
+   "valor_usd": 31348.6760311564
   },
   {
    "red": "ETH",
@@ -261,8 +261,8 @@
    },
    "tx": 21746,
    "ultima": "21746 tx enviadas (nonce)",
-   "valor_clp": 26031452.37181641,
-   "valor_usd": 27635.465579515236
+   "valor_clp": 26023778.60152347,
+   "valor_usd": 27627.308039526495
   },
   {
    "red": "BSC",
@@ -279,8 +279,8 @@
    },
    "tx": 46073,
    "ultima": "46073 tx enviadas (nonce)",
-   "valor_clp": 9198094.065443646,
-   "valor_usd": 9764.860201740528
+   "valor_clp": 9201270.861200787,
+   "valor_usd": 9768.198884794198
   },
   {
    "red": "POLYGON",
@@ -297,8 +297,8 @@
    },
    "tx": 3564,
    "ultima": "3564 tx enviadas (nonce)",
-   "valor_clp": 18963165.265633434,
-   "valor_usd": 20131.857033293145
+   "valor_clp": 18928234.29120609,
+   "valor_usd": 20094.231505508105
   },
   {
    "red": "BTC",
@@ -450,7 +450,7 @@
    "tokens": {},
    "tx": 61262392,
    "ultima": "2026-09-08 03:14 UTC",
-   "valor_clp": 226513993.76618287,
+   "valor_clp": 226914179.52607498,
    "valor_usd": 240819.74931560003
   },
   {
@@ -467,7 +467,7 @@
    "tokens": {},
    "tx": 61254192,
    "ultima": "2026-08-29 21:53 UTC",
-   "valor_clp": 24831150.58547457,
+   "valor_clp": 24875020.16148099,
    "valor_usd": 26399.390871120002
   },
   {
@@ -484,7 +484,7 @@
    "tokens": {},
    "tx": 100438259,
    "ultima": "2026-08-26 12:41 UTC",
-   "valor_clp": 159652041.0351654,
+   "valor_clp": 159934100.75385073,
    "valor_usd": 169735.05195224003
   },
   {
@@ -503,8 +503,8 @@
    },
    "tx": 959,
    "ultima": "959 tx enviadas (nonce)",
-   "valor_clp": 236993.802369938,
-   "valor_usd": 251.59700251597
+   "valor_clp": 236919.50236919502,
+   "valor_usd": 251.51800251518
   },
   {
    "red": "ETH",
@@ -522,8 +522,8 @@
    },
    "tx": 74,
    "ultima": "74 tx enviadas (nonce)",
-   "valor_clp": 54086438.96393968,
-   "valor_usd": 57418.96992420982
+   "valor_clp": 54086433.4847004,
+   "valor_usd": 57419.02150555993
   },
   {
    "red": "ETH",
@@ -560,8 +560,8 @@
    },
    "tx": 51,
    "ultima": "51 tx enviadas (nonce)",
-   "valor_clp": 36884.140405865866,
-   "valor_usd": 39.1568854277818
+   "valor_clp": 36872.576847527394,
+   "valor_usd": 39.14459039267091
   },
   {
    "red": "ETH",
@@ -579,8 +579,8 @@
    },
    "tx": 34,
    "ultima": "34 tx enviadas (nonce)",
-   "valor_clp": 208365.17166537023,
-   "valor_usd": 221.20431882813875
+   "valor_clp": 208299.8470355498,
+   "valor_usd": 221.1348619539017
   },
   {
    "red": "ETH",
@@ -598,8 +598,8 @@
    },
    "tx": 1,
    "ultima": "1 tx enviadas (nonce)",
-   "valor_clp": 327216801.96433675,
-   "valor_usd": 347379.2711702657
+   "valor_clp": 327126108.2504944,
+   "valor_usd": 347282.8807122991
   },
   {
    "red": "ETH",
@@ -617,8 +617,8 @@
    },
    "tx": 0,
    "ultima": "0 tx enviadas (nonce)",
-   "valor_clp": 240781866.06527603,
-   "valor_usd": 255618.4809747143
+   "valor_clp": 240706378.46750492,
+   "valor_usd": 255538.21825299266
   },
   {
    "red": "ETH",
@@ -636,8 +636,141 @@
    },
    "tx": 215,
    "ultima": "215 tx enviadas (nonce)",
-   "valor_clp": 39557285.71953293,
-   "valor_usd": 41994.74591814253
+   "valor_clp": 39544884.10340197,
+   "valor_usd": 41981.559812164895
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x5557e7ee0effb154afe78d4ecaf5ff5fa1e948ab",
+   "etiqueta": "OrionX: billetera caliente anterior (2018-2021)",
+   "tipo": "orionx",
+   "vigilar": true,
+   "nota": "Pago retiros de clientes por 3.018,88 ETH a 198 destinos entre 2018 y 2021 y traspaso 497 ETH a la caliente actual 0x5528d824... en 7 tx (30-ene a 18-feb-2021), tx 0xe829a627f729ca2486134d8f26201e22563aafccc0205a2fc0bf8282d634b85e. Comparte 36 destinos de retiro con 0x5528d824... Fondeada por Kraken 4 con 2.587 ETH.",
+   "origen": "analisis de entradas de 0x5528d824..., 11-sep-2026",
+   "explorer": "https://etherscan.io/address/0x5557e7ee0effb154afe78d4ecaf5ff5fa1e948ab",
+   "moneda": "ETH",
+   "saldo": 2.4e-17,
+   "tokens": {
+    "USDT": 0.0
+   },
+   "tx": 373,
+   "ultima": "373 tx enviadas (nonce)",
+   "valor_clp": 5.6860679999999996e-11,
+   "valor_usd": 6.036431999999999e-14
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x3f8f72ff8b6ea36c597477aebe2bd88ed4b93d17",
+   "etiqueta": "OrionX: recolector principal hacia la central",
+   "tipo": "orionx",
+   "vigilar": false,
+   "nota": "Envio 6.750,13 ETH, 969.582 USDT y 233.968 USDC exclusivamente a la central de depositos 0x0c827a96... entre 2021 y 2026 (112 tx); recibe gas de 0xdf9390b8... Tx de ejemplo 0x25810d859d21d5845ae8f6335499d7841bc0b3f1b52af1459a86864ea52a2dfe.",
+   "origen": "analisis de entradas de 0x0c827a96..., 11-sep-2026",
+   "explorer": "https://etherscan.io/address/0x3f8f72ff8b6ea36c597477aebe2bd88ed4b93d17",
+   "moneda": "ETH",
+   "saldo": 7.30978,
+   "tokens": {
+    "USDT": 0.0
+   },
+   "tx": 241,
+   "ultima": "241 tx enviadas (nonce)",
+   "valor_clp": 17318294.2271,
+   "valor_usd": 18385.4124604
+  },
+  {
+   "red": "ETH",
+   "direccion": "0xe93a2ab58f246ca56f79438b168896e47d50372e",
+   "etiqueta": "Depósito Binance: mayor canal de salida desde OrionX (titular por establecer)",
+   "tipo": "desvio",
+   "vigilar": true,
+   "nota": "Deposito de Binance (barre a Binance 14). Recibio 108 ETH, 26.813.044 USDT y 1.078.028 USDC desde tres direcciones de OrionX a la vez (caliente 0x5528d824..., central 0x0c827a96... y operativa 0x1028ffd6...) entre el 1-nov-2024 y el 24-ago-2026, 298 transferencias. Tx de ejemplo 0x844c047534c93d72ed4aeab64b939c47a391e4179b788ec167544769868f5581. El titular de un depósito de exchange solo lo puede establecer el exchange ante un oficio de la Fiscalía; puede ser una cuenta corporativa de OrionX o de un tercero. Informe: orionx-rastreo/binance_destinos (repo del grupo), 11-sep-2026.",
+   "origen": "analisis de salidas del circuito EVM, 11-sep-2026",
+   "explorer": "https://etherscan.io/address/0xe93a2ab58f246ca56f79438b168896e47d50372e",
+   "moneda": "ETH",
+   "saldo": 0.015492802696730338,
+   "tokens": {
+    "USDT": 0.0
+   },
+   "tx": 296,
+   "ultima": "296 tx enviadas (nonce)",
+   "valor_clp": 36705.470685080036,
+   "valor_usd": 38.96718748676221
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x398781cced85c593a60f03cf76c245877cc914c1",
+   "etiqueta": "Depósito Binance: 8,85 M USDT desde la caliente (titular por establecer)",
+   "tipo": "desvio",
+   "vigilar": true,
+   "nota": "Deposito de Binance (barre a Binance 14). Recibio 8.845.179 USDT de la caliente 0x5528d824... en 68 transferencias desde el 5-ago-2025 (tres semanas antes de la deteccion del descalce) hasta el 24-feb-2026. Tx de ejemplo 0xa0c19cd8d903c2149879bda80b699d35199e356ca34cd85828a0191e83147d0e. El titular de un depósito de exchange solo lo puede establecer el exchange ante un oficio de la Fiscalía; puede ser una cuenta corporativa de OrionX o de un tercero. Informe: orionx-rastreo/binance_destinos (repo del grupo), 11-sep-2026.",
+   "origen": "analisis de salidas del circuito EVM, 11-sep-2026",
+   "explorer": "https://etherscan.io/address/0x398781cced85c593a60f03cf76c245877cc914c1",
+   "moneda": "ETH",
+   "saldo": 0.008903289873448038,
+   "tokens": {
+    "USDT": 0.0
+   },
+   "tx": 53,
+   "ultima": "53 tx enviadas (nonce)",
+   "valor_clp": 21093.629851723723,
+   "valor_usd": 22.393376623899034
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x4def7506e75aaff37f22949b6c4b9dcc2630955d",
+   "etiqueta": "Destino sin etiqueta: 14,04 M USDT desde la caliente",
+   "tipo": "atribuida",
+   "vigilar": true,
+   "nota": "Recibio 14.040.011 USDT de la caliente 0x5528d824... en 656 transferencias entre el 5-ago-2025 y el 10-jun-2026 y los reenvia a decenas de direcciones con sufijo repetido (patron de red OTC de stablecoins). Sin etiqueta publica. Tx de ejemplo 0x5f1dc8b89643173de7d040c0c80886f32b3f791daaf9f90904b52803f287d76c. El titular de un depósito de exchange solo lo puede establecer el exchange ante un oficio de la Fiscalía; puede ser una cuenta corporativa de OrionX o de un tercero. Informe: orionx-rastreo/binance_destinos (repo del grupo), 11-sep-2026.",
+   "origen": "analisis de salidas del circuito EVM, 11-sep-2026",
+   "explorer": "https://etherscan.io/address/0x4def7506e75aaff37f22949b6c4b9dcc2630955d",
+   "moneda": "ETH",
+   "saldo": 0.005878429963331518,
+   "tokens": {
+    "USDT": 0.002175
+   },
+   "tx": 707,
+   "ultima": "707 tx enviadas (nonce)",
+   "valor_clp": 13929.195400725215,
+   "valor_usd": 14.787484220697166
+  },
+  {
+   "red": "ETH",
+   "direccion": "0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3",
+   "etiqueta": "Destino sin etiqueta: 9,85 M USDT desde la caliente",
+   "tipo": "atribuida",
+   "vigilar": true,
+   "nota": "Recibio 9.845.918 USDT de la caliente 0x5528d824... en 98 transferencias entre el 20-feb-2024 y el 27-feb-2026 y los reenvia a racimos de direcciones con sufijo repetido. Tx de ejemplo 0xdceea67da9024df4b652799323688205b2d3fb7e774a8c5cbf2a7f9138dac1be. El titular de un depósito de exchange solo lo puede establecer el exchange ante un oficio de la Fiscalía; puede ser una cuenta corporativa de OrionX o de un tercero. Informe: orionx-rastreo/binance_destinos (repo del grupo), 11-sep-2026.",
+   "origen": "analisis de salidas del circuito EVM, 11-sep-2026",
+   "explorer": "https://etherscan.io/address/0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3",
+   "moneda": "ETH",
+   "saldo": 0.8593252896669543,
+   "tokens": {
+    "USDT": 39782.583057
+   },
+   "tx": 760,
+   "ultima": "760 tx enviadas (nonce)",
+   "valor_clp": 39505135.03188795,
+   "valor_usd": 41939.28627684686
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x003740c4d6b77e67df0dfdb57385d46413ab2663",
+   "etiqueta": "Depósito Bitfinex: 223 ETH y 8,22 M USDT desde la caliente (titular por establecer)",
+   "tipo": "desvio",
+   "vigilar": true,
+   "nota": "Barre a la hot wallet de Bitfinex 0x77134cbc... Recibio 223,30 ETH, 8.219.767 USDT y 34.000 USDC de la caliente 0x5528d824... en 608 transferencias entre el 21-mar-2024 y el 14-ago-2026. Tx de ejemplo 0xde3ea89ebdd60341fceac9764c57b93ce29c2a529807324fa6c07abc9598ac33. El titular de un depósito de exchange solo lo puede establecer el exchange ante un oficio de la Fiscalía; puede ser una cuenta corporativa de OrionX o de un tercero. Informe: orionx-rastreo/binance_destinos (repo del grupo), 11-sep-2026.",
+   "origen": "analisis de salidas del circuito EVM, 11-sep-2026",
+   "explorer": "https://etherscan.io/address/0x003740c4d6b77e67df0dfdb57385d46413ab2663",
+   "moneda": "ETH",
+   "saldo": 0.00017381901348434,
+   "tokens": {
+    "USDT": 0.0
+   },
+   "tx": 1728,
+   "ultima": "1728 tx enviadas (nonce)",
+   "valor_clp": 411.8111376520309,
+   "valor_usd": 0.4371861063355422
   }
  ],
  "eventos": [
@@ -661,6 +794,6 @@
   }
  ],
  "errores": [],
- "total_clp": 3678048035.3352036,
- "total_usd": 3906465.7225335063
+ "total_clp": 3738494400.019815,
+ "total_usd": 3968467.1275655017
 }
