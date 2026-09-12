@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-12: informe público de destinos y scripts reproducibles
+
+- `informes/2026-09-11_destinos_Binance_Ethereum.md/.pdf`: versión pública del barrido
+  de salidas ETH/USDT/USDC. Solo muestra direcciones vigiladas por el monitor y las dos
+  billeteras calientes de Binance con etiqueta pública; 28 direcciones de destino van
+  codificadas (`D-01`…) porque son, en su mayoría, depósitos de clientes en exchanges.
+- `scripts/destinos/`: los tres scripts que generan el análisis (solo stdlib, sin
+  claves), con README de uso y reglas para publicar resultados.
+- `README.md`: nueva sección "Informes".
+
 ## 2026-09-11 (noche): destinos en Binance y Bitfinex desde el circuito Ethereum
 
 Fuente: barrido de todas las salidas de ETH, USDT y USDC de las 20 direcciones

@@ -30,6 +30,14 @@ Si sabes editar JSON, propón el cambio directamente en **`direcciones.json`** c
 
 **Criterio para pasar de "atribuida" o "en evaluación" a `orionx`:** una transacción pública directa con una billetera ya confirmada, o una etiqueta pública en un explorador (xrpscan, etherscan). `direcciones.json` guarda todas las direcciones propuestas con su confianza, evidencia y estado; la pestaña Atribuciones lo muestra. Las que no cumplen el criterio quedan con `monitorear: false` y `estado: evaluacion`, para no meter ruido en la investigación.
 
+## Informes
+
+Los análisis grandes se publican en `informes/` en versión pública: solo direcciones
+que el monitor vigila; las demás van codificadas para no exponer a clientes. Los
+scripts que los generan están en `scripts/`, para que cualquiera pueda repetirlos.
+
+- [2026-09-11 · Destinos en Binance de las billeteras OrionX en Ethereum](informes/2026-09-11_destinos_Binance_Ethereum.md) ([PDF](informes/2026-09-11_destinos_Binance_Ethereum.pdf)) · scripts en [`scripts/destinos/`](scripts/destinos/README.md)
+
 ## Cómo funciona
 
 - `direcciones.json` es la **fuente única** de direcciones: monitoreadas, en evaluación y descartadas, todo en un archivo. `scripts/validate_data.py` revisa el esquema en cada Pull Request.
