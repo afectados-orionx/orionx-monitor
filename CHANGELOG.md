@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-13: vista previa al compartir y metadatos
+
+- `og.png` (1200x630), `favicon.png` y `apple-touch-icon.png`: al compartir el enlace del
+  monitor en WhatsApp, Discord, Facebook o X ahora aparece una tarjeta con imagen.
+- `index.html`: título orientado a búsqueda, canonical, Open Graph, Twitter card grande y
+  JSON-LD (`WebApplication`) con el contacto del grupo. Sin cambios funcionales.
+
 ## 2026-09-12: informe público de destinos y scripts reproducibles
 
 - `informes/2026-09-11_destinos_Binance_Ethereum.md/.pdf`: versión pública del barrido
