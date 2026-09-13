@@ -2,7 +2,7 @@
 
 **Página en vivo: https://afectados-orionx.github.io/orionx-monitor/**
 
-Muestra saldo, valor en pesos y última actividad de las billeteras vinculadas a OrionX en Bitcoin, XRP, Tron, Litecoin, Ethereum, BSC y Polygon, y registra cada movimiento con fecha y hora. Se actualiza sola cada hora. Tiene cinco pestañas: **Resumen** (en lenguaje simple), **Billeteras vigiladas**, **Atribuciones** (todas las direcciones atribuidas a OrionX por afectados, con nivel de confianza, tipo de evidencia y nuestra verificación en cadena), **Precios al cierre** (última operación de cada mercado en OrionX el 3 de septiembre de 2026) y **Movimientos**. Lo mantienen clientes afectados por el cierre del 3 de septiembre de 2026; no tiene relación con la empresa.
+Muestra saldo, valor en pesos y última actividad de las billeteras vinculadas a OrionX en Bitcoin, XRP, Tron, Litecoin, Ethereum, BSC y Polygon, y registra cada movimiento con fecha y hora. Se actualiza sola cada hora. Tiene cinco pestañas: **Resumen** (en lenguaje simple), **Billeteras vigiladas**, **Atribuciones** (todas las direcciones atribuidas a OrionX por afectados, con nivel de confianza, tipo de evidencia y nuestra verificación en cadena), **Precios al cierre** (última operación de cada mercado en OrionX el 3 de septiembre de 2026) y **Movimientos** (arriba, los movimientos con alerta: los grandes para su red y cualquier salida desde almacenamiento en frío). Lo mantienen clientes afectados por el cierre del 3 de septiembre de 2026; no tiene relación con la empresa.
 
 Todo es verificable: cada dirección enlaza a su explorador público y `direcciones.json` anota qué transacción la vincula a OrionX.
 
@@ -15,6 +15,8 @@ Cuantas más copias existan, más difícil es que el registro desaparezca. Cada 
 3. En tu copia: **Settings → Pages → Source: "Deploy from a branch" → Branch: `main`, carpeta `/ (root)` → Save**. En dos minutos tu página estará en `https://TU_USUARIO.github.io/orionx-monitor/`.
 4. **Settings → Actions → General → Workflow permissions → marca "Read and write permissions" → Save.** Sin esto el robot no puede guardar los datos.
 5. Pestaña **Actions**. Si aparece un aviso para habilitar workflows, acéptalo. Entra en **monitor → Run workflow → Run workflow**. Desde ahí corre sola cada hora.
+
+Con eso también funcionan las alertas: cada movimiento grande abre un **Issue** en tu copia (ver "Alertas" más abajo). Si no quieres esos avisos, en **Settings → General → Features** desmarca *Issues* y el monitor seguirá funcionando igual.
 
 Opcional, avisos a Discord: un administrador del servidor crea un webhook (Ajustes del canal → Integraciones → Webhooks → Nuevo webhook → Copiar URL). En tu copia: **Settings → Secrets and variables → Actions → New repository secret**, nombre `DISCORD_WEBHOOK`, valor la URL. Cada movimiento detectado se publicará en ese canal.
 
@@ -30,6 +32,35 @@ Si sabes editar JSON, propón el cambio directamente en **`direcciones.json`** c
 
 **Criterio para pasar de "atribuida" o "en evaluación" a `orionx`:** una transacción pública directa con una billetera ya confirmada, o una etiqueta pública en un explorador (xrpscan, etherscan). `direcciones.json` guarda todas las direcciones propuestas con su confianza, evidencia y estado; la pestaña Atribuciones lo muestra. Las que no cumplen el criterio quedan con `monitorear: false` y `estado: evaluacion`, para no meter ruido en la investigación.
 
+## Alertas: que alguien se entere cuando algo se mueve
+
+Antes, un movimiento solo quedaba anotado en `historial.jsonl` y había que acordarse de mirar. Ahora `scripts/alertas.py` compara el `data.json` de la corrida anterior con el nuevo y levanta una **alerta** cuando:
+
+- el saldo cambia más que el umbral de esa moneda: **0,01 BTC · 0,5 ETH · 1.000 XRP · 1.000 USDT/USDC · 5 LTC · 500 TRX**, y en **BSC y Polygon** lo que equivalga a **≈US$ 500** al precio del momento; o
+- **sale cualquier cantidad** de una dirección de tipo `desvio` o `atribuida` cuyo rol declarado es almacenamiento en frío. Ahí no hay umbral: que se mueva ya es la noticia.
+
+Cambios por debajo de 0,000001 unidades se ignoran siempre: son redondeos de las APIs. Los umbrales se cambian sin tocar el código con la variable de entorno `ALERTA_UMBRALES`, por ejemplo `ALERTA_UMBRALES='{"BTC": 0.02}'`.
+
+Qué hace con cada alerta:
+
+1. La escribe en **`alertas.json`** (las últimas 50, la más reciente primero). La pestaña **Movimientos** de la web las muestra arriba, con su motivo y el enlace al explorador.
+2. Abre un **Issue** en este repositorio con la etiqueta `movimiento`: título `Movimiento: <red> <dirección abreviada> <±monto> <fecha UTC>`, y en el cuerpo la etiqueta pública de la dirección, saldo antes y después, valor aproximado en dólares y los enlaces al explorador y al monitor. Si ya hay un issue abierto de esa misma dirección de las últimas 24 horas, comenta ahí en vez de abrir otro. Usa el `GITHUB_TOKEN` del propio workflow (permiso `issues: write`), sin claves de terceros.
+3. Si están configurados los secretos `TELEGRAM_BOT_TOKEN` y `TELEGRAM_CHAT_ID`, manda el mismo texto a ese chat. Si no están, se salta el paso sin fallar.
+
+Un aviso que falle nunca interrumpe el guardado de los datos: primero se hace commit de `data.json`, `historial.jsonl` y `alertas.json`, y recién después se avisa.
+
+**Configurar Telegram (opcional).** Habla con `@BotFather` en Telegram, `/newbot`, y copia el token que te da. Agrega el bot al grupo o canal donde quieras los avisos, escribe cualquier mensaje ahí y abre `https://api.telegram.org/bot<TOKEN>/getUpdates` para leer el `chat.id` (en los grupos empieza con `-100`). Luego, en el repositorio: **Settings → Secrets and variables → Actions → New repository secret**, dos secretos: `TELEGRAM_BOT_TOKEN` y `TELEGRAM_CHAT_ID`. Los tokens van **solo** ahí; nunca en un archivo del repositorio.
+
+Probar las alertas sin esperar a que algo se mueva: copia `data.json` a otro archivo, edita a mano un saldo y compara.
+
+```bash
+cp data.json /tmp/anterior.json
+# edita /tmp/anterior.json y cambia un saldo
+python3 scripts/alertas.py --anterior /tmp/anterior.json --sin-guardar
+```
+
+Sin `GITHUB_TOKEN` ni secretos de Telegram no manda nada: solo imprime lo que habría avisado.
+
 ## Informes
 
 Los análisis grandes se publican en `informes/` en versión pública: solo direcciones
@@ -42,8 +73,9 @@ scripts que los generan están en `scripts/`, para que cualquiera pueda repetirl
 
 - `direcciones.json` es la **fuente única** de direcciones: monitoreadas, en evaluación y descartadas, todo en un archivo. `scripts/validate_data.py` revisa el esquema en cada Pull Request.
 - `monitor.py` (Python, sin dependencias) lee de `direcciones.json` las que tienen `monitorear: true` y consulta mempool.space, xrpscan, tronscan, blockcypher y nodos RPC públicos, más precios de CoinGecko. Compara con el `data.json` anterior y anota los cambios en `historial.jsonl`.
-- `.github/workflows/monitor.yml` lo ejecuta cada hora en GitHub Actions y guarda el resultado en el repositorio (con `git pull --rebase` antes del push, para no fallar si se mergeó un PR en el intertanto).
-- `index.html` lee `data.json` (monitor), `direcciones.json` (direcciones propuestas, su verificación y las descartadas) y `precios_cierre.json` (último libro de órdenes, transcrito del informe de un afectado) y dibuja la página. No hay servidor ni base de datos.
+- `scripts/alertas.py` (Python, sin dependencias) compara la foto anterior de `data.json` con la nueva, escribe `alertas.json` y avisa por Issue y Telegram. Ver "Alertas" más abajo.
+- `.github/workflows/monitor.yml` lo ejecuta cada hora en GitHub Actions y guarda el resultado en el repositorio (con `git pull --rebase` antes del push, para no fallar si se mergeó un PR en el intertanto); después de guardar, manda los avisos.
+- `index.html` lee `data.json` (monitor), `alertas.json` (movimientos con alerta), `direcciones.json` (direcciones propuestas, su verificación y las descartadas) y `precios_cierre.json` (último libro de órdenes, transcrito del informe de un afectado) y dibuja la página. No hay servidor ni base de datos.
 - Un movimiento se registra si vale al menos **US$ 1** (≈1.000 CLP) al precio del momento, en cualquier moneda (variable de entorno `UMBRAL_USD` para cambiarlo). Así se detectan también retiros goteados en microtransacciones: como se compara el saldo entre un chequeo y el siguiente, muchas transferencias pequeñas dentro de la hora se suman. Si CoinGecko no responde, se usa un mínimo en unidades por moneda. Los cambios menores suelen ser redondeos de las APIs. Si cambia el número de transacciones sin que el saldo pase el umbral, igual se anota, siempre que también haya cambiado la fecha de la última transacción (los contadores de algunos exploradores oscilan sin que haya transacciones nuevas).
 - Si una API de saldos falla, se conserva el último dato y la página lo indica. Si CoinGecko no responde, se reutilizan los precios del `data.json` anterior y la página avisa "precios sin actualizar" (antes quedaba todo en $0). Las APIs gratuitas aguantan sin problema una consulta por hora; no bajes el cron a menos de 30 minutos.
 - Avisos a Discord: un solo POST por tanda, sin reintentos (antes se enviaba tres veces). Un fallo de aviso nunca interrumpe el guardado de `data.json`.
@@ -52,7 +84,9 @@ Probarlo en tu computador:
 
 ```bash
 python3 scripts/validate_data.py     # revisa el esquema (lo mismo que corre en cada PR)
+cp data.json /tmp/anterior.json      # foto anterior, para comparar
 python3 monitor.py                   # genera data.json
+python3 scripts/alertas.py --anterior /tmp/anterior.json   # detecta alertas y escribe alertas.json
 python3 -m http.server 8000          # abre http://localhost:8000
 ```
 

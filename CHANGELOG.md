@@ -1,5 +1,38 @@
 # Changelog
 
+## 2026-09-13: alertas automáticas cuando una dirección se mueve
+
+Hasta ahora un movimiento quedaba solo en `historial.jsonl` y nadie se enteraba salvo
+que mirara la web. Nuevo aviso automático, con la misma regla de siempre: solo
+librería estándar y ninguna clave de terceros en el repositorio.
+
+- `scripts/alertas.py` (nuevo): compara el `data.json` de la corrida anterior con el
+  nuevo y levanta una alerta cuando el saldo cambia más que el umbral de esa moneda
+  (0,01 BTC · 0,5 ETH · 1.000 XRP · 1.000 USDT/USDC · 5 LTC · 500 TRX; en BSC y
+  Polygon, ≈US$ 500 al precio del momento, configurables con `ALERTA_UMBRALES`), y
+  **sin umbral** cuando sale cualquier cantidad de una dirección `desvio` o
+  `atribuida` con rol de almacenamiento en frío. Los cambios por debajo de 0,000001
+  unidades se ignoran: son los redondeos de las APIs que ya habían dado falsas
+  alertas en Tron. `monitor.py` no cambia: sigue anotando todo desde US$ 1.
+- Por cada alerta se abre un **Issue** con etiqueta `movimiento` (título
+  `Movimiento: <red> <dirección abreviada> <±monto> <fecha UTC>`; cuerpo con la
+  etiqueta pública, saldo antes y después, valor aproximado en dólares, enlaces al
+  explorador y al monitor y la frase "Dato en cadena; la Fiscalía debe establecer
+  responsabilidades"). Si ya hay un issue abierto de esa dirección de las últimas
+  24 h, se comenta ahí en vez de abrir otro. Usa el `GITHUB_TOKEN` del workflow.
+- Telegram opcional y desacoplado: con los secretos `TELEGRAM_BOT_TOKEN` y
+  `TELEGRAM_CHAT_ID` se manda el mismo texto; sin ellos el paso se salta sin fallar.
+  Ni el token del bot ni la URL del webhook aparecen en los mensajes de error.
+- `alertas.json` (nuevo): las últimas 50 alertas, más los umbrales vigentes. La
+  pestaña **Movimientos** de `index.html` las muestra arriba de la lista completa,
+  con el motivo y el enlace al explorador. Se lee con `fetch` del mismo origen, así
+  que la CSP (`connect-src 'self'`) no cambia.
+- `.github/workflows/monitor.yml`: guarda una foto de `data.json` antes de consultar,
+  corre `alertas.py` después de `monitor.py`, hace commit también de `alertas.json` y
+  **recién después** avisa (`if: always()`), para que el issue apunte a datos ya
+  publicados y un aviso que falle no tumbe la corrida. Nuevo permiso `issues: write`.
+- `.github/workflows/validate.yml`: `alertas.json` entra en el chequeo de JSON.
+
 ## 2026-09-13: vista previa al compartir y metadatos
 
 - `og.png` (1200x630), `favicon.png` y `apple-touch-icon.png`: al compartir el enlace del

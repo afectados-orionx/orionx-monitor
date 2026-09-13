@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  issues: write              # alertas: abrir o comentar el issue del movimiento
 concurrency: monitor
 jobs:
   run:
@@ -15,16 +16,30 @@ jobs:
           fetch-depth: 0        # necesario para 'git pull --rebase' antes del push
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
+      - name: Guardar la foto anterior de los saldos
+        run: cp data.json "$RUNNER_TEMP/data_anterior.json" || true
       - name: Consultar direcciones
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python monitor.py
+      - name: Detectar alertas
+        run: |
+          python scripts/alertas.py \
+            --anterior "$RUNNER_TEMP/data_anterior.json" \
+            --nuevas "$RUNNER_TEMP/alertas_nuevas.json"
       - name: Guardar resultados
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data.json historial.jsonl
+          git add data.json historial.jsonl alertas.json
           git diff --cached --quiet && exit 0
           git commit -m "monitor: $(date -u +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase --autostash origin main   # no fallar si un PR se mergeó entre corridas
           git push
+      - name: Avisar de los movimientos (issue y, si está configurado, Telegram)
+        if: always()            # los datos ya están guardados; un aviso que falle no debe tumbar la corrida
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/alertas.py --avisar "$RUNNER_TEMP/alertas_nuevas.json"

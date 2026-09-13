@@ -1,0 +1,20 @@
+{
+ "actualizado": "2026-09-13 22:50 UTC",
+ "umbrales": {
+  "unidades": {
+   "BTC": 0.01,
+   "ETH": 0.5,
+   "XRP": 1000.0,
+   "USDT": 1000.0,
+   "USDC": 1000.0,
+   "LTC": 5.0,
+   "TRX": 500.0
+  },
+  "usd": {
+   "BNB": 500.0,
+   "POL": 500.0
+  },
+  "nota": "Salidas desde almacenamiento en frío (desvío o atribuida) se avisan sin umbral."
+ },
+ "alertas": []
+}
