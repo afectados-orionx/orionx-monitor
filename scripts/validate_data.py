@@ -17,7 +17,7 @@ REDES = {"BTC", "XRP", "TRX", "LTC", "ETH", "BSC", "POLYGON"}
 EVM = {"ETH", "BSC", "POLYGON"}
 ESTADOS = {"monitor", "evaluacion", "relacionada", "descartada"}
 TIPOS = {"orionx", "desvio", "querella", "puente", "atribuida"}
-MONEDAS = {"BTC", "XRP", "TRX", "LTC", "ETH", "BNB", "POL", "USDT", None}
+MONEDAS = {"BTC", "XRP", "TRX", "LTC", "ETH", "BNB", "POL", "USDT", "USDC", None}
 CAMPOS_TEXTO = ("etiqueta", "nota", "origen", "rol", "confianza", "evidencia",
                 "nota_original", "seccion", "etiqueta_publica", "motivo",
                 "estaba_como", "retirada")

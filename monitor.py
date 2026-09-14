@@ -3,6 +3,7 @@
 Lee direcciones.json (las que tienen monitorear=true), consulta exploradores públicos, compara con data.json anterior,
 registra movimientos en historial.jsonl, reescribe data.json y avisa por Discord (env DISCORD_WEBHOOK) si hubo cambios.
 Un movimiento cuenta si vale al menos UMBRAL_USD dólares (por defecto 1) al precio del momento, en cualquier moneda.
+En las redes EVM (ETH, BSC, Polygon) y en Tron se consultan además los saldos de USDT y USDC (ver TOKENS / TRC20).
 """
 import json, os, sys, time, datetime as dt, urllib.request, urllib.parse
 from pathlib import Path
@@ -11,10 +12,16 @@ UA = {"User-Agent": "orionx-monitor/1.0 (github pages; afectados)"}
 RPC = {"ETH": ["https://ethereum-rpc.publicnode.com", "https://eth.drpc.org", "https://cloudflare-eth.com"],
        "BSC": ["https://bsc-dataseed.binance.org", "https://bsc-rpc.publicnode.com", "https://bsc.drpc.org"],
        "POLYGON": ["https://polygon-bor-rpc.publicnode.com", "https://polygon.drpc.org"]}
-USDT = {"ETH": "0xdac17f958d2ee523a2206206994597c13d831ec7", "BSC": "0x55d398326f99059ff775485246999027b3197955", "POLYGON": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f"}
-USDT_DEC = {"ETH": 6, "BSC": 18, "POLYGON": 6}
+# Stablecoins que se consultan en cada red EVM: símbolo -> [(contrato, decimales), ...]. Si un símbolo tiene varios
+# contratos (Polygon: USDC nativo y USDC.e puenteado) se suman bajo el mismo símbolo. USDC se agregó el 14-sep-2026
+# tras ver que una dirección atribuida convirtió 28.000 USDT en USDC vía Uniswap: el monitor solo veía la salida de USDT.
+TOKENS = {"ETH": {"USDT": [("0xdac17f958d2ee523a2206206994597c13d831ec7", 6)], "USDC": [("0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48", 6)]},
+          "BSC": {"USDT": [("0x55d398326f99059ff775485246999027b3197955", 18)], "USDC": [("0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", 18)]},
+          "POLYGON": {"USDT": [("0xc2132d05d31c914a87c6611c10748aeb04b58e8f", 6)],
+                      "USDC": [("0x3c499c542cef5e3811e1192ce70d8cc03d5c3359", 6), ("0x2791bca1f2de4661ed88a30c99a7a9449aa84174", 6)]}}
+TRC20 = {"USDT", "USDC"}   # tokens que se leen de Tronscan
 NATIVO = {"BTC": "BTC", "XRP": "XRP", "TRX": "TRX", "LTC": "LTC", "ETH": "ETH", "BSC": "BNB", "POLYGON": "POL"}
-COINGECKO = {"BTC": "bitcoin", "XRP": "ripple", "TRX": "tron", "LTC": "litecoin", "ETH": "ethereum", "BNB": "binancecoin", "POL": "polygon-ecosystem-token", "USDT": "tether"}
+COINGECKO = {"BTC": "bitcoin", "XRP": "ripple", "TRX": "tron", "LTC": "litecoin", "ETH": "ethereum", "BNB": "binancecoin", "POL": "polygon-ecosystem-token", "USDT": "tether", "USDC": "usd-coin"}
 UMBRAL_USD = float(os.environ.get("UMBRAL_USD", "1"))   # un movimiento cuenta si vale al menos esto en dólares (≈1.000 CLP)
 MIN_UNIDADES = {"BTC": 0.00001, "ETH": 0.0005, "BNB": 0.001, "LTC": 0.01, "XRP": 0.5, "TRX": 5, "POL": 5}   # respaldo si CoinGecko no responde
 EXPLORER = {"BTC": "https://mempool.space/address/{a}", "XRP": "https://xrpscan.com/account/{a}", "TRX": "https://tronscan.org/#/address/{a}",
@@ -80,7 +87,7 @@ def consultar(w):
     elif red == "TRX":
         j = get(f"https://apilist.tronscanapi.com/api/account?address={a}"); out["saldo"] = (j.get("balance") or 0) / 1e6; out["tx"] = j.get("totalTransactionCount")
         for tk in j.get("trc20token_balances", []):
-            if tk.get("tokenAbbr") == "USDT": out["tokens"]["USDT"] = float(tk["balance"]) / 10 ** int(tk.get("tokenDecimal", 6))
+            if tk.get("tokenAbbr") in TRC20: out["tokens"][tk["tokenAbbr"]] = out["tokens"].get(tk["tokenAbbr"], 0) + float(tk["balance"]) / 10 ** int(tk.get("tokenDecimal", 6))
         t = get(f"https://apilist.tronscanapi.com/api/transaction?address={a}&limit=1&start=0&sort=-timestamp").get("data") or []
         if t: out["ultima"] = iso(t[0]["timestamp"] / 1000)
     elif red == "LTC":
@@ -88,8 +95,8 @@ def consultar(w):
         if j.get("txrefs"): out["ultima"] = j["txrefs"][0].get("confirmed", "")[:16].replace("T", " ") + " UTC"
     elif red in RPC:
         out["saldo"] = int(rpc(red, "eth_getBalance", [a, "latest"]), 16) / 1e18; out["tx"] = int(rpc(red, "eth_getTransactionCount", [a, "latest"]), 16)
-        bal = rpc(red, "eth_call", [{"to": USDT[red], "data": "0x70a08231" + a[2:].lower().rjust(64, "0")}, "latest"])
-        out["tokens"]["USDT"] = int(bal, 16) / 10 ** USDT_DEC[red]
+        for sym, contratos in TOKENS[red].items():
+            out["tokens"][sym] = sum(int(rpc(red, "eth_call", [{"to": c, "data": "0x70a08231" + a[2:].lower().rjust(64, "0")}, "latest"]), 16) / 10 ** dec for c, dec in contratos)
         out["ultima"] = f"{out['tx']} tx enviadas (nonce)"   # sin indexador no hay fecha; el nonce delata salidas
     return out
 
@@ -137,18 +144,22 @@ def main():
         fila["valor_usd"] = (s or 0) * pr.get("usd", 0) + sum(v * px.get(k, {}).get("usd", 0) for k, v in (fila.get("tokens") or {}).items() if k in px)
         p = prev.get(krd(w["red"], w["direccion"]))
         if p and not fila.get("error") and p.get("saldo") is not None and s is not None:
-            d = (s or 0) - p["saldo"]; dt_usdt = (fila.get("tokens") or {}).get("USDT", 0) - (p.get("tokens") or {}).get("USDT", 0)
+            d = (s or 0) - p["saldo"]
             # umbral en dólares (UMBRAL_USD, por defecto 1): vale igual para BTC que para XRP. Sin precio, se usa un mínimo en unidades.
             usd_d = abs(d) * pr["usd"] if pr.get("usd") else None
-            usd_t = abs(dt_usdt) * px.get("USDT", {}).get("usd", 1.0)
             partes = []
             if (usd_d >= UMBRAL_USD) if usd_d is not None else (abs(d) >= MIN_UNIDADES.get(fila["moneda"], 0.001)):
                 partes.append(f"{'+' if d > 0 else ''}{d:,.8f} {fila['moneda']} (≈US$ {usd_d:,.2f}; saldo {s:,.6f})" if usd_d is not None else f"{'+' if d > 0 else ''}{d:,.8f} {fila['moneda']} (saldo {s:,.6f})")
-            if usd_t >= UMBRAL_USD: partes.append(f"{'+' if dt_usdt > 0 else ''}{dt_usdt:,.2f} USDT")
+            # tokens (USDT, USDC): solo los que ya estaban en la corrida anterior, para que un token recién agregado al
+            # monitor no aparezca como "entrada" de todo su saldo. "pendiente" (mempool BTC) no tiene precio y se omite.
+            usd_t, tok_ant, tok_act = 0.0, p.get("tokens") or {}, fila.get("tokens") or {}
+            for k in sorted(set(tok_act) & set(tok_ant) & set(px)):
+                dk = tok_act[k] - tok_ant[k]; usd_k = abs(dk) * px.get(k, {}).get("usd", 1.0)
+                if usd_k >= UMBRAL_USD: partes.append(f"{'+' if dk > 0 else ''}{dk:,.2f} {k} (saldo {tok_act[k]:,.2f})"); usd_t += usd_k
             # Un cambio solo en el contador de transacciones cuenta si también cambió la última actividad: los contadores de
             # Tronscan oscilan (137970 → 137968 → 137970 el 10-11 sep 2026 sin ninguna transacción nueva) y eso daba falsas alertas.
             if not partes and fila.get("tx") and p.get("tx") and fila["tx"] != p["tx"] and fila.get("ultima") and fila.get("ultima") != p.get("ultima"):
-                partes.append(f"nuevas transacciones ({p['tx']} → {fila['tx']}) " + ("sin cambio de saldo" if not d and not dt_usdt else f"con cambio de saldo menor a US$ {UMBRAL_USD:g}"))
+                partes.append(f"nuevas transacciones ({p['tx']} → {fila['tx']}) " + ("sin cambio de saldo" if not d and not usd_t else f"con cambio de saldo menor a US$ {UMBRAL_USD:g}"))
             if partes:
                 ev = {"fecha": ahora, "red": w["red"], "direccion": w["direccion"], "etiqueta": w["etiqueta"], "detalle": "; ".join(partes), "saldo_antes": p["saldo"], "saldo_despues": s,
                       "valor_usd": round((usd_d or 0) + usd_t, 2)}

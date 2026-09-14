@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-09-14: el monitor también sigue USDC
+
+El 14 de septiembre a las 18:09 UTC la dirección atribuida `0xad1618f3…` convirtió
+28.000 USDT en 27.856 USDC a través de Uniswap V4, sin que los fondos salieran de la
+dirección. La alerta funcionó (issue #2), pero el monitor solo consultaba USDT en las
+redes EVM: los 29.749 USDC que quedaron ahí eran invisibles para él.
+
+- `monitor.py`: en Ethereum, BSC y Polygon consulta ahora USDT **y USDC** (tabla
+  `TOKENS`; en Polygon suma el USDC nativo y el USDC.e puenteado bajo el mismo
+  símbolo). En Tron lee también el USDC TRC-20 si Tronscan lo informa. Precio de USDC
+  desde CoinGecko (`usd-coin`).
+- La comparación de tokens entre corridas es genérica y solo considera los tokens
+  presentes en las dos fotos, para que un token recién agregado no aparezca como
+  "entrada" de todo su saldo. El detalle de cada movimiento de token incluye el
+  saldo resultante (`-28,000.00 USDT (saldo 11,782.58)`).
+- Efecto en la página: aparece una línea `USDC` bajo el saldo de cada dirección EVM
+  y el total "Localizable hoy" sube ≈US$ 35.500, que es el USDC ya existente en las
+  direcciones vigiladas (29.749 en `0xad1618f3…`, 3.930 en la caliente en Polygon,
+  1.677 en la caliente en Ethereum y montos menores). `scripts/alertas.py` ya
+  contemplaba USDC en sus umbrales; no cambia.
+- `scripts/validate_data.py`: admite `moneda: "USDC"` en `direcciones.json`.
+
 ## 2026-09-13: alertas automáticas cuando una dirección se mueve
 
 Hasta ahora un movimiento quedaba solo en `historial.jsonl` y nadie se enteraba salvo

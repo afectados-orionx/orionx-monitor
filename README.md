@@ -72,7 +72,7 @@ scripts que los generan están en `scripts/`, para que cualquiera pueda repetirl
 ## Cómo funciona
 
 - `direcciones.json` es la **fuente única** de direcciones: monitoreadas, en evaluación y descartadas, todo en un archivo. `scripts/validate_data.py` revisa el esquema en cada Pull Request.
-- `monitor.py` (Python, sin dependencias) lee de `direcciones.json` las que tienen `monitorear: true` y consulta mempool.space, xrpscan, tronscan, blockcypher y nodos RPC públicos, más precios de CoinGecko. Compara con el `data.json` anterior y anota los cambios en `historial.jsonl`.
+- `monitor.py` (Python, sin dependencias) lee de `direcciones.json` las que tienen `monitorear: true` y consulta mempool.space, xrpscan, tronscan, blockcypher y nodos RPC públicos, más precios de CoinGecko. En Ethereum, BSC, Polygon y Tron lee además los saldos de **USDT y USDC** de cada dirección (en Polygon suma el USDC nativo y el USDC.e puenteado). Compara con el `data.json` anterior y anota los cambios en `historial.jsonl`.
 - `scripts/alertas.py` (Python, sin dependencias) compara la foto anterior de `data.json` con la nueva, escribe `alertas.json` y avisa por Issue y Telegram. Ver "Alertas" más abajo.
 - `.github/workflows/monitor.yml` lo ejecuta cada hora en GitHub Actions y guarda el resultado en el repositorio (con `git pull --rebase` antes del push, para no fallar si se mergeó un PR en el intertanto); después de guardar, manda los avisos.
 - `index.html` lee `data.json` (monitor), `alertas.json` (movimientos con alerta), `direcciones.json` (direcciones propuestas, su verificación y las descartadas) y `precios_cierre.json` (último libro de órdenes, transcrito del informe de un afectado) y dibuja la página. No hay servidor ni base de datos.
