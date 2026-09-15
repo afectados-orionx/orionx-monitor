@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-09-15: activos de clientes en las billeteras de OrionX (DAI, XAUT, DOT, ADA, SOL…)
+
+Un afectado señaló en el issue #1 que la billetera caliente EVM `0x5528…` vale bastante
+más de lo que mostraba el monitor, porque tiene activos en varias redes. El monitor ya
+seguía esa dirección en Ethereum, BSC y Polygon, pero solo contaba el nativo, USDT y USDC.
+Al revisar sus tokens aparecieron los activos que OrionX vendía a sus clientes: 33.474 DAI
+y 2,61 XAUT (oro tokenizado) en Ethereum, y en BSC 29.748 DOT, 11.579 ADA y 108,6 SOL como
+tokens Binance-Peg. Con eso la dirección pasa de ≈US$ 63.500 a ≈US$ 150.000 (el "net worth"
+de Bscscan, ≈175.000, suma además tokens sin mercado).
+
+- `monitor.py`: nueva tabla `TOKENS_ORIONX` que se consulta solo en las billeteras
+  `tipo: orionx` (DAI y XAUT en Ethereum; DOT, ADA, SOL, XRP, LTC, TRX, ETH, BTCB y DAI en
+  BSC; DAI en Polygon). Precios nuevos desde CoinGecko: `dai`, `tether-gold`, `polkadot`,
+  `cardano`, `solana` (BTCB al precio de `bitcoin`).
+- Como los tokens nuevos no estaban en la corrida anterior, la primera corrida no los
+  reporta como movimiento (regla del 14 sep); desde la segunda, cualquier salida ≥ US$ 1
+  queda en `historial.jsonl` y pasa por `scripts/alertas.py`.
+- Las demás billeteras EVM (atribuidas y de desvío) siguen con nativo + USDT + USDC.
+
+
 ## 2026-09-14: el monitor también sigue USDC
 
 El 14 de septiembre a las 18:09 UTC la dirección atribuida `0xad1618f3…` convirtió

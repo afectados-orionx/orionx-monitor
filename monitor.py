@@ -19,9 +19,20 @@ TOKENS = {"ETH": {"USDT": [("0xdac17f958d2ee523a2206206994597c13d831ec7", 6)], "
           "BSC": {"USDT": [("0x55d398326f99059ff775485246999027b3197955", 18)], "USDC": [("0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", 18)]},
           "POLYGON": {"USDT": [("0xc2132d05d31c914a87c6611c10748aeb04b58e8f", 6)],
                       "USDC": [("0x3c499c542cef5e3811e1192ce70d8cc03d5c3359", 6), ("0x2791bca1f2de4661ed88a30c99a7a9449aa84174", 6)]}}
+# Activos de clientes que OrionX custodiaba en sus propias billeteras EVM (tipo "orionx"), además de USDT/USDC: en Ethereum
+# DAI y oro tokenizado (XAUT); en BSC los tokens "Binance-Peg" con que servía DOT, ADA, SOL, XRP, LTC, TRX, ETH, BTC y DAI.
+# Solo se consultan en las billeteras de OrionX para no multiplicar las llamadas RPC (issue #1).
+TOKENS_ORIONX = {"ETH": {"DAI": [("0x6b175474e89094c44da98b954eedeac495271d0f", 18)], "XAUT": [("0x68749665ff8d2d112fa859aa293f07a622782f38", 6)]},
+                 "BSC": {"DOT": [("0x7083609fce4d1d8dc0c979aab8c869ea2c873402", 18)], "ADA": [("0x3ee2200efb3400fabb9aacf31297cbdd1d435d47", 18)],
+                         "SOL": [("0x570a5d26f7765ecb712c0924e4de545b89fd43df", 18)], "XRP": [("0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe", 18)],
+                         "LTC": [("0x4338665cbb7b2485a8855a139b75d5e34ab0db94", 18)], "TRX": [("0xce7de646e7208a4ef112cb6ed5038fa6cc6b12e3", 6)],
+                         "ETH": [("0x2170ed0880ac9a755fd29b2688956bd959f933f8", 18)], "BTCB": [("0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c", 18)],
+                         "DAI": [("0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3", 18)]},
+                 "POLYGON": {"DAI": [("0x8f3cf7ad23cd3cadbd9735aff958023239c6a063", 18)]}}
 TRC20 = {"USDT", "USDC"}   # tokens que se leen de Tronscan
 NATIVO = {"BTC": "BTC", "XRP": "XRP", "TRX": "TRX", "LTC": "LTC", "ETH": "ETH", "BSC": "BNB", "POLYGON": "POL"}
-COINGECKO = {"BTC": "bitcoin", "XRP": "ripple", "TRX": "tron", "LTC": "litecoin", "ETH": "ethereum", "BNB": "binancecoin", "POL": "polygon-ecosystem-token", "USDT": "tether", "USDC": "usd-coin"}
+COINGECKO = {"BTC": "bitcoin", "XRP": "ripple", "TRX": "tron", "LTC": "litecoin", "ETH": "ethereum", "BNB": "binancecoin", "POL": "polygon-ecosystem-token", "USDT": "tether", "USDC": "usd-coin",
+             "DAI": "dai", "XAUT": "tether-gold", "DOT": "polkadot", "ADA": "cardano", "SOL": "solana", "BTCB": "bitcoin"}
 UMBRAL_USD = float(os.environ.get("UMBRAL_USD", "1"))   # un movimiento cuenta si vale al menos esto en dólares (≈1.000 CLP)
 MIN_UNIDADES = {"BTC": 0.00001, "ETH": 0.0005, "BNB": 0.001, "LTC": 0.01, "XRP": 0.5, "TRX": 5, "POL": 5}   # respaldo si CoinGecko no responde
 EXPLORER = {"BTC": "https://mempool.space/address/{a}", "XRP": "https://xrpscan.com/account/{a}", "TRX": "https://tronscan.org/#/address/{a}",
@@ -95,7 +106,8 @@ def consultar(w):
         if j.get("txrefs"): out["ultima"] = j["txrefs"][0].get("confirmed", "")[:16].replace("T", " ") + " UTC"
     elif red in RPC:
         out["saldo"] = int(rpc(red, "eth_getBalance", [a, "latest"]), 16) / 1e18; out["tx"] = int(rpc(red, "eth_getTransactionCount", [a, "latest"]), 16)
-        for sym, contratos in TOKENS[red].items():
+        tabla = {**TOKENS[red], **(TOKENS_ORIONX.get(red, {}) if w.get("tipo") == "orionx" else {})}
+        for sym, contratos in tabla.items():
             out["tokens"][sym] = sum(int(rpc(red, "eth_call", [{"to": c, "data": "0x70a08231" + a[2:].lower().rjust(64, "0")}, "latest"]), 16) / 10 ** dec for c, dec in contratos)
         out["ultima"] = f"{out['tx']} tx enviadas (nonce)"   # sin indexador no hay fecha; el nonce delata salidas
     return out
