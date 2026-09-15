@@ -31,7 +31,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data.json historial.jsonl alertas.json
+          git add data.json historial.jsonl alertas.json descubiertas.json
           git diff --cached --quiet && exit 0
           git commit -m "monitor: $(date -u +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase --autostash origin main   # no fallar si un PR se mergeó entre corridas

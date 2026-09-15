@@ -78,6 +78,33 @@ añade `motivo` (obligatorio) y `retirada`. Ejemplo de registro descartado:
 }
 ```
 
+## Direcciones descubiertas por el monitor (`descubiertas.json`)
+
+Desde el 15-sep-2026 `monitor.py` propone solo direcciones a partir de movimientos
+reales y las guarda en **`descubiertas.json`** (lo escribe el robot; no se edita en
+un PR salvo los campos `seguir` y `motivo`). Cada registro dice de dónde salió:
+
+- `misma_billetera: true` → en BTC/LTC gastó en la misma transacción que una
+  dirección vigilada (misma llave) o recibió el posible vuelto. Es la señal más
+  fuerte que existe fuera de una confesión; el monitor la sigue (`seguir: true`)
+  y aparece en la tabla como "Descubierta".
+- `misma_billetera: false` → fue destino de una salida. Puede ser un cliente, un
+  exchange o cualquiera: **no** se sigue por defecto y no debe promoverse sin
+  más prueba.
+
+Para pasar una descubierta a `direcciones.json`: crear el registro normal (ver
+arriba) citando el `hash` que trae `descubiertas.json` como evidencia, y con el
+tipo que corresponda (`orionx` si es misma billetera de una `orionx`; `desvio`
+si es destino de una salida que no volvió a moverse y no tiene etiqueta pública
+de exchange). El registro de `descubiertas.json` se deja: el monitor deja de
+listarlo solo cuando la dirección ya está en `direcciones.json`.
+
+Cuidado con el **envenenamiento de direcciones**: los estafadores mandan
+transferencias de valor cero y tokens falsos desde direcciones que empiezan y
+terminan igual que las reales. El monitor ya descarta los tokens sin precio por
+contrato, pero al copiar una dirección desde un explorador hay que comparar los
+40 caracteres, no solo los extremos.
+
 ## Checklist de revisión (para quien mergea)
 
 - [ ] `python scripts/validate_data.py` pasa.

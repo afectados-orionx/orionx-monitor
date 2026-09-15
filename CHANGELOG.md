@@ -1,5 +1,46 @@
 # Changelog
 
+## 2026-09-15 (tarde): versión 3 del monitor, de saldos a transacciones
+
+Hasta hoy el monitor comparaba saldos de una lista fija de tokens. Con eso veía *que* algo se
+movió, pero no *a dónde*, no veía tokens que no estuvieran en la lista y no distinguía una
+transferencia real de una falsa. La misma tarde del cambio la dirección atribuida `0xad1618f3…`
+recibió 200.000 USDT (18:14 UTC), envió 27.308,72 USDC y 100 USDT, y en el intertanto recibió una
+docena de transferencias de valor cero y de tokens falsos "USDT"/"USDC" desde direcciones parecidas
+(envenenamiento de direcciones). El monitor viejo vio solo los cambios de saldo.
+
+- **Transferencias con hash y contraparte** en todas las redes: `eth_getLogs` filtrando solo por
+  tema en Ethereum (Tenderly, mevblocker), Polygon (Tenderly) y BSC (bloXroute y 1rpc, por partes);
+  Tronscan para TRC-20 y TRX; xrpscan para pagos XRP; mempool.space y litecoinspace para BTC y LTC.
+  Cada evento lleva `hash`, `hash_url`, `contraparte`, `contraparte_etiqueta`, `fecha_cadena`.
+- **Tokens descubiertos, no listados**: en EVM cuenta cualquier token que haya tocado la dirección
+  (por los logs) o que Blockscout vea en ella (inventario diario en Ethereum y Polygon), pero solo
+  si tiene **precio por contrato** (CoinGecko; Blockscout de respaldo). Un "USDT" imitador no tiene
+  precio y no cuenta ni como saldo ni como movimiento. En Tron cuentan todos los TRC-20 con precio
+  en Tronscan. `TOKENS_ORIONX` queda como semilla de las billeteras `orionx` (BSC no tiene Blockscout).
+- **Señales previas al movimiento**: aprobaciones ERC-20 (`Approval`) desde una dirección vigilada,
+  cambio de permisos owner/active en Tron, y en `scripts/alertas.py` el "fondeo de gas" (entrada
+  pequeña de nativo en una dirección con tokens por más de US$ 1.000). Se avisan sin umbral.
+- **Congelamiento**: cada hora se consulta `isBlackListed` (USDT) e `isBlacklisted` (USDC) por
+  dirección; el campo `congelada` va en `data.json`, la web lo marca y el cambio de estado alerta.
+- **Etiquetas de contrapartes**: `etiquetas_publicas.json` (copia comunitaria filtrada a exchanges,
+  puentes, mezcladores y protocolos; 6.100 direcciones) más `direcciones.json` y `descubiertas.json`.
+- **`descubiertas.json`** (nuevo, lo escribe el robot y lo commitea el workflow): destinos de
+  salidas y, en BTC/LTC, direcciones que gastan junto a una vigilada o reciben el posible vuelto.
+  Las "misma billetera" se siguen en cada corrida y aparecen en la tabla como "Descubierta".
+- **Alertas** (`scripts/alertas.py`): cuerpo con las transacciones (hash, contraparte, etiqueta),
+  clases nuevas (`aprobacion`, `permisos`, `congelamiento`, `gas`), umbral ≈US$ 500 para cualquier
+  token con precio, y copia fechada en Wayback Machine cuando Save Page Now responde.
+- **Rendimiento**: las consultas EVM de cada dirección van en un solo lote JSON-RPC (saldo, nonce,
+  `balanceOf` de cada token y lista negra) en vez de una llamada por dato. El congelamiento se
+  revisa una vez por hora aunque el monitor corra cada 10 minutos.
+- **Web**: los movimientos enlazan a la transacción y muestran la contraparte; las alertas muestran
+  su clase y sus transacciones; badge "CONGELADA"; tabla de direcciones descubiertas; los tokens sin
+  precio se cuentan aparte ("+N tokens sin precio, no contados").
+- Regla de la primera corrida: cursores, tokens y direcciones nuevos fijan su punto de partida sin
+  generar movimientos. Los eventos con hash se deduplican por `(red, dirección, hash, moneda)`.
+
+
 ## 2026-09-15: activos de clientes en las billeteras de OrionX (DAI, XAUT, DOT, ADA, SOL…)
 
 Un afectado señaló en el issue #1 que la billetera caliente EVM `0x5528…` vale bastante

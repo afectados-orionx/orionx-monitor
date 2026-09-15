@@ -11,7 +11,7 @@ jobs:
         with: { python-version: "3.12" }
       - name: JSON bien formado
         run: |
-          for f in direcciones.json precios_cierre.json data.json alertas.json; do
+          for f in direcciones.json precios_cierre.json data.json alertas.json descubiertas.json etiquetas_publicas.json; do
             echo "revisando $f"
             python -m json.tool "$f" > /dev/null
           done

@@ -72,6 +72,8 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:now
 .chip.querella{color:var(--warn);background:var(--warn-bg)}
 .chip.puente{color:var(--info);background:var(--info-bg)}
 .chip.atribuida{color:var(--warn);background:var(--warn-bg);border:1px dashed var(--warn)}
+.descubierta{color:var(--mut);background:var(--chip);border:1px dashed var(--mut)}
+.frz{color:var(--bad);font-size:11.5px;font-weight:700}
 .chip.confirmada{color:var(--acc);background:var(--acc-bg)}
 .chip.alta{color:var(--info);background:var(--info-bg)}
 .chip.media{color:var(--warn);background:var(--warn-bg)}
@@ -122,7 +124,7 @@ footer{color:var(--mut);font-size:12.5px;margin-top:28px;line-height:1.6;border-
       <li><b>Billeteras vigiladas</b>: la lista que se revisa cada hora, con saldo actual y última actividad. Cada dirección enlaza al explorador público para que la verifiques tú.</li>
       <li><b>Atribuciones</b>: todas las direcciones que distintos afectados han atribuido a OrionX, con qué tan firme es cada atribución y en qué se apoya. Solo las confirmadas pasan a la lista vigilada.</li>
       <li><b>Precios al cierre</b>: a qué precio se hizo la última operación de cada moneda en OrionX el 3 de septiembre. Sirve para el debate sobre cómo valorizar lo que cada uno tenía.</li>
-      <li><b>Movimientos</b>: cada cambio de saldo de al menos US$ 1 detectado entre un chequeo y el siguiente. Arriba de esa lista, en <b>alerta</b>, los movimientos grandes y cualquier salida desde una dirección que estaba quieta en almacenamiento en frío.</li>
+      <li><b>Movimientos</b>: cada cambio de saldo de al menos US$ 1 detectado entre un chequeo y el siguiente, con el hash de la transacción y la dirección de destino u origen cuando la red lo permite. Arriba de esa lista, en <b>alerta</b>, los movimientos grandes, cualquier salida desde una dirección que estaba quieta en almacenamiento en frío y las señales previas a un retiro (aprobaciones, cambios de permisos, fondeo de gas, congelamientos).</li>
     </ol>
   </div>
   <div class="box warn">
@@ -132,9 +134,14 @@ footer{color:var(--mut);font-size:12.5px;margin-top:28px;line-height:1.6;border-
 </section>
 
 <section id="t-billeteras" hidden>
-  <p class="nota">Se consultan cada hora. Las filas destacadas son de vigilancia prioritaria: fondos que salieron de OrionX y no se han movido.</p>
+  <p class="nota">Se consultan cada hora. Las filas destacadas son de vigilancia prioritaria: fondos que salieron de OrionX y no se han movido. En las redes EVM y en Tron se cuentan todos los tokens con precio de mercado que tenga cada dirección (los tokens imitadores y sin mercado se ignoran); si el emisor de una stablecoin congela una dirección, aparece marcada.</p>
   <div class="filtros" id="f-bill"></div>
   <div class="wrap"><table id="tabla"><thead><tr><th>Red</th><th>Billetera</th><th>Qué es</th><th class="num">Saldo</th><th class="num">Valor CLP</th><th>Última actividad</th></tr></thead><tbody></tbody></table></div>
+  <div class="box" id="desc-box" hidden style="margin-top:14px">
+    <h3 style="margin-top:0">Direcciones descubiertas por el monitor (sin validar)</h3>
+    <p class="nota">Las propone el propio monitor a partir de movimientos reales: destinos de salidas de una dirección vigilada y, en Bitcoin y Litecoin, direcciones que gastaron en la misma transacción que una vigilada (misma billetera) o que recibieron el posible vuelto. <b>No están validadas</b>: una persona debe confirmar la liga antes de que pasen a la lista vigilada. Las marcadas "misma billetera" se consultan en cada chequeo y aparecen también en la tabla de arriba como "Descubierta".</p>
+    <div class="wrap"><table id="tabla-desc"><thead><tr><th>Red</th><th>Dirección</th><th>Por qué</th><th>Desde</th><th>Vista desde</th><th>Veces</th><th>Transacción</th></tr></thead><tbody></tbody></table></div>
+  </div>
 </section>
 
 <section id="t-atribuciones" hidden>
@@ -166,7 +173,7 @@ footer{color:var(--mut);font-size:12.5px;margin-top:28px;line-height:1.6;border-
 <section id="t-movimientos" hidden>
   <div class="box warn" id="alertas-box" hidden>
     <h3 style="margin-top:0">Últimos movimientos con alerta</h3>
-    <p class="nota">Movimientos grandes para su red (0,01 BTC · 0,5 ETH · 1.000 XRP · 1.000 USDT/USDC · 5 LTC · 500 TRX · ≈US$ 500 en BSC y Polygon) y, sin ningún umbral, cualquier salida desde una dirección de desvío o atribuida que estaba en almacenamiento en frío. Cada uno abre un aviso en el repositorio para que quede fechado.</p>
+    <p class="nota">Movimientos grandes para su red (0,01 BTC · 0,5 ETH · 1.000 XRP · 1.000 USDT/USDC · 5 LTC · 500 TRX · ≈US$ 500 en BSC, Polygon y cualquier otro token) y, sin ningún umbral, cualquier salida desde una dirección de desvío o atribuida que estaba en almacenamiento en frío, las aprobaciones ERC-20, los cambios de permisos de cuenta en Tron, los congelamientos del emisor y las entradas pequeñas de gas en direcciones llenas de tokens. Cada uno abre un aviso en el repositorio para que quede fechado.</p>
     <div class="ev" id="alertas"></div>
   </div>
   <p class="nota">Cambios de saldo entre un chequeo y el siguiente. El más reciente primero. Se registra todo cambio de saldo que valga al menos US$ 1 (≈1.000 CLP) al precio del momento, en cualquier moneda, para detectar también retiros en microtransacciones. Los cambios menores suelen ser redondeos de la API y no se listan.</p>
@@ -174,7 +181,7 @@ footer{color:var(--mut);font-size:12.5px;margin-top:28px;line-height:1.6;border-
 </section>
 
 <footer>
-  Datos públicos de mempool.space, xrpscan.com, tronscan.org, blockcypher.com y nodos RPC públicos; precios de CoinGecko. Se actualiza cada hora con GitHub Actions.
+  Datos públicos de mempool.space, litecoinspace.org, xrpscan.com, tronscan.org, TronGrid, Blockscout y nodos RPC públicos (publicnode, Tenderly, mevblocker, bloXroute); precios de CoinGecko y Blockscout; etiquetas públicas de exploradores (copia comunitaria). Cada alerta pide una copia fechada del explorador a Wayback Machine. Se actualiza cada hora con GitHub Actions.
   Las etiquetas de "desvío" son destinos de fondos que salieron de billeteras de OrionX; solo la Fiscalía puede establecer quién las controla.
   Código, lista de billeteras e instrucciones para tener tu propia copia: <a href="https://github.com/afectados-orionx/orionx-monitor" target="_blank" rel="noopener">github.com/afectados-orionx/orionx-monitor</a>.
 </footer>
@@ -185,6 +192,8 @@ const fmt=(n,d=6)=>n==null?'—':Number(n).toLocaleString('es-CL',{maximumFracti
 const clp=n=>n==null?'—':'$'+Math.round(n).toLocaleString('es-CL');
 const pct=n=>n==null?'—':`<span class="${n<0?'neg':'pos'}">${n>0?'+':''}${fmt(n,1)} %</span>`;
 const corto=a=>a.length>22?a.slice(0,10)+'…'+a.slice(-6):a;
+const CLASE={saldo:'Movimiento',gas:'Fondeo de gas',aprobacion:'Aprobación',permisos:'Cambio de permisos',congelamiento:'Congelamiento'};
+const EXPL_TX={BTC:h=>`https://mempool.space/tx/${h}`,XRP:h=>`https://xrpscan.com/tx/${h}`,ETH:h=>`https://etherscan.io/tx/${h}`,TRX:h=>`https://tronscan.org/#/transaction/${h}`,LTC:h=>`https://litecoinspace.org/tx/${h}`,BSC:h=>`https://bscscan.com/tx/${h}`,POLYGON:h=>`https://polygonscan.com/tx/${h}`};
 const EXPL={BTC:a=>`https://mempool.space/address/${a}`,XRP:a=>`https://xrpscan.com/account/${a}`,ETH:a=>`https://etherscan.io/address/${a}`,TRX:a=>`https://tronscan.org/#/address/${a}`,LTC:a=>`https://litecoinspace.org/address/${a}`,BSC:a=>`https://bscscan.com/address/${a}`,POLYGON:a=>`https://polygonscan.com/address/${a}`};
 const addr=(red,a,url)=>`<span class="addr" title="${esc(a)}"><a href="${esc(url||EXPL[red]?.(a)||'#')}" target="_blank" rel="noopener">${esc(corto(a))}</a><button class="copy" data-c="${esc(a)}" title="Copiar dirección completa">copiar</button></span>`;
 document.addEventListener('click',e=>{const b=e.target.closest('.copy');if(!b)return;navigator.clipboard?.writeText(b.dataset.c).then(()=>{b.textContent='copiado';setTimeout(()=>b.textContent='copiar',1200)})});
@@ -201,27 +210,32 @@ fetch('data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
   document.getElementById('act').textContent='Última actualización: '+d.actualizado+(d.errores?.length?` · ${d.errores.length} consulta(s) con error (se muestra el último dato conocido)`:'')+(d.precios_antiguos?' · precios sin actualizar (CoinGecko no respondió; se usan los anteriores)':'');
   const or=d.billeteras.filter(b=>b.tipo==='orionx'),dv=d.billeteras.filter(b=>b.tipo==='desvio'),qr=d.billeteras.filter(b=>b.tipo==='querella');
   const sum=a=>a.reduce((s,b)=>s+(b.valor_clp||0),0);
-  const ev=d.eventos.filter(e=>e.valor_usd!=null);   // monitor.py ya decidió el umbral; aquí solo se muestra
+  const ev=d.eventos.filter(e=>e.valor_usd!=null||['aprobacion','permisos','congelamiento'].includes(e.tipo_evento));   // monitor.py ya decidió el umbral; aquí solo se muestra
   const hoy=Date.now(),ev7=ev.filter(e=>hoy-new Date(e.fecha.replace(' UTC','Z').replace(' ','T'))<7*864e5).length;
   document.getElementById('cards').innerHTML=[
-    ['Localizable hoy',clp(d.total_clp),'≈ US$ '+Math.round(d.total_usd).toLocaleString('es-CL')+' en '+d.billeteras.length+' direcciones'],
+    ['Localizable hoy',clp(d.total_clp),'≈ US$ '+Math.round(d.total_usd).toLocaleString('es-CL')+' en '+d.billeteras.filter(b=>b.tipo!=='descubierta').length+' direcciones'],
     ['En billeteras de OrionX',clp(sum(or)),`${or.length} direcciones`],
     ['En destinos de desvío',clp(sum(dv)),`${dv.length} direcciones sin mover`],
     ['Movimientos últimos 7 días',ev7,ev.length?'último: '+ev[0].fecha:'ninguno relevante registrado']
   ].map(c=>`<div class="card"><div class="k">${esc(c[0])}</div><div class="v">${esc(c[1])}</div><div class="d">${esc(c[2])}</div></div>`).join('');
-  const TIPO={orionx:'OrionX',desvio:'Desvío',querella:'Querella',puente:'Puente',atribuida:'En verificación'};
+  const TIPO={orionx:'OrionX',desvio:'Desvío',querella:'Querella',puente:'Puente',atribuida:'En verificación',descubierta:'Descubierta'};
   const tb=document.querySelector('#tabla tbody');
   const pinta=(sel={})=>{tb.innerHTML=d.billeteras.filter(b=>(!sel.Red||b.red===sel.Red)&&(!sel.Tipo||TIPO[b.tipo]===sel.Tipo)).map(b=>{
-    const toks=Object.entries(b.tokens||{}).map(([k,v])=>`<div class="nota">${fmt(v,2)} ${esc(k)}</div>`).join('');
+    const toks=Object.entries(b.tokens||{}).filter(([k,v])=>k==='pendiente'||v>0).map(([k,v])=>`<div class="nota">${fmt(v,2)} ${esc(k)}</div>`).join('');
+    const frz=Object.entries(b.congelada||{}).filter(([k,v])=>v).map(([k])=>k);
+    const sp=(b.tokens_sin_precio||[]).length;
     return `<tr class="${b.vigilar?'prio':''}"><td><span class="chip ${esc(b.tipo)}">${esc(TIPO[b.tipo]||b.tipo)}</span><div class="nota">${esc(b.red)}</div></td>
       <td>${addr(b.red,b.direccion,b.explorer)}${b.vigilar?'<div class="eye">● vigilancia prioritaria</div>':''}</td>
-      <td><b>${esc(b.etiqueta)}</b><div class="nota">${esc(b.nota||'')}</div>${b.error?`<div class="err">Error de consulta: ${esc(b.error)}</div>`:''}</td>
+      <td><b>${esc(b.etiqueta)}</b><div class="nota">${esc(b.nota||'')}</div>${frz.length?`<div class="frz">CONGELADA por el emisor: ${esc(frz.join(', '))}</div>`:''}${sp?`<div class="nota">+${sp} token(s) sin precio de mercado, no contados</div>`:''}${b.error?`<div class="err">Error de consulta: ${esc(b.error)}</div>`:''}</td>
       <td class="num">${fmt(b.saldo)} ${esc(b.moneda)}${toks}</td>
       <td class="num">${clp(b.valor_clp)}</td>
       <td class="nota">${esc(b.ultima||'—')}</td></tr>`}).join('')||'<tr><td colspan="6" class="nota">Sin resultados para ese filtro.</td></tr>'};
   filtros(document.getElementById('f-bill'),[{nombre:'Red',clave:'Red',valores:[...new Set(d.billeteras.map(b=>b.red))]},{nombre:'Tipo',clave:'Tipo',valores:[...new Set(d.billeteras.map(b=>TIPO[b.tipo]||b.tipo))]}],pinta);
   pinta();
-  document.getElementById('eventos').innerHTML=ev.length?ev.map(e=>`<div><time>${esc(e.fecha)}</time><span class="chip">${esc(e.red)}</span><b>${esc(e.etiqueta)}</b> · ${esc(e.detalle)}</div>`).join(''):'<div class="nota">Ningún movimiento relevante desde que empezó el monitor.</div>';
+  document.getElementById('eventos').innerHTML=ev.length?ev.map(e=>`<div><time>${esc(e.fecha)}</time><span class="chip">${esc(e.red)}</span>${e.tipo_evento&&e.tipo_evento!=='saldo'&&e.tipo_evento!=='transferencia'?`<span class="chip querella">${esc(CLASE[e.tipo_evento]||e.tipo_evento)}</span>`:''}<b>${esc(e.etiqueta)}</b> · ${esc(e.detalle)}${e.hash_url?` · <a href="${esc(e.hash_url)}" target="_blank" rel="noopener">ver transacción</a>`:''}${e.contraparte&&!e.contraparte_etiqueta?` · ${addr(e.red,e.contraparte)}`:''}</div>`).join(''):'<div class="nota">Ningún movimiento relevante desde que empezó el monitor.</div>';
+  // direcciones descubiertas (las escribe monitor.py en descubiertas.json)
+  fetch('descubiertas.json?t='+Date.now()).then(r=>r.json()).then(x=>{const l=x.direcciones||[];if(!l.length)return;document.getElementById('desc-box').hidden=false;
+    document.querySelector('#tabla-desc tbody').innerHTML=l.slice().reverse().map(y=>`<tr><td>${esc(y.red)}</td><td>${addr(y.red,y.direccion,y.explorer)}</td><td>${y.misma_billetera?'<b>misma billetera</b>: ':''}${esc(y.motivo)}</td><td class="nota">${esc(y.desde)}</td><td>${addr(y.red,y.origen||'')}</td><td class="num">${esc(y.veces)}</td><td>${y.hash?`<a href="${esc(EXPL_TX[y.red]?.(y.hash)||'#')}" target="_blank" rel="noopener">${esc(y.hash.slice(0,10))}…</a>`:'—'}</td></tr>`).join('')}).catch(()=>{});
 }).catch(e=>{document.getElementById('act').textContent='No se pudo cargar data.json: '+e});
 // alertas (las escribe scripts/alertas.py; si el archivo no existe, el bloque no se muestra)
 fetch('alertas.json?t='+Date.now()).then(r=>r.json()).then(a=>{
@@ -229,8 +243,10 @@ fetch('alertas.json?t='+Date.now()).then(r=>r.json()).then(a=>{
   if(!l.length) return;
   document.getElementById('alertas-box').hidden=false;
   document.getElementById('alertas').innerHTML=l.map(x=>{
-    const signo=x.delta>0?'+':'', usd=x.valor_usd!=null?` · ≈US$ ${fmt(x.valor_usd,2)}`:'';
-    return `<div><time>${esc(x.fecha)}</time><span class="chip ${esc(x.tipo)}">${esc(x.red)}</span><b>${esc(x.etiqueta)}</b> · ${esc(signo)}${fmt(x.delta,8)} ${esc(x.moneda)}${usd}${x.frio?' · <b>salida desde almacenamiento en frío</b>':''}<div class="nota">${esc(x.motivo)} · ${addr(x.red,x.direccion)}</div></div>`}).join('');
+    const signo=x.delta>0?'+':'', usd=x.valor_usd!=null?` · ≈US$ ${fmt(x.valor_usd,2)}`:'', cl=x.clase||'saldo';
+    const cab=(cl==='saldo'||cl==='gas')?`${esc(signo)}${fmt(x.delta,8)} ${esc(x.moneda)}${usd}`:esc(x.descripcion||x.motivo);
+    const txs=(x.transacciones||[]).map(t=>`<div class="nota">${t.sentido==='salida'?'→':'←'} ${fmt(t.cantidad,8)} ${esc(t.moneda||'')} ${t.contraparte?addr(x.red,t.contraparte):''}${t.contraparte_etiqueta?` <b>${esc(t.contraparte_etiqueta)}</b>`:''}${t.hash_url?` · <a href="${esc(t.hash_url)}" target="_blank" rel="noopener">ver transacción</a>`:''}</div>`).join('');
+    return `<div><time>${esc(x.fecha)}</time><span class="chip ${esc(x.tipo)}">${esc(x.red)}</span>${cl!=='saldo'?`<span class="chip querella">${esc(CLASE[cl]||cl)}</span>`:''}<b>${esc(x.etiqueta)}</b> · ${cab}${x.frio?' · <b>salida desde almacenamiento en frío</b>':''}${txs}<div class="nota">${esc(x.motivo)} · ${addr(x.red,x.direccion)}${x.hash_url?` · <a href="${esc(x.hash_url)}" target="_blank" rel="noopener">ver transacción</a>`:''}</div></div>`}).join('');
 }).catch(()=>{});
 // atribuciones (desde la fuente única direcciones.json; incluye las descartadas)
 fetch('direcciones.json?t='+Date.now()).then(r=>r.json()).then(src=>{
