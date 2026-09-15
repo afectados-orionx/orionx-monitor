@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-09-15 18:23 UTC",
+ "actualizado": "2026-09-15 18:56 UTC",
  "umbrales": {
   "unidades": {
    "BTC": 0.01,
@@ -12,11 +12,34 @@
   },
   "usd": {
    "BNB": 500.0,
-   "POL": 500.0
+   "POL": 500.0,
+   "otros tokens": 500.0
   },
-  "nota": "Salidas desde almacenamiento en frío (desvío o atribuida) se avisan sin umbral."
+  "nota": "Salidas desde almacenamiento en frío (desvío o atribuida), aprobaciones, cambios de permisos, congelamientos y fondeos de gas se avisan sin umbral."
  },
  "alertas": [
+  {
+   "fecha": "2026-09-15 18:55 UTC",
+   "clase": "saldo",
+   "red": "ETH",
+   "direccion": "0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3",
+   "abreviada": "0xad1618f3…1de2d3",
+   "etiqueta": "Destino sin etiqueta: 9,85 M USDT desde la caliente",
+   "tipo": "atribuida",
+   "rol": "destino de salidas",
+   "moneda": "USDC",
+   "delta": -27308.7199,
+   "saldo_antes": 29749.313193,
+   "saldo_despues": 2440.593293,
+   "valor_usd": 27301.37,
+   "motivo": "el cambio supera el umbral de aviso de la red (1.000 USDC)",
+   "frio": false,
+   "explorador": "https://etherscan.io/address/0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3",
+   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
+   "transacciones": [],
+   "titulo": "Movimiento: ETH 0xad1618f3…1de2d3 -27,308.71990000 USDC 2026-09-15 18:55 UTC",
+   "cuerpo": "**Destino sin etiqueta: 9,85 M USDT desde la caliente** (tipo `atribuida`, rol declarado: destino de salidas).\n\n- Red: **ETH**\n- Dirección: `0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3`\n- Cambio: **-27,308.71990000 USDC** (≈US$ 27,301.37)\n- Saldo antes: 29,749.31319300 USDC\n- Saldo después: 2,440.59329300 USDC\n- Detectado: 2026-09-15 18:55 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: el cambio supera el umbral de aviso de la red (1.000 USDC)\n- Explorador: https://etherscan.io/address/0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades."
+  },
   {
    "fecha": "2026-09-15 18:20 UTC",
    "red": "ETH",
