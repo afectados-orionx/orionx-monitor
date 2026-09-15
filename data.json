@@ -1,86 +1,86 @@
 {
  "version": 3,
- "actualizado": "2026-09-15 19:44 UTC",
+ "actualizado": "2026-09-15 20:18 UTC",
  "precios": {
   "BTC": {
-   "usd": 75864,
-   "clp": 72400317
+   "usd": 75947,
+   "clp": 72482108
   },
   "XRP": {
-   "clp": 1236.78,
-   "usd": 1.3
+   "clp": 1227.34,
+   "usd": 1.29
   },
   "TRX": {
-   "clp": 317.58,
-   "usd": 0.332778
+   "clp": 317.02,
+   "usd": 0.332175
   },
   "LTC": {
-   "clp": 49113,
-   "usd": 51.46
+   "clp": 49122,
+   "usd": 51.47
   },
   "ETH": {
-   "usd": 2403.32,
-   "clp": 2293582
+   "clp": 2295968,
+   "usd": 2405.72
   },
   "BNB": {
-   "clp": 684998,
-   "usd": 717.77
+   "clp": 683576,
+   "usd": 716.25
   },
   "POL": {
-   "clp": 90.14,
-   "usd": 0.094455
+   "clp": 89.66,
+   "usd": 0.093946
   },
   "USDT": {
-   "clp": 953.78,
-   "usd": 0.999414
+   "clp": 953.83,
+   "usd": 0.999425
   },
   "USDC": {
-   "clp": 954.03,
-   "usd": 0.999673
+   "clp": 954.08,
+   "usd": 0.999687
   },
   "DAI": {
-   "clp": 954.32,
-   "usd": 0.999983
+   "clp": 954.47,
+   "usd": 1.0
   },
   "XAUT": {
-   "clp": 4097571,
-   "usd": 4293.62
+   "clp": 4096638,
+   "usd": 4292.46
   },
   "DOT": {
-   "clp": 910.69,
-   "usd": 0.954261
+   "clp": 909.86,
+   "usd": 0.953354
   },
   "ADA": {
-   "clp": 187.84,
-   "usd": 0.196825
+   "clp": 188.0,
+   "usd": 0.19699
   },
   "SOL": {
-   "clp": 93189,
-   "usd": 97.65
+   "clp": 92986,
+   "usd": 97.43
   },
   "BTCB": {
-   "usd": 75864,
-   "clp": 72400317
+   "usd": 75947,
+   "clp": 72482108
   },
   "USDCOLD": {
-   "usd": 1.0007699123578275,
-   "clp": 955.0646640300706
+   "usd": 0.9982718197681117,
+   "clp": 952.7271236633906
   },
   "NFT": {
-   "usd": 2.3862785582926994e-07,
-   "clp": 0.00022772970104471913
+   "usd": 2.3776725168970507e-07,
+   "clp": 0.00022691946754171838
+  },
+  "HEX": {
+   "usd": 0.00116322,
+   "clp": 1.11
   },
   "EURT": {
    "usd": 0.058974,
-   "clp": 56.28120250466773
-  },
-  "HEX": {
-   "usd": 0.00119067,
-   "clp": 1.1363031062202449
+   "clp": 56.28
   },
   "SAI": {
-   "usd": 12.77,
-   "clp": 12186.912130508477
+   "usd": 12.64,
+   "clp": 12063.31
   }
  },
  "precios_antiguos": false,
@@ -153,8 +153,8 @@
     ]
    },
    "tokens_contratos": {},
-   "valor_clp": 95417032.27316567,
-   "valor_usd": 99981.85141056
+   "valor_clp": 95524825.37145633,
+   "valor_usd": 100091.23786087999
   },
   {
    "red": "BTC",
@@ -224,8 +224,8 @@
     ]
    },
    "tokens_contratos": {},
-   "valor_clp": 253580216.3002073,
-   "valor_usd": 265711.67539776
+   "valor_clp": 253866687.13805473,
+   "valor_usd": 266002.38072648
   },
   {
    "red": "BTC",
@@ -318,8 +318,8 @@
     ]
    },
    "tokens_contratos": {},
-   "valor_clp": 1332165832.8,
-   "valor_usd": 1395897.5999999999
+   "valor_clp": 1333670787.1999998,
+   "valor_usd": 1397424.7999999998
   },
   {
    "red": "BTC",
@@ -480,8 +480,8 @@
     "ledger": 101505944
    },
    "tokens_contratos": {},
-   "valor_clp": 1988.84365596,
-   "valor_usd": 2.0905066
+   "valor_clp": 1973.66336188,
+   "valor_usd": 2.07442578
   },
   {
    "red": "XRP",
@@ -500,8 +500,8 @@
     "ledger": 106867215
    },
    "tokens_contratos": {},
-   "valor_clp": 4597953.672908519,
-   "valor_usd": 4832.9854742
+   "valor_clp": 4562858.76300356,
+   "valor_usd": 4795.80866286
   },
   {
    "red": "XRP",
@@ -520,8 +520,8 @@
     "ledger": 98481622
    },
    "tokens_contratos": {},
-   "valor_clp": 1322.4826701000002,
-   "valor_usd": 1.3900835000000002
+   "valor_clp": 1312.3885253,
+   "valor_usd": 1.37939055
   },
   {
    "red": "XRP",
@@ -540,8 +540,8 @@
     "ledger": 105935609
    },
    "tokens_contratos": {},
-   "valor_clp": 1236.78247356,
-   "valor_usd": 1.3000026000000002
+   "valor_clp": 1227.34245468,
+   "valor_usd": 1.2900025800000001
   },
   {
    "red": "XRP",
@@ -560,8 +560,8 @@
     "ledger": 106632327
    },
    "tokens_contratos": {},
-   "valor_clp": 719752940.7255359,
-   "valor_usd": 756544.27056
+   "valor_clp": 714259265.4070079,
+   "valor_usd": 750724.6992479999
   },
   {
    "red": "TRX",
@@ -613,8 +613,8 @@
    "congelada": {
     "USDT": false
    },
-   "valor_clp": 82271878.53203359,
-   "valor_usd": 86209.01294336944
+   "valor_clp": 82133417.40914957,
+   "valor_usd": 86059.75884490796
   },
   {
    "red": "LTC",
@@ -684,8 +684,8 @@
     ]
    },
    "tokens_contratos": {},
-   "valor_clp": 28788846.78231459,
-   "valor_usd": 30164.601132447802
+   "valor_clp": 28794122.36354646,
+   "valor_usd": 30170.462889372102
   },
   {
    "red": "ETH",
@@ -721,9 +721,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:55 UTC",
-   "valor_clp": 69533687.38978232,
-   "valor_usd": 72860.66025123784
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 69561028.81859973,
+   "valor_usd": 72882.97431149519
   },
   {
    "red": "BSC",
@@ -753,8 +753,8 @@
    "cursor": {},
    "tokens_contratos": {},
    "inventario": null,
-   "valor_clp": 48732996.102594584,
-   "valor_usd": 51064.8200569019
+   "valor_clp": 48679082.99889199,
+   "valor_usd": 51005.989352546756
   },
   {
    "red": "POLYGON",
@@ -779,9 +779,9 @@
    "congelada": {
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:55 UTC",
-   "valor_clp": 22504111.37834268,
-   "valor_usd": 23581.16986922208
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 22428327.73764313,
+   "valor_usd": 23500.458552098047
   },
   {
    "red": "BTC",
@@ -1306,8 +1306,8 @@
     "ledger": 106836676
    },
    "tokens_contratos": {},
-   "valor_clp": 219000771.73422632,
-   "valor_usd": 230195.34861050002
+   "valor_clp": 217329199.3566239,
+   "valor_usd": 228424.61515965
   },
   {
    "red": "XRP",
@@ -1327,8 +1327,8 @@
     "ledger": 106630929
    },
    "tokens_contratos": {},
-   "valor_clp": 24007528.41292926,
-   "valor_usd": 25234.7118621
+   "valor_clp": 23824285.58217678,
+   "valor_usd": 25040.59869393
   },
   {
    "red": "XRP",
@@ -1348,8 +1348,8 @@
     "ledger": 106555885
    },
    "tokens_contratos": {},
-   "valor_clp": 154356557.02462602,
-   "valor_usd": 162246.74083670002
+   "valor_clp": 153178396.07578105,
+   "valor_usd": 160998.68898411002
   },
   {
    "red": "ETH",
@@ -1382,9 +1382,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:55 UTC",
-   "valor_clp": 263940.23964467447,
-   "valor_usd": 276.56863168526104
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 264178.100783768,
+   "valor_usd": 276.808631691007
   },
   {
    "red": "ETH",
@@ -1412,9 +1412,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
-   "valor_clp": 54770743.65477851,
-   "valor_usd": 57391.27262402002
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 54773631.60978987,
+   "valor_usd": 57391.921801864104
   },
   {
    "red": "ETH",
@@ -1442,7 +1442,7 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
+   "congelada_fecha": "2026-09-15 20:20 UTC",
    "valor_clp": 0.0,
    "valor_usd": 0.0
   },
@@ -1477,9 +1477,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
-   "valor_clp": 122002312.3884829,
-   "valor_usd": 127839.5636756743
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 120765339.40047275,
+   "valor_usd": 126538.56102767972
   },
   {
    "red": "ETH",
@@ -1507,9 +1507,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
-   "valor_clp": 201653.00012730295,
-   "valor_usd": 211.30122588064714
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 201862.77752681766,
+   "valor_usd": 211.51223412166144
   },
   {
    "red": "ETH",
@@ -1540,9 +1540,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
-   "valor_clp": 321697997.2848778,
-   "valor_usd": 337089.84683240874
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 321991185.25646377,
+   "valor_usd": 337383.24397043086
   },
   {
    "red": "ETH",
@@ -1568,9 +1568,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
-   "valor_clp": 233024220.01492357,
-   "valor_usd": 244173.42325073452
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 233266633.75419936,
+   "valor_usd": 244417.2593673572
   },
   {
    "red": "ETH",
@@ -1596,9 +1596,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
-   "valor_clp": 38282806.88174446,
-   "valor_usd": 40114.47396911576
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 38322632.260200046,
+   "valor_usd": 40154.53302528964
   },
   {
    "red": "ETH",
@@ -1626,9 +1626,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
-   "valor_clp": 5.5045968e-11,
-   "valor_usd": 5.767968e-14
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 5.5103231999999994e-11,
+   "valor_usd": 5.773727999999999e-14
   },
   {
    "red": "ETH",
@@ -1656,9 +1656,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
-   "valor_clp": 16784088.01396,
-   "valor_usd": 17587.134125800003
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 16801530.119039997,
+   "valor_usd": 17604.6778694
   },
   {
    "red": "ETH",
@@ -1684,9 +1684,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
-   "valor_clp": 35534.01339477216,
-   "valor_usd": 37.23416257710596
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 35570.979222006565,
+   "valor_usd": 37.27134530357811
   },
   {
    "red": "ETH",
@@ -1712,9 +1712,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
-   "valor_clp": 20420.4253945227,
-   "valor_usd": 21.39745461865514
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 20441.668644160745,
+   "valor_usd": 21.41882251435141
   },
   {
    "red": "ETH",
@@ -1740,9 +1740,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
-   "valor_clp": 15332.91020652783,
-   "valor_usd": 16.066517551040903
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 15347.03311062034,
+   "valor_usd": 16.080652928083897
   },
   {
    "red": "ETH",
@@ -1768,16 +1768,15 @@
     "USDC",
     "USDT",
     "ÚЅDС",
-    "ÚЅDТ",
-    "꒤5DT"
+    "ÚЅDТ"
    ],
    "congelada": {
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
-   "valor_clp": 206197808.12012696,
-   "valor_usd": 216063.42114216002
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 206210564.4841089,
+   "valor_usd": 216067.8460536965
   },
   {
    "red": "ETH",
@@ -1803,9 +1802,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-09-15 18:56 UTC",
-   "valor_clp": 398.6681605854395,
-   "valor_usd": 0.41774271148718406
+   "congelada_fecha": "2026-09-15 20:20 UTC",
+   "valor_clp": 399.08289275161314,
+   "valor_usd": 0.4181598771195464
   },
   {
    "red": "ETH",
@@ -1836,8 +1835,8 @@
     "USDC": false
    },
    "congelada_fecha": "2026-09-15 19:47 UTC",
-   "valor_clp": 396314487.0931803,
-   "valor_usd": 415276.27225876274
+   "valor_clp": 396336026.57717925,
+   "valor_usd": 415281.6897436582
   },
   {
    "red": "ETH",
@@ -1860,17 +1859,15 @@
    "tokens_contratos": {},
    "inventario": "2026-09-15 19:47 UTC",
    "tokens_sin_precio": [
-    "USDT",
-    "ÚЅDС",
-    "꒤5DC"
+    "USDT"
    ],
    "congelada": {
     "USDT": false,
     "USDC": false
    },
    "congelada_fecha": "2026-09-15 19:47 UTC",
-   "valor_clp": 33495793.810005985,
-   "valor_usd": 35098.33310020304
+   "valor_clp": 33497558.72158802,
+   "valor_usd": 35098.81101971509
   },
   {
    "red": "ETH",
@@ -1897,8 +1894,8 @@
     "USDC": false
    },
    "congelada_fecha": "2026-09-15 19:47 UTC",
-   "valor_clp": 95378.0,
-   "valor_usd": 99.9414
+   "valor_clp": 95383.0,
+   "valor_usd": 99.9425
   }
  ],
  "eventos": [
@@ -1966,18 +1963,18 @@
  "errores": [],
  "cursores": {
   "ETH": {
-   "bloque": 25985034,
-   "fecha": "2026-09-15 19:44 UTC",
-   "logs": 18
+   "bloque": 25985204,
+   "fecha": "2026-09-15 20:18 UTC",
+   "logs": 8
   },
   "BSC": {
-   "bloque": 122087845,
-   "fecha": "2026-09-15 19:44 UTC",
+   "bloque": 122092395,
+   "fecha": "2026-09-15 20:18 UTC",
    "logs": 0
   },
   "POLYGON": {
-   "bloque": 93864371,
-   "fecha": "2026-09-15 19:44 UTC",
+   "bloque": 93865701,
+   "fecha": "2026-09-15 20:18 UTC",
    "logs": 0
   }
  },
@@ -1986,57 +1983,57 @@
    "0x6b175474e89094c44da98b954eedeac495271d0f": {
     "simbolo": "DAI",
     "decimales": 18,
-    "precio_usd": 0.999983,
+    "precio_usd": 1.0,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:47 UTC",
+    "precio_fecha": "2026-09-15 20:20 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0x68749665ff8d2d112fa859aa293f07a622782f38": {
     "simbolo": "XAUT",
     "decimales": 6,
-    "precio_usd": 4293.62,
+    "precio_usd": 4292.46,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:47 UTC",
+    "precio_fecha": "2026-09-15 20:20 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": {
     "simbolo": "USDC",
     "decimales": 6,
-    "precio_usd": 0.999673,
+    "precio_usd": 0.999687,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:47 UTC",
+    "precio_fecha": "2026-09-15 20:20 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0xdac17f958d2ee523a2206206994597c13d831ec7": {
     "simbolo": "USDT",
     "decimales": 6,
-    "precio_usd": 0.999414,
+    "precio_usd": 0.999425,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:47 UTC",
+    "precio_fecha": "2026-09-15 20:20 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0xc581b735a1688071a1746c968e0798d642ede491": {
     "simbolo": "EURT",
     "decimales": 6,
     "precio_usd": 0.058974,
-    "precio_fuente": "blockscout",
-    "precio_fecha": "2026-09-15 18:56 UTC",
+    "precio_fuente": "coingecko",
+    "precio_fecha": "2026-09-15 20:20 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39": {
     "simbolo": "HEX",
     "decimales": 8,
-    "precio_usd": 0.00119067,
-    "precio_fuente": "blockscout",
-    "precio_fecha": "2026-09-15 18:55 UTC",
+    "precio_usd": 0.00116322,
+    "precio_fuente": "coingecko",
+    "precio_fecha": "2026-09-15 20:20 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359": {
     "simbolo": "SAI",
     "decimales": 18,
-    "precio_usd": 12.77,
-    "precio_fuente": "blockscout",
-    "precio_fecha": "2026-09-15 18:56 UTC",
+    "precio_usd": 12.64,
+    "precio_fuente": "coingecko",
+    "precio_fecha": "2026-09-15 20:20 UTC",
     "visto": "2026-09-15 18:56 UTC"
    },
    "0x8b3c55b6c02f89a80e40cbebc6363a5317255ace": {
@@ -2086,6 +2083,22 @@
     "precio_usd": null,
     "precio_fuente": "sin precio",
     "precio_fecha": "2026-09-15 19:47 UTC"
+   },
+   "0xeb4f5d47ca27efec30ef6925c5ebfb94eb708c53": {
+    "simbolo": "USDT",
+    "decimales": 6,
+    "visto": "2026-09-15 20:20 UTC",
+    "precio_usd": null,
+    "precio_fuente": "sin precio",
+    "precio_fecha": "2026-09-15 20:20 UTC"
+   },
+   "0x79b3cb250ea84ab50fc85f5225077e4b60fd2c33": {
+    "simbolo": "USDC",
+    "decimales": 6,
+    "visto": "2026-09-15 20:20 UTC",
+    "precio_usd": null,
+    "precio_fuente": "sin precio",
+    "precio_fecha": "2026-09-15 20:20 UTC"
    }
   },
   "BSC": {
@@ -2093,89 +2106,89 @@
     "simbolo": "ETH",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 2403.32,
+    "precio_usd": 2405.72,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC"
+    "precio_fecha": "2026-09-15 20:20 UTC"
    },
    "0x570a5d26f7765ecb712c0924e4de545b89fd43df": {
     "simbolo": "SOL",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 97.65,
+    "precio_usd": 97.43,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC"
+    "precio_fecha": "2026-09-15 20:20 UTC"
    },
    "0x4338665cbb7b2485a8855a139b75d5e34ab0db94": {
     "simbolo": "LTC",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 51.46,
+    "precio_usd": 51.47,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC"
+    "precio_fecha": "2026-09-15 20:20 UTC"
    },
    "0x3ee2200efb3400fabb9aacf31297cbdd1d435d47": {
     "simbolo": "ADA",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 0.196825,
+    "precio_usd": 0.19699,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC"
+    "precio_fecha": "2026-09-15 20:20 UTC"
    },
    "0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3": {
     "simbolo": "DAI",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 0.999983,
+    "precio_usd": 1.0,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC"
+    "precio_fecha": "2026-09-15 20:20 UTC"
    },
    "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d": {
     "simbolo": "USDC",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 0.999673,
+    "precio_usd": 0.999687,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC"
+    "precio_fecha": "2026-09-15 20:20 UTC"
    },
    "0xce7de646e7208a4ef112cb6ed5038fa6cc6b12e3": {
     "simbolo": "TRX",
     "decimales": 6,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 0.332778,
+    "precio_usd": 0.332175,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC"
+    "precio_fecha": "2026-09-15 20:20 UTC"
    },
    "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c": {
     "simbolo": "BTCB",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 75864,
+    "precio_usd": 75947,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC"
+    "precio_fecha": "2026-09-15 20:20 UTC"
    },
    "0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe": {
     "simbolo": "XRP",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 1.3,
+    "precio_usd": 1.29,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC"
+    "precio_fecha": "2026-09-15 20:20 UTC"
    },
    "0x55d398326f99059ff775485246999027b3197955": {
     "simbolo": "USDT",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 0.999414,
+    "precio_usd": 0.999425,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC"
+    "precio_fecha": "2026-09-15 20:20 UTC"
    },
    "0x7083609fce4d1d8dc0c979aab8c869ea2c873402": {
     "simbolo": "DOT",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 0.954261,
+    "precio_usd": 0.953354,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC"
+    "precio_fecha": "2026-09-15 20:20 UTC"
    }
   },
   "POLYGON": {
@@ -2190,31 +2203,31 @@
    "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359": {
     "simbolo": "USDC",
     "decimales": 6,
-    "precio_usd": 0.999673,
+    "precio_usd": 0.999687,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC",
+    "precio_fecha": "2026-09-15 20:20 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063": {
     "simbolo": "DAI",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 0.999983,
+    "precio_usd": 1.0,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC"
+    "precio_fecha": "2026-09-15 20:20 UTC"
    },
    "0x2791bca1f2de4661ed88a30c99a7a9449aa84174": {
     "simbolo": "USDC",
     "decimales": 6,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 0.999673,
+    "precio_usd": 0.999687,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-09-15 19:46 UTC"
+    "precio_fecha": "2026-09-15 20:20 UTC"
    }
   }
  },
  "descubiertas": 0,
  "descubiertas_seguidas": 0,
- "total_clp": 4477917815.756475,
- "total_usd": 4695826.897111602
+ "total_clp": 4470415082.441499,
+ "total_usd": 4687729.213330767
 }
