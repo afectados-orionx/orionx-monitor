@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-15 (noche): tres direcciones nuevas por el movimiento de 0xad1618
+
+Por el movimiento del 15-sep en la atribuida `0xad1618f3…` entran a vigilancia, con liga indirecta:
+`0xfd56ef36…` (atribuida: envió los 200.000 USDT; guarda ≈399.000 USDT), `0x55903d69…` (desvío: recibió
+27.308,72 USDC; es un contrato tipo billetera inteligente) y `0x628e3983…` (desvío: recibió 100 USDT,
+monto de prueba, sin vigilancia prioritaria). Evidencia: los hashes del issue #3. 45 direcciones en monitor.
+
 ## 2026-09-15 (tarde): versión 3 del monitor, de saldos a transacciones
 
 Hasta hoy el monitor comparaba saldos de una lista fija de tokens. Con eso veía *que* algo se
