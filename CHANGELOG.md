@@ -1,5 +1,49 @@
 # Changelog
 
+## 2026-09-15 (noche, 2): `0xfd56ef36…` no era liga indirecta, es destino directo de la caliente
+
+Al rastrear el origen de los 200.000 USDT del movimiento de la tarde apareció el hallazgo del día:
+`0xfd56ef36…`, que se había agregado como atribuida con liga indirecta, **recibió 5.244.503 USDT
+directamente de la billetera caliente `0x5528d824…` en 47 transferencias entre el 18-ene-2024 y el
+29-ene-2026** (ejemplo `0x576adfef…`), en un solo sentido. Es la cuarta de las "cadenas OTC" que el
+informe del 11 de septiembre dejó sin identificar. Pasa a **desvío**, liga confirmada, confianza alta.
+
+Con eso, las **dos mayores cadenas OTC del informe** (`0xad1618f3…`, 9,85 M USDT, y `0xfd56ef36…`,
+5,24 M USDT: 15,1 M USDT salidos de OrionX) resultan ser contrapartes entre sí: desde el 3-jul-2026,
+21 envíos por 5.342.000 USDT de la segunda a la primera. No prueba desvío —el dinero pasa por Binance
+entre medio y la fungibilidad rompe la trazabilidad—, pero es la estructura que conviene oficiar.
+
+Perfil de `0xfd56ef36…`: activa desde el 13-dic-2023, 57,94 M USDT de entrada y 57,54 M de salida
+(no acumula), 83 contrapartes relevantes, montos redondos, días hábiles. En jul-sep 2026 el **89 %**
+de su USDT entrante viene de billeteras calientes de **Binance** con etiqueta pública (14, 15, 16, 17
+y 18); el 15-sep repuso los 200.000 USDT **34 minutos** después de enviarlos. El cierre del 3-sep no
+la frenó: su salida media diaria subió de 99.835 a 206.843 USDT.
+
+Correcciones de dato en el mismo registro y en `0x55903d69…`:
+
+- `0x55903d69…` **no es un contrato desplegado** sino una **EOA con delegación EIP-7702** (código
+  delegado a `0x0000Fb7702…`, "UniversalGaslessDelegate": transferencias con gas patrocinado).
+  Funciona como recolector: barre lo que recibe hacia `0x8bc2ab7e…`, otra EOA con el mismo delegado,
+  normalmente al día siguiente. Al cierre del día retenía 47.110,37 USDT y 27.308,72 USDC.
+- El aviso del 14-sep (−28.000 USDT) **no fue una salida de fondos**: fue un cambio de USDT a USDC en
+  Uniswap v4; el dinero quedó en la misma dirección.
+
+**Envenenamiento de direcciones, alcance real.** Medido sobre 500 transferencias de `0xad1618f3…`: por
+cada contraparte real hay **5 a 8 clones** con los mismos 4 primeros y 4 últimos caracteres, más tokens
+imitadores con símbolo visualmente idéntico a USDT/USDC. La billetera caliente de OrionX también lo
+sufre: tienen clones circulando incluso el depósito de Bitfinex `0x003740c4…2663` y el de Binance
+`0xe93a2ab5…372e` citados en el informe. Dos consecuencias: **cotejar carácter por carácter toda
+dirección antes de citarla** en un escrito, y leer siempre por contrato, nunca por símbolo. Verificado
+que ninguna de las 32 direcciones EVM del monitor es clon de otra.
+
+Aguas abajo (registrado, no incorporado al monitor por estar a tres o más saltos): `0x55903d69…` →
+`0x8bc2ab7e…` → `0xff9f8615…` (tránsito puro, 16,2 M USD en 8 tx) → `0x300471d9…` → `0x04eb04eb…`
+(retiene 1.825.564 USDC); y `0x14b97ecc…` (agregador, 8,44 M de entrada y 10,39 M de salida entre el
+11 y el 15-sep) → `0x44b0bd8a…`, que trocea en importes exactos de 1.000.000 USD hacia direcciones
+nuevas que reenvían en minutos a un mismo concentrador. **Ninguna de las ~360 contrapartes rastreadas
+tiene etiqueta pública de exchange**: el dinero no llega a un exchange identificable donde pedir
+congelamiento, se dispersa entre concentradores anónimos.
+
 ## 2026-09-15 (noche): tres direcciones nuevas por el movimiento de 0xad1618
 
 Por el movimiento del 15-sep en la atribuida `0xad1618f3…` entran a vigilancia, con liga indirecta:
