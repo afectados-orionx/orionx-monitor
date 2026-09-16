@@ -1,6 +1,6 @@
 {
  "_nota": "Direcciones propuestas por el monitor a partir de movimientos reales: destinos de salidas y, en BTC/LTC, entradas gastadas junto a una vigilada (misma billetera) o posibles vueltos. NO están validadas: una persona debe confirmar la liga y, si corresponde, pasarlas a direcciones.json. 'seguir': true hace que el monitor consulte su saldo en cada corrida.",
- "actualizado": "2026-09-16 16:19 UTC",
+ "actualizado": "2026-09-16 17:17 UTC",
  "direcciones": [
   {
    "red": "ETH",
@@ -14,6 +14,32 @@
    "misma_billetera": false,
    "seguir": false,
    "explorer": "https://etherscan.io/address/0xd4e8d5f8442418ea23e3f1f20e31382090800901"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0xa28bd32cfd1762e6870396ff79e0faa637b7f8b0",
+   "origen": "0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3",
+   "motivo": "destino de una salida",
+   "hash": "0x5dfe25f942bb929b9f9fae4904e48213400ce00977d6569faeb3d4deb3b1b7e1",
+   "desde": "2026-09-16 17:19 UTC",
+   "ultima": "2026-09-16 17:19 UTC",
+   "veces": 1,
+   "misma_billetera": false,
+   "seguir": false,
+   "explorer": "https://etherscan.io/address/0xa28bd32cfd1762e6870396ff79e0faa637b7f8b0"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x43d891ffb4f244fefa793608413ea6832a09a45d",
+   "origen": "0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3",
+   "motivo": "destino de una salida",
+   "hash": "0x56a93f4034af9b5e57cbb330ee8739c4e8056a8f31602da8872c66814ac76b20",
+   "desde": "2026-09-16 17:19 UTC",
+   "ultima": "2026-09-16 17:19 UTC",
+   "veces": 1,
+   "misma_billetera": false,
+   "seguir": false,
+   "explorer": "https://etherscan.io/address/0x43d891ffb4f244fefa793608413ea6832a09a45d"
   }
  ]
 }
