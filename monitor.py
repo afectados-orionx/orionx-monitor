@@ -18,6 +18,8 @@ Qué vigila (desde el 15-sep-2026, versión 3):
     cambia el campo `congelada` y se registra el evento.
   * Direcciones descubiertas: destinos de salidas y, en BTC/LTC, entradas gastadas en conjunto (misma billetera) y
     posibles vueltos. Van a descubiertas.json, no a direcciones.json: una persona decide si se promueven.
+    Si la salida es grande (UMBRAL_SEGUIR_USD) y el destino no es un exchange con etiqueta pública, además quedan
+    en seguir=true: el monitor las consulta y avisa de sus movimientos desde la corrida siguiente, hasta MAX_SALTOS.
 
 Regla de la primera corrida: cualquier cosa que el monitor ve por primera vez (token nuevo, cursor nuevo, dirección
 nueva) fija su punto de partida sin generar movimientos; desde la segunda corrida todo cambio ≥ UMBRAL_USD se anota.
@@ -88,6 +90,16 @@ UTXO_API = {"BTC": "https://mempool.space/api", "LTC": "https://litecoinspace.or
 MAX_DESCUBIERTAS_NUEVAS = 25    # por corrida
 MAX_DESCUBIERTAS = 200          # total en descubiertas.json (se conservan las 'misma billetera' y las que se siguen)
 MAX_SEGUIDAS = 40               # descubiertas cuyo saldo se consulta en cada corrida
+# Vigilancia automática de destinos: un destino de una salida grande se empieza a vigilar solo
+# (seguir=true) sin esperar validación humana. Sigue siendo una propuesta: no entra a direcciones.json.
+UMBRAL_SEGUIR_USD = float(os.environ.get("UMBRAL_SEGUIR_USD", "10000"))
+MAX_SALTOS = 2                  # profundidad máxima que se vigila sola (a 3 saltos el dinero se dispersa)
+MAX_AUTO_POR_ORIGEN = 3         # si una dirección reparte a más destinos grandes en una sola corrida es un
+                                # agregador (mueve dinero de terceros): sus destinos se anotan pero no se vigilan solos
+UMBRAL_AVISO_DESCUBIERTA_USD = float(os.environ.get("UMBRAL_AVISO_DESCUBIERTA_USD", "50000"))   # avisos de descubiertas
+TIPOS_SEGUIR = ("orionx", "desvio", "atribuida", "querella", "puente", "descubierta")
+PREFIJO_7702 = "0xef0100"       # EIP-7702: EOA con código delegado (billetera con gas patrocinado), no es contrato
+PUBLICAS = set()                # claves (red, direccion) con etiqueta pública (exchange, puente, mezclador)
 ES_EVM = lambda red: red in RPC   # noqa: E731
 
 
@@ -187,7 +199,7 @@ def cargar_etiquetas():
     try:
         pub = json.loads((HERE / "etiquetas_publicas.json").read_text(encoding="utf-8")).get("etiquetas", {})
         for red, d in pub.items():
-            for a, n in d.items(): et[krd(red, a)] = f"{n} (etiqueta pública)"
+            for a, n in d.items(): et[krd(red, a)] = f"{n} (etiqueta pública)"; PUBLICAS.add(krd(red, a))
     except Exception as e: print("etiquetas públicas:", e)
     try:
         for w in json.loads((HERE / "direcciones.json").read_text(encoding="utf-8"))["direcciones"]:
@@ -371,12 +383,32 @@ def bloque_fecha(red, numero, cache):
     return cache[numero]
 
 
-def es_contrato(red, a, cache):
+def codigo_evm(red, a, cache):
+    """Primeros bytes del código de la dirección ("0x" si es una cuenta normal), cacheados. None si
+    el RPC falla. Se guarda recortado: basta para saber si hay código y si es una delegación 7702,
+    y así el caché no se llena con los kilobytes de cada contrato."""
     a = a.lower()
     if a not in cache:
-        try: cache[a] = rpc(red, "eth_getCode", [a, "latest"]) not in ("0x", "0x0", "", None)
+        try:
+            c = rpc(red, "eth_getCode", [a, "latest"])
+            cache[a] = c[:64] if isinstance(c, str) else c
         except Exception: cache[a] = None
     return cache[a]
+
+
+def delegado_7702(red, a, cache):
+    """Si la dirección es una EOA con delegación EIP-7702, la dirección a la que delega; si no, None."""
+    c = codigo_evm(red, a, cache)
+    return "0x" + c[len(PREFIJO_7702):][:40] if c and c.startswith(PREFIJO_7702) else None
+
+
+def es_contrato(red, a, cache):
+    """Contrato de verdad. Una EOA con delegación EIP-7702 tiene código pero sigue siendo una
+    billetera de una persona (gas patrocinado): cuenta como cuenta normal, y por eso se descubre."""
+    c = codigo_evm(red, a, cache)
+    if c is None: return None
+    if c.startswith(PREFIJO_7702): return False
+    return c not in ("0x", "0x0", "")
 
 
 def inventario_blockscout(red, a, tokens):
@@ -443,24 +475,82 @@ def evento(w, ctx, tipo, moneda, cantidad, sentido, hash_, contraparte, fecha_ca
             "fecha_cadena": fecha_cadena, "detalle": " ".join(partes), "valor_usd": valor_usd}
 
 
-def descubrir(ctx, red, direccion, origen, motivo, hash_, fuerte):
-    """Propone una dirección para descubiertas.json (no toca direcciones.json)."""
+def salto_de(ctx, red, origen):
+    """Distancia en saltos desde una dirección de direcciones.json. Las de la lista son 0; un destino
+    suyo, 1; el destino de ese destino, 2. Sirve para no perseguir la dispersión hasta el infinito."""
+    d = ctx["descubiertas_idx"].get(krd(red, origen or ""))
+    return int(d.get("salto") or 1) if d else 0
+
+
+def hay_cupo_para_seguir(ctx):
+    return sum(1 for x in ctx["descubiertas"] if x.get("seguir")) < MAX_SEGUIDAS
+
+
+def vigilar_sola(ctx, red, k, salto, valor_usd, w):
+    """¿Se empieza a vigilar este destino sin esperar validación humana? Sí cuando el monto es
+    grande, el origen es una dirección del caso, el destino no es un exchange con etiqueta pública
+    (ahí lo que sirve es oficiar, no vigilar) y no se pasa de MAX_SALTOS ni del cupo."""
+    return (valor_usd is not None and valor_usd >= UMBRAL_SEGUIR_USD
+            and (w or {}).get("tipo") in TIPOS_SEGUIR
+            and k not in PUBLICAS and salto <= MAX_SALTOS and hay_cupo_para_seguir(ctx))
+
+
+def candidato(ctx, d, origen, valor_usd):
+    """Anota un destino como candidato a vigilancia. La decisión se toma al final de la corrida,
+    cuando ya se sabe a cuántos destinos repartió cada origen (ver decidir_vigilancia)."""
+    ctx.setdefault("candidatos", {}).setdefault(krd(d["red"], origen or ""), []).append((d, valor_usd or 0))
+
+
+def decidir_vigilancia(ctx):
+    """Activa seguir=true en los candidatos de la corrida. Un origen que repartió a más de
+    MAX_AUTO_POR_ORIGEN destinos grandes en una sola corrida es un agregador que mueve dinero de
+    terceros (el 16-sep-2026 uno repartió 2,4 M USD a nueve cuentas en una hora): seguirlos a todos
+    ahoga las alertas de las billeteras de OrionX, así que quedan anotados para revisión humana."""
+    for korigen, lista in sorted(ctx.get("candidatos", {}).items()):
+        if len(lista) > MAX_AUTO_POR_ORIGEN:
+            reparto = ", ".join(f"{corto(d['direccion'])} US$ {v:,.0f}" for d, v in sorted(lista, key=lambda x: -x[1])[:6])
+            for d, v in lista:
+                d["seguir_motivo"] = (f"NO se vigila sola: el origen {corto(korigen[1])} repartió a {len(lista)} destinos grandes en una sola "
+                                      f"corrida (se comporta como agregador de terceros). Revisar a mano. Reparto: {reparto}")
+            org = ctx["descubiertas_idx"].get(korigen)
+            if org: org["agregador"] = True
+            print(f"  agregador: {korigen[1]} repartió a {len(lista)} destinos; no se vigilan solos")
+            continue
+        for d, v in sorted(lista, key=lambda x: -x[1]):
+            if not hay_cupo_para_seguir(ctx):
+                d["seguir_motivo"] = f"candidata (US$ {v:,.0f}) pero el cupo de {MAX_SEGUIDAS} direcciones seguidas está lleno"
+                continue
+            d["seguir"] = True
+            d["seguir_motivo"] = f"recibió US$ {v:,.0f} de {corto(korigen[1])}, una dirección vigilada ({ahora_txt()})"
+            ctx["seguidas_nuevas"] = ctx.get("seguidas_nuevas", 0) + 1
+
+
+def descubrir(ctx, red, direccion, origen, motivo, hash_, fuerte, w=None, valor_usd=None):
+    """Propone una dirección para descubiertas.json (no toca direcciones.json). Si la salida es
+    grande, además la deja en seguir=true: el monitor consulta su saldo y avisa de sus movimientos."""
     if not direccion: return
     k = krd(red, direccion)
     if k in ctx["conocidas"] or k in ctx["vigiladas"]: return
+    salto = salto_de(ctx, red, origen) + 1
     d = ctx["descubiertas_idx"].get(k)
     if d:
         d["veces"] = d.get("veces", 1) + 1; d["ultima"] = ahora_txt()
+        d["valor_usd_max"] = round(max(d.get("valor_usd_max") or 0, valor_usd or 0), 2)
         if fuerte and not d.get("misma_billetera"): d["misma_billetera"], d["motivo"], d["seguir"] = True, motivo, True
+        if not d.get("seguir") and vigilar_sola(ctx, red, k, d.get("salto", salto), valor_usd, w):
+            candidato(ctx, d, origen, valor_usd)
         return
     if ctx["descubiertas_nuevas"] >= MAX_DESCUBIERTAS_NUEVAS: return
     if not fuerte and ctx.get("descubiertas_debiles", 0) >= MAX_DESCUBIERTAS_NUEVAS // 2: return   # los destinos no desplazan a las 'misma billetera'
     ctx["descubiertas_nuevas"] += 1
     if not fuerte: ctx["descubiertas_debiles"] = ctx.get("descubiertas_debiles", 0) + 1
     d = {"red": red, "direccion": direccion.lower() if red in RPC else direccion, "origen": origen, "motivo": motivo, "hash": hash_,
-         "desde": ahora_txt(), "ultima": ahora_txt(), "veces": 1, "misma_billetera": bool(fuerte), "seguir": bool(fuerte),
+         "desde": ahora_txt(), "ultima": ahora_txt(), "veces": 1, "salto": salto, "valor_usd_max": round(valor_usd or 0, 2),
+         "misma_billetera": bool(fuerte), "seguir": bool(fuerte),
          "explorer": EXPLORER[red].format(a=direccion)}
+    if fuerte: ctx["seguidas_nuevas"] = ctx.get("seguidas_nuevas", 0) + 1
     ctx["descubiertas_idx"][k] = d; ctx["descubiertas"].append(d)
+    if vigilar_sola(ctx, red, k, salto, valor_usd, w): candidato(ctx, d, origen, valor_usd)
 
 
 # --- BTC / LTC ---------------------------------------------------------------------------------------------------------
@@ -486,7 +576,7 @@ def consultar_utxo(w, out, prev, ctx):
                 vu = monto * px if px else None
                 if vu is not None and vu < UMBRAL_USD: continue
                 out["eventos"].append(evento(w, ctx, "transferencia", moneda, monto, "salida", t["txid"], dest, fecha, valor_usd=vu))
-                descubrir(ctx, red, dest, a, "destino de una salida", t["txid"], fuerte=False)
+                descubrir(ctx, red, dest, a, "destino de una salida", t["txid"], fuerte=False, w=w, valor_usd=vu)
             for otra in entradas - {a}:
                 descubrir(ctx, red, otra, a, "gastó en la misma transacción que una dirección vigilada (misma billetera)", t["txid"], fuerte=True)
             if len(salidas) == 2:   # heurística de vuelto: 2 salidas, la que no es conocida y comparte formato con la vigilada
@@ -528,7 +618,7 @@ def consultar_xrp(w, out, prev, ctx):
         if t.get("Account") == a:
             out["eventos"].append(evento(w, ctx, "transferencia", "XRP", monto, "salida", t.get("hash"), t.get("Destination"), fecha, valor_usd=vu,
                                          detalle_extra=f"tag {t['DestinationTag']}" if t.get("DestinationTag") is not None else ""))
-            descubrir(ctx, "XRP", t.get("Destination"), a, "destino de una salida", t.get("hash"), fuerte=False)
+            descubrir(ctx, "XRP", t.get("Destination"), a, "destino de una salida", t.get("hash"), fuerte=False, w=w, valor_usd=vu)
         elif t.get("Destination") == a:
             out["eventos"].append(evento(w, ctx, "transferencia", "XRP", monto, "entrada", t.get("hash"), t.get("Account"), fecha, valor_usd=vu))
     out["cursor"]["ledger"] = nuevo
@@ -583,7 +673,7 @@ def consultar_tron(w, out, prev, ctx):
             fecha = iso(x["block_ts"] / 1000)
             if x.get("from_address") == a:
                 out["eventos"].append(evento(w, ctx, "transferencia", sym, monto, "salida", x.get("transaction_id"), x.get("to_address"), fecha, valor_usd=vu))
-                descubrir(ctx, "TRX", x.get("to_address"), a, "destino de una salida", x.get("transaction_id"), fuerte=False)
+                descubrir(ctx, "TRX", x.get("to_address"), a, "destino de una salida", x.get("transaction_id"), fuerte=False, w=w, valor_usd=vu)
             elif x.get("to_address") == a:
                 out["eventos"].append(evento(w, ctx, "transferencia", sym, monto, "entrada", x.get("transaction_id"), x.get("from_address"), fecha, valor_usd=vu))
         k = get(f"https://apilist.tronscanapi.com/api/transaction?address={a}&limit=50&start=0&sort=-timestamp&start_timestamp={ts + 1}")
@@ -595,7 +685,7 @@ def consultar_tron(w, out, prev, ctx):
             fecha = iso(x["timestamp"] / 1000)
             if x.get("ownerAddress") == a:
                 out["eventos"].append(evento(w, ctx, "transferencia", "TRX", monto, "salida", x.get("hash"), x.get("toAddress"), fecha, valor_usd=vu))
-                descubrir(ctx, "TRX", x.get("toAddress"), a, "destino de una salida", x.get("hash"), fuerte=False)
+                descubrir(ctx, "TRX", x.get("toAddress"), a, "destino de una salida", x.get("hash"), fuerte=False, w=w, valor_usd=vu)
             elif x.get("toAddress") == a:
                 out["eventos"].append(evento(w, ctx, "transferencia", "TRX", monto, "entrada", x.get("hash"), x.get("ownerAddress"), fecha, valor_usd=vu))
     except Exception as e:
@@ -681,9 +771,33 @@ def consultar_evm(w, out, prev, ctx):
         if vu < UMBRAL_USD: continue
         if de == a.lower():
             out["eventos"].append(evento(w, ctx, "transferencia", sym, valor, "salida", l["transactionHash"], para, fecha, valor_usd=vu))
-            if not es_contrato(red, para, ctx["contratos_cache"]): descubrir(ctx, red, para, a, "destino de una salida", l["transactionHash"], fuerte=False)
+            if not es_contrato(red, para, ctx["contratos_cache"]):
+                deleg = delegado_7702(red, para, ctx["contratos_cache"])
+                motivo = "destino de una salida" + (f" (EOA con delegación EIP-7702 a {corto(deleg)})" if deleg else "")
+                descubrir(ctx, red, para, a, motivo, l["transactionHash"], fuerte=False, w=w, valor_usd=vu)
         elif para == a.lower():
             out["eventos"].append(evento(w, ctx, "transferencia", sym, valor, "entrada", l["transactionHash"], de, fecha, valor_usd=vu))
+
+
+def agrupar_avisos(eventos, maximo=3):
+    """Si una misma dirección hizo más de `maximo` movimientos en la corrida, se avisa en una sola
+    línea con el neto. Un agregador puede hacer once en una hora y taparía todo lo demás."""
+    por_dir, orden = {}, []
+    for e in eventos:
+        k = (e.get("red"), e.get("direccion"))
+        if k not in por_dir: por_dir[k] = []; orden.append(k)
+        por_dir[k].append(e)
+    out = []
+    for k in orden:
+        l = por_dir[k]
+        if len(l) <= maximo: out.extend(l); continue
+        ent = sum(x.get("valor_usd") or 0 for x in l if x.get("sentido") == "entrada")
+        sal = sum(x.get("valor_usd") or 0 for x in l if x.get("sentido") == "salida")
+        out.append({**l[0], "tipo_evento": "resumen", "moneda": None, "cantidad": None, "sentido": None,
+                    "hash": None, "hash_url": None, "contraparte": None, "contraparte_etiqueta": None,
+                    "valor_usd": round(ent + sal, 2),
+                    "detalle": f"{len(l)} movimientos en esta corrida: entradas ≈US$ {ent:,.0f}, salidas ≈US$ {sal:,.0f} (detalle en el monitor)"})
+    return out
 
 
 # ------------------------------------------------------------------------------------------------------------ Discord
@@ -707,7 +821,7 @@ def main():
     desc_doc = cargar_descubiertas(); descubiertas = desc_doc.get("direcciones", [])
     ctx = {"px": px, "tokens": Tokens(d_ant.get("tokens_conocidos"), px), "etiquetas": cargar_etiquetas(), "bloques": {}, "contratos_cache": {},
            "logs_por_direccion": {}, "descubiertas": descubiertas, "descubiertas_idx": {krd(d["red"], d["direccion"]): d for d in descubiertas},
-           "descubiertas_nuevas": 0, "vigiladas": {krd(w["red"], w["direccion"]) for w in wallets}, "conocidas": set()}
+           "descubiertas_nuevas": 0, "seguidas_nuevas": 0, "vigiladas": {krd(w["red"], w["direccion"]) for w in wallets}, "conocidas": set()}
     try:
         ctx["conocidas"] = {krd(w["red"], w["direccion"]) for w in json.loads((HERE / "direcciones.json").read_text(encoding="utf-8"))["direcciones"]}
     except Exception: pass
@@ -751,7 +865,8 @@ def main():
         s = fila.get("saldo"); pr = px.get(fila["moneda"], {})
         fila["valor_clp"] = (s or 0) * pr.get("clp", 0) + sum(v * px.get(kk, {}).get("clp", 0) for kk, v in (fila.get("tokens") or {}).items() if kk in px)
         fila["valor_usd"] = (s or 0) * pr.get("usd", 0) + sum(v * px.get(kk, {}).get("usd", 0) for kk, v in (fila.get("tokens") or {}).items() if kk in px)
-        base = {"fecha": ahora, "red": w["red"], "direccion": w["direccion"], "etiqueta": w["etiqueta"], "saldo_antes": (p or {}).get("saldo"), "saldo_despues": s}
+        base = {"fecha": ahora, "red": w["red"], "direccion": w["direccion"], "etiqueta": w["etiqueta"], "tipo": w.get("tipo"),
+                "saldo_antes": (p or {}).get("saldo"), "saldo_despues": s}
         con_hash = fila.pop("eventos", []) or []
         cubiertas = {e["moneda"] for e in con_hash if e.get("tipo_evento") == "transferencia"}
         for e in con_hash: eventos.append({**base, **e, "valor_usd": round(e["valor_usd"], 2) if e.get("valor_usd") is not None else None})
@@ -791,6 +906,7 @@ def main():
         with open(hist, "a", encoding="utf-8") as fh:
             for e in nuevos: fh.write(json.dumps(e, ensure_ascii=False) + "\n")
     todos = previos + nuevos
+    decidir_vigilancia(ctx)
     fuertes = [d for d in descubiertas if d.get("misma_billetera") or d.get("seguir")]
     debiles = [d for d in descubiertas if not (d.get("misma_billetera") or d.get("seguir"))]
     descubiertas = debiles[-(MAX_DESCUBIERTAS - len(fuertes)):] + fuertes if len(descubiertas) > MAX_DESCUBIERTAS else descubiertas
@@ -798,7 +914,10 @@ def main():
         (HERE / "descubiertas.json").write_text(json.dumps({
             "_nota": "Direcciones propuestas por el monitor a partir de movimientos reales: destinos de salidas y, en BTC/LTC, entradas gastadas junto a una vigilada "
                      "(misma billetera) o posibles vueltos. NO están validadas: una persona debe confirmar la liga y, si corresponde, pasarlas a direcciones.json. "
-                     "'seguir': true hace que el monitor consulte su saldo en cada corrida.",
+                     "'seguir': true hace que el monitor consulte su saldo en cada corrida y avise de sus movimientos; se activa sola cuando el "
+                     f"destino recibe US$ {UMBRAL_SEGUIR_USD:,.0f} o más de una dirección del caso, no tiene etiqueta pública de exchange y está a {MAX_SALTOS} "
+                     "saltos o menos ('salto': 1 = destino directo de una dirección de la lista). Vigilar no es afirmar: para publicarla como dirección del "
+                     "caso hay que validar la liga a mano.",
             "actualizado": ahora, "direcciones": descubiertas}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     data = {"version": VERSION, "actualizado": ahora, "precios": px, "precios_antiguos": precios_antiguos, "billeteras": filas, "eventos": todos[-300:][::-1],
             "errores": errores + huecos, "cursores": cursores, "tokens_conocidos": ctx["tokens"].c,
@@ -806,11 +925,17 @@ def main():
             "total_clp": sum(f["valor_clp"] for f in filas if f.get("tipo") != "descubierta"), "total_usd": sum(f["valor_usd"] for f in filas if f.get("tipo") != "descubierta")}
     (HERE / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{ahora}: {len(filas)} billeteras, {len(nuevos)} movimientos nuevos, {len(errores)} errores; total ≈ {data['total_clp']:,.0f} CLP" + (" (precios antiguos)" if precios_antiguos else "")
-          + f"; descubiertas {len(descubiertas)} (+{ctx['descubiertas_nuevas']})")
-    for e in nuevos: print("  MOV", e["red"], e["etiqueta"], e["detalle"])
+          + f"; descubiertas {len(descubiertas)} (+{ctx['descubiertas_nuevas']}), seguidas {len([d for d in descubiertas if d.get('seguir')])} (+{ctx.get('seguidas_nuevas', 0)})")
+    # Los avisos (Telegram en el rock lee estas líneas, y el webhook de Discord) dejan fuera el goteo de las
+    # direcciones descubiertas sin validar: algunas son agregadores con decenas de transferencias por hora y
+    # taparían los movimientos de las billeteras de OrionX. En data.json y en el historial quedan todos.
+    avisables = agrupar_avisos([e for e in nuevos if e.get("tipo") != "descubierta" or (e.get("valor_usd") or 0) >= UMBRAL_AVISO_DESCUBIERTA_USD])
+    for e in avisables: print("  MOV", e["red"], e["etiqueta"], e["detalle"])
+    callados = len(nuevos) - len(avisables)
+    if callados: print(f"  ({callados} movimiento(s) de direcciones descubiertas bajo US$ {UMBRAL_AVISO_DESCUBIERTA_USD:,.0f}: van a data.json, sin aviso)")
     for e in errores + huecos: print("  ERR", e)
     wh = os.environ.get("DISCORD_WEBHOOK")
-    if wh and nuevos: discord(wh, nuevos, data)
+    if wh and avisables: discord(wh, avisables, data)
     if wh and errores and os.environ.get("AVISAR_ERRORES"): post(wh, {"content": "Monitor OrionX: errores de consulta\n" + "\n".join(errores)[:1800]})
 
 

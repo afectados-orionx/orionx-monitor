@@ -1,5 +1,61 @@
 # Changelog
 
+## 2026-09-17: el monitor sigue solo a dónde va el dinero (y deja de confundir billeteras con contratos)
+
+Las 12 alertas del 16-sep dejaron a la vista un hueco: el monitor avisaba de la salida, anotaba el
+destino en `descubiertas.json` con `seguir: false` y ahí se detenía. Si ese destino volvía a mover
+los fondos entre corridas, no había aviso. Tres cambios en `monitor.py`:
+
+**1. Vigilancia automática de destinos.** Un destino queda en `seguir: true` sin esperar validación
+humana cuando recibe **US$ 10.000 o más** (`UMBRAL_SEGUIR_USD`, configurable por entorno) de una
+dirección de tipo `orionx`/`desvio`/`atribuida`/`querella`/`puente`/`descubierta`, **no** tiene
+etiqueta pública de exchange (ahí lo que sirve es oficiar, no vigilar) y está a **dos saltos o
+menos** de la lista (`MAX_SALTOS`; cada registro trae ahora `salto`, `valor_usd_max` y
+`seguir_motivo`). Sigue rigiendo `MAX_SEGUIDAS = 40`. Vigilar no es atribuir: estas direcciones no
+entran a `direcciones.json` sin que una persona valide la liga.
+
+**2. Las EOA con delegación EIP-7702 ya no se descartan como contratos.** `es_contrato()` daba por
+contrato a toda dirección con código, y las billeteras que pagan la comisión de red con el token
+(EIP-7702, código `0xef0100…` + el contrato delegado) tienen código. Por eso quedaron fuera
+justamente los tres destinos más grandes del 16-sep. Ahora `codigo_evm()` cachea el código,
+`delegado_7702()` extrae el contrato delegado y el motivo del registro lo anota.
+
+**3. Frenos contra el ruido, medidos en una corrida real.** Al probarlo, `0x8bc2ab7e…` repartió
+**US$ 2,8 M a once destinos en una sola corrida**: es un agregador que mueve dinero de terceros, no
+una billetera personal. Dos reglas nuevas:
+
+- `MAX_AUTO_POR_ORIGEN = 3`: si un origen reparte a más destinos grandes en una corrida, ninguno de
+  esos destinos se vigila solo; quedan anotados con el reparto en `seguir_motivo` y el origen
+  marcado `agregador: true`, para que los revise una persona.
+- Los **avisos** (líneas `MOV` que lee el rock para Telegram, y el webhook de Discord) dejan fuera
+  el goteo de las descubiertas bajo `UMBRAL_AVISO_DESCUBIERTA_USD` (US$ 50.000) y agrupan en una
+  línea con el neto a la dirección que hizo más de tres movimientos en la corrida. En `data.json`,
+  en `historial.jsonl` y en la web siguen estando todos. Medido sobre la corrida de prueba: **57
+  movimientos → 1 aviso**. `scripts/alertas.py` usa el mismo umbral de US$ 50.000 para las
+  direcciones de tipo `descubierta` (`ALERTA_UMBRAL_DESCUBIERTA_USD`).
+
+La corrida completa pasó de ≈2 min a **4 min 20 s** con 51 direcciones (45 vigiladas + 6
+descubiertas seguidas). El timer del rock corre cada 10 minutos: hay margen, pero conviene mirarlo
+si el cupo de seguidas crece.
+
+**Las seis direcciones que recibieron fondos el 16-sep quedaron en vigilancia** (≈US$ 1,08 M en
+total). Las tres que el filtro dejaba fuera, agregadas a mano con su hash:
+
+| Dirección | Recibió (16-sep) | Desde | Delegado EIP-7702 |
+|---|---|---|---|
+| `0x573f5081…` | 850.000 USDT | `0xad1618f3…` | `0xa34e1e38…` |
+| `0x5b50619e…` | 100.000 USDT | `0xfd56ef36…` | `0xa34e1e38…` |
+| `0x8bc2ab7e…` | 42.000 + 14.742 USDT y 27.309 USDC | `0x55903d69…` | `0x0000fb77…` |
+
+`0x573f5081…` y `0x5b50619e…` comparten el mismo contrato delegado, o sea la misma infraestructura
+de billetera por dos vías; `0x8bc2ab7e…` usa el mismo delegado que `0x55903d69…` (el
+"UniversalGaslessDelegate" ya descrito el 15-sep). Las otras tres, ya anotadas y ahora seguidas:
+`0xa28bd32c…` (28.428 USDC), `0xd4e8d5f8…` (8.090 USDT en dos salidas) y `0x43d891ff…` (5.333 USDT);
+las dos últimas van bajo el umbral, activadas a mano.
+
+Corrección de dato: los destinos que el mensaje del 16-sep describía como "contratos sin nombre" no
+son contratos, son cuentas de persona con gas patrocinado.
+
 ## 2026-09-15 (noche, 2): `0xfd56ef36…` no era liga indirecta, es destino directo de la caliente
 
 Al rastrear el origen de los 200.000 USDT del movimiento de la tarde apareció el hallazgo del día:

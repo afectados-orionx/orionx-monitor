@@ -118,6 +118,12 @@ def num_es(x):
     return s.replace(",", "·").replace(".", ",").replace("·", ".")
 
 
+# Las direcciones que el monitor descubrió solo (tipo "descubierta") todavía no están validadas y
+# algunas son agregadores que mueven dinero de terceros todo el día: avisan solo si el movimiento es
+# grande, para no ahogar las alertas de las billeteras de OrionX.
+UMBRAL_DESCUBIERTA_USD = float(os.environ.get("ALERTA_UMBRAL_DESCUBIERTA_USD", "50000"))
+
+
 def umbral_de(moneda, precios, umbrales):
     """(umbral en unidades, cómo se explica). None = sin umbral aplicable."""
     if moneda in umbrales:
@@ -269,6 +275,11 @@ def detectar(anterior, actual, registros):
             usd_unit = (precios.get(moneda) or {}).get("usd")
             if usd_unit is None and moneda in ("USDT", "USDC"):
                 usd_unit = 1.0
+            if fila.get("tipo") == "descubierta" and usd_unit:
+                minimo = UMBRAL_DESCUBIERTA_USD / usd_unit
+                if umbral is None or umbral < minimo:
+                    umbral = minimo
+                    texto_umbral = f"≈US$ {num_es(UMBRAL_DESCUBIERTA_USD)}, el que rige para las direcciones descubiertas sin validar"
             salida_frio = frio and d < 0
             valor = abs(d) * usd_unit if usd_unit else None
             gas = (moneda == nativo and d > 0 and valor is not None and GAS_MIN_USD <= valor <= GAS_MAX_USD

@@ -1,6 +1,6 @@
 {
- "_nota": "Direcciones propuestas por el monitor a partir de movimientos reales: destinos de salidas y, en BTC/LTC, entradas gastadas junto a una vigilada (misma billetera) o posibles vueltos. NO están validadas: una persona debe confirmar la liga y, si corresponde, pasarlas a direcciones.json. 'seguir': true hace que el monitor consulte su saldo en cada corrida.",
- "actualizado": "2026-09-17 11:18 UTC",
+ "_nota": "Direcciones propuestas por el monitor a partir de movimientos reales: destinos de salidas y, en BTC/LTC, entradas gastadas junto a una vigilada (misma billetera) o posibles vueltos. NO están validadas: una persona debe confirmar la liga y, si corresponde, pasarlas a direcciones.json. 'seguir': true hace que el monitor consulte su saldo en cada corrida y avise de sus movimientos; se activa sola cuando el destino recibe US$ 10.000 o más de una dirección del caso, no tiene etiqueta pública de exchange y está a 2 saltos o menos ('salto': 1 = destino directo de una dirección de la lista). Vigilar no es afirmar: para publicarla como dirección del caso hay que validar la liga a mano.",
+ "actualizado": "2026-09-17 12:00 UTC",
  "direcciones": [
   {
    "red": "ETH",
@@ -12,8 +12,11 @@
    "ultima": "2026-09-16 19:20 UTC",
    "veces": 2,
    "misma_billetera": false,
-   "seguir": false,
-   "explorer": "https://etherscan.io/address/0xd4e8d5f8442418ea23e3f1f20e31382090800901"
+   "seguir": true,
+   "explorer": "https://etherscan.io/address/0xd4e8d5f8442418ea23e3f1f20e31382090800901",
+   "salto": 1,
+   "valor_usd_max": 8084.2,
+   "seguir_motivo": "US$ 8.090 en dos salidas de 0x628e3983… (15 y 16-sep); activada a mano el 17-sep-2026"
   },
   {
    "red": "ETH",
@@ -25,8 +28,11 @@
    "ultima": "2026-09-16 17:19 UTC",
    "veces": 1,
    "misma_billetera": false,
-   "seguir": false,
-   "explorer": "https://etherscan.io/address/0xa28bd32cfd1762e6870396ff79e0faa637b7f8b0"
+   "seguir": true,
+   "explorer": "https://etherscan.io/address/0xa28bd32cfd1762e6870396ff79e0faa637b7f8b0",
+   "salto": 1,
+   "valor_usd_max": 28420.92,
+   "seguir_motivo": "recibió US$ 28.421 de 0xad1618f3… el 16-sep-2026"
   },
   {
    "red": "ETH",
@@ -38,8 +44,59 @@
    "ultima": "2026-09-16 17:19 UTC",
    "veces": 1,
    "misma_billetera": false,
-   "seguir": false,
-   "explorer": "https://etherscan.io/address/0x43d891ffb4f244fefa793608413ea6832a09a45d"
+   "seguir": true,
+   "explorer": "https://etherscan.io/address/0x43d891ffb4f244fefa793608413ea6832a09a45d",
+   "salto": 1,
+   "valor_usd_max": 5330.28,
+   "seguir_motivo": "US$ 5.330 de 0xad1618f3… el 16-sep-2026; activada a mano el 17-sep-2026"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x573f50810334b73fea7c5ec7a1470a101a2754e3",
+   "origen": "0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3",
+   "motivo": "destino de una salida (EOA con delegación EIP-7702 a 0xa34e1e…a8f5c3)",
+   "hash": "0x8a7243c67e348cdb1bdcfea6c8ad446684f1dbcbf1b420f805336aedfa925449",
+   "desde": "2026-09-16 16:19 UTC",
+   "ultima": "2026-09-16 16:19 UTC",
+   "veces": 1,
+   "salto": 1,
+   "valor_usd_max": 849572.5,
+   "misma_billetera": false,
+   "seguir": true,
+   "seguir_motivo": "recibió 850.000 USDT de una dirección vigilada el 16-sep-2026; agregada a mano el 17-sep-2026 al corregir el filtro que tomaba por contrato a las cuentas con delegación EIP-7702",
+   "explorer": "https://etherscan.io/address/0x573f50810334b73fea7c5ec7a1470a101a2754e3"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x5b50619eae577b64ab953958af0a1b1d5bfd664d",
+   "origen": "0xfd56ef367c8a76bc70a9f98f47986c3879752e5a",
+   "motivo": "destino de una salida (EOA con delegación EIP-7702 a 0xa34e1e…a8f5c3)",
+   "hash": "0xfbd7d825448d64dbe87f75630ce2d2bfa4745d62dfa58feaa96ff92c4152fbc5",
+   "desde": "2026-09-16 15:19 UTC",
+   "ultima": "2026-09-16 15:19 UTC",
+   "veces": 1,
+   "salto": 1,
+   "valor_usd_max": 99950.0,
+   "misma_billetera": false,
+   "seguir": true,
+   "seguir_motivo": "recibió 100.000 USDT de una dirección vigilada el 16-sep-2026; agregada a mano el 17-sep-2026 al corregir el filtro que tomaba por contrato a las cuentas con delegación EIP-7702",
+   "explorer": "https://etherscan.io/address/0x5b50619eae577b64ab953958af0a1b1d5bfd664d"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x8bc2ab7e073a4141df6129c1992951fe46041731",
+   "origen": "0x55903d69ad9b048ccb20098bed207b1e6369821e",
+   "motivo": "destino de una salida (EOA con delegación EIP-7702 a 0x0000fb…bab16b)",
+   "hash": "0x0ae92d7c64e3b137fa241ea75fbf282c2c82f97f495871d3ccc37068c17d2c19",
+   "desde": "2026-09-16 11:19 UTC",
+   "ultima": "2026-09-16 11:19 UTC",
+   "veces": 1,
+   "salto": 1,
+   "valor_usd_max": 84003.85,
+   "misma_billetera": false,
+   "seguir": true,
+   "seguir_motivo": "recibió 42.000 + 14.742 USDT y 27.309 USDC en tres salidas de una dirección vigilada el 16-sep-2026; agregada a mano el 17-sep-2026 al corregir el filtro que tomaba por contrato a las cuentas con delegación EIP-7702",
+   "explorer": "https://etherscan.io/address/0x8bc2ab7e073a4141df6129c1992951fe46041731"
   }
  ]
 }

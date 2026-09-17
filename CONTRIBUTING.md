@@ -89,8 +89,19 @@ un PR salvo los campos `seguir` y `motivo`). Cada registro dice de dónde salió
   fuerte que existe fuera de una confesión; el monitor la sigue (`seguir: true`)
   y aparece en la tabla como "Descubierta".
 - `misma_billetera: false` → fue destino de una salida. Puede ser un cliente, un
-  exchange o cualquiera: **no** se sigue por defecto y no debe promoverse sin
-  más prueba.
+  exchange o cualquiera: no debe promoverse sin más prueba.
+
+Desde el 17-sep-2026 un destino **se empieza a vigilar solo** (`seguir: true`,
+con el porqué en `seguir_motivo`) cuando recibe **US$ 10.000 o más**
+(`UMBRAL_SEGUIR_USD`) de una dirección del caso, no tiene etiqueta pública de
+exchange y está a **dos saltos o menos** (`salto: 1` = destino directo de una
+dirección de la lista; `MAX_SALTOS`). Vigilar es solo consultar su saldo y
+avisar si mueve: **no** es afirmar que sea del caso, y no la mete en
+`direcciones.json`. El tope sigue siendo `MAX_SEGUIDAS`.
+
+Una EOA con **delegación EIP-7702** (código `0xef0100…`: billetera que paga la
+comisión de red con el token) tiene código pero no es un contrato, y se descubre
+como cualquier otra cuenta. El campo `motivo` anota a qué contrato delega.
 
 Para pasar una descubierta a `direcciones.json`: crear el registro normal (ver
 arriba) citando el `hash` que trae `descubiertas.json` como evidencia, y con el
