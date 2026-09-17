@@ -1,6 +1,6 @@
 {
  "_nota": "Direcciones propuestas por el monitor a partir de movimientos reales: destinos de salidas y, en BTC/LTC, entradas gastadas junto a una vigilada (misma billetera) o posibles vueltos. NO están validadas: una persona debe confirmar la liga y, si corresponde, pasarlas a direcciones.json. 'seguir': true hace que el monitor consulte su saldo en cada corrida y avise de sus movimientos; se activa sola cuando el destino recibe US$ 10,000 o más de una dirección del caso, no tiene etiqueta pública de exchange y está a 2 saltos o menos ('salto': 1 = destino directo de una dirección de la lista). Vigilar no es afirmar: para publicarla como dirección del caso hay que validar la liga a mano.",
- "actualizado": "2026-09-17 17:16 UTC",
+ "actualizado": "2026-09-17 18:22 UTC",
  "direcciones": [
   {
    "red": "ETH",
@@ -278,14 +278,14 @@
    "motivo": "destino de una salida",
    "hash": "0x1e1a1cea06de79ae59b9c5f126e5aeb203d25ebbbf7b9fa2042f3b97bd75df5d",
    "desde": "2026-09-17 15:22 UTC",
-   "ultima": "2026-09-17 15:22 UTC",
-   "veces": 2,
+   "ultima": "2026-09-17 18:26 UTC",
+   "veces": 3,
    "salto": 2,
    "valor_usd_max": 799667.2,
    "misma_billetera": false,
-   "seguir": false,
+   "seguir": true,
    "explorer": "https://etherscan.io/address/0xd4a0669d471509aa0c155aa001d97679970f8810",
-   "seguir_motivo": "NO se vigila sola: el origen 0x8bc2ab7e…041731 repartió a 4 destinos grandes en una sola corrida (se comporta como agregador de terceros). Revisar a mano. Reparto: 0xd4a0669d…0f8810 US$ 799,667, 0xd4a0669d…0f8810 US$ 549,541, 0xe6132f98…12000c US$ 217,349, 0x4d79d1b3…98dab3 US$ 33,402"
+   "seguir_motivo": "recibió US$ 699,464 de 0x8bc2ab7e…041731, una dirección vigilada (2026-09-17 18:26 UTC)"
   },
   {
    "red": "ETH",
@@ -440,6 +440,21 @@
    "seguir": true,
    "explorer": "https://etherscan.io/address/0x893901e411860c2696ffeaecab5e2da9b8d5dc85",
    "seguir_motivo": "recibió US$ 27,713 de 0x8bc2ab7e…041731, una dirección vigilada (2026-09-17 17:19 UTC)"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0xc8918fdeade5c14b7b51181f1895306f8c0f3f36",
+   "origen": "0xd4e8d5f8442418ea23e3f1f20e31382090800901",
+   "motivo": "destino de una salida",
+   "hash": "0x74fbf30280d8091dbfa2ae819a4b0d74d87edf25fa1aff12f9633c24c5b9cda3",
+   "desde": "2026-09-17 18:26 UTC",
+   "ultima": "2026-09-17 18:26 UTC",
+   "veces": 1,
+   "salto": 2,
+   "valor_usd_max": 5389.53,
+   "misma_billetera": false,
+   "seguir": false,
+   "explorer": "https://etherscan.io/address/0xc8918fdeade5c14b7b51181f1895306f8c0f3f36"
   }
  ]
 }
