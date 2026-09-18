@@ -1,6 +1,6 @@
 {
  "_nota": "Direcciones propuestas por el monitor a partir de movimientos reales: destinos de salidas y, en BTC/LTC, entradas gastadas junto a una vigilada (misma billetera) o posibles vueltos. NO están validadas: una persona debe confirmar la liga y, si corresponde, pasarlas a direcciones.json. 'seguir': true hace que el monitor consulte su saldo en cada corrida y avise de sus movimientos; se activa sola cuando el destino recibe US$ 10,000 o más de una dirección del caso, no tiene etiqueta pública de exchange y está a 2 saltos o menos ('salto': 1 = destino directo de una dirección de la lista). Vigilar no es afirmar: para publicarla como dirección del caso hay que validar la liga a mano.",
- "actualizado": "2026-09-18 13:18 UTC",
+ "actualizado": "2026-09-18 14:19 UTC",
  "direcciones": [
   {
    "red": "ETH",
@@ -311,8 +311,8 @@
    "motivo": "destino de una salida (EOA con delegación EIP-7702 a 0x0000fb77…bab16b)",
    "hash": "0x6ae30f93c18e3feab4a6178a6bb34eb5c0204649629f15a01f76f702af6871b9",
    "desde": "2026-09-17 15:22 UTC",
-   "ultima": "2026-09-18 10:20 UTC",
-   "veces": 2,
+   "ultima": "2026-09-18 14:20 UTC",
+   "veces": 3,
    "salto": 2,
    "valor_usd_max": 217349.12,
    "misma_billetera": false,
@@ -788,6 +788,81 @@
    "misma_billetera": false,
    "seguir": false,
    "explorer": "https://etherscan.io/address/0x2f52660090e967ef56a466fdfdb812d3b55420a3"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x94481c93c72ed2f9100ab2d403a03aa95128e56c",
+   "origen": "0xd4e8d5f8442418ea23e3f1f20e31382090800901",
+   "motivo": "destino de una salida",
+   "hash": "0xb9d9d45ce7edf37332718adbc875d823ca558df793f3793a4e3a715cc39b10ae",
+   "desde": "2026-09-18 14:19 UTC",
+   "ultima": "2026-09-18 14:19 UTC",
+   "veces": 2,
+   "salto": 2,
+   "valor_usd_max": 50.14,
+   "misma_billetera": false,
+   "seguir": false,
+   "explorer": "https://etherscan.io/address/0x94481c93c72ed2f9100ab2d403a03aa95128e56c"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x88633d35a6b4247c7433e330d6d012a2b883fc2d",
+   "origen": "0xd4e8d5f8442418ea23e3f1f20e31382090800901",
+   "motivo": "destino de una salida",
+   "hash": "0x263eb2981434a19f53ee212c61955203e0ac240ecae6f7a67e90215f5c06fb12",
+   "desde": "2026-09-18 14:19 UTC",
+   "ultima": "2026-09-18 14:19 UTC",
+   "veces": 1,
+   "salto": 2,
+   "valor_usd_max": 8419.18,
+   "misma_billetera": false,
+   "seguir": false,
+   "explorer": "https://etherscan.io/address/0x88633d35a6b4247c7433e330d6d012a2b883fc2d"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x291b5514c8d73a3f4c75ebd6b8396a423739f0e5",
+   "origen": "0xd4e8d5f8442418ea23e3f1f20e31382090800901",
+   "motivo": "destino de una salida",
+   "hash": "0x58682b0c1fcd835634c05ab52c708258ae71ada5f9339f21304c00b46d6d1ee8",
+   "desde": "2026-09-18 14:19 UTC",
+   "ultima": "2026-09-18 14:19 UTC",
+   "veces": 1,
+   "salto": 2,
+   "valor_usd_max": 7.99,
+   "misma_billetera": false,
+   "seguir": false,
+   "explorer": "https://etherscan.io/address/0x291b5514c8d73a3f4c75ebd6b8396a423739f0e5"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0xb8ae97ac58b8072c2d0b99439cba9502998a08b3",
+   "origen": "0x8bc2ab7e073a4141df6129c1992951fe46041731",
+   "motivo": "destino de una salida (EOA con delegación EIP-7702 a 0x0000fb77…bab16b)",
+   "hash": "0xb1cb3a3fdc28b4820b82b8dc6a469d5531e16c6c219fd1c672858854635ac03e",
+   "desde": "2026-09-18 14:20 UTC",
+   "ultima": "2026-09-18 14:20 UTC",
+   "veces": 1,
+   "salto": 2,
+   "valor_usd_max": 9106.13,
+   "misma_billetera": false,
+   "seguir": false,
+   "explorer": "https://etherscan.io/address/0xb8ae97ac58b8072c2d0b99439cba9502998a08b3"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0xca98a05a0c7302d0c9acad61ba75ea8cfe4ea855",
+   "origen": "0xd4a0669d471509aa0c155aa001d97679970f8810",
+   "motivo": "destino de una salida",
+   "hash": "0x79cb3d1a0fb61826de4cb627fc2f662fad22b46d4683d32e8c82a04e1f79bde7",
+   "desde": "2026-09-18 14:21 UTC",
+   "ultima": "2026-09-18 14:21 UTC",
+   "veces": 1,
+   "salto": 3,
+   "valor_usd_max": 4319.14,
+   "misma_billetera": false,
+   "seguir": false,
+   "explorer": "https://etherscan.io/address/0xca98a05a0c7302d0c9acad61ba75ea8cfe4ea855"
   }
  ]
 }
