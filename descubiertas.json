@@ -1,6 +1,6 @@
 {
  "_nota": "Direcciones propuestas por el monitor a partir de movimientos reales: destinos de salidas y, en BTC/LTC, entradas gastadas junto a una vigilada (misma billetera) o posibles vueltos. NO están validadas: una persona debe confirmar la liga y, si corresponde, pasarlas a direcciones.json. 'seguir': true hace que el monitor consulte su saldo en cada corrida y avise de sus movimientos; se activa sola cuando el destino recibe US$ 10,000 o más de una dirección del caso, no tiene etiqueta pública de exchange y está a 2 saltos o menos ('salto': 1 = destino directo de una dirección de la lista). Vigilar no es afirmar: para publicarla como dirección del caso hay que validar la liga a mano.",
- "actualizado": "2026-09-18 06:24 UTC",
+ "actualizado": "2026-09-18 07:19 UTC",
  "direcciones": [
   {
    "red": "ETH",
@@ -590,6 +590,22 @@
    "misma_billetera": false,
    "seguir": false,
    "explorer": "https://etherscan.io/address/0x52d70eaaa289436eeccc560aac21ad8490898b92"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x5c7b11aa109cb3ef1fb70ff80f187379a543c04d",
+   "origen": "0x8bc2ab7e073a4141df6129c1992951fe46041731",
+   "motivo": "destino de una salida",
+   "hash": "0x21834bc6f3449343cfea46b6d02d61c3214e12941c5e8f8642957e8a954c00af",
+   "desde": "2026-09-18 07:20 UTC",
+   "ultima": "2026-09-18 07:20 UTC",
+   "veces": 1,
+   "salto": 2,
+   "valor_usd_max": 92381.45,
+   "misma_billetera": false,
+   "seguir": true,
+   "explorer": "https://etherscan.io/address/0x5c7b11aa109cb3ef1fb70ff80f187379a543c04d",
+   "seguir_motivo": "recibió US$ 92,381 de 0x8bc2ab7e…041731, una dirección vigilada (2026-09-18 07:21 UTC)"
   }
  ]
 }
