@@ -1,6 +1,6 @@
 {
  "_nota": "Direcciones propuestas por el monitor a partir de movimientos reales: destinos de salidas y, en BTC/LTC, entradas gastadas junto a una vigilada (misma billetera) o posibles vueltos. NO están validadas: una persona debe confirmar la liga y, si corresponde, pasarlas a direcciones.json. 'seguir': true hace que el monitor consulte su saldo en cada corrida y avise de sus movimientos; se activa sola cuando el destino recibe US$ 10,000 o más de una dirección del caso, no tiene etiqueta pública de exchange y está a 2 saltos o menos ('salto': 1 = destino directo de una dirección de la lista). Vigilar no es afirmar: para publicarla como dirección del caso hay que validar la liga a mano.",
- "actualizado": "2026-09-19 01:16 UTC",
+ "actualizado": "2026-09-19 02:18 UTC",
  "direcciones": [
   {
    "red": "ETH",
@@ -1123,6 +1123,36 @@
    "misma_billetera": false,
    "seguir": false,
    "explorer": "https://etherscan.io/address/0x257f38ee08282c4c94955d67a6d6ef8b4ff46bf4"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x7bdc98fc855db2a07a62632eea49a69f9442809a",
+   "origen": "0xd4e8d5f8442418ea23e3f1f20e31382090800901",
+   "motivo": "destino de una salida",
+   "hash": "0x847924582a7212de1342cb1c0078dba3a932486240de677a3ba0070881dbbd53",
+   "desde": "2026-09-19 02:19 UTC",
+   "ultima": "2026-09-19 02:19 UTC",
+   "veces": 1,
+   "salto": 2,
+   "valor_usd_max": 262.68,
+   "misma_billetera": false,
+   "seguir": false,
+   "explorer": "https://etherscan.io/address/0x7bdc98fc855db2a07a62632eea49a69f9442809a"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0xd616185ad496b95baca500dcef6e32dcdbbaecd0",
+   "origen": "0xd4e8d5f8442418ea23e3f1f20e31382090800901",
+   "motivo": "destino de una salida",
+   "hash": "0xa9a60df405cfa6ac8a075afbcad660636ddb78040dc3ae835026885192af6ef6",
+   "desde": "2026-09-19 02:19 UTC",
+   "ultima": "2026-09-19 02:19 UTC",
+   "veces": 1,
+   "salto": 2,
+   "valor_usd_max": 167.94,
+   "misma_billetera": false,
+   "seguir": false,
+   "explorer": "https://etherscan.io/address/0xd616185ad496b95baca500dcef6e32dcdbbaecd0"
   }
  ]
 }
