@@ -98,6 +98,12 @@ MAX_AUTO_POR_ORIGEN = 3         # si una dirección reparte a más destinos gran
                                 # agregador (mueve dinero de terceros): sus destinos se anotan pero no se vigilan solos
 UMBRAL_AVISO_DESCUBIERTA_USD = float(os.environ.get("UMBRAL_AVISO_DESCUBIERTA_USD", "50000"))   # avisos de descubiertas
 TIPOS_SEGUIR = ("orionx", "desvio", "atribuida", "querella", "puente", "descubierta")
+# Presupuesto total de consultas. El 20-sep-2026 una corrida en GitHub Actions quedó 3 h 20 min pidiendo datos a
+# nodos que no respondían (reintentos de 40 s): bloqueó las corridas siguientes y la web quedó 3 h sin actualizar.
+# Agotado el presupuesto, get() deja de intentar: cada dirección pendiente conserva su valor anterior y queda
+# anotada en "errores", que es justo lo que ya pasa cuando una fuente falla.
+LIMITE_MINUTOS = float(os.environ.get("LIMITE_MINUTOS", "15"))
+T0 = time.monotonic()
 PREFIJO_7702 = "0xef0100"       # EIP-7702: EOA con código delegado (billetera con gas patrocinado), no es contrato
 PUBLICAS = set()                # claves (red, direccion) con etiqueta pública (exchange, puente, mezclador)
 ES_EVM = lambda red: red in RPC   # noqa: E731
@@ -114,6 +120,8 @@ def corto_hash(h): return h[:10] + "…" if h and len(h) > 14 else (h or "")
 def get(url, data=None, tries=3, timeout=40):
     err = None
     for i in range(tries):
+        if time.monotonic() - T0 > LIMITE_MINUTOS * 60:
+            raise RuntimeError(f"{url[:60]}: corrida cortada a los {LIMITE_MINUTOS:g} min (LIMITE_MINUTOS)")
         try:
             req = urllib.request.Request(url, data=json.dumps(data).encode() if data else None, headers={**UA, "content-type": "application/json"})
             with urllib.request.urlopen(req, timeout=timeout) as r: return json.load(r)

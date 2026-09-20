@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-09-20: una corrida colgada dejó la web 3 h sin actualizar
+
+La corrida de las 08:19 UTC quedó **3 h 20 min** pidiendo datos a fuentes que no respondían desde
+el runner de GitHub (13 direcciones BTC con `Network is unreachable` hacia mempool.space y un 429
+de Tronscan; cada petición reintenta tres veces con 40 s de espera). Como `concurrency: monitor`
+serializa las corridas, las de 09:17 y 10:17 quedaron en cola y se cancelaron, y la de 11:17
+arrancó junto con el final de la lenta: las dos partían del mismo commit, el `git pull --rebase`
+chocó (`CONFLICT` en `data.json`, `historial.jsonl` y `descubiertas.json`) y esa corrida murió sin
+publicar. Resultado: `data.json` en Pages con marca de las 08:19 hasta pasadas las 12:00 UTC.
+La vigilancia no se interrumpió: el rock siguió consultando cada 10 min sin errores.
+
+Tres cambios para que no se repita:
+
+- **Presupuesto de tiempo en `monitor.py`** (`LIMITE_MINUTOS`, por defecto 15). Agotado, `get()`
+  deja de intentar: las direcciones pendientes conservan el valor de la corrida anterior y quedan
+  listadas en `errores`, igual que cuando una fuente falla. Mejor una foto parcial y puntual que
+  una completa tres horas tarde.
+- **`timeout-minutes: 22` en el workflow.** Ninguna corrida puede volver a bloquear la cola.
+- **`scripts/publicar.sh`** reemplaza al `git pull --rebase` del workflow. Si el remoto avanzó,
+  rehace el commit sobre `origin/main`: en `data.json`, `alertas.json` y `descubiertas.json` (fotos
+  completas) gana lo recién generado, y `historial.jsonl` (registro que solo crece) conserva las
+  líneas de ambas corridas sin repetir. Hasta tres intentos.
+
 ## 2026-09-17: el monitor sigue solo a dónde va el dinero (y deja de confundir billeteras con contratos)
 
 Las 12 alertas del 16-sep dejaron a la vista un hueco: el monitor avisaba de la salida, anotaba el
