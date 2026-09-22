@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-09-22 21:19 UTC",
+ "actualizado": "2026-09-22 22:21 UTC",
  "umbrales": {
   "unidades": {
    "BTC": 0.01,
@@ -18,6 +18,50 @@
   "nota": "Salidas desde almacenamiento en frío (desvío o atribuida), aprobaciones, cambios de permisos, congelamientos y fondeos de gas se avisan sin umbral."
  },
  "alertas": [
+  {
+   "fecha": "2026-09-22 22:18 UTC",
+   "clase": "gas",
+   "red": "ETH",
+   "direccion": "0xd4e8d5f8442418ea23e3f1f20e31382090800901",
+   "abreviada": "0xd4e8d5f8…800901",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "rol": null,
+   "moneda": "ETH",
+   "delta": 0.007908,
+   "saldo_antes": 29.04579878138908,
+   "saldo_despues": 29.05370678138908,
+   "valor_usd": 21.67,
+   "motivo": "entrada pequeña de ETH en una dirección que guarda tokens por ≈US$ 211,221: es el gas que hace falta para moverlos (posible preparación de un retiro)",
+   "frio": false,
+   "explorador": "https://etherscan.io/address/0xd4e8d5f8442418ea23e3f1f20e31382090800901",
+   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
+   "transacciones": [],
+   "titulo": "Fondeo de gas: ETH 0xd4e8d5f8…800901 +0.00790800 ETH 2026-09-22 22:18 UTC",
+   "cuerpo": "**Descubierta: destino de una salida** (tipo `descubierta`).\n\n- Red: **ETH**\n- Dirección: `0xd4e8d5f8442418ea23e3f1f20e31382090800901`\n- Cambio: **+0.00790800 ETH** (≈US$ 21.67)\n- Saldo antes: 29.04579878 ETH\n- Saldo después: 29.05370678 ETH\n- Detectado: 2026-09-22 22:18 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: entrada pequeña de ETH en una dirección que guarda tokens por ≈US$ 211,221: es el gas que hace falta para moverlos (posible preparación de un retiro)\n- Explorador: https://etherscan.io/address/0xd4e8d5f8442418ea23e3f1f20e31382090800901\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades."
+  },
+  {
+   "fecha": "2026-09-22 22:18 UTC",
+   "clase": "gas",
+   "red": "ETH",
+   "direccion": "0xd4a0669d471509aa0c155aa001d97679970f8810",
+   "abreviada": "0xd4a0669d…0f8810",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "rol": null,
+   "moneda": "ETH",
+   "delta": 0.0149,
+   "saldo_antes": 40.75167058085631,
+   "saldo_despues": 40.76657058085632,
+   "valor_usd": 40.83,
+   "motivo": "entrada pequeña de ETH en una dirección que guarda tokens por ≈US$ 206,761: es el gas que hace falta para moverlos (posible preparación de un retiro)",
+   "frio": false,
+   "explorador": "https://etherscan.io/address/0xd4a0669d471509aa0c155aa001d97679970f8810",
+   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
+   "transacciones": [],
+   "titulo": "Fondeo de gas: ETH 0xd4a0669d…0f8810 +0.01490000 ETH 2026-09-22 22:18 UTC",
+   "cuerpo": "**Descubierta: destino de una salida** (tipo `descubierta`).\n\n- Red: **ETH**\n- Dirección: `0xd4a0669d471509aa0c155aa001d97679970f8810`\n- Cambio: **+0.01490000 ETH** (≈US$ 40.83)\n- Saldo antes: 40.75167058 ETH\n- Saldo después: 40.76657058 ETH\n- Detectado: 2026-09-22 22:18 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: entrada pequeña de ETH en una dirección que guarda tokens por ≈US$ 206,761: es el gas que hace falta para moverlos (posible preparación de un retiro)\n- Explorador: https://etherscan.io/address/0xd4a0669d471509aa0c155aa001d97679970f8810\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades."
+  },
   {
    "fecha": "2026-09-22 21:17 UTC",
    "clase": "gas",
@@ -1796,50 +1840,6 @@
    "transacciones": [],
    "titulo": "Fondeo de gas: ETH 0xd4a0669d…0f8810 +0.00280000 ETH 2026-09-22 00:25 UTC",
    "cuerpo": "**Descubierta: destino de una salida** (tipo `descubierta`).\n\n- Red: **ETH**\n- Dirección: `0xd4a0669d471509aa0c155aa001d97679970f8810`\n- Cambio: **+0.00280000 ETH** (≈US$ 7.76)\n- Saldo antes: 67.86600582 ETH\n- Saldo después: 67.86880582 ETH\n- Detectado: 2026-09-22 00:25 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: entrada pequeña de ETH en una dirección que guarda tokens por ≈US$ 1,243,503: es el gas que hace falta para moverlos (posible preparación de un retiro)\n- Explorador: https://etherscan.io/address/0xd4a0669d471509aa0c155aa001d97679970f8810\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades."
-  },
-  {
-   "fecha": "2026-09-21 22:18 UTC",
-   "clase": "gas",
-   "red": "ETH",
-   "direccion": "0xd4e8d5f8442418ea23e3f1f20e31382090800901",
-   "abreviada": "0xd4e8d5f8…800901",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "rol": null,
-   "moneda": "ETH",
-   "delta": 0.13384669,
-   "saldo_antes": 27.84023749231777,
-   "saldo_despues": 27.974084183303223,
-   "valor_usd": 372.08,
-   "motivo": "entrada pequeña de ETH en una dirección que guarda tokens por ≈US$ 226,672: es el gas que hace falta para moverlos (posible preparación de un retiro)",
-   "frio": false,
-   "explorador": "https://etherscan.io/address/0xd4e8d5f8442418ea23e3f1f20e31382090800901",
-   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
-   "transacciones": [],
-   "titulo": "Fondeo de gas: ETH 0xd4e8d5f8…800901 +0.13384669 ETH 2026-09-21 22:18 UTC",
-   "cuerpo": "**Descubierta: destino de una salida** (tipo `descubierta`).\n\n- Red: **ETH**\n- Dirección: `0xd4e8d5f8442418ea23e3f1f20e31382090800901`\n- Cambio: **+0.13384669 ETH** (≈US$ 372.08)\n- Saldo antes: 27.84023749 ETH\n- Saldo después: 27.97408418 ETH\n- Detectado: 2026-09-21 22:18 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: entrada pequeña de ETH en una dirección que guarda tokens por ≈US$ 226,672: es el gas que hace falta para moverlos (posible preparación de un retiro)\n- Explorador: https://etherscan.io/address/0xd4e8d5f8442418ea23e3f1f20e31382090800901\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades."
-  },
-  {
-   "fecha": "2026-09-21 21:18 UTC",
-   "clase": "saldo",
-   "red": "ETH",
-   "direccion": "0x8bc2ab7e073a4141df6129c1992951fe46041731",
-   "abreviada": "0x8bc2ab7e…041731",
-   "etiqueta": "Descubierta: destino de una salida (EOA con delegación EIP-7702 a 0x0000fb…bab16b)",
-   "tipo": "descubierta",
-   "rol": null,
-   "moneda": "USDC",
-   "delta": 62953.78362,
-   "saldo_antes": 374960.733233,
-   "saldo_despues": 437914.516853,
-   "valor_usd": 62945.98,
-   "motivo": "el cambio supera el umbral de aviso de la red (≈US$ 50.000, el que rige para las direcciones descubiertas sin validar)",
-   "frio": false,
-   "explorador": "https://etherscan.io/address/0x8bc2ab7e073a4141df6129c1992951fe46041731",
-   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
-   "transacciones": [],
-   "titulo": "Movimiento: ETH 0x8bc2ab7e…041731 +62,953.78362000 USDC 2026-09-21 21:18 UTC",
-   "cuerpo": "**Descubierta: destino de una salida (EOA con delegación EIP-7702 a 0x0000fb…bab16b)** (tipo `descubierta`).\n\n- Red: **ETH**\n- Dirección: `0x8bc2ab7e073a4141df6129c1992951fe46041731`\n- Cambio: **+62,953.78362000 USDC** (≈US$ 62,945.98)\n- Saldo antes: 374,960.73323300 USDC\n- Saldo después: 437,914.51685300 USDC\n- Detectado: 2026-09-21 21:18 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: el cambio supera el umbral de aviso de la red (≈US$ 50.000, el que rige para las direcciones descubiertas sin validar)\n- Explorador: https://etherscan.io/address/0x8bc2ab7e073a4141df6129c1992951fe46041731\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades."
   }
  ]
 }
