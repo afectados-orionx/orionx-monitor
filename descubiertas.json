@@ -1,6 +1,6 @@
 {
  "_nota": "Direcciones propuestas por el monitor a partir de movimientos reales: destinos de salidas y, en BTC/LTC, entradas gastadas junto a una vigilada (misma billetera) o posibles vueltos. NO están validadas: una persona debe confirmar la liga y, si corresponde, pasarlas a direcciones.json. 'seguir': true hace que el monitor consulte su saldo en cada corrida y avise de sus movimientos; se activa sola cuando el destino recibe US$ 10,000 o más de una dirección del caso, no tiene etiqueta pública de exchange y está a 2 saltos o menos ('salto': 1 = destino directo de una dirección de la lista). Vigilar no es afirmar: para publicarla como dirección del caso hay que validar la liga a mano.",
- "actualizado": "2026-09-22 14:19 UTC",
+ "actualizado": "2026-09-22 15:19 UTC",
  "direcciones": [
   {
    "red": "ETH",
@@ -1703,8 +1703,8 @@
    "motivo": "destino de una salida",
    "hash": "0xe73400e387130dc9a8a6cf54c505d807e3b06a23c3c137f053712c2a18ac5c7b",
    "desde": "2026-09-21 17:17 UTC",
-   "ultima": "2026-09-21 17:17 UTC",
-   "veces": 1,
+   "ultima": "2026-09-22 15:22 UTC",
+   "veces": 2,
    "salto": 2,
    "valor_usd_max": 999955.0,
    "misma_billetera": false,
@@ -1923,6 +1923,22 @@
    "seguir": true,
    "explorer": "https://etherscan.io/address/0xb0dff46e70c9c8bd5eb92cc3cde3bc53c2570cdc",
    "seguir_motivo": "recibió US$ 625,094 de 0x8bc2ab7e…041731, una dirección vigilada (2026-09-22 14:23 UTC)"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0x84c48e92c04791f2a1f01588cb4dc6997700d6ff",
+   "origen": "0x8bc2ab7e073a4141df6129c1992951fe46041731",
+   "motivo": "destino de una salida",
+   "hash": "0x961b946ca3a774e516d63ca0565499e01abeca33207ce11bd276419fbb099c35",
+   "desde": "2026-09-22 15:22 UTC",
+   "ultima": "2026-09-22 15:22 UTC",
+   "veces": 1,
+   "salto": 2,
+   "valor_usd_max": 704932.32,
+   "misma_billetera": false,
+   "seguir": true,
+   "explorer": "https://etherscan.io/address/0x84c48e92c04791f2a1f01588cb4dc6997700d6ff",
+   "seguir_motivo": "recibió US$ 704,932 de 0x8bc2ab7e…041731, una dirección vigilada (2026-09-22 15:23 UTC)"
   }
  ]
 }
