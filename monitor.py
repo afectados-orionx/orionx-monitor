@@ -809,11 +809,133 @@ def agrupar_avisos(eventos, maximo=3):
 
 
 # ------------------------------------------------------------------------------------------------------------ Discord
+# El canal #trazabilidadcuentas lo leen afectados sin formación técnica. Desde el 22-sep-2026 el webhook avisa al
+# instante solo lo que les importa (una billetera de OrionX o de la querella se movió, o un emisor congeló fondos) y el
+# resto (racimo OTC y direcciones descubiertas, decenas de movimientos al día) va en un resumen diario en palabras simples.
+# DISCORD_MODO=detalle vuelve al aviso por corrida con todo el detalle técnico.
+DISCORD_MODO = os.environ.get("DISCORD_MODO", "resumen")
+RESUMEN_HORA_CHILE = int(os.environ.get("RESUMEN_HORA_CHILE", "20"))   # hora local a partir de la cual se manda el resumen
+TIPOS_URGENTES = {"orionx", "querella"}
+# Entidades identificadas a mano aguas abajo (no están en etiquetas_publicas.json porque no son etiquetas de un explorador).
+ENTIDADES = {"ETH": {
+    "0x6d89f703dfa9c505f70a3718911ccd7710e5a585": "Circle (contrato de depósito)",   # contrato verificado CircleDeposit; owner 0x55fe002a… = "Circle"
+    "0x81ce974ee54b0d3d84eae6e2278fee0a5734c5b8": "Gate.io (depósito)"}}   # reenvía todo a la caliente 0x0d0707…492fe ("Gate.io")
+NOMBRE_SENCILLO = {"orionx": "billetera de OrionX", "querella": "billetera citada en la querella", "desvio": "destino de fondos de OrionX (desvío)",
+                   "atribuida": "destino de fondos de OrionX (atribuida)", "puente": "puente", "descubierta": "dirección descubierta (sin validar)"}
+
+
+def hora_chile():
+    try:
+        from zoneinfo import ZoneInfo
+        return dt.datetime.now(ZoneInfo("America/Santiago"))
+    except Exception:
+        return dt.datetime.now(dt.timezone(dt.timedelta(hours=-3)))
+
+
+def es_urgente(e):
+    return e.get("tipo") in TIPOS_URGENTES or e.get("tipo_evento") == "congelamiento"
+
+
+def entidad(red, a):
+    """Nombre de una contraparte conocida (exchange, emisor), o None si no tiene nombre público."""
+    if not a: return None
+    a = a.lower()
+    if a in ENTIDADES.get(red, {}): return ENTIDADES[red][a]
+    if krd(red, a) in PUBLICAS:
+        n = (ETIQUETAS_CACHE.get(krd(red, a)) or "").replace(" (etiqueta pública)", "")
+        return n or None
+    return None
+
+
+ETIQUETAS_CACHE = {}
+
+
+def num(v, dec=2):
+    return f"{v:,.{dec}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
+
+def usd(v):
+    v = v or 0
+    if v >= 1e6: return f"US$ {v / 1e6:,.1f} M".replace(",", "X").replace(".", ",").replace("X", ".")
+    return f"US$ {v:,.0f}".replace(",", ".")
+
+
+def aviso_urgente(e):
+    que = NOMBRE_SENCILLO.get(e.get("tipo"), "dirección vigilada")
+    if e.get("tipo_evento") == "congelamiento":
+        titulo = f"🧊 **Congelamiento** en una {que}"
+    else:
+        titulo = f"🚨 **Se movió una {que}**"
+    if e.get("tipo_evento") == "transferencia" and e.get("cantidad") is not None:
+        verbo = "Salieron" if e.get("sentido") == "salida" else "Entraron"
+        hacia = "hacia" if e.get("sentido") == "salida" else "desde"
+        nom = entidad(e["red"], e.get("contraparte")) or "una dirección sin nombre público"
+        cuerpo = f"{verbo} {num(e['cantidad'])} {e['moneda']} (≈{usd(e.get('valor_usd'))}) {hacia} {nom} (`{corto(e.get('contraparte') or '')}`)."
+    else:
+        cuerpo = e.get("detalle", "")
+    enlace = e.get("hash_url") or EXPLORER[e["red"]].format(a=e["direccion"])
+    return f"{titulo} ({e['red']}, {e.get('etiqueta', '')[:60]})\n{cuerpo}\n<{enlace}>"
+
+
+def resumen_diario(data, historial, desde, vigiladas):
+    """Resumen del día en palabras simples: estado de las billeteras de OrionX y, para el racimo de terceros,
+    solo lo que entra desde afuera y sale hacia afuera (lo que circula entre direcciones vigiladas no se suma dos veces)."""
+    ev = [e for e in historial if e.get("fecha", "") > desde]
+    fil = data["billeteras"]
+    ori = [f for f in fil if f.get("tipo") == "orionx"]
+    usd_ori = sum(f.get("valor_usd") or 0 for f in ori)
+    mov_ori = [e for e in ev if e.get("tipo") in TIPOS_URGENTES and e.get("tipo_evento") in ("transferencia", "saldo")]
+    lineas = [f"📋 **Resumen del día del monitor** ({hora_chile():%d-%m-%Y}, hasta las {hora_chile():%H:%M} de Chile)", ""]
+    if mov_ori:
+        lineas.append(f"🚨 **Billeteras de OrionX o de la querella: {len(mov_ori)} movimiento(s) hoy.** Ya se avisaron por separado; los admins lo están revisando.")
+    else:
+        lineas.append(f"✅ **Las {len(ori)} billeteras de OrionX no se movieron hoy.** Siguen con ≈{usd(usd_ori)} a la vista.")
+    terc = [e for e in ev if e.get("tipo") not in TIPOS_URGENTES and e.get("tipo_evento") == "transferencia" and e.get("valor_usd")]
+    afuera = lambda e: krd(e["red"], e.get("contraparte") or "") not in vigiladas   # noqa: E731
+    ent = [e for e in terc if e.get("sentido") == "entrada" and afuera(e)]
+    sal = [e for e in terc if e.get("sentido") == "salida" and afuera(e)]
+    if not terc:
+        lineas += ["", "🔁 Las direcciones de terceros que vigilamos tampoco movieron fondos hoy."]
+    else:
+        def por_nombre(lista):
+            acc = {}
+            for e in lista:
+                n = entidad(e["red"], e.get("contraparte")) or "direcciones sin nombre público"
+                acc[n] = acc.get(n, 0) + e["valor_usd"]
+            return sorted(acc.items(), key=lambda x: -x[1])
+        lineas += ["", f"🔁 **Terceros que recibieron fondos de OrionX antes del cierre** (mesas OTC y sus destinos): {len(terc)} transferencias.",
+                   f"• Entró desde afuera: ≈{usd(sum(e['valor_usd'] for e in ent))}"]
+        lineas += [f"   – {n}: ≈{usd(v)}" for n, v in por_nombre(ent)[:4]]
+        lineas.append(f"• Salió hacia afuera: ≈{usd(sum(e['valor_usd'] for e in sal))}")
+        lineas += [f"   – {n}: ≈{usd(v)}" for n, v in por_nombre(sal)[:4]]
+        lineas += ["", "ℹ️ **Qué significa:** es dinero de terceros que opera con volumen propio (entra desde exchanges y vuelve a salir). "
+                   "No se puede afirmar que sea dinero de los afectados. Lo útil es que aparecen **empresas con nombre** (exchanges, emisores de "
+                   "stablecoins): son a quienes la fiscal o el abogado pueden pedir información sobre los dueños de esas cuentas."]
+    lineas += ["", "Detalle técnico, hashes y todas las direcciones: <https://afectados-orionx.github.io/orionx-monitor/>",
+               "Si alguna vez retiraste cripto desde OrionX, tu dirección de depósito o de retiro nos sirve: escríbela en este canal."]
+    return "\n".join(lineas)
+
+
 def discord(webhook, eventos, data):
-    lineas = [f"**Monitor OrionX: {len(eventos)} movimiento(s) nuevo(s)** ({data['actualizado']})"]
-    for e in eventos[:15]:
-        lineas.append(f"• [{e['red']}] {e['etiqueta']}: {e['detalle']}  <{e.get('hash_url') or EXPLORER[e['red']].format(a=e['direccion'])}>")
-    post(webhook, {"content": "\n".join(lineas)[:1900]})
+    if DISCORD_MODO == "detalle":
+        lineas = [f"**Monitor OrionX: {len(eventos)} movimiento(s) nuevo(s)** ({data['actualizado']})"]
+        for e in eventos[:15]:
+            lineas.append(f"• [{e['red']}] {e['etiqueta']}: {e['detalle']}  <{e.get('hash_url') or EXPLORER[e['red']].format(a=e['direccion'])}>")
+        post(webhook, {"content": "\n".join(lineas)[:1900]}); return
+    urg = [e for e in eventos if es_urgente(e)]
+    for e in urg[:5]: post(webhook, {"content": aviso_urgente(e)[:1900]})
+    if len(urg) > 5: post(webhook, {"content": f"…y {len(urg) - 5} movimiento(s) más de billeteras de OrionX o de la querella. Detalle: <https://afectados-orionx.github.io/orionx-monitor/>"})
+
+
+def tal_vez_resumen(webhook, data, historial, d_ant, vigiladas):
+    """Una vez al día, desde RESUMEN_HORA_CHILE. La fecha del último resumen queda en data.json."""
+    prev = d_ant.get("resumen_discord") or {}
+    ahora = hora_chile(); hoy = f"{ahora:%Y-%m-%d}"
+    data["resumen_discord"] = prev
+    if DISCORD_MODO == "detalle" or ahora.hour < RESUMEN_HORA_CHILE or prev.get("fecha") == hoy: return
+    desde = prev.get("hasta") or (dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=24)).strftime("%Y-%m-%d %H:%M UTC")
+    if webhook: post(webhook, {"content": resumen_diario(data, historial, desde, vigiladas)[:1990]})
+    data["resumen_discord"] = {"fecha": hoy, "hasta": data["actualizado"]}
 
 
 # --------------------------------------------------------------------------------------------------------------- main
@@ -931,6 +1053,8 @@ def main():
             "errores": errores + huecos, "cursores": cursores, "tokens_conocidos": ctx["tokens"].c,
             "descubiertas": len(descubiertas), "descubiertas_seguidas": len(seguidas),
             "total_clp": sum(f["valor_clp"] for f in filas if f.get("tipo") != "descubierta"), "total_usd": sum(f["valor_usd"] for f in filas if f.get("tipo") != "descubierta")}
+    ETIQUETAS_CACHE.update(ctx["etiquetas"])
+    tal_vez_resumen(os.environ.get("DISCORD_WEBHOOK"), data, todos, d_ant, {krd(f["red"], f["direccion"]) for f in filas})
     (HERE / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{ahora}: {len(filas)} billeteras, {len(nuevos)} movimientos nuevos, {len(errores)} errores; total ≈ {data['total_clp']:,.0f} CLP" + (" (precios antiguos)" if precios_antiguos else "")
           + f"; descubiertas {len(descubiertas)} (+{ctx['descubiertas_nuevas']}), seguidas {len([d for d in descubiertas if d.get('seguir')])} (+{ctx.get('seguidas_nuevas', 0)})")

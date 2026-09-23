@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-09-22: avisos de Discord en palabras simples y un resumen diario
+
+El canal de Discord recibía ≈15 avisos al día, casi todos de la mesa OTC y de direcciones
+descubiertas ("EOA con delegación EIP-7702", "destino de una salida"), sin ningún movimiento de
+las billeteras de OrionX. Para quien no rastrea cadenas eso era ruido y parecía que "se estaba
+yendo la plata". Ahora (`DISCORD_MODO=resumen`, por defecto):
+
+- **Aviso inmediato solo si importa:** se mueve una billetera de OrionX o citada en la querella
+  (`tipo` `orionx`/`querella`) o un emisor congela fondos. El texto dice qué salió, cuánto en
+  dólares y hacia quién ("Gate.io (depósito)", "una dirección sin nombre público").
+- **Resumen diario a las 20:00 de Chile** (`RESUMEN_HORA_CHILE`): estado de las 25 billeteras de
+  OrionX y, para el racimo de terceros, solo lo que entra desde afuera y sale hacia afuera,
+  agrupado por entidad con nombre. Lo que circula entre direcciones vigiladas no se suma dos veces.
+  La fecha del último resumen queda en `data.json` (`resumen_discord`).
+- `ENTIDADES` nombra dos destinos identificados a mano: el contrato verificado **CircleDeposit**
+  `0x6d89f703…a585` (su `owner` es `0x55fe002a…44b8`, etiqueta pública "Circle"; recibió
+  ≈US$ 12 M en USDC el 22-sep desde `0xd4a0669d…`) y el depósito de **Gate.io** `0x81ce974e…c5b8`.
+- `DISCORD_MODO=detalle` vuelve al aviso técnico por corrida. El historial, `data.json`, los
+  issues y el Telegram del rock no cambian.
+
 ## 2026-09-20: una corrida colgada dejó la web 3 h sin actualizar
 
 La corrida de las 08:19 UTC quedó **3 h 20 min** pidiendo datos a fuentes que no respondían desde

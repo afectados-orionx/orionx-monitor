@@ -18,7 +18,7 @@ Cuantas más copias existan, más difícil es que el registro desaparezca. Cada 
 
 Con eso también funcionan las alertas: cada movimiento grande abre un **Issue** en tu copia (ver "Alertas" más abajo). Si no quieres esos avisos, en **Settings → General → Features** desmarca *Issues* y el monitor seguirá funcionando igual.
 
-Opcional, avisos a Discord: un administrador del servidor crea un webhook (Ajustes del canal → Integraciones → Webhooks → Nuevo webhook → Copiar URL). En tu copia: **Settings → Secrets and variables → Actions → New repository secret**, nombre `DISCORD_WEBHOOK`, valor la URL. Cada movimiento detectado se publicará en ese canal.
+Opcional, avisos a Discord: un administrador del servidor crea un webhook (Ajustes del canal → Integraciones → Webhooks → Nuevo webhook → Copiar URL). En tu copia: **Settings → Secrets and variables → Actions → New repository secret**, nombre `DISCORD_WEBHOOK`, valor la URL. Por defecto se publica al instante solo lo que mueve una billetera de OrionX o de la querella (o un congelamiento), y un resumen diario en palabras simples a las 20:00 de Chile; con la variable `DISCORD_MODO=detalle` se publica cada movimiento con su detalle técnico.
 
 Para recibir las billeteras nuevas que se agreguen aquí, en tu copia pulsa **Sync fork → Update branch** de vez en cuando.
 
