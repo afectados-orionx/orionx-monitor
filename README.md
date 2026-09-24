@@ -1,5 +1,7 @@
 # Monitor de billeteras OrionX
 
+> **¿Tenías fondos en OrionX?** No estás solo. Grupo de afectados, plantillas para denunciar en Fiscalía, SERNAC y CMF, y alerta de estafas: **https://afectados-orionx.github.io/** · Discord: https://discord.gg/NhreVAj9Xv
+
 **Página en vivo: https://afectados-orionx.github.io/orionx-monitor/**
 
 Muestra saldo, valor en pesos y última actividad de las billeteras vinculadas a OrionX en Bitcoin, XRP, Tron, Litecoin, Ethereum, BSC y Polygon, y registra cada movimiento con fecha y hora. Se actualiza sola cada hora. Tiene cinco pestañas: **Resumen** (en lenguaje simple), **Billeteras vigiladas**, **Atribuciones** (todas las direcciones atribuidas a OrionX por afectados, con nivel de confianza, tipo de evidencia y nuestra verificación en cadena), **Precios al cierre** (última operación de cada mercado en OrionX el 3 de septiembre de 2026) y **Movimientos** (arriba, los movimientos con alerta: los grandes para su red y cualquier salida desde almacenamiento en frío). Lo mantienen clientes afectados por el cierre del 3 de septiembre de 2026; no tiene relación con la empresa.
