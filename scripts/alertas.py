@@ -64,6 +64,10 @@ from monitor import EXPLORER, EXPLORER_TX, NATIVO, krd  # noqa: E402  (mismo rep
 UA = {"User-Agent": "orionx-monitor-alertas/1.0 (github pages; afectados)"}
 MONITOR_URL = "https://afectados-orionx.github.io/orionx-monitor/#movimientos"
 FRASE = "Dato en cadena; la Fiscalía debe establecer responsabilidades."
+# Pie de cada aviso: los issues se indexan en Google en horas y son la puerta de entrada de quien busca "OrionX".
+PIE = "¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
+# Prefijo de los títulos: dice de qué monitor es el aviso, no de quién es la billetera.
+PREFIJO = "Monitor OrionX"
 
 # Umbral en unidades de la propia moneda.
 UMBRALES = {"BTC": 0.01, "ETH": 0.5, "XRP": 1000.0, "USDT": 1000.0, "USDC": 1000.0, "LTC": 5.0, "TRX": 500.0}
@@ -122,6 +126,13 @@ def num_es(x):
 # algunas son agregadores que mueven dinero de terceros todo el día: avisan solo si el movimiento es
 # grande, para no ahogar las alertas de las billeteras de OrionX.
 UMBRAL_DESCUBIERTA_USD = float(os.environ.get("ALERTA_UMBRAL_DESCUBIERTA_USD", "50000"))
+
+
+def monto_titulo(delta, moneda):
+    """Monto legible para el título: signo, formato chileno, 2 decimales desde 1 unidad (8 bajo 1)."""
+    signo = "+" if delta > 0 else "−"
+    x = abs(delta)
+    return f"{signo}{num_es(round(x, 2) if x >= 1 else round(x, 8))} {moneda}"
 
 
 def umbral_de(moneda, precios, umbrales):
@@ -196,13 +207,13 @@ def redactar(a):
     if clase in ("saldo", "gas"):
         signo = "+" if a["delta"] > 0 else ""
         monto = f"{signo}{a['delta']:,.8f} {a['moneda']}"
-        titulo = f"{CLASES[clase]}: {a['red']} {a['abreviada']} {monto} {a['fecha']}"
+        titulo = f"{PREFIJO} · {CLASES[clase]} de {monto_titulo(a['delta'], a['moneda'])} en billetera vigilada ({a['red']} {a['abreviada']}) · {a['fecha']}"
         usd = f" (≈US$ {a['valor_usd']:,.2f})" if a.get("valor_usd") is not None else ""
         lineas += [f"- Cambio: **{monto}**{usd}",
                    f"- Saldo antes: {a['saldo_antes']:,.8f} {a['moneda']}",
                    f"- Saldo después: {a['saldo_despues']:,.8f} {a['moneda']}"]
     else:
-        titulo = f"{CLASES.get(clase, clase)}: {a['red']} {a['abreviada']} {a.get('moneda') or ''} {a['fecha']}".replace("  ", " ")
+        titulo = f"{PREFIJO} · {CLASES.get(clase, clase)} {a.get('moneda') or ''} en billetera vigilada ({a['red']} {a['abreviada']}) · {a['fecha']}".replace("  ", " ")
         lineas += [f"- Qué pasó: **{a.get('descripcion') or a.get('motivo')}**"]
         if a.get("contraparte"):
             et = f" ({a['contraparte_etiqueta']})" if a.get("contraparte_etiqueta") else ""
@@ -221,7 +232,7 @@ def redactar(a):
                f"- Monitor: {a['monitor']}"]
     if a.get("wayback"):
         lineas.append("- Copia fechada (Wayback Machine): " + " · ".join(a["wayback"]))
-    lineas += ["", FRASE]
+    lineas += ["", FRASE, "", PIE]
     return titulo, "\n".join(lineas)
 
 
