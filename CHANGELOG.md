@@ -18,6 +18,15 @@ movían más en un día que todo el descalce de OrionX. Ninguna de las 25 billet
 
 Las direcciones del caso (`orionx`, `querella`, `desvio`, `atribuida`) no cambian: se siguen igual.
 
+Validación a mano de los tres destinos grandes posteriores al cierre (informe
+`orionx-rastreo/validacion_destinos_2026-09-25.md` del proyecto): entran 6 registros a
+`direcciones.json`. `desvio` monitoreadas: las subcuentas de paso `0x573f5081…54e3` (850.000 USDT
+el 16-sep desde `0xad1618`) y `0x5b50619e…664d` (590.000 USDT desde `0xfd56ef`), y el probable
+depósito `0xfc62e98c…0998` (715.347 USDC el 22-sep). En evaluación, sin monitorear: el concentrador
+`0x9aacb475…6cb0`. Relacionadas: la cuenta con etiqueta pública **Binance Deposit**
+`0x755d3663…cc5a`, donde terminan las dos cadenas, y la caliente sin etiqueta `0x0668c9bf…2f9b`.
+Las descubiertas que pasan a `direcciones.json` ya no se consultan dos veces.
+
 ## 2026-09-22: avisos de Discord en palabras simples y un resumen diario
 
 El canal de Discord recibía ≈15 avisos al día, casi todos de la mesa OTC y de direcciones

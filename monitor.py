@@ -999,7 +999,8 @@ def main():
         ctx["conocidas"] = {krd(w["red"], w["direccion"]) for w in json.loads((HERE / "direcciones.json").read_text(encoding="utf-8"))["direcciones"]}
     except Exception: pass
     # descubiertas que se siguen (saldo en cada corrida), después de las vigiladas
-    seguidas = [d for d in descubiertas if d.get("seguir")][-MAX_SEGUIDAS:]
+    # (las que ya pasaron a direcciones.json se consultan como tales, no dos veces)
+    seguidas = [d for d in descubiertas if d.get("seguir") and krd(d["red"], d["direccion"]) not in ctx["vigiladas"] | ctx["conocidas"]][-MAX_SEGUIDAS:]
     for d in seguidas:
         wallets.append({"red": d["red"], "direccion": d["direccion"], "etiqueta": f"Descubierta: {d.get('motivo', '')}"[:90], "tipo": "descubierta", "vigilar": False,
                         "nota": f"Vista el {d.get('desde', '')} desde {corto(d.get('origen') or '')}. Pendiente de validación humana.", "origen": d.get("origen")})
