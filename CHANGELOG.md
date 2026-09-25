@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-09-25: el monitor deja de seguir a los servicios de alto volumen
+
+Entre el 12 y el 25-sep el monitor emitió 469 alertas y **427 fueron de direcciones descubiertas**,
+casi todas mesas o procesadores de terceros a dos saltos del caso: `0x58b704…9025` (1.721
+transferencias y US$ 110 M en 24 h), `0x8bc2ab7e…1731`, `0xd4a0669d…8810` y `0x74aa5387…6828`
+movían más en un día que todo el descalce de OrionX. Ninguna de las 25 billeteras de OrionX se movió.
+
+- `detectar_servicios()`: una descubierta seguida que en 24 h (mirando los últimos 7 días del
+  historial) mueve **US$ 5 M** (`UMBRAL_SERVICIO_USD_24H`) o hace **50 transferencias**
+  (`UMBRAL_SERVICIO_TX_24H`) queda con `servicio: true`, deja de seguirse y sus destinos vigilados
+  solos también. Se conserva en `descubiertas.json` para no volver a seguirla si reaparece, y un
+  destino suyo ya no se vigila solo. Con el historial actual: 6 servicios, 40 → 9 seguidas.
+- `alertas.py`: el "fondeo de gas" ya no se evalúa en descubiertas (`0xd4e8d5f8…0901` recibió ≈500
+  depósitos chicos de ETH en una semana y dio 102 alertas).
+- La pestaña de descubiertas muestra la marca "servicio de alto volumen: no se sigue".
+
+Las direcciones del caso (`orionx`, `querella`, `desvio`, `atribuida`) no cambian: se siguen igual.
+
 ## 2026-09-22: avisos de Discord en palabras simples y un resumen diario
 
 El canal de Discord recibía ≈15 avisos al día, casi todos de la mesa OTC y de direcciones

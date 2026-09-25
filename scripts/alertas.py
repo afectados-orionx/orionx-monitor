@@ -293,7 +293,9 @@ def detectar(anterior, actual, registros):
                     texto_umbral = f"≈US$ {num_es(UMBRAL_DESCUBIERTA_USD)}, el que rige para las direcciones descubiertas sin validar"
             salida_frio = frio and d < 0
             valor = abs(d) * usd_unit if usd_unit else None
-            gas = (moneda == nativo and d > 0 and valor is not None and GAS_MIN_USD <= valor <= GAS_MAX_USD
+            # En una descubierta el "fondeo de gas" no dice nada: 0xd4e8d5f8… recibió 500 depósitos chicos de ETH en
+            # una semana (17-25 sep 2026) y cada uno salía como alerta. Se evalúa solo en direcciones del caso.
+            gas = (fila.get("tipo") != "descubierta" and moneda == nativo and d > 0 and valor is not None and GAS_MIN_USD <= valor <= GAS_MAX_USD
                    and valor_tokens >= GAS_TOKENS_USD and (umbral is None or abs(d) < umbral))
             if not salida_frio and not gas and (umbral is None or abs(d) < umbral):
                 continue

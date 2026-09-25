@@ -96,6 +96,13 @@ UMBRAL_SEGUIR_USD = float(os.environ.get("UMBRAL_SEGUIR_USD", "10000"))
 MAX_SALTOS = 2                  # profundidad máxima que se vigila sola (a 3 saltos el dinero se dispersa)
 MAX_AUTO_POR_ORIGEN = 3         # si una dirección reparte a más destinos grandes en una sola corrida es un
                                 # agregador (mueve dinero de terceros): sus destinos se anotan pero no se vigilan solos
+# Servicio de alto volumen (mesa OTC, procesador, exchange): una descubierta que mueve más de esto en 24 h deja de
+# seguirse sola, y también sus destinos. El 17-25 sep 2026 cuatro de ellas (0x58b704…, 0x8bc2ab7e…, 0xd4a0669d…,
+# 0x74aa5387…) movieron entre US$ 20 M y 110 M al día, 15 veces el descalce entero de OrionX, y dieron 427 de las
+# 469 alertas del período: ruido que tapaba a las direcciones del caso.
+UMBRAL_SERVICIO_USD_24H = float(os.environ.get("UMBRAL_SERVICIO_USD_24H", "5000000"))
+UMBRAL_SERVICIO_TX_24H = int(os.environ.get("UMBRAL_SERVICIO_TX_24H", "50"))
+VENTANA_SERVICIO_DIAS = 7       # cuánto historial se mira para detectarlos
 UMBRAL_AVISO_DESCUBIERTA_USD = float(os.environ.get("UMBRAL_AVISO_DESCUBIERTA_USD", "50000"))   # avisos de descubiertas
 TIPOS_SEGUIR = ("orionx", "desvio", "atribuida", "querella", "puente", "descubierta")
 # Presupuesto total de consultas. El 20-sep-2026 una corrida en GitHub Actions quedó 3 h 20 min pidiendo datos a
@@ -498,8 +505,9 @@ def vigilar_sola(ctx, red, k, salto, valor_usd, w):
     """¿Se empieza a vigilar este destino sin esperar validación humana? Sí cuando el monto es
     grande, el origen es una dirección del caso, el destino no es un exchange con etiqueta pública
     (ahí lo que sirve es oficiar, no vigilar) y no se pasa de MAX_SALTOS ni del cupo."""
+    org = ctx["descubiertas_idx"].get(krd(red, (w or {}).get("direccion") or ""))
     return (valor_usd is not None and valor_usd >= UMBRAL_SEGUIR_USD
-            and (w or {}).get("tipo") in TIPOS_SEGUIR
+            and (w or {}).get("tipo") in TIPOS_SEGUIR and not (org or {}).get("servicio")
             and k not in PUBLICAS and salto <= MAX_SALTOS and hay_cupo_para_seguir(ctx))
 
 
@@ -531,6 +539,41 @@ def decidir_vigilancia(ctx):
             d["seguir"] = True
             d["seguir_motivo"] = f"recibió US$ {v:,.0f} de {corto(korigen[1])}, una dirección vigilada ({ahora_txt()})"
             ctx["seguidas_nuevas"] = ctx.get("seguidas_nuevas", 0) + 1
+
+
+def detectar_servicios(ctx, historial):
+    """Marca como servicio de alto volumen a las descubiertas seguidas que en alguna ventana de 24 h (de los últimos
+    VENTANA_SERVICIO_DIAS días) movieron UMBRAL_SERVICIO_USD_24H o hicieron UMBRAL_SERVICIO_TX_24H transferencias.
+    Dejan de seguirse, y también sus destinos vigilados solos (lo que paga una mesa es dinero de sus clientes).
+    Quedan en descubiertas.json con servicio=true para no volver a seguirlas si reaparecen."""
+    limite = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=VENTANA_SERVICIO_DIAS)).strftime("%Y-%m-%d %H:%M UTC")
+    por_dir = {}
+    for e in historial:
+        if e.get("tipo") == "descubierta" and e.get("tipo_evento") == "transferencia" and e.get("fecha", "") >= limite:
+            por_dir.setdefault(krd(e["red"], e["direccion"]), []).append((e["fecha"], e.get("valor_usd") or 0))
+    marcadas = []
+    for d in ctx["descubiertas"]:
+        if d.get("servicio") or not d.get("seguir") or d.get("misma_billetera"): continue
+        movs = sorted(por_dir.get(krd(d["red"], d["direccion"]), []))
+        fechas = [dt.datetime.strptime(f, "%Y-%m-%d %H:%M UTC") for f, _ in movs]
+        mejor_usd = mejor_n = 0; j = 0; suma = 0.0
+        for i in range(len(movs)):   # ventana deslizante de 24 h
+            suma += movs[i][1]
+            while fechas[i] - fechas[j] > dt.timedelta(hours=24): suma -= movs[j][1]; j += 1
+            mejor_usd, mejor_n = max(mejor_usd, suma), max(mejor_n, i - j + 1)
+        if mejor_usd >= UMBRAL_SERVICIO_USD_24H or mejor_n >= UMBRAL_SERVICIO_TX_24H:
+            d.update({"servicio": True, "seguir": False, "seguir_motivo": (
+                f"NO se sigue: se comporta como servicio de alto volumen (mesa OTC, procesador o exchange): hasta US$ {mejor_usd:,.0f} "
+                f"y {mejor_n} transferencias en 24 h ({ahora_txt()}). Sus movimientos son de terceros; sus destinos tampoco se siguen.")})
+            marcadas.append(d)
+    for s in marcadas:
+        print(f"  servicio: {s['direccion']} deja de seguirse")
+        for d in ctx["descubiertas"]:
+            if d.get("seguir") and not d.get("misma_billetera") and krd(d["red"], d.get("origen") or "") == krd(s["red"], s["direccion"]):
+                d["seguir"] = False
+                d["seguir_motivo"] = f"NO se sigue: su origen {corto(s['direccion'])} es un servicio de alto volumen ({ahora_txt()})"
+                print(f"    y su destino {d['direccion']}")
+    return marcadas
 
 
 def descubrir(ctx, red, direccion, origen, motivo, hash_, fuerte, w=None, valor_usd=None):
@@ -1036,9 +1079,11 @@ def main():
         with open(hist, "a", encoding="utf-8") as fh:
             for e in nuevos: fh.write(json.dumps(e, ensure_ascii=False) + "\n")
     todos = previos + nuevos
+    detectar_servicios(ctx, todos)
     decidir_vigilancia(ctx)
-    fuertes = [d for d in descubiertas if d.get("misma_billetera") or d.get("seguir")]
-    debiles = [d for d in descubiertas if not (d.get("misma_billetera") or d.get("seguir"))]
+    # los servicios se conservan aunque no se sigan: si se borraran, un destino suyo volvería a seguirse solo
+    fuertes = [d for d in descubiertas if d.get("misma_billetera") or d.get("seguir") or d.get("servicio")]
+    debiles = [d for d in descubiertas if not (d.get("misma_billetera") or d.get("seguir") or d.get("servicio"))]
     descubiertas = debiles[-(MAX_DESCUBIERTAS - len(fuertes)):] + fuertes if len(descubiertas) > MAX_DESCUBIERTAS else descubiertas
     if descubiertas or not (HERE / "descubiertas.json").exists():
         (HERE / "descubiertas.json").write_text(json.dumps({
