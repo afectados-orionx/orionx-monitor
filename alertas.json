@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-09-25 02:24 UTC",
+ "actualizado": "2026-09-25 03:24 UTC",
  "umbrales": {
   "unidades": {
    "BTC": 0.01,
@@ -18,6 +18,28 @@
   "nota": "Salidas desde almacenamiento en frío (desvío o atribuida), aprobaciones, cambios de permisos, congelamientos y fondeos de gas se avisan sin umbral."
  },
  "alertas": [
+  {
+   "fecha": "2026-09-25 03:18 UTC",
+   "clase": "gas",
+   "red": "ETH",
+   "direccion": "0xd4e8d5f8442418ea23e3f1f20e31382090800901",
+   "abreviada": "0xd4e8d5f8…800901",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "rol": null,
+   "moneda": "ETH",
+   "delta": 0.04241698,
+   "saldo_antes": 30.85258003389511,
+   "saldo_despues": 30.89499701009568,
+   "valor_usd": 113.5,
+   "motivo": "entrada pequeña de ETH en una dirección que guarda tokens por ≈US$ 205,904: es el gas que hace falta para moverlos (posible preparación de un retiro)",
+   "frio": false,
+   "explorador": "https://etherscan.io/address/0xd4e8d5f8442418ea23e3f1f20e31382090800901",
+   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
+   "transacciones": [],
+   "titulo": "Monitor OrionX · Fondeo de gas de +0,04241698 ETH en billetera vigilada (ETH 0xd4e8d5f8…800901) · 2026-09-25 03:18 UTC",
+   "cuerpo": "**Descubierta: destino de una salida** (tipo `descubierta`).\n\n- Red: **ETH**\n- Dirección: `0xd4e8d5f8442418ea23e3f1f20e31382090800901`\n- Cambio: **+0.04241698 ETH** (≈US$ 113.50)\n- Saldo antes: 30.85258003 ETH\n- Saldo después: 30.89499701 ETH\n- Detectado: 2026-09-25 03:18 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: entrada pequeña de ETH en una dirección que guarda tokens por ≈US$ 205,904: es el gas que hace falta para moverlos (posible preparación de un retiro)\n- Explorador: https://etherscan.io/address/0xd4e8d5f8442418ea23e3f1f20e31382090800901\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades.\n\n¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
+  },
   {
    "fecha": "2026-09-25 02:18 UTC",
    "clase": "gas",
@@ -4101,28 +4123,6 @@
    ],
    "titulo": "Monitor OrionX · Movimiento de −77.652,14 USDC en billetera vigilada (ETH 0x74aa5387…406828) · 2026-09-24 15:20 UTC",
    "cuerpo": "**Descubierta: destino de una salida** (tipo `descubierta`).\n\n- Red: **ETH**\n- Dirección: `0x74aa5387681505c806ff1e972b12cdfd01406828`\n- Cambio: **-77,652.14321300 USDC** (≈US$ 77,637.00)\n- Saldo antes: 2,442,266.91775000 USDC\n- Saldo después: 2,364,614.77453700 USDC\n- Tx: 40.926087 USDC ← `0x8715b5b3d70682226eb4cdffdd138a6b15fea0cb` · https://etherscan.io/tx/0x04501c90dd52736c51a5be522ed240f1d7bc3dc7d7a460d57d793b25123557cc\n- Tx: 32,602.82 USDC ← `0x338c8bd900cb7bc209748d4d4a4861824a057e3c` · https://etherscan.io/tx/0x8d63663f59c4b435dbd177a41d2caf27d5f60d21b270f56576044951ea3d5216\n- Tx: 20,244.7193 USDC → `0xe871eff0c56d71257b9c453765da902447dd9707` · https://etherscan.io/tx/0x13d62cf99340f6846f5664e6347b39e6863fd17306310945fbcf3a53c7aa12d8\n- Tx: 65,995.5 USDC → `0xb4a61bd27667dfd6798b9108322ccc3b2aeb86a4` · https://etherscan.io/tx/0xd2566125bd6a2ebfebf4d2f4e36a6879f6ae6627b5036615bab789d81dd967f1 · 2026-09-24 14:38 UTC\n- Tx: 191,154.3842 USDC → `0x0f53b0b35be4eda0b67d8225257a5d6f2a6a33fa` · https://etherscan.io/tx/0xf756baefacd1e23309de00d3d65da6fc535d0d275c8edfd57eb58a55c34e023f\n- Tx: 34,995.5 USDC → `0xb4a61bd27667dfd6798b9108322ccc3b2aeb86a4` · https://etherscan.io/tx/0xaa93855b62187ad8d9f03566fe0539e8f5f32854b89e9e99b1e8cebbb8a2fecb\n- Detectado: 2026-09-24 15:20 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: el cambio supera el umbral de aviso de la red (≈US$ 50.000, el que rige para las direcciones descubiertas sin validar)\n- Explorador: https://etherscan.io/address/0x74aa5387681505c806ff1e972b12cdfd01406828\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades.\n\n¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
-  },
-  {
-   "fecha": "2026-09-24 14:20 UTC",
-   "clase": "gas",
-   "red": "ETH",
-   "direccion": "0xd4e8d5f8442418ea23e3f1f20e31382090800901",
-   "abreviada": "0xd4e8d5f8…800901",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "rol": null,
-   "moneda": "ETH",
-   "delta": 0.02972554,
-   "saldo_antes": 30.60596895765453,
-   "saldo_despues": 30.635694498271437,
-   "valor_usd": 79.41,
-   "motivo": "entrada pequeña de ETH en una dirección que guarda tokens por ≈US$ 209,239: es el gas que hace falta para moverlos (posible preparación de un retiro)",
-   "frio": false,
-   "explorador": "https://etherscan.io/address/0xd4e8d5f8442418ea23e3f1f20e31382090800901",
-   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
-   "transacciones": [],
-   "titulo": "Monitor OrionX · Fondeo de gas de +0,02972554 ETH en billetera vigilada (ETH 0xd4e8d5f8…800901) · 2026-09-24 14:20 UTC",
-   "cuerpo": "**Descubierta: destino de una salida** (tipo `descubierta`).\n\n- Red: **ETH**\n- Dirección: `0xd4e8d5f8442418ea23e3f1f20e31382090800901`\n- Cambio: **+0.02972554 ETH** (≈US$ 79.41)\n- Saldo antes: 30.60596896 ETH\n- Saldo después: 30.63569450 ETH\n- Detectado: 2026-09-24 14:20 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: entrada pequeña de ETH en una dirección que guarda tokens por ≈US$ 209,239: es el gas que hace falta para moverlos (posible preparación de un retiro)\n- Explorador: https://etherscan.io/address/0xd4e8d5f8442418ea23e3f1f20e31382090800901\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades.\n\n¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
   }
  ]
 }
