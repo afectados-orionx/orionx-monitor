@@ -1,22 +1,7 @@
 {
  "_nota": "Direcciones propuestas por el monitor a partir de movimientos reales: destinos de salidas y, en BTC/LTC, entradas gastadas junto a una vigilada (misma billetera) o posibles vueltos. NO están validadas: una persona debe confirmar la liga y, si corresponde, pasarlas a direcciones.json. 'seguir': true hace que el monitor consulte su saldo en cada corrida y avise de sus movimientos; se activa sola cuando el destino recibe US$ 10,000 o más de una dirección del caso, no tiene etiqueta pública de exchange y está a 2 saltos o menos ('salto': 1 = destino directo de una dirección de la lista). Vigilar no es afirmar: para publicarla como dirección del caso hay que validar la liga a mano.",
- "actualizado": "2026-09-29 09:22 UTC",
+ "actualizado": "2026-09-29 10:21 UTC",
  "direcciones": [
-  {
-   "red": "ETH",
-   "direccion": "0xe16942f2adb54727db7cf539fca1896dce91b0b0",
-   "origen": "0xd4a0669d471509aa0c155aa001d97679970f8810",
-   "motivo": "destino de una salida",
-   "hash": "0x399d554ea48934ac5c8007e1c86dd563e724f379387fa305e01fccba495311dc",
-   "desde": "2026-09-25 08:25 UTC",
-   "ultima": "2026-09-25 10:21 UTC",
-   "veces": 2,
-   "salto": 3,
-   "valor_usd_max": 569020.84,
-   "misma_billetera": false,
-   "seguir": false,
-   "explorer": "https://etherscan.io/address/0xe16942f2adb54727db7cf539fca1896dce91b0b0"
-  },
   {
    "red": "ETH",
    "direccion": "0x34862fb275d7d22570cc0eb08c33778cadeb5fdf",
@@ -2741,6 +2726,21 @@
    "misma_billetera": false,
    "seguir": false,
    "explorer": "https://etherscan.io/address/0xe9b1f238b4a7d058b0df1cad180724cc5e8ee469"
+  },
+  {
+   "red": "ETH",
+   "direccion": "0xcffad3200574698b78f32232aa9d63eabd290703",
+   "origen": "0xd3aa06e45b1816ad12da76199635cfe81ac96921",
+   "motivo": "destino de una salida",
+   "hash": "0xc0ebcd790cd9076f99c20cd8ee600e2dee3514c7ce43a38576ec7f88ccb7c52b",
+   "desde": "2026-09-29 10:23 UTC",
+   "ultima": "2026-09-29 10:23 UTC",
+   "veces": 1,
+   "salto": 3,
+   "valor_usd_max": 12897.17,
+   "misma_billetera": false,
+   "seguir": false,
+   "explorer": "https://etherscan.io/address/0xcffad3200574698b78f32232aa9d63eabd290703"
   },
   {
    "red": "ETH",
