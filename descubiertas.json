@@ -1,6 +1,6 @@
 {
  "_nota": "Direcciones propuestas por el monitor a partir de movimientos reales: destinos de salidas y, en BTC/LTC, entradas gastadas junto a una vigilada (misma billetera) o posibles vueltos. NO están validadas: una persona debe confirmar la liga y, si corresponde, pasarlas a direcciones.json. 'seguir': true hace que el monitor consulte su saldo en cada corrida y avise de sus movimientos; se activa sola cuando el destino recibe US$ 10,000 o más de una dirección del caso, no tiene etiqueta pública de exchange y está a 2 saltos o menos ('salto': 1 = destino directo de una dirección de la lista). Vigilar no es afirmar: para publicarla como dirección del caso hay que validar la liga a mano.",
- "actualizado": "2026-09-29 11:20 UTC",
+ "actualizado": "2026-09-29 12:26 UTC",
  "direcciones": [
   {
    "red": "ETH",
@@ -2830,8 +2830,8 @@
    "motivo": "destino de una salida (EOA con delegación EIP-7702 a 0x0000fb…bab16b)",
    "hash": "0x0ae92d7c64e3b137fa241ea75fbf282c2c82f97f495871d3ccc37068c17d2c19",
    "desde": "2026-09-16 11:19 UTC",
-   "ultima": "2026-09-29 11:24 UTC",
-   "veces": 17,
+   "ultima": "2026-09-29 12:28 UTC",
+   "veces": 19,
    "salto": 1,
    "valor_usd_max": 89788.11,
    "misma_billetera": false,
@@ -2848,8 +2848,8 @@
    "motivo": "destino de una salida",
    "hash": "0x1e1a1cea06de79ae59b9c5f126e5aeb203d25ebbbf7b9fa2042f3b97bd75df5d",
    "desde": "2026-09-17 15:22 UTC",
-   "ultima": "2026-09-25 15:22 UTC",
-   "veces": 31,
+   "ultima": "2026-09-29 12:28 UTC",
+   "veces": 32,
    "salto": 2,
    "valor_usd_max": 29993070.0,
    "misma_billetera": false,
