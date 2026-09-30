@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-09-30 11:22 UTC",
+ "actualizado": "2026-09-30 12:33 UTC",
  "umbrales": {
   "unidades": {
    "BTC": 0.01,
@@ -18,6 +18,350 @@
   "nota": "Salidas desde almacenamiento en frío (desvío o atribuida), aprobaciones, cambios de permisos, congelamientos y fondeos de gas se avisan sin umbral."
  },
  "alertas": [
+  {
+   "fecha": "2026-09-30 12:29 UTC",
+   "clase": "saldo",
+   "red": "ETH",
+   "direccion": "0x8bc2ab7e073a4141df6129c1992951fe46041731",
+   "abreviada": "0x8bc2ab7e…041731",
+   "etiqueta": "Descubierta: destino de una salida (EOA con delegación EIP-7702 a 0x0000fb…bab16b)",
+   "tipo": "descubierta",
+   "rol": null,
+   "moneda": "USDC",
+   "delta": -15574716.9989,
+   "saldo_antes": 16458408.016076,
+   "saldo_despues": 883691.017176,
+   "valor_usd": 15571321.71,
+   "motivo": "el cambio supera el umbral de aviso de la red (≈US$ 50.000, el que rige para las direcciones descubiertas sin validar)",
+   "frio": false,
+   "explorador": "https://etherscan.io/address/0x8bc2ab7e073a4141df6129c1992951fe46041731",
+   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
+   "transacciones": [
+    {
+     "hash": "0xcdd2349504651b47ccca3be01761c566feca2df46e9363eceafc470431894f72",
+     "hash_url": "https://etherscan.io/tx/0xcdd2349504651b47ccca3be01761c566feca2df46e9363eceafc470431894f72",
+     "contraparte": "0x49275d95a46037357a459361a2b193b536b0ca18",
+     "contraparte_etiqueta": null,
+     "cantidad": 400000.0011,
+     "moneda": "USDC",
+     "sentido": "entrada",
+     "fecha_cadena": "2026-09-30 12:26 UTC",
+     "valor_usd": 399912.8
+    },
+    {
+     "hash": "0x721894a884b4b3188fc12131bd87bde7d7526d8e1680666e05029f8af6ad80e3",
+     "hash_url": "https://etherscan.io/tx/0x721894a884b4b3188fc12131bd87bde7d7526d8e1680666e05029f8af6ad80e3",
+     "contraparte": "0x893901e411860c2696ffeaecab5e2da9b8d5dc85",
+     "contraparte_etiqueta": null,
+     "cantidad": 174717.0,
+     "moneda": "USDC",
+     "sentido": "salida",
+     "fecha_cadena": "2026-09-30 12:03 UTC",
+     "valor_usd": 174678.91
+    },
+    {
+     "hash": "0x5dd82381ee57270a7f15d517da9d6e4a2c938dd69b6446b121e5da463d412ff6",
+     "hash_url": "https://etherscan.io/tx/0x5dd82381ee57270a7f15d517da9d6e4a2c938dd69b6446b121e5da463d412ff6",
+     "contraparte": "0xd4a0669d471509aa0c155aa001d97679970f8810",
+     "contraparte_etiqueta": "descubierta 2026-09-17 15:22 UTC: destino de una salida",
+     "cantidad": 15800000.0,
+     "moneda": "USDC",
+     "sentido": "salida",
+     "fecha_cadena": "2026-09-30 11:38 UTC",
+     "valor_usd": 15796555.6
+    }
+   ],
+   "titulo": "Monitor OrionX · Movimiento de −15.574.717 USDC en billetera vigilada (ETH 0x8bc2ab7e…041731) · 2026-09-30 12:29 UTC",
+   "cuerpo": "**Descubierta: destino de una salida (EOA con delegación EIP-7702 a 0x0000fb…bab16b)** (tipo `descubierta`).\n\n- Red: **ETH**\n- Dirección: `0x8bc2ab7e073a4141df6129c1992951fe46041731`\n- Cambio: **-15,574,716.99890000 USDC** (≈US$ 15,571,321.71)\n- Saldo antes: 16,458,408.01607600 USDC\n- Saldo después: 883,691.01717600 USDC\n- Tx: 400,000.0011 USDC ← `0x49275d95a46037357a459361a2b193b536b0ca18` · https://etherscan.io/tx/0xcdd2349504651b47ccca3be01761c566feca2df46e9363eceafc470431894f72 · 2026-09-30 12:26 UTC\n- Tx: 174,717 USDC → `0x893901e411860c2696ffeaecab5e2da9b8d5dc85` · https://etherscan.io/tx/0x721894a884b4b3188fc12131bd87bde7d7526d8e1680666e05029f8af6ad80e3 · 2026-09-30 12:03 UTC\n- Tx: 15,800,000 USDC → `0xd4a0669d471509aa0c155aa001d97679970f8810` (descubierta 2026-09-17 15:22 UTC: destino de una salida) · https://etherscan.io/tx/0x5dd82381ee57270a7f15d517da9d6e4a2c938dd69b6446b121e5da463d412ff6 · 2026-09-30 11:38 UTC\n- Detectado: 2026-09-30 12:29 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: el cambio supera el umbral de aviso de la red (≈US$ 50.000, el que rige para las direcciones descubiertas sin validar)\n- Explorador: https://etherscan.io/address/0x8bc2ab7e073a4141df6129c1992951fe46041731\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades.\n\n¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
+  },
+  {
+   "fecha": "2026-09-30 12:29 UTC",
+   "clase": "saldo",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "abreviada": "0x58b70406…925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "rol": null,
+   "moneda": "USDC",
+   "delta": 406889.92,
+   "saldo_antes": 3282578.72561,
+   "saldo_despues": 3689468.64561,
+   "valor_usd": 406801.22,
+   "motivo": "el cambio supera el umbral de aviso de la red (≈US$ 50.000, el que rige para las direcciones descubiertas sin validar)",
+   "frio": false,
+   "explorador": "https://etherscan.io/address/0x58b704065b7aff3ed351052f8560019e05925023",
+   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
+   "transacciones": [
+    {
+     "hash": "0x0adb8f22070e5c1007c8fefc51433190ff81bf1a932fb59ade4c7aed816ec0bc",
+     "hash_url": "https://etherscan.io/tx/0x0adb8f22070e5c1007c8fefc51433190ff81bf1a932fb59ade4c7aed816ec0bc",
+     "contraparte": "0x58beebf5feac00ab5f72c4f47772a87291bc9b09",
+     "contraparte_etiqueta": null,
+     "cantidad": 2200.0,
+     "moneda": "USDC",
+     "sentido": "entrada",
+     "fecha_cadena": null,
+     "valor_usd": 2199.52
+    },
+    {
+     "hash": "0x6f7953e246b94557c8fb4a9f5e1276e7eee510b99edaee9d359027d369c0bda5",
+     "hash_url": "https://etherscan.io/tx/0x6f7953e246b94557c8fb4a9f5e1276e7eee510b99edaee9d359027d369c0bda5",
+     "contraparte": "0x7962bfb56480d65c303231cbfcd158b5f2861e18",
+     "contraparte_etiqueta": null,
+     "cantidad": 204000.0,
+     "moneda": "USDC",
+     "sentido": "entrada",
+     "fecha_cadena": "2026-09-30 12:20 UTC",
+     "valor_usd": 203955.53
+    },
+    {
+     "hash": "0x45dc7ae128e12f839f5a492c47bde9207ad46e2994ee46cc796cb4f73a1a1e50",
+     "hash_url": "https://etherscan.io/tx/0x45dc7ae128e12f839f5a492c47bde9207ad46e2994ee46cc796cb4f73a1a1e50",
+     "contraparte": "0x7962bfb56480d65c303231cbfcd158b5f2861e18",
+     "contraparte_etiqueta": null,
+     "cantidad": 203999.1,
+     "moneda": "USDC",
+     "sentido": "entrada",
+     "fecha_cadena": "2026-09-30 12:13 UTC",
+     "valor_usd": 203954.63
+    },
+    {
+     "hash": "0xa5723f4a0f8dc219a0bcd79fc5d84719f3c9e105c57bf8e49d76c26013855151",
+     "hash_url": "https://etherscan.io/tx/0xa5723f4a0f8dc219a0bcd79fc5d84719f3c9e105c57bf8e49d76c26013855151",
+     "contraparte": "0x042d6177e5c41a49a13bf7c41d921873cf222c92",
+     "contraparte_etiqueta": null,
+     "cantidad": 648.08,
+     "moneda": "USDC",
+     "sentido": "entrada",
+     "fecha_cadena": "2026-09-30 11:37 UTC",
+     "valor_usd": 647.94
+    },
+    {
+     "hash": "0xa21442dd254c2cbfcc1696d822affcd9138bac6f1200b3b2c412878ff1e00506",
+     "hash_url": "https://etherscan.io/tx/0xa21442dd254c2cbfcc1696d822affcd9138bac6f1200b3b2c412878ff1e00506",
+     "contraparte": "0x0ad6ff0a7e6f2978d477870bfd57881fef70514a",
+     "contraparte_etiqueta": null,
+     "cantidad": 135.000766,
+     "moneda": "USDC",
+     "sentido": "entrada",
+     "fecha_cadena": "2026-09-30 11:20 UTC",
+     "valor_usd": 134.97
+    },
+    {
+     "hash": "0x8ce7a4f5230100211cabbef79af8e329184bcaaf7158b10b3b865ac1cf27de2d",
+     "hash_url": "https://etherscan.io/tx/0x8ce7a4f5230100211cabbef79af8e329184bcaaf7158b10b3b865ac1cf27de2d",
+     "contraparte": "0xf33f720e47e07e7bcc1c00eae4eca2463a48f45f",
+     "contraparte_etiqueta": null,
+     "cantidad": 708.7,
+     "moneda": "USDC",
+     "sentido": "salida",
+     "fecha_cadena": "2026-09-30 12:22 UTC",
+     "valor_usd": 708.55
+    },
+    {
+     "hash": "0x6fffce70815e699a2b1f0424a8f6aaba0cd7dd389d8715e62d96f30e476a3d82",
+     "hash_url": "https://etherscan.io/tx/0x6fffce70815e699a2b1f0424a8f6aaba0cd7dd389d8715e62d96f30e476a3d82",
+     "contraparte": "0xbdcf31e102d02b12693a18212a222bb0844a2666",
+     "contraparte_etiqueta": null,
+     "cantidad": 1008.0,
+     "moneda": "USDC",
+     "sentido": "salida",
+     "fecha_cadena": "2026-09-30 12:06 UTC",
+     "valor_usd": 1007.78
+    },
+    {
+     "hash": "0x32bacd9cbf08e9f6104cd0d90a17279866b910f194a753dc4205e6780481f48d",
+     "hash_url": "https://etherscan.io/tx/0x32bacd9cbf08e9f6104cd0d90a17279866b910f194a753dc4205e6780481f48d",
+     "contraparte": "0x22a659a62c0ef38eef1f5cbcdfbc1ebe9e5e2658",
+     "contraparte_etiqueta": null,
+     "cantidad": 1740.56,
+     "moneda": "USDC",
+     "sentido": "salida",
+     "fecha_cadena": "2026-09-30 12:02 UTC",
+     "valor_usd": 1740.18
+    },
+    {
+     "hash": "0xc5ded6e88c00f78896ee260551a137d29a308ed0b634fed1373c748103c0be34",
+     "hash_url": "https://etherscan.io/tx/0xc5ded6e88c00f78896ee260551a137d29a308ed0b634fed1373c748103c0be34",
+     "contraparte": "0x7be3bc1195a4a07ba204f8d952a902ae07343c5a",
+     "contraparte_etiqueta": null,
+     "cantidad": 500.0,
+     "moneda": "USDC",
+     "sentido": "salida",
+     "fecha_cadena": "2026-09-30 11:41 UTC",
+     "valor_usd": 499.89
+    },
+    {
+     "hash": "0x24576b120c9c71acba5e191d1639ee3b94b6f1a3c261a6a8fb08435ae18e5b89",
+     "hash_url": "https://etherscan.io/tx/0x24576b120c9c71acba5e191d1639ee3b94b6f1a3c261a6a8fb08435ae18e5b89",
+     "contraparte": "0x7009c714223825471002015257b86d4c0966c9a0",
+     "contraparte_etiqueta": null,
+     "cantidad": 5359.08,
+     "moneda": "USDC",
+     "sentido": "salida",
+     "fecha_cadena": "2026-09-30 11:20 UTC",
+     "valor_usd": 5357.91
+    }
+   ],
+   "titulo": "Monitor OrionX · Movimiento de +406.889,92 USDC en billetera vigilada (ETH 0x58b70406…925023) · 2026-09-30 12:29 UTC",
+   "cuerpo": "**Descubierta: destino de una salida** (tipo `descubierta`).\n\n- Red: **ETH**\n- Dirección: `0x58b704065b7aff3ed351052f8560019e05925023`\n- Cambio: **+406,889.92000000 USDC** (≈US$ 406,801.22)\n- Saldo antes: 3,282,578.72561000 USDC\n- Saldo después: 3,689,468.64561000 USDC\n- Tx: 2,200 USDC ← `0x58beebf5feac00ab5f72c4f47772a87291bc9b09` · https://etherscan.io/tx/0x0adb8f22070e5c1007c8fefc51433190ff81bf1a932fb59ade4c7aed816ec0bc\n- Tx: 204,000 USDC ← `0x7962bfb56480d65c303231cbfcd158b5f2861e18` · https://etherscan.io/tx/0x6f7953e246b94557c8fb4a9f5e1276e7eee510b99edaee9d359027d369c0bda5 · 2026-09-30 12:20 UTC\n- Tx: 203,999.1 USDC ← `0x7962bfb56480d65c303231cbfcd158b5f2861e18` · https://etherscan.io/tx/0x45dc7ae128e12f839f5a492c47bde9207ad46e2994ee46cc796cb4f73a1a1e50 · 2026-09-30 12:13 UTC\n- Tx: 648.08 USDC ← `0x042d6177e5c41a49a13bf7c41d921873cf222c92` · https://etherscan.io/tx/0xa5723f4a0f8dc219a0bcd79fc5d84719f3c9e105c57bf8e49d76c26013855151 · 2026-09-30 11:37 UTC\n- Tx: 135.000766 USDC ← `0x0ad6ff0a7e6f2978d477870bfd57881fef70514a` · https://etherscan.io/tx/0xa21442dd254c2cbfcc1696d822affcd9138bac6f1200b3b2c412878ff1e00506 · 2026-09-30 11:20 UTC\n- Tx: 708.7 USDC → `0xf33f720e47e07e7bcc1c00eae4eca2463a48f45f` · https://etherscan.io/tx/0x8ce7a4f5230100211cabbef79af8e329184bcaaf7158b10b3b865ac1cf27de2d · 2026-09-30 12:22 UTC\n- Tx: 1,008 USDC → `0xbdcf31e102d02b12693a18212a222bb0844a2666` · https://etherscan.io/tx/0x6fffce70815e699a2b1f0424a8f6aaba0cd7dd389d8715e62d96f30e476a3d82 · 2026-09-30 12:06 UTC\n- Tx: 1,740.56 USDC → `0x22a659a62c0ef38eef1f5cbcdfbc1ebe9e5e2658` · https://etherscan.io/tx/0x32bacd9cbf08e9f6104cd0d90a17279866b910f194a753dc4205e6780481f48d · 2026-09-30 12:02 UTC\n- Tx: 500 USDC → `0x7be3bc1195a4a07ba204f8d952a902ae07343c5a` · https://etherscan.io/tx/0xc5ded6e88c00f78896ee260551a137d29a308ed0b634fed1373c748103c0be34 · 2026-09-30 11:41 UTC\n- Tx: 5,359.08 USDC → `0x7009c714223825471002015257b86d4c0966c9a0` · https://etherscan.io/tx/0x24576b120c9c71acba5e191d1639ee3b94b6f1a3c261a6a8fb08435ae18e5b89 · 2026-09-30 11:20 UTC\n- Detectado: 2026-09-30 12:29 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: el cambio supera el umbral de aviso de la red (≈US$ 50.000, el que rige para las direcciones descubiertas sin validar)\n- Explorador: https://etherscan.io/address/0x58b704065b7aff3ed351052f8560019e05925023\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades.\n\n¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
+  },
+  {
+   "fecha": "2026-09-30 12:29 UTC",
+   "clase": "saldo",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "abreviada": "0x58b70406…925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "rol": null,
+   "moneda": "USDT",
+   "delta": 96152.7841,
+   "saldo_antes": 2706177.758787,
+   "saldo_despues": 2802330.542887,
+   "valor_usd": 96115.09,
+   "motivo": "el cambio supera el umbral de aviso de la red (≈US$ 50.000, el que rige para las direcciones descubiertas sin validar)",
+   "frio": false,
+   "explorador": "https://etherscan.io/address/0x58b704065b7aff3ed351052f8560019e05925023",
+   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
+   "transacciones": [
+    {
+     "hash": "0x292c22bbdb77e2cffa92474450366a08b7485e31f7c7f2a8f9aa6d5a750b24f0",
+     "hash_url": "https://etherscan.io/tx/0x292c22bbdb77e2cffa92474450366a08b7485e31f7c7f2a8f9aa6d5a750b24f0",
+     "contraparte": "0x229437c71b66eee7a7ca8dcd2b1c84dc1ef6901d",
+     "contraparte_etiqueta": null,
+     "cantidad": 2000.0,
+     "moneda": "USDT",
+     "sentido": "entrada",
+     "fecha_cadena": null,
+     "valor_usd": 1999.22
+    },
+    {
+     "hash": "0x331c4c2005134652be0dda827093f21c53e1ce4ac160103cefb25144f9b7f493",
+     "hash_url": "https://etherscan.io/tx/0x331c4c2005134652be0dda827093f21c53e1ce4ac160103cefb25144f9b7f493",
+     "contraparte": "0xdee2dd49be0e865094a9c7b4d3927c3b533931cd",
+     "contraparte_etiqueta": null,
+     "cantidad": 59.0,
+     "moneda": "USDT",
+     "sentido": "entrada",
+     "fecha_cadena": "2026-09-30 12:17 UTC",
+     "valor_usd": 58.98
+    },
+    {
+     "hash": "0x3bf100f8e9c79f8559d45db6fb6c28caa86f1be517dc29065912fa7f8ded417d",
+     "hash_url": "https://etherscan.io/tx/0x3bf100f8e9c79f8559d45db6fb6c28caa86f1be517dc29065912fa7f8ded417d",
+     "contraparte": "0x6b27ad5433c362fac24570a9a32bc6ed4f0b720d",
+     "contraparte_etiqueta": null,
+     "cantidad": 4081.0,
+     "moneda": "USDT",
+     "sentido": "entrada",
+     "fecha_cadena": "2026-09-30 12:16 UTC",
+     "valor_usd": 4079.4
+    },
+    {
+     "hash": "0xcbc8a8945a5b0441ae4151fee3c2657de99cba2d4afaec000b3a5170fabb7c45",
+     "hash_url": "https://etherscan.io/tx/0xcbc8a8945a5b0441ae4151fee3c2657de99cba2d4afaec000b3a5170fabb7c45",
+     "contraparte": "0xf461b8d0e82fbb05be646cbaf75d951c51432b53",
+     "contraparte_etiqueta": null,
+     "cantidad": 100.0,
+     "moneda": "USDT",
+     "sentido": "entrada",
+     "fecha_cadena": "2026-09-30 12:00 UTC",
+     "valor_usd": 99.96
+    },
+    {
+     "hash": "0xbedad420bd1c76c0359343a308c23a2d0e07f4e123e261b58fbe39d8d1c9f7b8",
+     "hash_url": "https://etherscan.io/tx/0xbedad420bd1c76c0359343a308c23a2d0e07f4e123e261b58fbe39d8d1c9f7b8",
+     "contraparte": "0xdc99bbae11a8333f996b8230c80179d7401d01f1",
+     "contraparte_etiqueta": null,
+     "cantidad": 200000.0,
+     "moneda": "USDT",
+     "sentido": "entrada",
+     "fecha_cadena": "2026-09-30 11:43 UTC",
+     "valor_usd": 199921.6
+    },
+    {
+     "hash": "0x1d0c98035e9ce651d4794fe57c5e480bddf66b2d9ad9d4d5166bf3d6018ddfc8",
+     "hash_url": "https://etherscan.io/tx/0x1d0c98035e9ce651d4794fe57c5e480bddf66b2d9ad9d4d5166bf3d6018ddfc8",
+     "contraparte": "0xb5f6b7badb0337f81c0102d54de908cd742f9b0e",
+     "contraparte_etiqueta": null,
+     "cantidad": 437.6241,
+     "moneda": "USDT",
+     "sentido": "entrada",
+     "fecha_cadena": "2026-09-30 11:42 UTC",
+     "valor_usd": 437.45
+    },
+    {
+     "hash": "0x4eb2f8e6773a547791810a22d00c764eab00c25a46ff972f76f3cb172ff2e201",
+     "hash_url": "https://etherscan.io/tx/0x4eb2f8e6773a547791810a22d00c764eab00c25a46ff972f76f3cb172ff2e201",
+     "contraparte": "0xa0ff42ae84feaa61f98ab8ca3cb2c53aab09d88f",
+     "contraparte_etiqueta": null,
+     "cantidad": 72.0,
+     "moneda": "USDT",
+     "sentido": "entrada",
+     "fecha_cadena": "2026-09-30 11:26 UTC",
+     "valor_usd": 71.97
+    },
+    {
+     "hash": "0x602d29834b2f6404762c463bc88793f8ee691759a870a4144fc5b6abef58cd15",
+     "hash_url": "https://etherscan.io/tx/0x602d29834b2f6404762c463bc88793f8ee691759a870a4144fc5b6abef58cd15",
+     "contraparte": "0xbc4ceb161db5b26722689371631fd27214a279f9",
+     "contraparte_etiqueta": null,
+     "cantidad": 108.59,
+     "moneda": "USDT",
+     "sentido": "salida",
+     "fecha_cadena": "2026-09-30 12:18 UTC",
+     "valor_usd": 108.55
+    },
+    {
+     "hash": "0xd68d8cf59ee34a72155bccc7b7570d4b07fea13c8d82e0fecaf14318614f0c41",
+     "hash_url": "https://etherscan.io/tx/0xd68d8cf59ee34a72155bccc7b7570d4b07fea13c8d82e0fecaf14318614f0c41",
+     "contraparte": "0x6236cca4282e6d6a250ff5cfa27abaaa46a9ee9f",
+     "contraparte_etiqueta": null,
+     "cantidad": 54.23,
+     "moneda": "USDT",
+     "sentido": "salida",
+     "fecha_cadena": "2026-09-30 12:17 UTC",
+     "valor_usd": 54.21
+    },
+    {
+     "hash": "0x1f3780b558a055f2424e71121cbd4f9b33cf5b00315d040c02e65c5db04c9024",
+     "hash_url": "https://etherscan.io/tx/0x1f3780b558a055f2424e71121cbd4f9b33cf5b00315d040c02e65c5db04c9024",
+     "contraparte": "0xfe9bc25f0abd44fc657a9c82c8a80f47b02e9307",
+     "contraparte_etiqueta": null,
+     "cantidad": 915.38,
+     "moneda": "USDT",
+     "sentido": "salida",
+     "fecha_cadena": "2026-09-30 12:11 UTC",
+     "valor_usd": 915.02
+    },
+    {
+     "hash": "0x8f184e679d0ff3ea9ab975aa7559272fd2b8fe625b35af55c88358511a3317c5",
+     "hash_url": "https://etherscan.io/tx/0x8f184e679d0ff3ea9ab975aa7559272fd2b8fe625b35af55c88358511a3317c5",
+     "contraparte": "0x09add7ae11c013fee4a4d94551f2102a10f9a5ff",
+     "contraparte_etiqueta": null,
+     "cantidad": 6634.92,
+     "moneda": "USDT",
+     "sentido": "salida",
+     "fecha_cadena": "2026-09-30 12:04 UTC",
+     "valor_usd": 6632.32
+    },
+    {
+     "hash": "0x7ae41d23109d62e4a29beb108150e91f349f9970e8dae2995f5eeadbe0135af0",
+     "hash_url": "https://etherscan.io/tx/0x7ae41d23109d62e4a29beb108150e91f349f9970e8dae2995f5eeadbe0135af0",
+     "contraparte": "0xe01339416b860957484732a3cbbc91909b18872f",
+     "contraparte_etiqueta": null,
+     "cantidad": 100000.0,
+     "moneda": "USDT",
+     "sentido": "salida",
+     "fecha_cadena": "2026-09-30 11:49 UTC",
+     "valor_usd": 99960.8
+    }
+   ],
+   "titulo": "Monitor OrionX · Movimiento de +96.152,78 USDT en billetera vigilada (ETH 0x58b70406…925023) · 2026-09-30 12:29 UTC",
+   "cuerpo": "**Descubierta: destino de una salida** (tipo `descubierta`).\n\n- Red: **ETH**\n- Dirección: `0x58b704065b7aff3ed351052f8560019e05925023`\n- Cambio: **+96,152.78410000 USDT** (≈US$ 96,115.09)\n- Saldo antes: 2,706,177.75878700 USDT\n- Saldo después: 2,802,330.54288700 USDT\n- Tx: 2,000 USDT ← `0x229437c71b66eee7a7ca8dcd2b1c84dc1ef6901d` · https://etherscan.io/tx/0x292c22bbdb77e2cffa92474450366a08b7485e31f7c7f2a8f9aa6d5a750b24f0\n- Tx: 59 USDT ← `0xdee2dd49be0e865094a9c7b4d3927c3b533931cd` · https://etherscan.io/tx/0x331c4c2005134652be0dda827093f21c53e1ce4ac160103cefb25144f9b7f493 · 2026-09-30 12:17 UTC\n- Tx: 4,081 USDT ← `0x6b27ad5433c362fac24570a9a32bc6ed4f0b720d` · https://etherscan.io/tx/0x3bf100f8e9c79f8559d45db6fb6c28caa86f1be517dc29065912fa7f8ded417d · 2026-09-30 12:16 UTC\n- Tx: 100 USDT ← `0xf461b8d0e82fbb05be646cbaf75d951c51432b53` · https://etherscan.io/tx/0xcbc8a8945a5b0441ae4151fee3c2657de99cba2d4afaec000b3a5170fabb7c45 · 2026-09-30 12:00 UTC\n- Tx: 200,000 USDT ← `0xdc99bbae11a8333f996b8230c80179d7401d01f1` · https://etherscan.io/tx/0xbedad420bd1c76c0359343a308c23a2d0e07f4e123e261b58fbe39d8d1c9f7b8 · 2026-09-30 11:43 UTC\n- Tx: 437.6241 USDT ← `0xb5f6b7badb0337f81c0102d54de908cd742f9b0e` · https://etherscan.io/tx/0x1d0c98035e9ce651d4794fe57c5e480bddf66b2d9ad9d4d5166bf3d6018ddfc8 · 2026-09-30 11:42 UTC\n- Tx: 72 USDT ← `0xa0ff42ae84feaa61f98ab8ca3cb2c53aab09d88f` · https://etherscan.io/tx/0x4eb2f8e6773a547791810a22d00c764eab00c25a46ff972f76f3cb172ff2e201 · 2026-09-30 11:26 UTC\n- Tx: 108.59 USDT → `0xbc4ceb161db5b26722689371631fd27214a279f9` · https://etherscan.io/tx/0x602d29834b2f6404762c463bc88793f8ee691759a870a4144fc5b6abef58cd15 · 2026-09-30 12:18 UTC\n- Tx: 54.23 USDT → `0x6236cca4282e6d6a250ff5cfa27abaaa46a9ee9f` · https://etherscan.io/tx/0xd68d8cf59ee34a72155bccc7b7570d4b07fea13c8d82e0fecaf14318614f0c41 · 2026-09-30 12:17 UTC\n- Tx: 915.38 USDT → `0xfe9bc25f0abd44fc657a9c82c8a80f47b02e9307` · https://etherscan.io/tx/0x1f3780b558a055f2424e71121cbd4f9b33cf5b00315d040c02e65c5db04c9024 · 2026-09-30 12:11 UTC\n- Tx: 6,634.92 USDT → `0x09add7ae11c013fee4a4d94551f2102a10f9a5ff` · https://etherscan.io/tx/0x8f184e679d0ff3ea9ab975aa7559272fd2b8fe625b35af55c88358511a3317c5 · 2026-09-30 12:04 UTC\n- Tx: 100,000 USDT → `0xe01339416b860957484732a3cbbc91909b18872f` · https://etherscan.io/tx/0x7ae41d23109d62e4a29beb108150e91f349f9970e8dae2995f5eeadbe0135af0 · 2026-09-30 11:49 UTC\n- Detectado: 2026-09-30 12:29 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: el cambio supera el umbral de aviso de la red (≈US$ 50.000, el que rige para las direcciones descubiertas sin validar)\n- Explorador: https://etherscan.io/address/0x58b704065b7aff3ed351052f8560019e05925023\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades.\n\n¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
+  },
   {
    "fecha": "2026-09-30 11:19 UTC",
    "clase": "saldo",
@@ -3243,108 +3587,6 @@
    ],
    "titulo": "Monitor OrionX · Movimiento de +93.498,22 USDC en billetera vigilada (ETH 0xad1618f3…1de2d3) · 2026-09-28 14:23 UTC",
    "cuerpo": "**Destino sin etiqueta: 9,85 M USDT desde la caliente** (tipo `atribuida`, rol declarado: destino de salidas).\n\n- Red: **ETH**\n- Dirección: `0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3`\n- Cambio: **+93,498.22099800 USDC** (≈US$ 93,484.66)\n- Saldo antes: 232.25830800 USDC\n- Saldo después: 93,730.47930600 USDC\n- Tx: 93,498.220998 USDC ← `0x4c82d1fbfe28c977cbb58d8c7ff8fcf9f70a2cca` · https://etherscan.io/tx/0xd670c8648e357c25d16db579169e80562722e85178d70aceb8729e747701544d · 2026-09-28 13:27 UTC\n- Detectado: 2026-09-28 14:23 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: el cambio supera el umbral de aviso de la red (1.000 USDC)\n- Explorador: https://etherscan.io/address/0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades.\n\n¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
-  },
-  {
-   "fecha": "2026-09-28 14:23 UTC",
-   "clase": "saldo",
-   "red": "ETH",
-   "direccion": "0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3",
-   "abreviada": "0xad1618f3…1de2d3",
-   "etiqueta": "Destino sin etiqueta: 9,85 M USDT desde la caliente",
-   "tipo": "atribuida",
-   "rol": "destino de salidas",
-   "moneda": "USDT",
-   "delta": -94000.0,
-   "saldo_antes": 96573.9018,
-   "saldo_despues": 2573.9018,
-   "valor_usd": 93976.22,
-   "motivo": "el cambio supera el umbral de aviso de la red (1.000 USDT)",
-   "frio": false,
-   "explorador": "https://etherscan.io/address/0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3",
-   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
-   "transacciones": [
-    {
-     "hash": "0xd670c8648e357c25d16db579169e80562722e85178d70aceb8729e747701544d",
-     "hash_url": "https://etherscan.io/tx/0xd670c8648e357c25d16db579169e80562722e85178d70aceb8729e747701544d",
-     "contraparte": "0x000000000004444c5dc75cb358380d2e3de08a90",
-     "contraparte_etiqueta": null,
-     "cantidad": 94000.0,
-     "moneda": "USDT",
-     "sentido": "salida",
-     "fecha_cadena": "2026-09-28 13:27 UTC",
-     "valor_usd": 93976.22
-    }
-   ],
-   "titulo": "Monitor OrionX · Movimiento de −94.000 USDT en billetera vigilada (ETH 0xad1618f3…1de2d3) · 2026-09-28 14:23 UTC",
-   "cuerpo": "**Destino sin etiqueta: 9,85 M USDT desde la caliente** (tipo `atribuida`, rol declarado: destino de salidas).\n\n- Red: **ETH**\n- Dirección: `0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3`\n- Cambio: **-94,000.00000000 USDT** (≈US$ 93,976.22)\n- Saldo antes: 96,573.90180000 USDT\n- Saldo después: 2,573.90180000 USDT\n- Tx: 94,000 USDT → `0x000000000004444c5dc75cb358380d2e3de08a90` · https://etherscan.io/tx/0xd670c8648e357c25d16db579169e80562722e85178d70aceb8729e747701544d · 2026-09-28 13:27 UTC\n- Detectado: 2026-09-28 14:23 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: el cambio supera el umbral de aviso de la red (1.000 USDT)\n- Explorador: https://etherscan.io/address/0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades.\n\n¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
-  },
-  {
-   "fecha": "2026-09-28 13:21 UTC",
-   "clase": "saldo",
-   "red": "ETH",
-   "direccion": "0xfd56ef367c8a76bc70a9f98f47986c3879752e5a",
-   "abreviada": "0xfd56ef36…752e5a",
-   "etiqueta": "Destino sin etiqueta: 5,24 M USDT desde la caliente; origen de los 200.000 USDT del 15-sep",
-   "tipo": "desvio",
-   "rol": "destino directo de la caliente y origen de fondos hacia la otra atribuida",
-   "moneda": "USDT",
-   "delta": -199999.9999,
-   "saldo_antes": 281025.900834,
-   "saldo_despues": 81025.900934,
-   "valor_usd": 199940.2,
-   "motivo": "el cambio supera el umbral de aviso de la red (1.000 USDT)",
-   "frio": false,
-   "explorador": "https://etherscan.io/address/0xfd56ef367c8a76bc70a9f98f47986c3879752e5a",
-   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
-   "transacciones": [
-    {
-     "hash": "0x552a788d831f137bb3a0f3b2fa53c62128af8da8e775130cdaa94d12f12dbdf7",
-     "hash_url": "https://etherscan.io/tx/0x552a788d831f137bb3a0f3b2fa53c62128af8da8e775130cdaa94d12f12dbdf7",
-     "contraparte": "0x5b50619eae577b64ab953958af0a1b1d5bfd664d",
-     "contraparte_etiqueta": "Subcuenta de paso: 6,34 M USDT desde 0xfd56ef, reenviados a una cuenta de depósi",
-     "cantidad": 200000.0,
-     "moneda": "USDT",
-     "sentido": "salida",
-     "fecha_cadena": "2026-09-28 13:15 UTC",
-     "valor_usd": 199940.2
-    }
-   ],
-   "titulo": "Monitor OrionX · Movimiento de −200.000 USDT en billetera vigilada (ETH 0xfd56ef36…752e5a) · 2026-09-28 13:21 UTC",
-   "cuerpo": "**Destino sin etiqueta: 5,24 M USDT desde la caliente; origen de los 200.000 USDT del 15-sep** (tipo `desvio`, rol declarado: destino directo de la caliente y origen de fondos hacia la otra atribuida).\n\n- Red: **ETH**\n- Dirección: `0xfd56ef367c8a76bc70a9f98f47986c3879752e5a`\n- Cambio: **-199,999.99990000 USDT** (≈US$ 199,940.20)\n- Saldo antes: 281,025.90083400 USDT\n- Saldo después: 81,025.90093400 USDT\n- Tx: 200,000 USDT → `0x5b50619eae577b64ab953958af0a1b1d5bfd664d` (Subcuenta de paso: 6,34 M USDT desde 0xfd56ef, reenviados a una cuenta de depósi) · https://etherscan.io/tx/0x552a788d831f137bb3a0f3b2fa53c62128af8da8e775130cdaa94d12f12dbdf7 · 2026-09-28 13:15 UTC\n- Detectado: 2026-09-28 13:21 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: el cambio supera el umbral de aviso de la red (1.000 USDT)\n- Explorador: https://etherscan.io/address/0xfd56ef367c8a76bc70a9f98f47986c3879752e5a\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades.\n\n¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
-  },
-  {
-   "fecha": "2026-09-25 22:18 UTC",
-   "clase": "saldo",
-   "red": "ETH",
-   "direccion": "0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3",
-   "abreviada": "0xad1618f3…1de2d3",
-   "etiqueta": "Destino sin etiqueta: 9,85 M USDT desde la caliente",
-   "tipo": "atribuida",
-   "rol": "destino de salidas",
-   "moneda": "USDT",
-   "delta": -43229.7599,
-   "saldo_antes": 139803.6617,
-   "saldo_despues": 96573.9018,
-   "valor_usd": 43222.37,
-   "motivo": "el cambio supera el umbral de aviso de la red (1.000 USDT)",
-   "frio": false,
-   "explorador": "https://etherscan.io/address/0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3",
-   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
-   "transacciones": [
-    {
-     "hash": "0x93b047ab617274c35c40449133a600205bdb482f56b9ec5adb8cf0b0b5251cba",
-     "hash_url": "https://etherscan.io/tx/0x93b047ab617274c35c40449133a600205bdb482f56b9ec5adb8cf0b0b5251cba",
-     "contraparte": "0x6f5b30ddb2cc57775d34c59632f27db5975bce8d",
-     "contraparte_etiqueta": "descubierta 2026-09-18 20:19 UTC: destino de una salida (EOA con delegación EIP-",
-     "cantidad": 43229.76,
-     "moneda": "USDT",
-     "sentido": "salida",
-     "fecha_cadena": "2026-09-25 21:23 UTC",
-     "valor_usd": 43222.37
-    }
-   ],
-   "titulo": "Monitor OrionX · Movimiento de −43.229,76 USDT en billetera vigilada (ETH 0xad1618f3…1de2d3) · 2026-09-25 22:18 UTC",
-   "cuerpo": "**Destino sin etiqueta: 9,85 M USDT desde la caliente** (tipo `atribuida`, rol declarado: destino de salidas).\n\n- Red: **ETH**\n- Dirección: `0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3`\n- Cambio: **-43,229.75990000 USDT** (≈US$ 43,222.37)\n- Saldo antes: 139,803.66170000 USDT\n- Saldo después: 96,573.90180000 USDT\n- Tx: 43,229.76 USDT → `0x6f5b30ddb2cc57775d34c59632f27db5975bce8d` (descubierta 2026-09-18 20:19 UTC: destino de una salida (EOA con delegación EIP-) · https://etherscan.io/tx/0x93b047ab617274c35c40449133a600205bdb482f56b9ec5adb8cf0b0b5251cba · 2026-09-25 21:23 UTC\n- Detectado: 2026-09-25 22:18 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: el cambio supera el umbral de aviso de la red (1.000 USDT)\n- Explorador: https://etherscan.io/address/0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades.\n\n¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
   }
  ]
 }
