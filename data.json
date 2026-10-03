@@ -1,402 +1,402 @@
 {
  "version": 3,
- "actualizado": "2026-10-03 01:19 UTC",
+ "actualizado": "2026-10-03 02:21 UTC",
  "precios": {
   "BTC": {
-   "clp": 83908628,
-   "usd": 84677
+   "clp": 83878592,
+   "usd": 84647
   },
   "XRP": {
-   "clp": 1478.32,
+   "clp": 1476.77,
    "usd": 1.49
   },
   "TRX": {
-   "clp": 331.75,
-   "usd": 0.334788
+   "clp": 331.47,
+   "usd": 0.334508
   },
   "LTC": {
-   "clp": 70227,
-   "usd": 70.87
+   "clp": 69511,
+   "usd": 70.15
   },
   "ETH": {
-   "clp": 2657272,
-   "usd": 2681.62
+   "clp": 2655607,
+   "usd": 2679.94
   },
   "BNB": {
-   "clp": 762365,
-   "usd": 769.35
+   "clp": 761828,
+   "usd": 768.81
   },
   "POL": {
-   "clp": 107.1,
-   "usd": 0.108077
+   "clp": 107.19,
+   "usd": 0.108167
   },
   "USDT": {
-   "clp": 990.83,
-   "usd": 0.99991
+   "clp": 990.81,
+   "usd": 0.999887
   },
   "USDC": {
-   "clp": 990.88,
-   "usd": 0.999963
+   "clp": 990.84,
+   "usd": 0.999922
   },
   "DAI": {
-   "clp": 990.97,
-   "usd": 1.0
+   "clp": 990.75,
+   "usd": 0.999826
   },
   "XAUT": {
-   "clp": 4103683,
-   "usd": 4141.29
+   "clp": 4105330,
+   "usd": 4142.95
   },
   "DOT": {
-   "clp": 1162.71,
+   "clp": 1162.49,
    "usd": 1.17
   },
   "ADA": {
-   "clp": 245.72,
-   "usd": 0.247967
+   "clp": 246.24,
+   "usd": 0.248496
   },
   "SOL": {
-   "clp": 118435,
-   "usd": 119.52
+   "clp": 118161,
+   "usd": 119.24
   },
   "BTCB": {
-   "clp": 83908628,
-   "usd": 84677
+   "clp": 83878592,
+   "usd": 84647
   },
   "USDCOLD": {
-   "usd": 1.0001860460744354,
-   "clp": 991.1099584967022
+   "usd": 0.9996386664186155,
+   "clp": 990.5599529989671
   },
   "NFT": {
-   "usd": 2.409985779179876e-07,
-   "clp": 0.0002388116605860795
-  },
-  "EURT": {
-   "usd": 0.04719323,
-   "clp": 46.76467690182117
+   "usd": 2.4101473786356247e-07,
+   "clp": 0.0002388258432074421
   },
   "HEX": {
-   "usd": 0.00098622,
-   "clp": 0.9772643163884749
+   "usd": 0.00098638,
+   "clp": 0.977427
+  },
+  "EURT": {
+   "usd": 0.051398,
+   "clp": 50.93
   },
   "SAI": {
-   "usd": 14.0,
-   "clp": 13872.868558170236
+   "usd": 14.13,
+   "clp": 14001.71
   },
   "LINK": {
-   "usd": 13.91,
-   "clp": 13780.07
+   "usd": 13.94,
+   "clp": 13813.452320112172
   },
   "SHIB": {
    "usd": 5.72e-06,
-   "clp": 0.00566751
+   "clp": 0.005668073692327233
   },
   "TUSD": {
-   "usd": 0.999712,
-   "clp": 990.63
-  },
-  "CHKN": {
-   "usd": 1.8981e-08,
-   "clp": 1.881e-05
-  },
-  "ENJ": {
-   "usd": 0.03258239,
-   "clp": 32.28651527007431
-  },
-  "UNI": {
-   "usd": 8.76,
-   "clp": 8680.452040683662
-  },
-  "QNT": {
-   "usd": 226.48,
-   "clp": 224423.37650388535
-  },
-  "PEPE": {
-   "usd": 4.18e-06,
-   "clp": 0.004142042183796542
-  },
-  "PAXG": {
-   "usd": 4147.52,
-   "clp": 4109857.1287415875
-  },
-  "MANA": {
-   "usd": 0.097788,
-   "clp": 96.90000504045365
-  },
-  "AAVE": {
-   "usd": 181.08,
-   "clp": 179435.64560810477
-  },
-  "NEIRO": {
-   "usd": 8.907e-05,
-   "clp": 0.0882611716054445
-  },
-  "MXNB": {
-   "usd": 0.055097,
-   "clp": 54.59667421067896
-  },
-  "BAT": {
-   "usd": 0.092339,
-   "clp": 91.50048641377725
-  },
-  "CRV": {
-   "usd": 0.35761,
-   "clp": 354.36260893480414
-  },
-  "EURC": {
-   "usd": 1.12,
-   "clp": 1109.829484653619
-  },
-  "MORPHO": {
-   "usd": 2.54,
-   "clp": 2516.9347241251717
-  },
-  "PYUSD": {
-   "usd": 0.999984,
-   "clp": 990.9033280195218
-  },
-  "LDO": {
-   "usd": 0.428454,
-   "clp": 424.5632875158765
-  },
-  "ONDO": {
-   "usd": 0.489322,
-   "clp": 484.8785563300697
-  },
-  "RLUSD": {
-   "usd": 1.0,
-   "clp": 990.9191827264455
-  },
-  "APE": {
-   "usd": 0.164176,
-   "clp": 162.6851477432969
-  },
-  "GALA": {
-   "usd": 0.00255941,
-   "clp": 2.5361684654618917
-  },
-  "VIRTUAL": {
-   "usd": 0.751518,
-   "clp": 744.6936023642129
-  },
-  "USDS": {
-   "usd": 0.999941,
-   "clp": 990.8607184946645
-  },
-  "CHZ": {
-   "usd": 0.01624594,
-   "clp": 16.09841358742287
-  },
-  "COMP": {
-   "usd": 23.9,
-   "clp": 23682.968467162045
-  },
-  "FLOKI": {
-   "usd": 2.685e-05,
-   "clp": 0.026606180056205058
-  },
-  "GRT": {
-   "usd": 0.02816002,
-   "clp": 27.90430400396036
-  },
-  "SAND": {
-   "usd": 0.063855,
-   "clp": 63.27514441299717
+   "usd": 0.999753,
+   "clp": 990.6772164554594
   },
   "YFI": {
-   "usd": 2528.0,
-   "clp": 2505043.693932454
-  },
-  "OMG": {
-   "usd": 0.04944877,
-   "clp": 48.999734755227976
-  },
-  "SNX": {
-   "usd": 0.243985,
-   "clp": 241.7694167975118
-  },
-  "USAT": {
-   "usd": 0.999228,
-   "clp": 990.1541931173806
+   "usd": 2530.98,
+   "clp": 2508003.6982178986
   },
   "SUSHI": {
-   "usd": 0.248317,
-   "clp": 246.06207869708277
+   "usd": 0.254082,
+   "clp": 251.77543704438597
   },
-  "PENDLE": {
-   "usd": 2.33,
-   "clp": 2308.841695752618
-  },
-  "LRC": {
-   "usd": 0.010316,
-   "clp": 10.222322289006012
-  },
-  "USDP": {
-   "usd": 0.998823,
-   "clp": 989.7528708483765
-  },
-  "SKY": {
-   "usd": 0.087001,
-   "clp": 86.21095981638348
-  },
-  "WFTM": {
-   "usd": 0.04364867,
-   "clp": 43.25230440349632
-  },
-  "FOX": {
-   "usd": 0.00567354,
-   "clp": 5.622019619965798
-  },
-  "LPT": {
-   "usd": 1.65,
-   "clp": 1635.016651498635
-  },
-  "UDS": {
-   "usd": 0.111098,
-   "clp": 110.08913936254264
+  "AAVE": {
+   "usd": 181.22,
+   "clp": 179574.88016145822
   },
   "FET": {
-   "usd": 0.220358,
-   "clp": 218.35696926723406
+   "usd": 0.220737,
+   "clp": 218.7331438152511
+  },
+  "BAL": {
+   "usd": 0.133325,
+   "clp": 132.1146722079595
   },
   "AXS": {
    "usd": 1.22,
-   "clp": 1208.9214029262635
+   "clp": 1205.34
   },
-  "BAL": {
-   "usd": 0.131482,
-   "clp": 130.2880359832385
+  "LRC": {
+   "usd": 0.01029398,
+   "clp": 10.2
+  },
+  "COMP": {
+   "usd": 24.54,
+   "clp": 24314
+  },
+  "CHKN": {
+   "usd": 1.8981e-08,
+   "clp": 1.8808689991969092e-05
+  },
+  "ENJ": {
+   "usd": 0.03258239,
+   "clp": 32.28660622240313
+  },
+  "UNI": {
+   "usd": 8.76,
+   "clp": 8680.476493843804
+  },
+  "QNT": {
+   "usd": 226.48,
+   "clp": 224424.00871298453
+  },
+  "PEPE": {
+   "usd": 4.18e-06,
+   "clp": 0.004142053852085285
+  },
+  "PAXG": {
+   "usd": 4147.52,
+   "clp": 4109868.706363819
+  },
+  "MANA": {
+   "usd": 0.097788,
+   "clp": 96.90027801141528
+  },
+  "NEIRO": {
+   "usd": 8.907e-05,
+   "clp": 0.08826142024048717
+  },
+  "MXNB": {
+   "usd": 0.055097,
+   "clp": 54.5968280115653
+  },
+  "BAT": {
+   "usd": 0.092339,
+   "clp": 91.50074417409166
+  },
+  "CRV": {
+   "usd": 0.35761,
+   "clp": 354.36360718761216
+  },
+  "EURC": {
+   "usd": 1.12,
+   "clp": 1109.8326110850526
+  },
+  "MORPHO": {
+   "usd": 2.54,
+   "clp": 2516.94181442503
+  },
+  "PYUSD": {
+   "usd": 0.999984,
+   "clp": 990.9061194314957
+  },
+  "LDO": {
+   "usd": 0.428454,
+   "clp": 424.56448352663847
+  },
+  "ONDO": {
+   "usd": 0.489322,
+   "clp": 484.87992225121434
+  },
+  "RLUSD": {
+   "usd": 1.0,
+   "clp": 990.9219741830826
+  },
+  "APE": {
+   "usd": 0.164176,
+   "clp": 162.68560603348178
+  },
+  "GALA": {
+   "usd": 0.00255941,
+   "clp": 2.5361756099439234
+  },
+  "VIRTUAL": {
+   "usd": 0.751518,
+   "clp": 744.6957001941219
+  },
+  "USDS": {
+   "usd": 0.999941,
+   "clp": 990.8635097866058
+  },
+  "CHZ": {
+   "usd": 0.01624594,
+   "clp": 16.09845893725991
+  },
+  "FLOKI": {
+   "usd": 2.685e-05,
+   "clp": 0.026606255006815765
+  },
+  "GRT": {
+   "usd": 0.02816002,
+   "clp": 27.904382611435093
+  },
+  "SAND": {
+   "usd": 0.063855,
+   "clp": 63.275322661460734
+  },
+  "OMG": {
+   "usd": 0.04944877,
+   "clp": 48.999872789325195
+  },
+  "SNX": {
+   "usd": 0.243985,
+   "clp": 241.77009787105942
+  },
+  "USAT": {
+   "usd": 0.999228,
+   "clp": 990.1569824190133
+  },
+  "PENDLE": {
+   "usd": 2.33,
+   "clp": 2308.8481998465827
+  },
+  "USDP": {
+   "usd": 0.998823,
+   "clp": 989.7556590194691
+  },
+  "SKY": {
+   "usd": 0.087001,
+   "clp": 86.21120267590237
+  },
+  "WFTM": {
+   "usd": 0.04364867,
+   "clp": 43.252426246865895
+  },
+  "FOX": {
+   "usd": 0.00567354,
+   "clp": 5.622035457406687
+  },
+  "LPT": {
+   "usd": 1.65,
+   "clp": 1635.0212574020863
+  },
+  "UDS": {
+   "usd": 0.111098,
+   "clp": 110.08944948779211
   },
   "ETHDYDX": {
    "usd": 0.145284,
-   "clp": 143.9647025432289
+   "clp": 143.96510809721497
+  },
+  "BREV": {
+   "usd": 0.085212,
+   "clp": 84.43844326408883
+  },
+  "KITE": {
+   "usd": 0.150126,
+   "clp": 148.76315229620948
+  },
+  "WLD": {
+   "usd": 0.566619,
+   "clp": 561.475218089644
+  },
+  "RSR": {
+   "usd": 0.00167718,
+   "clp": 1.66
+  },
+  "ROBO": {
+   "usd": 0.00818955,
+   "clp": 8.12
   },
   "FLUID": {
    "usd": 1.59,
-   "clp": 1574.67
+   "clp": 1575.5659389511015
+  },
+  "USDG": {
+   "usd": 0.999987,
+   "clp": 990.9090921974182
   },
   "XBO": {
    "usd": 0.078358,
-   "clp": 77.64644532007881
+   "clp": 77.64666405303798
   },
   "WLFI": {
    "usd": 0.055049,
-   "clp": 54.5491100899081
+   "clp": 54.549263756804514
   },
   "CBBTC": {
    "usd": 84584.0,
-   "clp": 83815908.15173367
+   "clp": 83816144.26430187
   },
   "LIT": {
    "usd": 3.77,
-   "clp": 3735.7653188786994
+   "clp": 3735.7758426702217
   },
   "YB": {
    "usd": 0.088618,
-   "clp": 87.81327613485215
-  },
-  "USDG": {
-   "usd": 1.0,
-   "clp": 990.9191827264455
-  },
-  "WLD": {
-   "usd": 0.561286,
-   "clp": 556.1890643957956
+   "clp": 87.81352350815642
   },
   "USD1": {
    "usd": 0.999474,
-   "clp": 990.3979592363313
-  },
-  "KITE": {
-   "usd": 0.149246,
-   "clp": 147.89072434519107
+   "clp": 990.4007492246623
   },
   "INJ": {
    "usd": 7.31,
-   "clp": 7243.6192257303155
+   "clp": 7243.639631278334
   },
   "ETHFI": {
    "usd": 0.705549,
-   "clp": 699.1420384534608
+   "clp": 699.1440079628998
   },
   "SPX": {
    "usd": 0.416376,
-   "clp": 412.59496562690646
-  },
-  "RSR": {
-   "usd": 0.00174878,
-   "clp": 1.7328996483683532
+   "clp": 412.59612792245525
   },
   "IMX": {
    "usd": 0.179216,
-   "clp": 177.58857225150263
+   "clp": 177.58907252519532
   },
   "SPK": {
    "usd": 0.02378572,
-   "clp": 23.569726222960067
+   "clp": 23.56979261976603
   },
   "UMA": {
    "usd": 0.407334,
-   "clp": 403.6350743766939
+   "clp": 403.63621143189175
   },
   "ACH": {
    "usd": 0.0062431,
-   "clp": 6.186407549679472
+   "clp": 6.186424977022403
   },
   "ZRO": {
    "usd": 1.91,
-   "clp": 1892.6556390075107
+   "clp": 1892.6609706896877
   },
   "CFG": {
    "usd": 0.148234,
-   "clp": 146.88791413227193
+   "clp": 146.88832792105507
   },
   "SAFE": {
    "usd": 0.113219,
-   "clp": 112.19087894910543
+   "clp": 112.19119499503444
   },
   "ENA": {
    "usd": 0.244523,
-   "clp": 242.30253131781862
-  },
-  "BREV": {
-   "usd": 0.085272,
-   "clp": 84.49766054944946
+   "clp": 242.3032138931699
   },
   "DOS": {
    "usd": 0.21268,
-   "clp": 210.74869178226044
+   "clp": 210.749285469258
   },
   "MSFTON": {
    "usd": 517.71,
-   "clp": 513008.7700893081
+   "clp": 513010.21525432373
   },
   "MNT": {
    "usd": 0.677374,
-   "clp": 671.2228904801433
+   "clp": 671.2247813402914
   },
   "AZTEC": {
    "usd": 0.01684378,
-   "clp": 16.690824711624046
-  },
-  "ROBO": {
-   "usd": 0.00898425,
-   "clp": 8.902665667410067
+   "clp": 16.690871730305524
   },
   "AMZNON": {
    "usd": 248.73,
-   "clp": 246471.32831954877
+   "clp": 246472.02263855812
   },
   "GRVT": {
    "usd": 0.208838,
-   "clp": 206.9415802822254
+   "clp": 206.94216324444662
   },
   "IMU": {
    "usd": 0.00198252,
-   "clp": 1.964517098138833
+   "clp": 1.9645226322574452
   },
   "BIT": {
    "usd": 0.66144,
-   "clp": 655.4335842225801
+   "clp": 655.4354306036582
   }
  },
  "precios_antiguos": false,
@@ -469,8 +469,8 @@
     ]
    },
    "tokens_contratos": {},
-   "valor_clp": 110583939.37519711,
-   "valor_usd": 111596.58378007999
+   "valor_clp": 110544354.65927167,
+   "valor_usd": 111557.04650888
   },
   {
    "red": "BTC",
@@ -541,8 +541,8 @@
     ]
    },
    "tokens_contratos": {},
-   "valor_clp": 293888021.2116578,
-   "valor_usd": 296579.22630006
+   "valor_clp": 293782820.81909376,
+   "valor_usd": 296474.15199666
   },
   {
    "red": "BTC",
@@ -635,8 +635,8 @@
     ]
    },
    "tokens_contratos": {},
-   "valor_clp": 1543918755.1999998,
-   "valor_usd": 1558056.7999999998
+   "valor_clp": 1543366092.8,
+   "valor_usd": 1557504.7999999998
   },
   {
    "red": "BTC",
@@ -797,7 +797,7 @@
     "ledger": 101505944
    },
    "tokens_contratos": {},
-   "valor_clp": 2377.25978224,
+   "valor_clp": 2374.76725514,
    "valor_usd": 2.39604218
   },
   {
@@ -817,7 +817,7 @@
     "ledger": 106867215
    },
    "tokens_contratos": {},
-   "valor_clp": 5495922.37401488,
+   "valor_clp": 5490159.9682571795,
    "valor_usd": 5539.34488966
   },
   {
@@ -837,7 +837,7 @@
     "ledger": 98481622
    },
    "tokens_contratos": {},
-   "valor_clp": 1580.7601844,
+   "valor_clp": 1579.10277715,
    "valor_usd": 1.5932495500000001
   },
   {
@@ -857,7 +857,7 @@
     "ledger": 105935609
    },
    "tokens_contratos": {},
-   "valor_clp": 1478.32295664,
+   "valor_clp": 1476.7729535400001,
    "valor_usd": 1.49000298
   },
   {
@@ -877,7 +877,7 @@
     "ledger": 106632327
    },
    "tokens_contratos": {},
-   "valor_clp": 860318866.1955839,
+   "valor_clp": 859416832.642224,
    "valor_usd": 867116.1254879999
   },
   {
@@ -930,8 +930,8 @@
    "congelada": {
     "USDT": false
    },
-   "valor_clp": 85914704.46379797,
-   "valor_usd": 86701.49505752495
+   "valor_clp": 85845828.66079883,
+   "valor_usd": 86632.60913387765
   },
   {
    "red": "LTC",
@@ -1001,8 +1001,8 @@
     ]
    },
    "tokens_contratos": {},
-   "valor_clp": 41165360.352281615,
-   "valor_usd": 41542.271322514105
+   "valor_clp": 40745658.55650173,
+   "valor_usd": 41120.224823964505
   },
   {
    "red": "ETH",
@@ -1038,9 +1038,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 74652967.3829666,
-   "valor_usd": 75335.34480230881
+   "congelada_fecha": "2026-10-03 02:24 UTC",
+   "valor_clp": 74633654.02666467,
+   "valor_usd": 75317.45353145394
   },
   {
    "red": "BSC",
@@ -1074,8 +1074,8 @@
    "permisos": null,
    "inventario": null,
    "error": "'>' not supported between instances of 'NoneType' and 'str'",
-   "valor_clp": 60335734.70736381,
-   "valor_usd": 60788.4481273594
+   "valor_clp": 60301853.9195894,
+   "valor_usd": 60760.52999126326
   },
   {
    "red": "POLYGON",
@@ -1100,9 +1100,9 @@
    "congelada": {
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 25514367.296494015,
-   "valor_usd": 25747.482392840244
+   "congelada_fecha": "2026-10-03 02:24 UTC",
+   "valor_clp": 25528406.891098127,
+   "valor_usd": 25761.50408295087
   },
   {
    "red": "BTC",
@@ -1627,7 +1627,7 @@
     "ledger": 106836676
    },
    "tokens_contratos": {},
-   "valor_clp": 261771067.5060572,
+   "valor_clp": 261496603.82117546,
    "valor_usd": 263839.28417665
   },
   {
@@ -1648,7 +1648,7 @@
     "ledger": 106630929
    },
    "tokens_contratos": {},
-   "valor_clp": 28696137.876907438,
+   "valor_clp": 28666050.33584109,
    "valor_usd": 28922.86205733
   },
   {
@@ -1669,7 +1669,7 @@
     "ledger": 106555885
    },
    "tokens_contratos": {},
-   "valor_clp": 184502001.47208488,
+   "valor_clp": 184308553.43493342,
    "valor_usd": 185959.72603591002
   },
   {
@@ -1703,9 +1703,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 294461.84934088873,
-   "valor_usd": 297.15997465059263
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 296854.719115697,
+   "valor_usd": 299.575582450936
   },
   {
    "red": "ETH",
@@ -1733,9 +1733,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 56900362.06922545,
-   "valor_usd": 57421.79890828563
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 56899201.6469148,
+   "valor_usd": 57420.46615378777
   },
   {
    "red": "ETH",
@@ -1763,7 +1763,7 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
+   "congelada_fecha": "2026-10-03 02:25 UTC",
    "valor_clp": 0.0,
    "valor_usd": 0.0
   },
@@ -1798,9 +1798,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 138881024.54604012,
-   "valor_usd": 140153.73495196717
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 140170443.78291863,
+   "valor_usd": 141454.7488055634
   },
   {
    "red": "ETH",
@@ -1828,9 +1828,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 233628.69985970465,
-   "valor_usd": 235.76938835350776
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 233482.31285900297,
+   "valor_usd": 235.62168255029056
   },
   {
    "red": "ETH",
@@ -1861,9 +1861,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 367022134.1489151,
-   "valor_usd": 370385.13088281924
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 367063880.56263715,
+   "valor_usd": 370427.2532072901
   },
   {
    "red": "ETH",
@@ -1889,9 +1889,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 269974535.537642,
-   "valor_usd": 272448.25294077967
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 269805374.231735,
+   "valor_usd": 272277.56765914377
   },
   {
    "red": "ETH",
@@ -1917,9 +1917,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 44353256.20576826,
-   "valor_usd": 44759.65535576392
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 44325465.23551299,
+   "valor_usd": 44731.61401639936
   },
   {
    "red": "ETH",
@@ -1947,9 +1947,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 6.377452799999999e-11,
-   "valor_usd": 6.435887999999999e-14
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 6.3734568e-11,
+   "valor_usd": 6.431855999999999e-14
   },
   {
    "red": "ETH",
@@ -1977,9 +1977,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 19443296.79216,
-   "valor_usd": 19621.4515258
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 19431125.23246,
+   "valor_usd": 19609.1703
   },
   {
    "red": "ETH",
@@ -2005,9 +2005,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 41168.59080754602,
-   "valor_usd": 41.54580956760601
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 41142.79529105596,
+   "valor_usd": 41.519781659075505
   },
   {
    "red": "ETH",
@@ -2033,9 +2033,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 23658.462888597016,
-   "valor_usd": 23.875240190435726
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 23643.638910957725,
+   "valor_usd": 23.860282663448334
   },
   {
    "red": "ETH",
@@ -2061,9 +2061,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 17532.7257782416,
-   "valor_usd": 17.693381626458695
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 17522.86542103137,
+   "valor_usd": 17.68343119776006
   },
   {
    "red": "ETH",
@@ -2089,9 +2089,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 39656350.86926497,
-   "valor_usd": 40019.83132926699
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 39653608.2035267,
+   "valor_usd": 40017.01862574343
   },
   {
    "red": "ETH",
@@ -2117,9 +2117,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 461.8843975995591,
-   "valor_usd": 0.4661165429398758
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 461.5949889421077,
+   "valor_usd": 0.46582452699722215
   },
   {
    "red": "ETH",
@@ -2149,9 +2149,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 17342660.981711783,
-   "valor_usd": 17501.628239569487
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 17341457.697627988,
+   "valor_usd": 17500.40130159847
   },
   {
    "red": "ETH",
@@ -2177,9 +2177,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 36666316.69108118,
-   "valor_usd": 37002.42196659521
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 36664831.70588714,
+   "valor_usd": 37000.899835126394
   },
   {
    "red": "ETH",
@@ -2205,9 +2205,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 35.71413368383818,
-   "valor_usd": 0.03604137457488211
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 35.691815918124846,
+   "valor_usd": 0.03601885546623442
   },
   {
    "red": "ETH",
@@ -2233,9 +2233,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 1199.068175160902,
-   "valor_usd": 1.2100549746810862
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 1198.3173707972126,
+   "valor_usd": 1.209297403917274
   },
   {
    "red": "ETH",
@@ -2261,9 +2261,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 1215.7836816116728,
-   "valor_usd": 1.2269236405921162
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 1215.0218928938134,
+   "valor_usd": 1.226154988912835
   },
   {
    "red": "ETH",
@@ -2289,9 +2289,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 9.500432133054515,
-   "valor_usd": 0.009587513574429043
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 9.499248255440808,
+   "valor_usd": 0.009586313779809804
   },
   {
    "red": "ETH",
@@ -2317,9 +2317,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 48735015.8416,
-   "valor_usd": 49181.75020791
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 48733048.4988,
+   "valor_usd": 49179.73368154
   },
   {
    "red": "ETH",
@@ -2345,9 +2345,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 13448.41770555789,
-   "valor_usd": 13.571642604738297
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 13439.991163043704,
+   "valor_usd": 13.563140147426688
   },
   {
    "red": "ETH",
@@ -2373,9 +2373,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 5479.621486718509,
-   "valor_usd": 5.529830055490776
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 5476.188052062445,
+   "valor_usd": 5.526365688990965
   },
   {
    "red": "ETH",
@@ -2414,9 +2414,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:31 UTC",
-   "valor_clp": 1590801238.4831676,
-   "valor_usd": 1605381.917585964
+   "congelada_fecha": "2026-10-03 02:25 UTC",
+   "valor_clp": 1590748616.898738,
+   "valor_usd": 1605326.4523465992
   },
   {
    "red": "ETH",
@@ -2428,15 +2428,15 @@
    "origen": "0xa28bd32cfd1762e6870396ff79e0faa637b7f8b0",
    "explorer": "https://etherscan.io/address/0x58b704065b7aff3ed351052f8560019e05925023",
    "moneda": "ETH",
-   "saldo": 31.00068368462666,
+   "saldo": 30.98068907735937,
    "tokens": {
-    "USDT": 6303624.876347,
-    "USDC": 5598480.56464,
+    "USDT": 6272331.347481,
+    "USDC": 5592964.727632,
     "ENJ": 169963.17566809282,
     "UNI": 14153.191763012317,
-    "QNT": 350.9418264013509,
-    "PEPE": 99250480963.73128,
-    "PAXG": 11.112613231380811,
+    "QNT": 351.12344140135093,
+    "PEPE": 99190280963.73128,
+    "PAXG": 11.09313105138081,
     "MANA": 820345.9820781549,
     "AAVE": 302.91237790032864,
     "NEIRO": 363092504.3630709,
@@ -2465,7 +2465,7 @@
     "SNX": 17850.377952000683,
     "USAT": 4298.703666,
     "SUSHI": 13483.590878390189,
-    "PENDLE": 2968.355554077092,
+    "PENDLE": 2967.355554077092,
     "LRC": 338119.133358688,
     "USDP": 2553.061809735075,
     "SKY": 82778.3977412585,
@@ -2481,8 +2481,8 @@
     "HEX": 1895.0,
     "ETHDYDX": 12.5
    },
-   "tx": 1330678,
-   "ultima": "1330678 tx enviadas (nonce)",
+   "tx": 1330726,
+   "ultima": "1330726 tx enviadas (nonce)",
    "cursor": {},
    "tokens_contratos": {
     "ENJ": [
@@ -2635,9 +2635,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:33 UTC",
-   "valor_clp": 13276862282.066273,
-   "valor_usd": 13398570.070979906
+   "congelada_fecha": "2026-10-03 02:26 UTC",
+   "valor_clp": 13240394397.535185,
+   "valor_usd": 13361757.110248484
   },
   {
    "red": "ETH",
@@ -2663,9 +2663,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:33 UTC",
-   "valor_clp": 715129.4832017758,
-   "valor_usd": 721.682945658035
+   "congelada_fecha": "2026-10-03 02:27 UTC",
+   "valor_clp": 715110.8979752011,
+   "valor_usd": 721.6621772757743
   },
   {
    "red": "ETH",
@@ -2687,17 +2687,13 @@
    "cursor": {},
    "tokens_contratos": {},
    "inventario": "2026-10-02 04:30 UTC",
-   "tokens_sin_precio": [
-    "USDT",
-    "ꓴ឵ՏᎠ឵Ⲧ"
-   ],
    "congelada": {
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:33 UTC",
-   "valor_clp": 13566295.60881365,
-   "valor_usd": 13690.617491373348
+   "congelada_fecha": "2026-10-03 02:27 UTC",
+   "valor_clp": 13565966.497269325,
+   "valor_usd": 13690.247065722544
   },
   {
    "red": "ETH",
@@ -2723,9 +2719,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:33 UTC",
-   "valor_clp": 12751.383331234776,
-   "valor_usd": 12.868221457459303
+   "congelada_fecha": "2026-10-03 02:27 UTC",
+   "valor_clp": 12743.393538226568,
+   "valor_usd": 12.860159684333905
   },
   {
    "red": "ETH",
@@ -2737,10 +2733,10 @@
    "origen": "0x43d891ffb4f244fefa793608413ea6832a09a45d",
    "explorer": "https://etherscan.io/address/0x74aa5387681505c806ff1e972b12cdfd01406828",
    "moneda": "ETH",
-   "saldo": 215.31234846901998,
+   "saldo": 215.44092455256717,
    "tokens": {
-    "USDT": 2307103.613116,
-    "USDC": 5722832.813763,
+    "USDT": 2307102.938001,
+    "USDC": 5723508.776418,
     "XBO": 885748.3358440367,
     "LINK": 110.27265671,
     "EURC": 468.068047,
@@ -2789,8 +2785,8 @@
     "HEX": 1895.0,
     "AAVE": 0.0090029
    },
-   "tx": 147199,
-   "ultima": "147199 tx enviadas (nonce)",
+   "tx": 147200,
+   "ultima": "147200 tx enviadas (nonce)",
    "cursor": {},
    "tokens_contratos": {
     "XBO": [
@@ -2936,16 +2932,13 @@
     ]
    },
    "inventario": "2026-10-02 03:24 UTC",
-   "tokens_sin_precio": [
-    "ꓴ឵ՏᎠ឵Ⲧ"
-   ],
    "congelada": {
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:35 UTC",
-   "valor_clp": 8601466320.036001,
-   "valor_usd": 8680304.674220858
+   "congelada_fecha": "2026-10-03 02:28 UTC",
+   "valor_clp": 8601847693.828064,
+   "valor_usd": 8680678.87101676
   },
   {
    "red": "ETH",
@@ -2971,9 +2964,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:35 UTC",
-   "valor_clp": 10555.557348550834,
-   "valor_usd": 10.652275603333377
+   "congelada_fecha": "2026-10-03 02:28 UTC",
+   "valor_clp": 10548.943421566568,
+   "valor_usd": 10.645602091421324
   },
   {
    "red": "ETH",
@@ -2999,9 +2992,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:35 UTC",
-   "valor_clp": 2508.2652321153587,
-   "valor_usd": 2.531247915972097
+   "congelada_fecha": "2026-10-03 02:28 UTC",
+   "valor_clp": 2506.6936746489746,
+   "valor_usd": 2.529662199966584
   },
   {
    "red": "ETH",
@@ -3027,9 +3020,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:35 UTC",
-   "valor_clp": 1368.2034436887848,
-   "valor_usd": 1.3807399914892864
+   "congelada_fecha": "2026-10-03 02:28 UTC",
+   "valor_clp": 1367.3461514229791,
+   "valor_usd": 1.3798749758697348
   },
   {
    "red": "ETH",
@@ -3055,9 +3048,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:35 UTC",
-   "valor_clp": 67.58754055139171,
-   "valor_usd": 0.06820683034835087
+   "congelada_fecha": "2026-10-03 02:28 UTC",
+   "valor_clp": 67.54519138464549,
+   "valor_usd": 0.06816409965757991
   },
   {
    "red": "ETH",
@@ -3079,13 +3072,16 @@
    "cursor": {},
    "tokens_contratos": {},
    "inventario": "2026-10-02 20:26 UTC",
+   "tokens_sin_precio": [
+    "ꓴ឵ՏᎠ឵Ⲧ"
+   ],
    "congelada": {
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:35 UTC",
-   "valor_clp": 13503.854698328536,
-   "valor_usd": 13.62758755450393
+   "congelada_fecha": "2026-10-03 02:28 UTC",
+   "valor_clp": 13495.3934199676,
+   "valor_usd": 13.619050048410015
   },
   {
    "red": "ETH",
@@ -3106,7 +3102,7 @@
    "ultima": "490 tx enviadas (nonce)",
    "cursor": {},
    "tokens_contratos": {},
-   "inventario": "2026-10-02 01:27 UTC",
+   "inventario": "2026-10-03 02:28 UTC",
    "tokens_sin_precio": [
     "USDT",
     "ꓴ឵ՏᎠ឵Ⲧ"
@@ -3115,9 +3111,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:35 UTC",
-   "valor_clp": 227118002.2434798,
-   "valor_usd": 229199.31936140533
+   "congelada_fecha": "2026-10-03 02:28 UTC",
+   "valor_clp": 227113404.82543072,
+   "valor_usd": 229194.03423241797
   },
   {
    "red": "ETH",
@@ -3143,9 +3139,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:35 UTC",
-   "valor_clp": 13084246.052362308,
-   "valor_usd": 13204.150431734246
+   "congelada_fecha": "2026-10-03 02:28 UTC",
+   "valor_clp": 13083934.13446996,
+   "valor_usd": 13203.798691479094
   },
   {
    "red": "ETH",
@@ -3171,9 +3167,9 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:35 UTC",
-   "valor_clp": 5749521673.126456,
-   "valor_usd": 5802210.478193129
+   "congelada_fecha": "2026-10-03 02:28 UTC",
+   "valor_clp": 5749112556.876244,
+   "valor_usd": 5801783.1717562815
   },
   {
    "red": "ETH",
@@ -3199,12 +3195,1516 @@
     "USDT": false,
     "USDC": false
    },
-   "congelada_fecha": "2026-10-03 00:35 UTC",
-   "valor_clp": 6.404925703787672,
-   "valor_usd": 0.006463628115921086
+   "congelada_fecha": "2026-10-03 02:28 UTC",
+   "valor_clp": 6.403597756467681,
+   "valor_usd": 0.0064622836251928065
   }
  ],
  "eventos": [
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 215.31234846901998,
+   "saldo_despues": 215.44092455256717,
+   "tipo_evento": "saldo",
+   "detalle": "+0.12857608 ETH (≈US$ 344.58; saldo 215.440925)",
+   "valor_usd": 344.58
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 215.31234846901998,
+   "saldo_despues": 215.44092455256717,
+   "tipo_evento": "transferencia",
+   "moneda": "USDC",
+   "cantidad": 25.887276,
+   "sentido": "entrada",
+   "hash": "0x31066966becc441bc143b9ecdd5bab7bd7c3fe52306b10db77844165b82f7a0d",
+   "hash_url": "https://etherscan.io/tx/0x31066966becc441bc143b9ecdd5bab7bd7c3fe52306b10db77844165b82f7a0d",
+   "contraparte": "0xb076e578e7f6842d49a06b5e67c6867511d78817",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+25.887276 USDC ← 0xb076e578…d78817 tx 0x31066966…",
+   "valor_usd": 25.89
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 215.31234846901998,
+   "saldo_despues": 215.44092455256717,
+   "tipo_evento": "transferencia",
+   "moneda": "USDC",
+   "cantidad": 224.521,
+   "sentido": "entrada",
+   "hash": "0xb03ac6b924fc26544b9d69ddd12a87cb134fb2173be063c544f73d4937a74eef",
+   "hash_url": "https://etherscan.io/tx/0xb03ac6b924fc26544b9d69ddd12a87cb134fb2173be063c544f73d4937a74eef",
+   "contraparte": "0x23e67e61ebd8440a398950115d5d89e0caa8c0c6",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+224.521 USDC ← 0x23e67e61…a8c0c6 tx 0xb03ac6b9…",
+   "valor_usd": 224.5
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 215.31234846901998,
+   "saldo_despues": 215.44092455256717,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 11.64625,
+   "sentido": "entrada",
+   "hash": "0xc99572f909b6f8b8c9cc13bcfeb3e3dd6eb7e358eb9a1f6243a78f6157a46777",
+   "hash_url": "https://etherscan.io/tx/0xc99572f909b6f8b8c9cc13bcfeb3e3dd6eb7e358eb9a1f6243a78f6157a46777",
+   "contraparte": "0x8662f87b2e6875de28482b45014183dc59236bad",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+11.64625 USDT ← 0x8662f87b…236bad tx 0xc99572f9…",
+   "valor_usd": 11.64
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 215.31234846901998,
+   "saldo_despues": 215.44092455256717,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 11.06,
+   "sentido": "entrada",
+   "hash": "0xc8593d5c603ddb58128eeaf5ba8d8c5377b14b871d1e8afbfc086ba6e55ad485",
+   "hash_url": "https://etherscan.io/tx/0xc8593d5c603ddb58128eeaf5ba8d8c5377b14b871d1e8afbfc086ba6e55ad485",
+   "contraparte": "0x837b32686f8c9df931cb4935b63d360c9c65ec1c",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+11.06 USDT ← 0x837b3268…65ec1c tx 0xc8593d5c…",
+   "valor_usd": 11.06
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 215.31234846901998,
+   "saldo_despues": 215.44092455256717,
+   "tipo_evento": "transferencia",
+   "moneda": "USDC",
+   "cantidad": 200.39365,
+   "sentido": "entrada",
+   "hash": "0xc845dcfd114e4658f312508c57e29463ccbdf9395f2a43ade8ac9b703a94de32",
+   "hash_url": "https://etherscan.io/tx/0xc845dcfd114e4658f312508c57e29463ccbdf9395f2a43ade8ac9b703a94de32",
+   "contraparte": "0xe39494be2a2537d86c979761b1473ef9ea126e4e",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+200.39365 USDC ← 0xe39494be…126e4e tx 0xc845dcfd…",
+   "valor_usd": 200.38
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 215.31234846901998,
+   "saldo_despues": 215.44092455256717,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 50.0,
+   "sentido": "entrada",
+   "hash": "0x2010e1577d8ff77df76a23310109140383ba65fbfdfa931f63361f588e7200ee",
+   "hash_url": "https://etherscan.io/tx/0x2010e1577d8ff77df76a23310109140383ba65fbfdfa931f63361f588e7200ee",
+   "contraparte": "0xd27fd91d5e81d2d9ec3b6c92c8625a17d3de8c7a",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:36 UTC",
+   "detalle": "+50 USDT ← 0xd27fd91d…de8c7a tx 0x2010e157… (2026-10-03 01:36 UTC)",
+   "valor_usd": 49.99
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 215.31234846901998,
+   "saldo_despues": 215.44092455256717,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 11.474235,
+   "sentido": "entrada",
+   "hash": "0x6850b0689661b31c5f11445699c5a2d68a69faa56fc31940c89abc894cde70a8",
+   "hash_url": "https://etherscan.io/tx/0x6850b0689661b31c5f11445699c5a2d68a69faa56fc31940c89abc894cde70a8",
+   "contraparte": "0x5e48ece61310cb2c7b4f010e0f3f2d9210524d20",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+11.474235 USDT ← 0x5e48ece6…524d20 tx 0x6850b068…",
+   "valor_usd": 11.47
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 215.31234846901998,
+   "saldo_despues": 215.44092455256717,
+   "tipo_evento": "transferencia",
+   "moneda": "USDC",
+   "cantidad": 225.160729,
+   "sentido": "entrada",
+   "hash": "0x441e63e1550fa5d0322e2c0ea5f08a225d67fca26dba5689050e5669253fca91",
+   "hash_url": "https://etherscan.io/tx/0x441e63e1550fa5d0322e2c0ea5f08a225d67fca26dba5689050e5669253fca91",
+   "contraparte": "0x717ffa509fe83d60510b7e41f7e2b4d1b3cd22ac",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+225.160729 USDC ← 0x717ffa50…cd22ac tx 0x441e63e1…",
+   "valor_usd": 225.14
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 215.31234846901998,
+   "saldo_despues": 215.44092455256717,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 383.8556,
+   "sentido": "salida",
+   "hash": "0x57040818c672c4b8e0286296e4dbcd374ffe9b8e964cd931a3bdb56662c7dc07",
+   "hash_url": "https://etherscan.io/tx/0x57040818c672c4b8e0286296e4dbcd374ffe9b8e964cd931a3bdb56662c7dc07",
+   "contraparte": "0x7bea180a66636a9da08b4d74a7b90b2d0cee3245",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "-383.8556 USDT → 0x7bea180a…ee3245 tx 0x57040818…",
+   "valor_usd": 383.81
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "saldo",
+   "detalle": "-0.01999461 ETH (≈US$ 53.58; saldo 30.980689)",
+   "valor_usd": 53.58
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 10.364934,
+   "sentido": "entrada",
+   "hash": "0xb51dce2bf26e29dda9b39ade2353d5f629cdc73cf6427ac1a2da5e1c8d99d19e",
+   "hash_url": "https://etherscan.io/tx/0xb51dce2bf26e29dda9b39ade2353d5f629cdc73cf6427ac1a2da5e1c8d99d19e",
+   "contraparte": "0x5314ca2652bc47413260530c9c8bc4e9eb4e1c0f",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+10.364934 USDT ← 0x5314ca26…4e1c0f tx 0xb51dce2b…",
+   "valor_usd": 10.36
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 303.33,
+   "sentido": "entrada",
+   "hash": "0x962a344d6c71e31f1104b916182f488919cff45acfd3be37ed1d2625e40870ab",
+   "hash_url": "https://etherscan.io/tx/0x962a344d6c71e31f1104b916182f488919cff45acfd3be37ed1d2625e40870ab",
+   "contraparte": "0xa97fac340628f6071051eee3aa75ca4b5f2f1003",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+303.33 USDT ← 0xa97fac34…2f1003 tx 0x962a344d…",
+   "valor_usd": 303.3
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 38.33,
+   "sentido": "entrada",
+   "hash": "0xb2ea39e2d58b23f5cbd787c04adc487a9524689e1cc3046f8fa01f631aab062a",
+   "hash_url": "https://etherscan.io/tx/0xb2ea39e2d58b23f5cbd787c04adc487a9524689e1cc3046f8fa01f631aab062a",
+   "contraparte": "0x1f49e18dd9f02fee7255f907d66e5e644d919270",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+38.33 USDT ← 0x1f49e18d…919270 tx 0xb2ea39e2…",
+   "valor_usd": 38.33
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDC",
+   "cantidad": 80.002992,
+   "sentido": "entrada",
+   "hash": "0x60e68d850d108203932a9504001af3f014522362debe7c64596a6d918a012823",
+   "hash_url": "https://etherscan.io/tx/0x60e68d850d108203932a9504001af3f014522362debe7c64596a6d918a012823",
+   "contraparte": "0x0ad6ff0a7e6f2978d477870bfd57881fef70514a",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+80.002992 USDC ← 0x0ad6ff0a…70514a tx 0x60e68d85…",
+   "valor_usd": 80.0
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDC",
+   "cantidad": 4900.0,
+   "sentido": "entrada",
+   "hash": "0xa392143a4850a8dbc477df26eb906f00d8cb69108554b6b1a2a936a9aa51b795",
+   "hash_url": "https://etherscan.io/tx/0xa392143a4850a8dbc477df26eb906f00d8cb69108554b6b1a2a936a9aa51b795",
+   "contraparte": "0x9c20d4d19a21539f77bdeb8692151ecc6545c5d2",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+4,900 USDC ← 0x9c20d4d1…45c5d2 tx 0xa392143a…",
+   "valor_usd": 4899.62
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "QNT",
+   "cantidad": 0.181615,
+   "sentido": "entrada",
+   "hash": "0xb44e1e6074118519d92d80d254317409e3772a58c5864cb2f640709f64c44da7",
+   "hash_url": "https://etherscan.io/tx/0xb44e1e6074118519d92d80d254317409e3772a58c5864cb2f640709f64c44da7",
+   "contraparte": "0xb14814c0ae2bf8b614405908ff49135ba3a6eece",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+0.181615 QNT ← 0xb14814c0…a6eece tx 0xb44e1e60…",
+   "valor_usd": 41.13
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 99.0,
+   "sentido": "entrada",
+   "hash": "0x95111887454e5498756174f6e99f549a1c7d7dda3b2f52f092a41290ea915c1d",
+   "hash_url": "https://etherscan.io/tx/0x95111887454e5498756174f6e99f549a1c7d7dda3b2f52f092a41290ea915c1d",
+   "contraparte": "0x89bce9a304e8d7eac19cabf91d6db7a684530b3c",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+99 USDT ← 0x89bce9a3…530b3c tx 0x95111887…",
+   "valor_usd": 98.99
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 1999.1,
+   "sentido": "entrada",
+   "hash": "0xc8573b2b55119b3d83211c30d4ad1d03a5714a503f7d0269da056a547fff6ff9",
+   "hash_url": "https://etherscan.io/tx/0xc8573b2b55119b3d83211c30d4ad1d03a5714a503f7d0269da056a547fff6ff9",
+   "contraparte": "0x050a31cc05b1d6ad6619ac44efa8f4d7c8c2098f",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+1,999.1 USDT ← 0x050a31cc…c2098f tx 0xc8573b2b…",
+   "valor_usd": 1998.87
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 1175.7138,
+   "sentido": "entrada",
+   "hash": "0xc7bc515c2c276b7d5baa1eb107f768caa69920a82f90989b104be442c5d96a56",
+   "hash_url": "https://etherscan.io/tx/0xc7bc515c2c276b7d5baa1eb107f768caa69920a82f90989b104be442c5d96a56",
+   "contraparte": "0x265732e79b5963cae9fe23da269b855fb60c365a",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+1,175.7138 USDT ← 0x265732e7…0c365a tx 0xc7bc515c…",
+   "valor_usd": 1175.58
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 8.7024,
+   "sentido": "entrada",
+   "hash": "0x6c879d2a50c9dd9cb1cba037baa77f0132b941a4f37bd6284a80636586a0fe0d",
+   "hash_url": "https://etherscan.io/tx/0x6c879d2a50c9dd9cb1cba037baa77f0132b941a4f37bd6284a80636586a0fe0d",
+   "contraparte": "0x141e3006d9beb0ffc7aac54338bd5d4b65f16d08",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:56 UTC",
+   "detalle": "+8.7024 USDT ← 0x141e3006…f16d08 tx 0x6c879d2a… (2026-10-03 01:56 UTC)",
+   "valor_usd": 8.7
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 20.81,
+   "sentido": "entrada",
+   "hash": "0x4d594f39f0250206b99640723d2cf143426d79e4e2b9256376e63ee727514d9f",
+   "hash_url": "https://etherscan.io/tx/0x4d594f39f0250206b99640723d2cf143426d79e4e2b9256376e63ee727514d9f",
+   "contraparte": "0xc6164190d8d665bf6873b809cbd7158063224424",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+20.81 USDT ← 0xc6164190…224424 tx 0x4d594f39…",
+   "valor_usd": 20.81
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 102.1,
+   "sentido": "entrada",
+   "hash": "0xe583e1d9520a901d6f5863a62438588a23e31bbcbfdf349468b53e0b5e340e76",
+   "hash_url": "https://etherscan.io/tx/0xe583e1d9520a901d6f5863a62438588a23e31bbcbfdf349468b53e0b5e340e76",
+   "contraparte": "0xb3a31741e22918a64c58221c2021bea13d0bcb1c",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+102.1 USDT ← 0xb3a31741…0bcb1c tx 0xe583e1d9…",
+   "valor_usd": 102.09
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 85.5,
+   "sentido": "entrada",
+   "hash": "0xe3ce7e9f9e779d84d8d3361a95470384849ccba95e8e3bc4813a13fca8ea8840",
+   "hash_url": "https://etherscan.io/tx/0xe3ce7e9f9e779d84d8d3361a95470384849ccba95e8e3bc4813a13fca8ea8840",
+   "contraparte": "0xa3c3dec93e3bf8b16ec173d289ff274f46d7ab9b",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+85.5 USDT ← 0xa3c3dec9…d7ab9b tx 0xe3ce7e9f…",
+   "valor_usd": 85.49
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 1000.0,
+   "sentido": "entrada",
+   "hash": "0x7e4904c56cabc2767ee48616c0941d2f7f7abd443e7b8256332cc5037ba0492e",
+   "hash_url": "https://etherscan.io/tx/0x7e4904c56cabc2767ee48616c0941d2f7f7abd443e7b8256332cc5037ba0492e",
+   "contraparte": "0x47b6a5ddc354316c74101387cc8495a2bd68eaec",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+1,000 USDT ← 0x47b6a5dd…68eaec tx 0x7e4904c5…",
+   "valor_usd": 999.89
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDC",
+   "cantidad": 99.9,
+   "sentido": "entrada",
+   "hash": "0x2e627beb1778f90e668dfc678aeb549e306abf13a7044bce3c9a3ff6ce631c80",
+   "hash_url": "https://etherscan.io/tx/0x2e627beb1778f90e668dfc678aeb549e306abf13a7044bce3c9a3ff6ce631c80",
+   "contraparte": "0x240e7346281252b834d387008262f07784a4d23c",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+99.9 USDC ← 0x240e7346…a4d23c tx 0x2e627beb…",
+   "valor_usd": 99.89
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 60.0,
+   "sentido": "entrada",
+   "hash": "0x92b70df09e95f88961dfe8300d26dc5f7bab9f267235d260d271e3560c8d40db",
+   "hash_url": "https://etherscan.io/tx/0x92b70df09e95f88961dfe8300d26dc5f7bab9f267235d260d271e3560c8d40db",
+   "contraparte": "0x47e6fad80e667e364342b1878ccadb8bb4b4b86f",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+60 USDT ← 0x47e6fad8…b4b86f tx 0x92b70df0…",
+   "valor_usd": 59.99
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 546.28,
+   "sentido": "entrada",
+   "hash": "0x8a25103812860872e8954bcc2c073a20d45cbc3a756019dd9a5ed5c1c662e867",
+   "hash_url": "https://etherscan.io/tx/0x8a25103812860872e8954bcc2c073a20d45cbc3a756019dd9a5ed5c1c662e867",
+   "contraparte": "0xa58ce09f64151c135bceaa9430d9a080b0d0d463",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "+546.28 USDT ← 0xa58ce09f…d0d463 tx 0x8a251038…",
+   "valor_usd": 546.22
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 145.01,
+   "sentido": "entrada",
+   "hash": "0xd50c4bbd85c9e68453ef177e20514bf6929dbe73020a6801be17d8de8563b397",
+   "hash_url": "https://etherscan.io/tx/0xd50c4bbd85c9e68453ef177e20514bf6929dbe73020a6801be17d8de8563b397",
+   "contraparte": "0x354130e658da2b8f6407d67fcead436343ec3b94",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:23 UTC",
+   "detalle": "+145.01 USDT ← 0x354130e6…ec3b94 tx 0xd50c4bbd… (2026-10-03 01:23 UTC)",
+   "valor_usd": 144.99
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 500.0,
+   "sentido": "entrada",
+   "hash": "0xfbe1ebe21f80b645c80676c52b0fe206e99103a0ef1fa93ad8ecaf1edcd84be1",
+   "hash_url": "https://etherscan.io/tx/0xfbe1ebe21f80b645c80676c52b0fe206e99103a0ef1fa93ad8ecaf1edcd84be1",
+   "contraparte": "0xf59a39a23f838f40f347ed536c55fb249733459f",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:23 UTC",
+   "detalle": "+500 USDT ← 0xf59a39a2…33459f tx 0xfbe1ebe2… (2026-10-03 01:23 UTC)",
+   "valor_usd": 499.94
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 138.7,
+   "sentido": "entrada",
+   "hash": "0x1a603186d448a68769b6183ef22a8fbe68d3467472bc6c0872ee19bad90f56d5",
+   "hash_url": "https://etherscan.io/tx/0x1a603186d448a68769b6183ef22a8fbe68d3467472bc6c0872ee19bad90f56d5",
+   "contraparte": "0x883de603f31dab108b9106671ab819b6236298be",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:21 UTC",
+   "detalle": "+138.7 USDT ← 0x883de603…6298be tx 0x1a603186… (2026-10-03 01:21 UTC)",
+   "valor_usd": 138.68
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 47.5,
+   "sentido": "entrada",
+   "hash": "0x49efbdcad2dc031171bacdd37b1302c264656ef9f90ce637ec969a67ab9baaf9",
+   "hash_url": "https://etherscan.io/tx/0x49efbdcad2dc031171bacdd37b1302c264656ef9f90ce637ec969a67ab9baaf9",
+   "contraparte": "0xb82167517a5aceefaf13e7664c0b3e0af2b1b5c2",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:21 UTC",
+   "detalle": "+47.5 USDT ← 0xb8216751…b1b5c2 tx 0x49efbdca… (2026-10-03 01:21 UTC)",
+   "valor_usd": 47.49
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 2011.48,
+   "sentido": "salida",
+   "hash": "0x874070ad95cc4d9c417c95150ef76072ad0c777b1c8f2eff2498af28d07b5d85",
+   "hash_url": "https://etherscan.io/tx/0x874070ad95cc4d9c417c95150ef76072ad0c777b1c8f2eff2498af28d07b5d85",
+   "contraparte": "0xfa9cf477f745854995be7e20a6524acba1e2dc5f",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "-2,011.48 USDT → 0xfa9cf477…e2dc5f tx 0x874070ad…",
+   "valor_usd": 2011.25
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 1000.16,
+   "sentido": "salida",
+   "hash": "0x30116f3800b944e3a41ab26e41941f4af1ff7bb3ca5b0f3924324a9ba3869fd9",
+   "hash_url": "https://etherscan.io/tx/0x30116f3800b944e3a41ab26e41941f4af1ff7bb3ca5b0f3924324a9ba3869fd9",
+   "contraparte": "0x092f676838d95971152a64ff71252cda55e7ba89",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "-1,000.16 USDT → 0x092f6768…e7ba89 tx 0x30116f38…",
+   "valor_usd": 1000.05
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 303.33,
+   "sentido": "salida",
+   "hash": "0x05182dbb142da19b5a8a7e05d0ade3bea6073d8ea6c396411b1330be474b14dc",
+   "hash_url": "https://etherscan.io/tx/0x05182dbb142da19b5a8a7e05d0ade3bea6073d8ea6c396411b1330be474b14dc",
+   "contraparte": "0xa97fac340628f6071051eee3aa75ca4b5f2f1003",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "-303.33 USDT → 0xa97fac34…2f1003 tx 0x05182dbb…",
+   "valor_usd": 303.3
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 60.73,
+   "sentido": "salida",
+   "hash": "0x2faa1bbf32af75a4d836df1a16abdce52e47615881f10a613fe6611b8752a312",
+   "hash_url": "https://etherscan.io/tx/0x2faa1bbf32af75a4d836df1a16abdce52e47615881f10a613fe6611b8752a312",
+   "contraparte": "0x72e3a62d0d89f5200fba84011985519c27d11aa8",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "-60.73 USDT → 0x72e3a62d…d11aa8 tx 0x2faa1bbf…",
+   "valor_usd": 60.72
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 108.81,
+   "sentido": "salida",
+   "hash": "0xa3f7292584fcf663a677c3d1193c6c43e62e9d3e26ca8e4a26a5c21bd9d67f00",
+   "hash_url": "https://etherscan.io/tx/0xa3f7292584fcf663a677c3d1193c6c43e62e9d3e26ca8e4a26a5c21bd9d67f00",
+   "contraparte": "0x73adb154a2700b348553c923930dbc60d523cf61",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": null,
+   "detalle": "-108.81 USDT → 0x73adb154…23cf61 tx 0xa3f72925…",
+   "valor_usd": 108.8
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 24.32,
+   "sentido": "salida",
+   "hash": "0x59360e7499897c97e6bfb8dbc78697ade6545c07b08f6da5edcfdd995d25d2a8",
+   "hash_url": "https://etherscan.io/tx/0x59360e7499897c97e6bfb8dbc78697ade6545c07b08f6da5edcfdd995d25d2a8",
+   "contraparte": "0x72e3a62d0d89f5200fba84011985519c27d11aa8",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 02:09 UTC",
+   "detalle": "-24.32 USDT → 0x72e3a62d…d11aa8 tx 0x59360e74… (2026-10-03 02:09 UTC)",
+   "valor_usd": 24.32
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 52.35,
+   "sentido": "salida",
+   "hash": "0xf1fa54cb7bd725e1cccc0fdead9da5284d64b7da19c5e198951fd97c11ca7589",
+   "hash_url": "https://etherscan.io/tx/0xf1fa54cb7bd725e1cccc0fdead9da5284d64b7da19c5e198951fd97c11ca7589",
+   "contraparte": "0x2120a87a16cdd366952f3a28d3e3d8d033ea796f",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 02:09 UTC",
+   "detalle": "-52.35 USDT → 0x2120a87a…ea796f tx 0xf1fa54cb… (2026-10-03 02:09 UTC)",
+   "valor_usd": 52.34
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 281.1,
+   "sentido": "salida",
+   "hash": "0x5c226085c350a42de031df9ffdf12d89db034298e3b745fbfa6dbac296a0f83b",
+   "hash_url": "https://etherscan.io/tx/0x5c226085c350a42de031df9ffdf12d89db034298e3b745fbfa6dbac296a0f83b",
+   "contraparte": "0xb0f35aac4260645b05059ad437019d51add91f18",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 02:08 UTC",
+   "detalle": "-281.1 USDT → 0xb0f35aac…d91f18 tx 0x5c226085… (2026-10-03 02:08 UTC)",
+   "valor_usd": 281.07
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 28124.79,
+   "sentido": "salida",
+   "hash": "0x09dad1bb3c98a1278181009d42d60ec20cfe06fa898ae18baeb50aa97f923b58",
+   "hash_url": "https://etherscan.io/tx/0x09dad1bb3c98a1278181009d42d60ec20cfe06fa898ae18baeb50aa97f923b58",
+   "contraparte": "0x1aaf7f75c76b9f56fc4a0cae47459151dcb3f8e3",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 02:08 UTC",
+   "detalle": "-28,124.79 USDT → 0x1aaf7f75…b3f8e3 tx 0x09dad1bb… (2026-10-03 02:08 UTC)",
+   "valor_usd": 28121.61
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 23.1,
+   "sentido": "salida",
+   "hash": "0x748f4f7e3585ad5262e5ec73cde55d882e83044f13b6df66bdf4398de8d98cf5",
+   "hash_url": "https://etherscan.io/tx/0x748f4f7e3585ad5262e5ec73cde55d882e83044f13b6df66bdf4398de8d98cf5",
+   "contraparte": "0x5e5459af5d71474aff01b8ddb236fc026ec6fc93",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 02:04 UTC",
+   "detalle": "-23.1 USDT → 0x5e5459af…c6fc93 tx 0x748f4f7e… (2026-10-03 02:04 UTC)",
+   "valor_usd": 23.1
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 135.81,
+   "sentido": "salida",
+   "hash": "0x0ee3401c06ef0e286a5aa7fe9a0060b9085e4137556ed4c7031a0c1cff84cba0",
+   "hash_url": "https://etherscan.io/tx/0x0ee3401c06ef0e286a5aa7fe9a0060b9085e4137556ed4c7031a0c1cff84cba0",
+   "contraparte": "0xc697d307ff7a6fa68d9ac65749ab587ed8acdb12",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 02:04 UTC",
+   "detalle": "-135.81 USDT → 0xc697d307…acdb12 tx 0x0ee3401c… (2026-10-03 02:04 UTC)",
+   "valor_usd": 135.79
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 683.0,
+   "sentido": "salida",
+   "hash": "0xaaaab5d5e03484b05580dcc54764d297eb574e9fe7e3d9ea7b50d89a6b44d18c",
+   "hash_url": "https://etherscan.io/tx/0xaaaab5d5e03484b05580dcc54764d297eb574e9fe7e3d9ea7b50d89a6b44d18c",
+   "contraparte": "0x54537d603d025ab4075cfdb8209b5767e203d79b",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:56 UTC",
+   "detalle": "-683 USDT → 0x54537d60…03d79b tx 0xaaaab5d5… (2026-10-03 01:56 UTC)",
+   "valor_usd": 682.92
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDC",
+   "cantidad": 5014.09,
+   "sentido": "salida",
+   "hash": "0x6d49d503a6dc153de058095d28e5aad332aba141977841ce4a3771394f94a963",
+   "hash_url": "https://etherscan.io/tx/0x6d49d503a6dc153de058095d28e5aad332aba141977841ce4a3771394f94a963",
+   "contraparte": "0x7009c714223825471002015257b86d4c0966c9a0",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:56 UTC",
+   "detalle": "-5,014.09 USDC → 0x7009c714…66c9a0 tx 0x6d49d503… (2026-10-03 01:56 UTC)",
+   "valor_usd": 5013.7
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "PENDLE",
+   "cantidad": 1.0,
+   "sentido": "salida",
+   "hash": "0x85f2875d24bed4c5b61dd98278b992bceb2b13e8c22aacec3d3d2b4dbeca5fa7",
+   "hash_url": "https://etherscan.io/tx/0x85f2875d24bed4c5b61dd98278b992bceb2b13e8c22aacec3d3d2b4dbeca5fa7",
+   "contraparte": "0x2e2aed954cb60cb0411423da41cfd54aad73772b",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:52 UTC",
+   "detalle": "-1 PENDLE → 0x2e2aed95…73772b tx 0x85f2875d… (2026-10-03 01:52 UTC)",
+   "valor_usd": 2.33
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 20.81,
+   "sentido": "salida",
+   "hash": "0x134d3f10edbe2a7905d384a9864218292206cfc37d0ad5e4295a6c01b6a8451e",
+   "hash_url": "https://etherscan.io/tx/0x134d3f10edbe2a7905d384a9864218292206cfc37d0ad5e4295a6c01b6a8451e",
+   "contraparte": "0xc6164190d8d665bf6873b809cbd7158063224424",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:51 UTC",
+   "detalle": "-20.81 USDT → 0xc6164190…224424 tx 0x134d3f10… (2026-10-03 01:51 UTC)",
+   "valor_usd": 20.81
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 189.16,
+   "sentido": "salida",
+   "hash": "0x5f3051baf594ccbe847c3576e9686abbd4122ca62b42a0f541bbca1e83ceb564",
+   "hash_url": "https://etherscan.io/tx/0x5f3051baf594ccbe847c3576e9686abbd4122ca62b42a0f541bbca1e83ceb564",
+   "contraparte": "0x4c7c618569c61e91c0ff4574bb06d4a1baff1deb",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:50 UTC",
+   "detalle": "-189.16 USDT → 0x4c7c6185…ff1deb tx 0x5f3051ba… (2026-10-03 01:50 UTC)",
+   "valor_usd": 189.14
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 40.0,
+   "sentido": "salida",
+   "hash": "0x05ecff79e48fabd5470e388c8cc0f34d4ff7101457311ad5d07c020d3216c3c6",
+   "hash_url": "https://etherscan.io/tx/0x05ecff79e48fabd5470e388c8cc0f34d4ff7101457311ad5d07c020d3216c3c6",
+   "contraparte": "0xd4dc607ebe58e61ae62658537cbf248c2f5a00b1",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:47 UTC",
+   "detalle": "-40 USDT → 0xd4dc607e…5a00b1 tx 0x05ecff79… (2026-10-03 01:47 UTC)",
+   "valor_usd": 40.0
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 124.32,
+   "sentido": "salida",
+   "hash": "0xdbe5a9f87759418a3685c0b282a68c42a9987ebde760047d73e8301904a639ba",
+   "hash_url": "https://etherscan.io/tx/0xdbe5a9f87759418a3685c0b282a68c42a9987ebde760047d73e8301904a639ba",
+   "contraparte": "0xf36470ed181136f052b2b80835b0cc38cf54b222",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:46 UTC",
+   "detalle": "-124.32 USDT → 0xf36470ed…54b222 tx 0xdbe5a9f8… (2026-10-03 01:46 UTC)",
+   "valor_usd": 124.31
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDC",
+   "cantidad": 40.8,
+   "sentido": "salida",
+   "hash": "0x72cfcc8bbe12f33adc26b49ddea9ebf9690749b9c10b5a855ab9d50b9bf5130e",
+   "hash_url": "https://etherscan.io/tx/0x72cfcc8bbe12f33adc26b49ddea9ebf9690749b9c10b5a855ab9d50b9bf5130e",
+   "contraparte": "0x695b3d06969ec643a982311e8dd8d3f5133a1973",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:45 UTC",
+   "detalle": "-40.8 USDC → 0x695b3d06…3a1973 tx 0x72cfcc8b… (2026-10-03 01:45 UTC)",
+   "valor_usd": 40.8
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "PEPE",
+   "cantidad": 60200000.0,
+   "sentido": "salida",
+   "hash": "0xa50049e00eff529d8bde3f2b99e33fbc20e873ca88d2dc5e86122e8a6c9d808d",
+   "hash_url": "https://etherscan.io/tx/0xa50049e00eff529d8bde3f2b99e33fbc20e873ca88d2dc5e86122e8a6c9d808d",
+   "contraparte": "0x0227c886a9350f1196e84297039308e289a977d7",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:44 UTC",
+   "detalle": "-60,200,000 PEPE → 0x0227c886…a977d7 tx 0xa50049e0… (2026-10-03 01:44 UTC)",
+   "valor_usd": 251.64
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 50.0,
+   "sentido": "salida",
+   "hash": "0x44dc946d15127c29588ac1902d39bfa48414acbaa272ade8283fc72ae93542e1",
+   "hash_url": "https://etherscan.io/tx/0x44dc946d15127c29588ac1902d39bfa48414acbaa272ade8283fc72ae93542e1",
+   "contraparte": "0x309cbf237b06a78c68c7dec67477fb1a6afcc4d1",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:42 UTC",
+   "detalle": "-50 USDT → 0x309cbf23…fcc4d1 tx 0x44dc946d… (2026-10-03 01:42 UTC)",
+   "valor_usd": 49.99
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 20.84,
+   "sentido": "salida",
+   "hash": "0x9886a39e0ca69c72d1f9d8a311099f8f1d908ce4760328de87ee7e6b486b15d1",
+   "hash_url": "https://etherscan.io/tx/0x9886a39e0ca69c72d1f9d8a311099f8f1d908ce4760328de87ee7e6b486b15d1",
+   "contraparte": "0x55d6f095083d7ede33e84d65c478c40ce164aa19",
+   "contraparte_etiqueta": "descubierta 2026-10-03 01:24 UTC: destino de una salida",
+   "fecha_cadena": "2026-10-03 01:41 UTC",
+   "detalle": "-20.84 USDT → 0x55d6f095…64aa19 [descubierta 2026-10-03 01:24 UTC: destino de una salida] tx 0x9886a39e… (2026-10-03 01:41 UTC)",
+   "valor_usd": 20.84
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 31.96,
+   "sentido": "salida",
+   "hash": "0xe23dc17334f5397f0320343c8982ac6a1070b60bd30412fe9e509469012bb005",
+   "hash_url": "https://etherscan.io/tx/0xe23dc17334f5397f0320343c8982ac6a1070b60bd30412fe9e509469012bb005",
+   "contraparte": "0x1833e03d4e1f3c3684e27c7d42f3fbe8100beabf",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:41 UTC",
+   "detalle": "-31.96 USDT → 0x1833e03d…0beabf tx 0xe23dc173… (2026-10-03 01:41 UTC)",
+   "valor_usd": 31.96
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDC",
+   "cantidad": 40.49,
+   "sentido": "salida",
+   "hash": "0x5896c39e7ed722ed793f7597fa878f485943df4bdb83722c4be5b7699d6632fb",
+   "hash_url": "https://etherscan.io/tx/0x5896c39e7ed722ed793f7597fa878f485943df4bdb83722c4be5b7699d6632fb",
+   "contraparte": "0x08a846f91d838ea8b95a8c9273f9f78c252fbd2e",
+   "contraparte_etiqueta": "descubierta 2026-10-02 18:30 UTC: destino de una salida",
+   "fecha_cadena": "2026-10-03 01:37 UTC",
+   "detalle": "-40.49 USDC → 0x08a846f9…2fbd2e [descubierta 2026-10-02 18:30 UTC: destino de una salida] tx 0x5896c39e… (2026-10-03 01:37 UTC)",
+   "valor_usd": 40.49
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 1081.03,
+   "sentido": "salida",
+   "hash": "0xeb204697b739c72982958ba858627751826395188c810b4e85ddfddf92eb4195",
+   "hash_url": "https://etherscan.io/tx/0xeb204697b739c72982958ba858627751826395188c810b4e85ddfddf92eb4195",
+   "contraparte": "0x5eb186b2c5f50270e5d727ecd88a776b4cd103c4",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:37 UTC",
+   "detalle": "-1,081.03 USDT → 0x5eb186b2…d103c4 tx 0xeb204697… (2026-10-03 01:37 UTC)",
+   "valor_usd": 1080.91
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 5.5,
+   "sentido": "salida",
+   "hash": "0x1f88e4581d1b70ea3d1f127d4bbae1492ac6ac77b7ece0d44d8091184360db93",
+   "hash_url": "https://etherscan.io/tx/0x1f88e4581d1b70ea3d1f127d4bbae1492ac6ac77b7ece0d44d8091184360db93",
+   "contraparte": "0x1602d184c2bf30cdcc0d557b35d37b057c483d7a",
+   "contraparte_etiqueta": "descubierta 2026-10-02 14:26 UTC: destino de una salida",
+   "fecha_cadena": "2026-10-03 01:37 UTC",
+   "detalle": "-5.5 USDT → 0x1602d184…483d7a [descubierta 2026-10-02 14:26 UTC: destino de una salida] tx 0x1f88e458… (2026-10-03 01:37 UTC)",
+   "valor_usd": 5.5
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 22.68,
+   "sentido": "salida",
+   "hash": "0x6e0c15dcdc0e4415b09bdbcef83454f0cc43b0448a8b15b5c704a5514ded329f",
+   "hash_url": "https://etherscan.io/tx/0x6e0c15dcdc0e4415b09bdbcef83454f0cc43b0448a8b15b5c704a5514ded329f",
+   "contraparte": "0x019969cb0fab92855de851681ccafe6b10d45f6c",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:35 UTC",
+   "detalle": "-22.68 USDT → 0x019969cb…d45f6c tx 0x6e0c15dc… (2026-10-03 01:35 UTC)",
+   "valor_usd": 22.68
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 436.89,
+   "sentido": "salida",
+   "hash": "0x69f0dbf75fee4c6ab6af1b1ab8be4a0997c5d8bfa1c6a31d8c6448a88c94d5b8",
+   "hash_url": "https://etherscan.io/tx/0x69f0dbf75fee4c6ab6af1b1ab8be4a0997c5d8bfa1c6a31d8c6448a88c94d5b8",
+   "contraparte": "0x157d32b2d4aa62650f07d6d3cee7bd97bafd11bf",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:32 UTC",
+   "detalle": "-436.89 USDT → 0x157d32b2…fd11bf tx 0x69f0dbf7… (2026-10-03 01:32 UTC)",
+   "valor_usd": 436.84
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 5.0,
+   "sentido": "salida",
+   "hash": "0xe91814fde1e0108bcc56c47bcc54ff21682c623f10fef5f261b9d785d8355612",
+   "hash_url": "https://etherscan.io/tx/0xe91814fde1e0108bcc56c47bcc54ff21682c623f10fef5f261b9d785d8355612",
+   "contraparte": "0x64fc3ce337fac323218e833f1548eeb0c37639bb",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:32 UTC",
+   "detalle": "-5 USDT → 0x64fc3ce3…7639bb tx 0xe91814fd… (2026-10-03 01:32 UTC)",
+   "valor_usd": 5.0
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 5.42,
+   "sentido": "salida",
+   "hash": "0xa8f158bbefbfbde0b4f1de6e42a72d4c4798ca2677f726d1b8b827bb872a5090",
+   "hash_url": "https://etherscan.io/tx/0xa8f158bbefbfbde0b4f1de6e42a72d4c4798ca2677f726d1b8b827bb872a5090",
+   "contraparte": "0xda5fccc2fc4ca256db3638fc389336e7e04715b7",
+   "contraparte_etiqueta": "descubierta 2026-10-02 20:24 UTC: destino de una salida",
+   "fecha_cadena": "2026-10-03 01:30 UTC",
+   "detalle": "-5.42 USDT → 0xda5fccc2…4715b7 [descubierta 2026-10-02 20:24 UTC: destino de una salida] tx 0xa8f158bb… (2026-10-03 01:30 UTC)",
+   "valor_usd": 5.42
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDC",
+   "cantidad": 5500.0,
+   "sentido": "salida",
+   "hash": "0xaf4108c9ef0abcddb582784e0112308fb6816b41b3073f2a7be659a2a59515b6",
+   "hash_url": "https://etherscan.io/tx/0xaf4108c9ef0abcddb582784e0112308fb6816b41b3073f2a7be659a2a59515b6",
+   "contraparte": "0xf8e9239ba253fcd60c058e2b9cac7329d73ec2bc",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:30 UTC",
+   "detalle": "-5,500 USDC → 0xf8e9239b…3ec2bc tx 0xaf4108c9… (2026-10-03 01:30 UTC)",
+   "valor_usd": 5499.57
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 50.0,
+   "sentido": "salida",
+   "hash": "0x2cdecae0c83964f3e25f901ac803e3afa0ee2c4baeba0f3c35a813245b0dc659",
+   "hash_url": "https://etherscan.io/tx/0x2cdecae0c83964f3e25f901ac803e3afa0ee2c4baeba0f3c35a813245b0dc659",
+   "contraparte": "0xcac2938056c3fea45e19848bb14b205cbe809418",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:30 UTC",
+   "detalle": "-50 USDT → 0xcac29380…809418 tx 0x2cdecae0… (2026-10-03 01:30 UTC)",
+   "valor_usd": 49.99
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 886.9,
+   "sentido": "salida",
+   "hash": "0xf9b32305b24bf7e14e12c32fe54a825e3aaeae80b24c3e4a8da4471c7d9b1139",
+   "hash_url": "https://etherscan.io/tx/0xf9b32305b24bf7e14e12c32fe54a825e3aaeae80b24c3e4a8da4471c7d9b1139",
+   "contraparte": "0x2d5b4101d116e487c09a4e12a829ebefcd29c0e0",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:30 UTC",
+   "detalle": "-886.9 USDT → 0x2d5b4101…29c0e0 tx 0xf9b32305… (2026-10-03 01:30 UTC)",
+   "valor_usd": 886.8
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "PAXG",
+   "cantidad": 0.01948218,
+   "sentido": "salida",
+   "hash": "0xb93983ef2ae239f6c0cd604fd2b227bf5d49aacf4a5cb8aad2eee79f4750f624",
+   "hash_url": "https://etherscan.io/tx/0xb93983ef2ae239f6c0cd604fd2b227bf5d49aacf4a5cb8aad2eee79f4750f624",
+   "contraparte": "0x51e3e19fa842d8a96765f14a6447399f7d4135a8",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:29 UTC",
+   "detalle": "-0.01948218 PAXG → 0x51e3e19f…4135a8 tx 0xb93983ef… (2026-10-03 01:29 UTC)",
+   "valor_usd": 80.8
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 20.11,
+   "sentido": "salida",
+   "hash": "0xc69ebd10f6a3006503b34c389a00c17a1315ccadb27acdb2db771f2f9d143a3f",
+   "hash_url": "https://etherscan.io/tx/0xc69ebd10f6a3006503b34c389a00c17a1315ccadb27acdb2db771f2f9d143a3f",
+   "contraparte": "0x26d3adb956e37fe6367002fd8828773dfbd217c2",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:27 UTC",
+   "detalle": "-20.11 USDT → 0x26d3adb9…d217c2 tx 0xc69ebd10… (2026-10-03 01:27 UTC)",
+   "valor_usd": 20.11
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 16.58,
+   "sentido": "salida",
+   "hash": "0x84de04dde8ee28a220dde315abea3a61b427f4a953961115fc9b0e05b8f605f4",
+   "hash_url": "https://etherscan.io/tx/0x84de04dde8ee28a220dde315abea3a61b427f4a953961115fc9b0e05b8f605f4",
+   "contraparte": "0xa206ad5fc8eee4787f9ca1519748de3f361ac4b0",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:27 UTC",
+   "detalle": "-16.58 USDT → 0xa206ad5f…1ac4b0 tx 0x84de04dd… (2026-10-03 01:27 UTC)",
+   "valor_usd": 16.58
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 1002.0,
+   "sentido": "salida",
+   "hash": "0x244d5b2dc25becd980c3b64414c9841a1182cbe1e170ae64160c047b68e217e1",
+   "hash_url": "https://etherscan.io/tx/0x244d5b2dc25becd980c3b64414c9841a1182cbe1e170ae64160c047b68e217e1",
+   "contraparte": "0x26ba81e473d3d27c7cebba755eb8539401348c43",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:26 UTC",
+   "detalle": "-1,002 USDT → 0x26ba81e4…348c43 tx 0x244d5b2d… (2026-10-03 01:26 UTC)",
+   "valor_usd": 1001.89
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 10.78,
+   "sentido": "salida",
+   "hash": "0x3d46b39c8f40f7358e31ad504f066747e2f02430091c93de64a8f7ee96766271",
+   "hash_url": "https://etherscan.io/tx/0x3d46b39c8f40f7358e31ad504f066747e2f02430091c93de64a8f7ee96766271",
+   "contraparte": "0x55d6f095083d7ede33e84d65c478c40ce164aa19",
+   "contraparte_etiqueta": "descubierta 2026-10-03 01:24 UTC: destino de una salida",
+   "fecha_cadena": "2026-10-03 01:25 UTC",
+   "detalle": "-10.78 USDT → 0x55d6f095…64aa19 [descubierta 2026-10-03 01:24 UTC: destino de una salida] tx 0x3d46b39c… (2026-10-03 01:25 UTC)",
+   "valor_usd": 10.78
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 2.93,
+   "sentido": "salida",
+   "hash": "0x1d56668d41a38093900fd61991030a8f831a10d7e0e8b58268f1caa073eb6091",
+   "hash_url": "https://etherscan.io/tx/0x1d56668d41a38093900fd61991030a8f831a10d7e0e8b58268f1caa073eb6091",
+   "contraparte": "0xd13b8b6a61a8d53d25a044bbce256804854ed3a3",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:25 UTC",
+   "detalle": "-2.93 USDT → 0xd13b8b6a…4ed3a3 tx 0x1d56668d… (2026-10-03 01:25 UTC)",
+   "valor_usd": 2.93
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDC",
+   "cantidad": 13.6,
+   "sentido": "salida",
+   "hash": "0x91e6af353b7eb61a1a15bfe4c393f45269f00b34ae3385c9f42635ce00689b13",
+   "hash_url": "https://etherscan.io/tx/0x91e6af353b7eb61a1a15bfe4c393f45269f00b34ae3385c9f42635ce00689b13",
+   "contraparte": "0x1927e7fa1fc32861673f23765bd9a4341e283db1",
+   "contraparte_etiqueta": "descubierta 2026-10-03 00:33 UTC: destino de una salida",
+   "fecha_cadena": "2026-10-03 01:23 UTC",
+   "detalle": "-13.6 USDC → 0x1927e7fa…283db1 [descubierta 2026-10-03 00:33 UTC: destino de una salida] tx 0x91e6af35… (2026-10-03 01:23 UTC)",
+   "valor_usd": 13.6
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 37.84,
+   "sentido": "salida",
+   "hash": "0x7c33669612f8212529940f68bea2eac87acc4189007c81a4483b4b10402ee2b4",
+   "hash_url": "https://etherscan.io/tx/0x7c33669612f8212529940f68bea2eac87acc4189007c81a4483b4b10402ee2b4",
+   "contraparte": "0xda5fccc2fc4ca256db3638fc389336e7e04715b7",
+   "contraparte_etiqueta": "descubierta 2026-10-02 20:24 UTC: destino de una salida",
+   "fecha_cadena": "2026-10-03 01:23 UTC",
+   "detalle": "-37.84 USDT → 0xda5fccc2…4715b7 [descubierta 2026-10-02 20:24 UTC: destino de una salida] tx 0x7c336696… (2026-10-03 01:23 UTC)",
+   "valor_usd": 37.84
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 320.0,
+   "sentido": "salida",
+   "hash": "0x81418a2fa1b8932ef46d112c324b11b0941e2252bd7efe72695c8b3e5809c8e8",
+   "hash_url": "https://etherscan.io/tx/0x81418a2fa1b8932ef46d112c324b11b0941e2252bd7efe72695c8b3e5809c8e8",
+   "contraparte": "0x0b701114c9ced4df78f2b333d5fa316c5f078ef3",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:21 UTC",
+   "detalle": "-320 USDT → 0x0b701114…078ef3 tx 0x81418a2f… (2026-10-03 01:21 UTC)",
+   "valor_usd": 319.96
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "PEPE",
+   "cantidad": 58980500.0,
+   "sentido": "salida",
+   "hash": "0xfbaf58a58b7c53523600239d12e13105d8838f4f7da13d9e6eab4763dd5ee2c0",
+   "hash_url": "https://etherscan.io/tx/0xfbaf58a58b7c53523600239d12e13105d8838f4f7da13d9e6eab4763dd5ee2c0",
+   "contraparte": "0x0227c886a9350f1196e84297039308e289a977d7",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:20 UTC",
+   "detalle": "-58,980,500 PEPE → 0x0227c886…a977d7 tx 0xfbaf58a5… (2026-10-03 01:20 UTC)",
+   "valor_usd": 246.54
+  },
+  {
+   "fecha": "2026-10-03 02:21 UTC",
+   "red": "ETH",
+   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
+   "etiqueta": "Descubierta: destino de una salida",
+   "tipo": "descubierta",
+   "saldo_antes": 31.00068368462666,
+   "saldo_despues": 30.98068907735937,
+   "tipo_evento": "transferencia",
+   "moneda": "USDT",
+   "cantidad": 108.08,
+   "sentido": "salida",
+   "hash": "0x85811fd253f69bb2e82c60a230068288c8d99ea997f85365d1eb7fc2aa698703",
+   "hash_url": "https://etherscan.io/tx/0x85811fd253f69bb2e82c60a230068288c8d99ea997f85365d1eb7fc2aa698703",
+   "contraparte": "0x024a7a00dfba3f5c7fd6aa94a2158959b5706113",
+   "contraparte_etiqueta": null,
+   "fecha_cadena": "2026-10-03 01:20 UTC",
+   "detalle": "-108.08 USDT → 0x024a7a00…706113 tx 0x85811fd2… (2026-10-03 01:20 UTC)",
+   "valor_usd": 108.07
+  },
   {
    "fecha": "2026-10-03 01:19 UTC",
    "red": "ETH",
@@ -7636,1518 +9136,6 @@
    "fecha_cadena": null,
    "detalle": "-270.46 USDT → 0x148ed3ba…32de67 tx 0x6a00f912…",
    "valor_usd": 270.44
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 100.0,
-   "sentido": "salida",
-   "hash": "0x3f6543ea959012ce224b30595b63862cf9e7304a6a663f8d35b158bd01c79797",
-   "hash_url": "https://etherscan.io/tx/0x3f6543ea959012ce224b30595b63862cf9e7304a6a663f8d35b158bd01c79797",
-   "contraparte": "0xf7a01bbb3ba676305a0b169289d7673d18f1b03b",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-100 USDT → 0xf7a01bbb…f1b03b tx 0x3f6543ea…",
-   "valor_usd": 99.99
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 86409.62,
-   "sentido": "salida",
-   "hash": "0x330fd8db2471f6c1a12ea6139fe1a8d4597b19733b450b852f74b5f2d35b1187",
-   "hash_url": "https://etherscan.io/tx/0x330fd8db2471f6c1a12ea6139fe1a8d4597b19733b450b852f74b5f2d35b1187",
-   "contraparte": "0x4c34ddb382f6b63206c95036445d43938be8bec4",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-86,409.62 USDT → 0x4c34ddb3…e8bec4 tx 0x330fd8db…",
-   "valor_usd": 86402.02
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 208603.86,
-   "sentido": "salida",
-   "hash": "0x9bb1a397bc9a85eb83e0df39bccbb1b6e928139eb0ef5dcc4b4c9f715e529bbc",
-   "hash_url": "https://etherscan.io/tx/0x9bb1a397bc9a85eb83e0df39bccbb1b6e928139eb0ef5dcc4b4c9f715e529bbc",
-   "contraparte": "0x4c34ddb382f6b63206c95036445d43938be8bec4",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-208,603.86 USDT → 0x4c34ddb3…e8bec4 tx 0x9bb1a397…",
-   "valor_usd": 208585.5
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 654.3,
-   "sentido": "salida",
-   "hash": "0xb8e733d1c4f3a788143b6e5879e23f99549b1c252328d714326d3c05f1a746f1",
-   "hash_url": "https://etherscan.io/tx/0xb8e733d1c4f3a788143b6e5879e23f99549b1c252328d714326d3c05f1a746f1",
-   "contraparte": "0x1ff429a81cd18838a851f7997d8bef1bf0e908f6",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-654.3 USDC → 0x1ff429a8…e908f6 tx 0xb8e733d1…",
-   "valor_usd": 654.29
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 21.61,
-   "sentido": "salida",
-   "hash": "0xa85ecd505f6a84c5eeb934bff8f1b88230d489841337f1647e373a17df99177d",
-   "hash_url": "https://etherscan.io/tx/0xa85ecd505f6a84c5eeb934bff8f1b88230d489841337f1647e373a17df99177d",
-   "contraparte": "0xda5fccc2fc4ca256db3638fc389336e7e04715b7",
-   "contraparte_etiqueta": "descubierta 2026-10-02 20:24 UTC: destino de una salida",
-   "fecha_cadena": null,
-   "detalle": "-21.61 USDT → 0xda5fccc2…4715b7 [descubierta 2026-10-02 20:24 UTC: destino de una salida] tx 0xa85ecd50…",
-   "valor_usd": 21.61
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "PEPE",
-   "cantidad": 6460140417.094368,
-   "sentido": "salida",
-   "hash": "0x77aff49ae35cb224865d59c2efcdeaf8a217c40c7fa16fb834aee964446bf76d",
-   "hash_url": "https://etherscan.io/tx/0x77aff49ae35cb224865d59c2efcdeaf8a217c40c7fa16fb834aee964446bf76d",
-   "contraparte": "0x67b4b3351316bed9f6b41d23162ae69e169090b6",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-6,460,140,417.09436798 PEPE → 0x67b4b335…9090b6 tx 0x77aff49a…",
-   "valor_usd": 27003.39
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 14602.7,
-   "sentido": "salida",
-   "hash": "0x5249c93e2a9a3f9814210d3e6512831a9665fdedc3139149718e4917f678f5b4",
-   "hash_url": "https://etherscan.io/tx/0x5249c93e2a9a3f9814210d3e6512831a9665fdedc3139149718e4917f678f5b4",
-   "contraparte": "0x9d6fc644ca3dd98cd8ac260f9921ba198e9d64f8",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-14,602.7 USDT → 0x9d6fc644…9d64f8 tx 0x5249c93e…",
-   "valor_usd": 14601.41
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 59.47,
-   "sentido": "salida",
-   "hash": "0x87e24621b5e49ca7ad9e38528ce428e93b546e30f6fb5b2d3d795083e349e675",
-   "hash_url": "https://etherscan.io/tx/0x87e24621b5e49ca7ad9e38528ce428e93b546e30f6fb5b2d3d795083e349e675",
-   "contraparte": "0x179c6b57f15fe02453f4360e6904aa6d2c8208d6",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-59.47 USDT → 0x179c6b57…8208d6 tx 0x87e24621…",
-   "valor_usd": 59.46
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 102.92,
-   "sentido": "salida",
-   "hash": "0xea13567984d03b846b13097219d7253ed18975a731cf767a530ebd69604c22f0",
-   "hash_url": "https://etherscan.io/tx/0xea13567984d03b846b13097219d7253ed18975a731cf767a530ebd69604c22f0",
-   "contraparte": "0xa86306c247eac33d12e29fa7e1c6fe7271f7f59c",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-102.92 USDC → 0xa86306c2…f7f59c tx 0xea135679…",
-   "valor_usd": 102.92
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 65466.12,
-   "sentido": "salida",
-   "hash": "0x7f795ecc7e7921271479e3db1ec810d348a97da103996004b0411f511fb6e884",
-   "hash_url": "https://etherscan.io/tx/0x7f795ecc7e7921271479e3db1ec810d348a97da103996004b0411f511fb6e884",
-   "contraparte": "0x33709915ad89f812062f3a2c59a30c59cf5f4249",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-65,466.12 USDT → 0x33709915…5f4249 tx 0x7f795ecc…",
-   "valor_usd": 65460.36
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 3000.0,
-   "sentido": "salida",
-   "hash": "0xbc3afa2a05bd158771812dfb39a52c3e412ee8f50dfcb43950f3f49316c065be",
-   "hash_url": "https://etherscan.io/tx/0xbc3afa2a05bd158771812dfb39a52c3e412ee8f50dfcb43950f3f49316c065be",
-   "contraparte": "0x75e2945c76a3bf03042f612349eb4f92afe0b655",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-3,000 USDT → 0x75e2945c…e0b655 tx 0xbc3afa2a…",
-   "valor_usd": 2999.74
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 3.93,
-   "sentido": "salida",
-   "hash": "0x4214db84349c336a067873a1aa8c1190c1027a99575e9800a0afb8cd9f6cbe0d",
-   "hash_url": "https://etherscan.io/tx/0x4214db84349c336a067873a1aa8c1190c1027a99575e9800a0afb8cd9f6cbe0d",
-   "contraparte": "0x5fa8522b65f736db61f9331b2eb471ac1334534e",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-3.93 USDT → 0x5fa8522b…34534e tx 0x4214db84…",
-   "valor_usd": 3.93
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 2.67,
-   "sentido": "salida",
-   "hash": "0xd10378fffe8ee74d05e537402b75b1fddd368cd45d11fdd6d258f952a897f49d",
-   "hash_url": "https://etherscan.io/tx/0xd10378fffe8ee74d05e537402b75b1fddd368cd45d11fdd6d258f952a897f49d",
-   "contraparte": "0x3a249779d2a27fcdee0f624ef43ca059e71e8e88",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-2.67 USDT → 0x3a249779…1e8e88 tx 0xd10378ff…",
-   "valor_usd": 2.67
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 1297.65,
-   "sentido": "salida",
-   "hash": "0x7edc9cffc9d403ab20803b74eb1e0af48bfa256e7fe5074427bd4e3db5c76343",
-   "hash_url": "https://etherscan.io/tx/0x7edc9cffc9d403ab20803b74eb1e0af48bfa256e7fe5074427bd4e3db5c76343",
-   "contraparte": "0x3e8a2f9b68ed598e311f9abe4b3f1a63b8f0828a",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-1,297.65 USDT → 0x3e8a2f9b…f0828a tx 0x7edc9cff…",
-   "valor_usd": 1297.54
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "ONDO",
-   "cantidad": 27.45143514,
-   "sentido": "salida",
-   "hash": "0x72f331b3bfd9e2297361cac7512df20dfdc9c3cc45d33a4ce80615d28f38bb64",
-   "hash_url": "https://etherscan.io/tx/0x72f331b3bfd9e2297361cac7512df20dfdc9c3cc45d33a4ce80615d28f38bb64",
-   "contraparte": "0xddbbec6aeea686d63c1f0276cdf40ed5206dffb9",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-27.45143514 ONDO → 0xddbbec6a…6dffb9 tx 0x72f331b3…",
-   "valor_usd": 13.43
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 146114.86,
-   "sentido": "salida",
-   "hash": "0x8ae4f4ded740d7c523ea963694356dc0584187c883cd77bd9c155e9b4503408a",
-   "hash_url": "https://etherscan.io/tx/0x8ae4f4ded740d7c523ea963694356dc0584187c883cd77bd9c155e9b4503408a",
-   "contraparte": "0x33709915ad89f812062f3a2c59a30c59cf5f4249",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-146,114.86 USDT → 0x33709915…5f4249 tx 0x8ae4f4de…",
-   "valor_usd": 146102.0
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 5997.77,
-   "sentido": "salida",
-   "hash": "0xd58917df1a214b24f38fdf166729f53e958b88bd25130915b9ee5100f7b03cb1",
-   "hash_url": "https://etherscan.io/tx/0xd58917df1a214b24f38fdf166729f53e958b88bd25130915b9ee5100f7b03cb1",
-   "contraparte": "0xd8e7a12535cc00806e53ba3f817b60a8fe5e1d55",
-   "contraparte_etiqueta": "descubierta 2026-10-02 17:25 UTC: destino de una salida",
-   "fecha_cadena": null,
-   "detalle": "-5,997.77 USDC → 0xd8e7a125…5e1d55 [descubierta 2026-10-02 17:25 UTC: destino de una salida] tx 0xd58917df…",
-   "valor_usd": 5997.64
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 5.3,
-   "sentido": "salida",
-   "hash": "0xafade7bbc6c7c729c97b4cdd3445e938e43858e6bbfd7296ae7a24972fa61e07",
-   "hash_url": "https://etherscan.io/tx/0xafade7bbc6c7c729c97b4cdd3445e938e43858e6bbfd7296ae7a24972fa61e07",
-   "contraparte": "0x3fdaea4c20e4d456504aafb9391027c960c620eb",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-5.3 USDC → 0x3fdaea4c…c620eb tx 0xafade7bb…",
-   "valor_usd": 5.3
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 216.45,
-   "sentido": "salida",
-   "hash": "0x30beb5549407606670bfeda2d15231a31c38ba7e795ab2a57f0a815e676e225e",
-   "hash_url": "https://etherscan.io/tx/0x30beb5549407606670bfeda2d15231a31c38ba7e795ab2a57f0a815e676e225e",
-   "contraparte": "0x3725083c599cf04d022bcea36f23d519715ea2a8",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-216.45 USDT → 0x3725083c…5ea2a8 tx 0x30beb554…",
-   "valor_usd": 216.43
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 200.05,
-   "sentido": "salida",
-   "hash": "0x12f8714249c29ba2498782e1d76cb22eb63cfd7594e87aef8a714cb6e18467dd",
-   "hash_url": "https://etherscan.io/tx/0x12f8714249c29ba2498782e1d76cb22eb63cfd7594e87aef8a714cb6e18467dd",
-   "contraparte": "0x65d8b1fd2e159bf46882e17478f79e259227b800",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-200.05 USDT → 0x65d8b1fd…27b800 tx 0x12f87142…",
-   "valor_usd": 200.03
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 287.25,
-   "sentido": "salida",
-   "hash": "0x66bd8039425e102f3e6737f915767499d134a3d8822da9b5a4177f4f55a7d112",
-   "hash_url": "https://etherscan.io/tx/0x66bd8039425e102f3e6737f915767499d134a3d8822da9b5a4177f4f55a7d112",
-   "contraparte": "0x0848989fedc2a91538463a0f6e5320d71fb04ff3",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-287.25 USDT → 0x0848989f…b04ff3 tx 0x66bd8039…",
-   "valor_usd": 287.22
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 6.12,
-   "sentido": "salida",
-   "hash": "0x16415ad6538b5fb05486e4dbc8f31f1b0af9209221a6b4db76cbaa533b423be1",
-   "hash_url": "https://etherscan.io/tx/0x16415ad6538b5fb05486e4dbc8f31f1b0af9209221a6b4db76cbaa533b423be1",
-   "contraparte": "0x3fdaea4c20e4d456504aafb9391027c960c620eb",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-6.12 USDC → 0x3fdaea4c…c620eb tx 0x16415ad6…",
-   "valor_usd": 6.12
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 5.72,
-   "sentido": "salida",
-   "hash": "0xf98edac78a38cf753089f1eb193ac6a46f9d1e53570379360617be7d4b1862e8",
-   "hash_url": "https://etherscan.io/tx/0xf98edac78a38cf753089f1eb193ac6a46f9d1e53570379360617be7d4b1862e8",
-   "contraparte": "0x7ca9ab6b0c5269bfaac1ff27449d3404eeaff8b7",
-   "contraparte_etiqueta": "descubierta 2026-10-02 09:26 UTC: destino de una salida",
-   "fecha_cadena": null,
-   "detalle": "-5.72 USDT → 0x7ca9ab6b…aff8b7 [descubierta 2026-10-02 09:26 UTC: destino de una salida] tx 0xf98edac7…",
-   "valor_usd": 5.72
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 52.46,
-   "sentido": "salida",
-   "hash": "0x5c1b42c8b33bef3048bca1ab5c4940568d04fe7074e68096f5d7cfccb1267059",
-   "hash_url": "https://etherscan.io/tx/0x5c1b42c8b33bef3048bca1ab5c4940568d04fe7074e68096f5d7cfccb1267059",
-   "contraparte": "0x23d78ec8beb4dc51d8e7c7e809a72120d4d96b4c",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-52.46 USDT → 0x23d78ec8…d96b4c tx 0x5c1b42c8…",
-   "valor_usd": 52.46
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 352.46,
-   "sentido": "salida",
-   "hash": "0x7f431f10c6a5f8e8603efceb333bf8fe8b476587ba9fffab599d288bbad93afe",
-   "hash_url": "https://etherscan.io/tx/0x7f431f10c6a5f8e8603efceb333bf8fe8b476587ba9fffab599d288bbad93afe",
-   "contraparte": "0x2a6083b2e576f8a347ae7c78f21990533fef94cc",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:50 UTC",
-   "detalle": "-352.46 USDC → 0x2a6083b2…ef94cc tx 0x7f431f10… (2026-10-02 22:50 UTC)",
-   "valor_usd": 352.45
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 50.0,
-   "sentido": "salida",
-   "hash": "0xfd3e5eda55afbad32392b07ed9e26cdd693764f3fff733c83a6211b8863999dc",
-   "hash_url": "https://etherscan.io/tx/0xfd3e5eda55afbad32392b07ed9e26cdd693764f3fff733c83a6211b8863999dc",
-   "contraparte": "0x7552e3cf4a95731caecdd26ed6d31fcaf26f3151",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:49 UTC",
-   "detalle": "-50 USDT → 0x7552e3cf…6f3151 tx 0xfd3e5eda… (2026-10-02 22:49 UTC)",
-   "valor_usd": 50.0
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 20.0,
-   "sentido": "salida",
-   "hash": "0x0f7d38a3c119f8dfa889d3d4f6043f90cefda40ed551cd882f1148479b27f531",
-   "hash_url": "https://etherscan.io/tx/0x0f7d38a3c119f8dfa889d3d4f6043f90cefda40ed551cd882f1148479b27f531",
-   "contraparte": "0x6ad3a8052d0f0e0552e928125cd2d91024fcbb25",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:47 UTC",
-   "detalle": "-20 USDT → 0x6ad3a805…fcbb25 tx 0x0f7d38a3… (2026-10-02 22:47 UTC)",
-   "valor_usd": 20.0
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 48.64,
-   "sentido": "salida",
-   "hash": "0x326b956361f172239c9a7f644516a622496fc5afc6e1dbfca63ae34e67a5cf88",
-   "hash_url": "https://etherscan.io/tx/0x326b956361f172239c9a7f644516a622496fc5afc6e1dbfca63ae34e67a5cf88",
-   "contraparte": "0xceddfa94f4d22b9ccc7eb7730e331c10fe935bd0",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:47 UTC",
-   "detalle": "-48.64 USDT → 0xceddfa94…935bd0 tx 0x326b9563… (2026-10-02 22:47 UTC)",
-   "valor_usd": 48.64
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 1000.0,
-   "sentido": "salida",
-   "hash": "0xd70c012b4e35964168ab6ba24074801606d41c3765a628176f425731f61809c8",
-   "hash_url": "https://etherscan.io/tx/0xd70c012b4e35964168ab6ba24074801606d41c3765a628176f425731f61809c8",
-   "contraparte": "0x0e5755d0366c8fd0c8955ce87585c9af777a999f",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:46 UTC",
-   "detalle": "-1,000 USDT → 0x0e5755d0…7a999f tx 0xd70c012b… (2026-10-02 22:46 UTC)",
-   "valor_usd": 999.91
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 11.0,
-   "sentido": "salida",
-   "hash": "0xa08146a909038b18190af19bd0279f776d7718dd8b58044fc45228f70ec11082",
-   "hash_url": "https://etherscan.io/tx/0xa08146a909038b18190af19bd0279f776d7718dd8b58044fc45228f70ec11082",
-   "contraparte": "0x90bcbf64eeb43333b5a53bd44fcc686adaf39e6a",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:45 UTC",
-   "detalle": "-11 USDC → 0x90bcbf64…f39e6a tx 0xa08146a9… (2026-10-02 22:45 UTC)",
-   "valor_usd": 11.0
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 101.3,
-   "sentido": "salida",
-   "hash": "0xccb0cbbf806f4a960b94ad6c7587f2af009f362d3c9904d8be334604092323d7",
-   "hash_url": "https://etherscan.io/tx/0xccb0cbbf806f4a960b94ad6c7587f2af009f362d3c9904d8be334604092323d7",
-   "contraparte": "0x79b5f957bc10b6f4ab1b1311457101fdaea48bb0",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:45 UTC",
-   "detalle": "-101.3 USDT → 0x79b5f957…a48bb0 tx 0xccb0cbbf… (2026-10-02 22:45 UTC)",
-   "valor_usd": 101.29
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 69.12,
-   "sentido": "salida",
-   "hash": "0xea448f4efdcb02079232c560debabc2ac4b56ec276c5f21b911c948196470200",
-   "hash_url": "https://etherscan.io/tx/0xea448f4efdcb02079232c560debabc2ac4b56ec276c5f21b911c948196470200",
-   "contraparte": "0xdceb02cb9d32c2c1db469f746bcf862dafbe3881",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:44 UTC",
-   "detalle": "-69.12 USDT → 0xdceb02cb…be3881 tx 0xea448f4e… (2026-10-02 22:44 UTC)",
-   "valor_usd": 69.11
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 259.46,
-   "sentido": "salida",
-   "hash": "0xf0874cd8b42a3022f95f5267bb3e308c3f8ac4e0c2069187c972df274a44ebef",
-   "hash_url": "https://etherscan.io/tx/0xf0874cd8b42a3022f95f5267bb3e308c3f8ac4e0c2069187c972df274a44ebef",
-   "contraparte": "0xd9611f0232cc70aaba9f5e673477f6f2437d6f46",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:42 UTC",
-   "detalle": "-259.46 USDT → 0xd9611f02…7d6f46 tx 0xf0874cd8… (2026-10-02 22:42 UTC)",
-   "valor_usd": 259.44
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 200.0,
-   "sentido": "salida",
-   "hash": "0x6724ed5041f07bbebc027df7906afa1ec6845bc78852f3c23dfe19c278770c1e",
-   "hash_url": "https://etherscan.io/tx/0x6724ed5041f07bbebc027df7906afa1ec6845bc78852f3c23dfe19c278770c1e",
-   "contraparte": "0xf2086c15f990a1e53d1e5f8658322d38d2a788ea",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:42 UTC",
-   "detalle": "-200 USDT → 0xf2086c15…a788ea tx 0x6724ed50… (2026-10-02 22:42 UTC)",
-   "valor_usd": 199.98
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 750.0,
-   "sentido": "salida",
-   "hash": "0x1c5d11db9017a6da0b081aadde2d12737f538aeb6ff340970588ecc2c514b988",
-   "hash_url": "https://etherscan.io/tx/0x1c5d11db9017a6da0b081aadde2d12737f538aeb6ff340970588ecc2c514b988",
-   "contraparte": "0x1bba74aef16ff1acc30857e367fc48494337b844",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:41 UTC",
-   "detalle": "-750 USDT → 0x1bba74ae…37b844 tx 0x1c5d11db… (2026-10-02 22:41 UTC)",
-   "valor_usd": 749.93
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 12.19,
-   "sentido": "salida",
-   "hash": "0xd020069a07742a11281e4203c65f6d69efdab72a4d71bdf1a54510ec5f796a98",
-   "hash_url": "https://etherscan.io/tx/0xd020069a07742a11281e4203c65f6d69efdab72a4d71bdf1a54510ec5f796a98",
-   "contraparte": "0xcfd09f0bb79c0e20cb3b3cde578615565a72e828",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:41 UTC",
-   "detalle": "-12.19 USDT → 0xcfd09f0b…72e828 tx 0xd020069a… (2026-10-02 22:41 UTC)",
-   "valor_usd": 12.19
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 306.51,
-   "sentido": "salida",
-   "hash": "0xcc8dc5bb9347f4a52ca1acd64a9187433882f4c2f49c0dd998baf7b622f768ba",
-   "hash_url": "https://etherscan.io/tx/0xcc8dc5bb9347f4a52ca1acd64a9187433882f4c2f49c0dd998baf7b622f768ba",
-   "contraparte": "0x77851aafb34cf4755089e7541dde7f0e718d0051",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:39 UTC",
-   "detalle": "-306.51 USDC → 0x77851aaf…8d0051 tx 0xcc8dc5bb… (2026-10-02 22:39 UTC)",
-   "valor_usd": 306.5
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 468.89,
-   "sentido": "salida",
-   "hash": "0xc47d624cd819752e683efe015cdd5ed318de7560e65fd26f8b56842704cb3f7a",
-   "hash_url": "https://etherscan.io/tx/0xc47d624cd819752e683efe015cdd5ed318de7560e65fd26f8b56842704cb3f7a",
-   "contraparte": "0x29fc29814881da5e593443d68f6641506dcadb05",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:39 UTC",
-   "detalle": "-468.89 USDT → 0x29fc2981…cadb05 tx 0xc47d624c… (2026-10-02 22:39 UTC)",
-   "valor_usd": 468.85
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 26.97,
-   "sentido": "salida",
-   "hash": "0x1ee79afa95194f886ff17c41e16ef37647f5121166bb4db8c10f7c33086c831e",
-   "hash_url": "https://etherscan.io/tx/0x1ee79afa95194f886ff17c41e16ef37647f5121166bb4db8c10f7c33086c831e",
-   "contraparte": "0x7bfd6c70ff3c99ccdcbcd17ac1bad8618a12788b",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:39 UTC",
-   "detalle": "-26.97 USDT → 0x7bfd6c70…12788b tx 0x1ee79afa… (2026-10-02 22:39 UTC)",
-   "valor_usd": 26.97
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 5445.0,
-   "sentido": "salida",
-   "hash": "0x240136a824a28b1993cb896d77688c5ce7831317f085e47772ba003e1fa43ffe",
-   "hash_url": "https://etherscan.io/tx/0x240136a824a28b1993cb896d77688c5ce7831317f085e47772ba003e1fa43ffe",
-   "contraparte": "0xd8e7a12535cc00806e53ba3f817b60a8fe5e1d55",
-   "contraparte_etiqueta": "descubierta 2026-10-02 17:25 UTC: destino de una salida",
-   "fecha_cadena": "2026-10-02 22:38 UTC",
-   "detalle": "-5,445 USDC → 0xd8e7a125…5e1d55 [descubierta 2026-10-02 17:25 UTC: destino de una salida] tx 0x240136a8… (2026-10-02 22:38 UTC)",
-   "valor_usd": 5444.88
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 7521.6,
-   "sentido": "salida",
-   "hash": "0xc4668e6288bf02e62e21a2f17852ad75735f093eeade67a65840ad7b89e9d4b9",
-   "hash_url": "https://etherscan.io/tx/0xc4668e6288bf02e62e21a2f17852ad75735f093eeade67a65840ad7b89e9d4b9",
-   "contraparte": "0xd8e7a12535cc00806e53ba3f817b60a8fe5e1d55",
-   "contraparte_etiqueta": "descubierta 2026-10-02 17:25 UTC: destino de una salida",
-   "fecha_cadena": "2026-10-02 22:38 UTC",
-   "detalle": "-7,521.6 USDC → 0xd8e7a125…5e1d55 [descubierta 2026-10-02 17:25 UTC: destino de una salida] tx 0xc4668e62… (2026-10-02 22:38 UTC)",
-   "valor_usd": 7521.43
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 100.02,
-   "sentido": "salida",
-   "hash": "0xbba9238a7a100db6f20ce2a7911d424cc8f72f2eac550deb55b2a9d726aad04a",
-   "hash_url": "https://etherscan.io/tx/0xbba9238a7a100db6f20ce2a7911d424cc8f72f2eac550deb55b2a9d726aad04a",
-   "contraparte": "0xeb2d9a177426407b045eadfcd0a89bf80c3b5a1e",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:38 UTC",
-   "detalle": "-100.02 USDC → 0xeb2d9a17…3b5a1e tx 0xbba9238a… (2026-10-02 22:38 UTC)",
-   "valor_usd": 100.02
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 65.0,
-   "sentido": "salida",
-   "hash": "0xcaec12cf5b61c54876067517a4341bad365897aa501c9ae92cbd3289fa377db4",
-   "hash_url": "https://etherscan.io/tx/0xcaec12cf5b61c54876067517a4341bad365897aa501c9ae92cbd3289fa377db4",
-   "contraparte": "0xa066e4b442c6daca9695549c823b878a1f5cea90",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:38 UTC",
-   "detalle": "-65 USDT → 0xa066e4b4…5cea90 tx 0xcaec12cf… (2026-10-02 22:38 UTC)",
-   "valor_usd": 64.99
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 30.0,
-   "sentido": "salida",
-   "hash": "0xe93656d9026242b51eed1e103b3f3ebc7b73636d658b1edf75acc0f8c09dc020",
-   "hash_url": "https://etherscan.io/tx/0xe93656d9026242b51eed1e103b3f3ebc7b73636d658b1edf75acc0f8c09dc020",
-   "contraparte": "0xf195c8ebf666ced71b58b301fe9027872a9f1453",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:37 UTC",
-   "detalle": "-30 USDC → 0xf195c8eb…9f1453 tx 0xe93656d9… (2026-10-02 22:37 UTC)",
-   "valor_usd": 30.0
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 19.38,
-   "sentido": "salida",
-   "hash": "0x9bd45a777b394a7079ee2c3d7efc23c8b35e32dc807cc88842fed91e24e91065",
-   "hash_url": "https://etherscan.io/tx/0x9bd45a777b394a7079ee2c3d7efc23c8b35e32dc807cc88842fed91e24e91065",
-   "contraparte": "0x55d6f095083d7ede33e84d65c478c40ce164aa19",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:36 UTC",
-   "detalle": "-19.38 USDT → 0x55d6f095…64aa19 tx 0x9bd45a77… (2026-10-02 22:36 UTC)",
-   "valor_usd": 19.38
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 57440.45,
-   "sentido": "salida",
-   "hash": "0x2d5e21155568d37af7bba112bd73759eaf07e9d9cd9b6ad53d802c47850e193c",
-   "hash_url": "https://etherscan.io/tx/0x2d5e21155568d37af7bba112bd73759eaf07e9d9cd9b6ad53d802c47850e193c",
-   "contraparte": "0xd8e7a12535cc00806e53ba3f817b60a8fe5e1d55",
-   "contraparte_etiqueta": "descubierta 2026-10-02 17:25 UTC: destino de una salida",
-   "fecha_cadena": "2026-10-02 22:35 UTC",
-   "detalle": "-57,440.45 USDC → 0xd8e7a125…5e1d55 [descubierta 2026-10-02 17:25 UTC: destino de una salida] tx 0x2d5e2115… (2026-10-02 22:35 UTC)",
-   "valor_usd": 57439.19
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 4905.74,
-   "sentido": "salida",
-   "hash": "0xbf4adae89f6b2737c7baccce15a6b74a72b7942b5a54ec8568bcb9bfe2be2b86",
-   "hash_url": "https://etherscan.io/tx/0xbf4adae89f6b2737c7baccce15a6b74a72b7942b5a54ec8568bcb9bfe2be2b86",
-   "contraparte": "0x13eb764bd716ebc7f229c5db444c20afc78dff3d",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:33 UTC",
-   "detalle": "-4,905.74 USDC → 0x13eb764b…8dff3d tx 0xbf4adae8… (2026-10-02 22:33 UTC)",
-   "valor_usd": 4905.63
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 40.0,
-   "sentido": "salida",
-   "hash": "0xa44815ba3fe7423a4939f42fda3e2737fc567e072964f86ed4fe888b7f92c103",
-   "hash_url": "https://etherscan.io/tx/0xa44815ba3fe7423a4939f42fda3e2737fc567e072964f86ed4fe888b7f92c103",
-   "contraparte": "0x3525ae7bf32a9860c87bf09ec0527878bc1ec5b9",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:33 UTC",
-   "detalle": "-40 USDT → 0x3525ae7b…1ec5b9 tx 0xa44815ba… (2026-10-02 22:33 UTC)",
-   "valor_usd": 40.0
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 43.0,
-   "sentido": "salida",
-   "hash": "0xc6306ba67db36e120ffd460ebf6dbe4503e3cfeff263a768d47932300bf0f05c",
-   "hash_url": "https://etherscan.io/tx/0xc6306ba67db36e120ffd460ebf6dbe4503e3cfeff263a768d47932300bf0f05c",
-   "contraparte": "0x00dcef49a8be57b869df3ed153ece07d8d3b1a20",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:33 UTC",
-   "detalle": "-43 USDT → 0x00dcef49…3b1a20 tx 0xc6306ba6… (2026-10-02 22:33 UTC)",
-   "valor_usd": 43.0
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 66868.44,
-   "sentido": "salida",
-   "hash": "0x2613fc2269b0cfc8f5345934cc586054d8b3a6bbac9effc9ce2f2775b197e9c6",
-   "hash_url": "https://etherscan.io/tx/0x2613fc2269b0cfc8f5345934cc586054d8b3a6bbac9effc9ce2f2775b197e9c6",
-   "contraparte": "0xd8e7a12535cc00806e53ba3f817b60a8fe5e1d55",
-   "contraparte_etiqueta": "descubierta 2026-10-02 17:25 UTC: destino de una salida",
-   "fecha_cadena": "2026-10-02 22:32 UTC",
-   "detalle": "-66,868.44 USDC → 0xd8e7a125…5e1d55 [descubierta 2026-10-02 17:25 UTC: destino de una salida] tx 0x2613fc22… (2026-10-02 22:32 UTC)",
-   "valor_usd": 66866.97
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 10.0,
-   "sentido": "salida",
-   "hash": "0xa5706617d3cf42773ba3c5a6290a2de2d79e0a954af5743520e0499a37224be7",
-   "hash_url": "https://etherscan.io/tx/0xa5706617d3cf42773ba3c5a6290a2de2d79e0a954af5743520e0499a37224be7",
-   "contraparte": "0x9ba806b8e348e50e5dc224ffa655b947d43fa5c3",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:32 UTC",
-   "detalle": "-10 USDC → 0x9ba806b8…3fa5c3 tx 0xa5706617… (2026-10-02 22:32 UTC)",
-   "valor_usd": 10.0
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 25.0,
-   "sentido": "salida",
-   "hash": "0x2b76b3a65661482d495924cb5559d9cb0b2c52dfcdaa69fad8a20ce3e1377abf",
-   "hash_url": "https://etherscan.io/tx/0x2b76b3a65661482d495924cb5559d9cb0b2c52dfcdaa69fad8a20ce3e1377abf",
-   "contraparte": "0xf195c8ebf666ced71b58b301fe9027872a9f1453",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:31 UTC",
-   "detalle": "-25 USDC → 0xf195c8eb…9f1453 tx 0x2b76b3a6… (2026-10-02 22:31 UTC)",
-   "valor_usd": 25.0
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 3464.33,
-   "sentido": "salida",
-   "hash": "0xd5b97b57226da6111e5db87580c827609a81aabfb930bee27f2d1d54d129a7a6",
-   "hash_url": "https://etherscan.io/tx/0xd5b97b57226da6111e5db87580c827609a81aabfb930bee27f2d1d54d129a7a6",
-   "contraparte": "0x7f6f0584b72d8b0ede3618fbce52034b42038a49",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:31 UTC",
-   "detalle": "-3,464.33 USDT → 0x7f6f0584…038a49 tx 0xd5b97b57… (2026-10-02 22:31 UTC)",
-   "valor_usd": 3464.03
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 588.67,
-   "sentido": "salida",
-   "hash": "0x42f5755004d8fdebdb593c66d1a331d8e770fb463c1e1bb424b888052b784bb7",
-   "hash_url": "https://etherscan.io/tx/0x42f5755004d8fdebdb593c66d1a331d8e770fb463c1e1bb424b888052b784bb7",
-   "contraparte": "0xb7a7820a5314f2a0cf50a534e1f16a46ee4106bc",
-   "contraparte_etiqueta": "descubierta 2026-10-02 14:26 UTC: destino de una salida",
-   "fecha_cadena": "2026-10-02 22:31 UTC",
-   "detalle": "-588.67 USDT → 0xb7a7820a…4106bc [descubierta 2026-10-02 14:26 UTC: destino de una salida] tx 0x42f57550… (2026-10-02 22:31 UTC)",
-   "valor_usd": 588.62
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "MANA",
-   "cantidad": 93500.0,
-   "sentido": "salida",
-   "hash": "0x19614866337ef50c08133d8e55456171a673a8420bd8e44b8e79dc29f3f13799",
-   "hash_url": "https://etherscan.io/tx/0x19614866337ef50c08133d8e55456171a673a8420bd8e44b8e79dc29f3f13799",
-   "contraparte": "0xa01aa2196724a39290f465b3925e5dcafe7f2256",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:31 UTC",
-   "detalle": "-93,500 MANA → 0xa01aa219…7f2256 tx 0x19614866… (2026-10-02 22:31 UTC)",
-   "valor_usd": 9143.18
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 11.7,
-   "sentido": "salida",
-   "hash": "0x0d1e4bcb7502435fd3ee638377c9b97745ad3927c0115d738c3bc4a21bf68477",
-   "hash_url": "https://etherscan.io/tx/0x0d1e4bcb7502435fd3ee638377c9b97745ad3927c0115d738c3bc4a21bf68477",
-   "contraparte": "0x1602d184c2bf30cdcc0d557b35d37b057c483d7a",
-   "contraparte_etiqueta": "descubierta 2026-10-02 14:26 UTC: destino de una salida",
-   "fecha_cadena": "2026-10-02 22:29 UTC",
-   "detalle": "-11.7 USDT → 0x1602d184…483d7a [descubierta 2026-10-02 14:26 UTC: destino de una salida] tx 0x0d1e4bcb… (2026-10-02 22:29 UTC)",
-   "valor_usd": 11.7
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 5754.21,
-   "sentido": "salida",
-   "hash": "0x3fc5f3ac5d9000b3e9cb376c609577f87a4644b39abb0ced5e5625acf79330cc",
-   "hash_url": "https://etherscan.io/tx/0x3fc5f3ac5d9000b3e9cb376c609577f87a4644b39abb0ced5e5625acf79330cc",
-   "contraparte": "0xd8e7a12535cc00806e53ba3f817b60a8fe5e1d55",
-   "contraparte_etiqueta": "descubierta 2026-10-02 17:25 UTC: destino de una salida",
-   "fecha_cadena": "2026-10-02 22:28 UTC",
-   "detalle": "-5,754.21 USDC → 0xd8e7a125…5e1d55 [descubierta 2026-10-02 17:25 UTC: destino de una salida] tx 0x3fc5f3ac… (2026-10-02 22:28 UTC)",
-   "valor_usd": 5754.08
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 1.66,
-   "sentido": "salida",
-   "hash": "0xa1a0e92e5ab244c016a0a0be6feae27d111c495ed2d77acf2d3e7e7bd3c53f2d",
-   "hash_url": "https://etherscan.io/tx/0xa1a0e92e5ab244c016a0a0be6feae27d111c495ed2d77acf2d3e7e7bd3c53f2d",
-   "contraparte": "0xb4e863a46c107943e848d0be887ca7558123d810",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:28 UTC",
-   "detalle": "-1.66 USDT → 0xb4e863a4…23d810 tx 0xa1a0e92e… (2026-10-02 22:28 UTC)",
-   "valor_usd": 1.66
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 8686.69,
-   "sentido": "salida",
-   "hash": "0xd550390423a6c298a3f694d46a1f2efe472c3b710d1c7d32e0ec3dcd5414692b",
-   "hash_url": "https://etherscan.io/tx/0xd550390423a6c298a3f694d46a1f2efe472c3b710d1c7d32e0ec3dcd5414692b",
-   "contraparte": "0xd8e7a12535cc00806e53ba3f817b60a8fe5e1d55",
-   "contraparte_etiqueta": "descubierta 2026-10-02 17:25 UTC: destino de una salida",
-   "fecha_cadena": "2026-10-02 22:27 UTC",
-   "detalle": "-8,686.69 USDC → 0xd8e7a125…5e1d55 [descubierta 2026-10-02 17:25 UTC: destino de una salida] tx 0xd5503904… (2026-10-02 22:27 UTC)",
-   "valor_usd": 8686.5
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 1146.18,
-   "sentido": "salida",
-   "hash": "0x397659a428961318e6d5205c189c2e1f4b806755a0b8efea1267e1eab2c32821",
-   "hash_url": "https://etherscan.io/tx/0x397659a428961318e6d5205c189c2e1f4b806755a0b8efea1267e1eab2c32821",
-   "contraparte": "0x23d78ec8beb4dc51d8e7c7e809a72120d4d96b4c",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:26 UTC",
-   "detalle": "-1,146.18 USDT → 0x23d78ec8…d96b4c tx 0x397659a4… (2026-10-02 22:26 UTC)",
-   "valor_usd": 1146.08
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 10.0,
-   "sentido": "salida",
-   "hash": "0x2b48ab7db30010f6e0e2ba3fb64673ae41a25ff35b32234dd04112feb49fc076",
-   "hash_url": "https://etherscan.io/tx/0x2b48ab7db30010f6e0e2ba3fb64673ae41a25ff35b32234dd04112feb49fc076",
-   "contraparte": "0x26f43ad16ac693c12eedfe0204f7e93709b2c4f0",
-   "contraparte_etiqueta": "descubierta 2026-10-02 16:24 UTC: destino de una salida",
-   "fecha_cadena": "2026-10-02 22:26 UTC",
-   "detalle": "-10 USDT → 0x26f43ad1…b2c4f0 [descubierta 2026-10-02 16:24 UTC: destino de una salida] tx 0x2b48ab7d… (2026-10-02 22:26 UTC)",
-   "valor_usd": 10.0
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 8573.91,
-   "sentido": "salida",
-   "hash": "0xff8b2ad010d2d86aaae2b64ad73f965c42cd680f743317668551e2f6f25fa6f1",
-   "hash_url": "https://etherscan.io/tx/0xff8b2ad010d2d86aaae2b64ad73f965c42cd680f743317668551e2f6f25fa6f1",
-   "contraparte": "0xd8e7a12535cc00806e53ba3f817b60a8fe5e1d55",
-   "contraparte_etiqueta": "descubierta 2026-10-02 17:25 UTC: destino de una salida",
-   "fecha_cadena": "2026-10-02 22:25 UTC",
-   "detalle": "-8,573.91 USDC → 0xd8e7a125…5e1d55 [descubierta 2026-10-02 17:25 UTC: destino de una salida] tx 0xff8b2ad0… (2026-10-02 22:25 UTC)",
-   "valor_usd": 8573.72
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 449.9,
-   "sentido": "salida",
-   "hash": "0x109c6d9e5da15f867c52cc662bc41708426545a96d99bccdb2ea805210e243c9",
-   "hash_url": "https://etherscan.io/tx/0x109c6d9e5da15f867c52cc662bc41708426545a96d99bccdb2ea805210e243c9",
-   "contraparte": "0x477e7922eb46c6aacddb9ea5f434e678ae2440ce",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:25 UTC",
-   "detalle": "-449.9 USDT → 0x477e7922…2440ce tx 0x109c6d9e… (2026-10-02 22:25 UTC)",
-   "valor_usd": 449.86
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 2703.22,
-   "sentido": "salida",
-   "hash": "0x38a7c34433ebe3a3f25da65109a9edb897a97a375929ea90b6c76e8f94d1b936",
-   "hash_url": "https://etherscan.io/tx/0x38a7c34433ebe3a3f25da65109a9edb897a97a375929ea90b6c76e8f94d1b936",
-   "contraparte": "0xf10280b35e5f4d6a51964fa0c1d027a5d04ff77e",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:25 UTC",
-   "detalle": "-2,703.22 USDT → 0xf10280b3…4ff77e tx 0x38a7c344… (2026-10-02 22:25 UTC)",
-   "valor_usd": 2702.98
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 8912.28,
-   "sentido": "salida",
-   "hash": "0x73a1631a8c800af429a3c717540c3143f90f5e8141199e6341cf66b43811d640",
-   "hash_url": "https://etherscan.io/tx/0x73a1631a8c800af429a3c717540c3143f90f5e8141199e6341cf66b43811d640",
-   "contraparte": "0xd8e7a12535cc00806e53ba3f817b60a8fe5e1d55",
-   "contraparte_etiqueta": "descubierta 2026-10-02 17:25 UTC: destino de una salida",
-   "fecha_cadena": "2026-10-02 22:23 UTC",
-   "detalle": "-8,912.28 USDC → 0xd8e7a125…5e1d55 [descubierta 2026-10-02 17:25 UTC: destino de una salida] tx 0x73a1631a… (2026-10-02 22:23 UTC)",
-   "valor_usd": 8912.08
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 25.0,
-   "sentido": "salida",
-   "hash": "0x7772aabf04fe772da95243cd52d7785b6611c36aee686dd3779d2064cd871ed3",
-   "hash_url": "https://etherscan.io/tx/0x7772aabf04fe772da95243cd52d7785b6611c36aee686dd3779d2064cd871ed3",
-   "contraparte": "0xf195c8ebf666ced71b58b301fe9027872a9f1453",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:23 UTC",
-   "detalle": "-25 USDC → 0xf195c8eb…9f1453 tx 0x7772aabf… (2026-10-02 22:23 UTC)",
-   "valor_usd": 25.0
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 812.54,
-   "sentido": "salida",
-   "hash": "0x74e4528903869b86c9e589daf4dab1f59fae836e19306dce2eea72e79f75a920",
-   "hash_url": "https://etherscan.io/tx/0x74e4528903869b86c9e589daf4dab1f59fae836e19306dce2eea72e79f75a920",
-   "contraparte": "0xc567bc57c5badca444bb187af6252069f24475a6",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:22 UTC",
-   "detalle": "-812.54 USDC → 0xc567bc57…4475a6 tx 0x74e45289… (2026-10-02 22:22 UTC)",
-   "valor_usd": 812.52
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 538.57,
-   "sentido": "salida",
-   "hash": "0x4d87165d34041976780afa43e84ed97253811941a98f2a25af917f23cc654681",
-   "hash_url": "https://etherscan.io/tx/0x4d87165d34041976780afa43e84ed97253811941a98f2a25af917f23cc654681",
-   "contraparte": "0x23d78ec8beb4dc51d8e7c7e809a72120d4d96b4c",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 22:20 UTC",
-   "detalle": "-538.57 USDT → 0x23d78ec8…d96b4c tx 0x4d87165d… (2026-10-02 22:20 UTC)",
-   "valor_usd": 538.52
-  },
-  {
-   "fecha": "2026-10-02 23:17 UTC",
-   "red": "ETH",
-   "direccion": "0x58b704065b7aff3ed351052f8560019e05925023",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 29.901142336428666,
-   "saldo_despues": 30.88079106032861,
-   "tipo_evento": "transferencia",
-   "moneda": "USDC",
-   "cantidad": 56396.12,
-   "sentido": "salida",
-   "hash": "0x42bb7d3531a73fa6012348f3ca500c0d5196c764d32cd88cdd2ae10a6b30183d",
-   "hash_url": "https://etherscan.io/tx/0x42bb7d3531a73fa6012348f3ca500c0d5196c764d32cd88cdd2ae10a6b30183d",
-   "contraparte": "0xd8e7a12535cc00806e53ba3f817b60a8fe5e1d55",
-   "contraparte_etiqueta": "descubierta 2026-10-02 17:25 UTC: destino de una salida",
-   "fecha_cadena": "2026-10-02 22:20 UTC",
-   "detalle": "-56,396.12 USDC → 0xd8e7a125…5e1d55 [descubierta 2026-10-02 17:25 UTC: destino de una salida] tx 0x42bb7d35… (2026-10-02 22:20 UTC)",
-   "valor_usd": 56394.88
-  },
-  {
-   "fecha": "2026-10-02 22:19 UTC",
-   "red": "ETH",
-   "direccion": "0xd5133f2ff49b776b7a7af60306e6fcd4067c863e",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 0.008066889261176272,
-   "saldo_despues": 0.008049214470824727,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 39008.24,
-   "sentido": "salida",
-   "hash": "0x640252ba842bf1161bf5be3167f3fb59d0cfffdb13630ca71691e310ef95ef4f",
-   "hash_url": "https://etherscan.io/tx/0x640252ba842bf1161bf5be3167f3fb59d0cfffdb13630ca71691e310ef95ef4f",
-   "contraparte": "0xbf432e5c230b70785163a8d806ec2f76c7b7878b",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-39,008.24 USDT → 0xbf432e5c…b7878b tx 0x640252ba…",
-   "valor_usd": 39004.03
-  },
-  {
-   "fecha": "2026-10-02 22:19 UTC",
-   "red": "ETH",
-   "direccion": "0xd5133f2ff49b776b7a7af60306e6fcd4067c863e",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 0.008066889261176272,
-   "saldo_despues": 0.008049214470824727,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 18074.03,
-   "sentido": "salida",
-   "hash": "0x8614a5a669dea527e33e5757a72fb168276e98f308bef5185cba2f64ee75279c",
-   "hash_url": "https://etherscan.io/tx/0x8614a5a669dea527e33e5757a72fb168276e98f308bef5185cba2f64ee75279c",
-   "contraparte": "0xfd439267a696f34e9b31b93e1b560ba8f948873c",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "-18,074.03 USDT → 0xfd439267…48873c tx 0x8614a5a6…",
-   "valor_usd": 18072.08
-  },
-  {
-   "fecha": "2026-10-02 22:19 UTC",
-   "red": "ETH",
-   "direccion": "0xd5133f2ff49b776b7a7af60306e6fcd4067c863e",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 0.008066889261176272,
-   "saldo_despues": 0.008049214470824727,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 50499.9,
-   "sentido": "salida",
-   "hash": "0x9c0c8ae7fa28996f2d0503490453b7a78d0538757ab03a0ae0ee7f4fd030d41b",
-   "hash_url": "https://etherscan.io/tx/0x9c0c8ae7fa28996f2d0503490453b7a78d0538757ab03a0ae0ee7f4fd030d41b",
-   "contraparte": "0xed564c06073cb41c8d5e86bbe71979bbc0875d40",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": "2026-10-02 21:43 UTC",
-   "detalle": "-50,499.9 USDT → 0xed564c06…875d40 tx 0x9c0c8ae7… (2026-10-02 21:43 UTC)",
-   "valor_usd": 50494.45
-  },
-  {
-   "fecha": "2026-10-02 22:19 UTC",
-   "red": "ETH",
-   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 215.01561924341982,
-   "saldo_despues": 215.14396557099892,
-   "tipo_evento": "saldo",
-   "detalle": "+0.12834633 ETH (≈US$ 341.65; saldo 215.143966)",
-   "valor_usd": 341.65
-  },
-  {
-   "fecha": "2026-10-02 22:19 UTC",
-   "red": "ETH",
-   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 215.01561924341982,
-   "saldo_despues": 215.14396557099892,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 58.0,
-   "sentido": "entrada",
-   "hash": "0x9eefb4eb3a7cfb30eb8eb154d1da4566e94578645dd3f5dc125dcab7e0157281",
-   "hash_url": "https://etherscan.io/tx/0x9eefb4eb3a7cfb30eb8eb154d1da4566e94578645dd3f5dc125dcab7e0157281",
-   "contraparte": "0x1d3dca4d5b821bc7a54348fe3be194fd53af97c4",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "+58 USDT ← 0x1d3dca4d…af97c4 tx 0x9eefb4eb…",
-   "valor_usd": 57.99
-  },
-  {
-   "fecha": "2026-10-02 22:19 UTC",
-   "red": "ETH",
-   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 215.01561924341982,
-   "saldo_despues": 215.14396557099892,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 10.2,
-   "sentido": "entrada",
-   "hash": "0x1b4cefb9db8d57dbbc5a48a22337ccf9f2771b829fcc3789511628a6c2648863",
-   "hash_url": "https://etherscan.io/tx/0x1b4cefb9db8d57dbbc5a48a22337ccf9f2771b829fcc3789511628a6c2648863",
-   "contraparte": "0x09bbde4ec7a9bec7692895daa00575ad197c804b",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "+10.2 USDT ← 0x09bbde4e…7c804b tx 0x1b4cefb9…",
-   "valor_usd": 10.2
-  },
-  {
-   "fecha": "2026-10-02 22:19 UTC",
-   "red": "ETH",
-   "direccion": "0x74aa5387681505c806ff1e972b12cdfd01406828",
-   "etiqueta": "Descubierta: destino de una salida",
-   "tipo": "descubierta",
-   "saldo_antes": 215.01561924341982,
-   "saldo_despues": 215.14396557099892,
-   "tipo_evento": "transferencia",
-   "moneda": "USDT",
-   "cantidad": 11.58,
-   "sentido": "entrada",
-   "hash": "0x23be6d3965ebe3ae2d5484ad91927090f93c7e3c3cb0ca38c099180265d12e0e",
-   "hash_url": "https://etherscan.io/tx/0x23be6d3965ebe3ae2d5484ad91927090f93c7e3c3cb0ca38c099180265d12e0e",
-   "contraparte": "0xbf3be4ff7cb36e8dae8c2f0271e42afc9e6e3f6d",
-   "contraparte_etiqueta": null,
-   "fecha_cadena": null,
-   "detalle": "+11.58 USDT ← 0xbf3be4ff…6e3f6d tx 0x23be6d39…",
-   "valor_usd": 11.58
   }
  ],
  "errores": [
@@ -9155,18 +9143,18 @@
  ],
  "cursores": {
   "ETH": {
-   "bloque": 26108475,
-   "fecha": "2026-10-03 01:19 UTC",
-   "logs": 90
+   "bloque": 26108784,
+   "fecha": "2026-10-03 02:21 UTC",
+   "logs": 88
   },
   "BSC": {
-   "bloque": 125080095,
-   "fecha": "2026-10-03 01:19 UTC",
+   "bloque": 125100095,
+   "fecha": "2026-10-03 02:21 UTC",
    "logs": 0
   },
   "POLYGON": {
-   "bloque": 94856928,
-   "fecha": "2026-10-03 01:19 UTC",
+   "bloque": 94859407,
+   "fecha": "2026-10-03 02:21 UTC",
    "logs": 0
   }
  },
@@ -9175,57 +9163,57 @@
    "0x6b175474e89094c44da98b954eedeac495271d0f": {
     "simbolo": "DAI",
     "decimales": 18,
-    "precio_usd": 1.0,
+    "precio_usd": 0.999826,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:23 UTC",
+    "precio_fecha": "2026-10-03 02:25 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0x68749665ff8d2d112fa859aa293f07a622782f38": {
     "simbolo": "XAUT",
     "decimales": 6,
-    "precio_usd": 4141.29,
+    "precio_usd": 4142.95,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:23 UTC",
+    "precio_fecha": "2026-10-03 02:25 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": {
     "simbolo": "USDC",
     "decimales": 6,
-    "precio_usd": 0.999963,
+    "precio_usd": 0.999922,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:26 UTC",
+    "precio_fecha": "2026-10-03 02:28 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0xdac17f958d2ee523a2206206994597c13d831ec7": {
     "simbolo": "USDT",
     "decimales": 6,
-    "precio_usd": 0.99991,
+    "precio_usd": 0.999887,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:26 UTC",
+    "precio_fecha": "2026-10-03 02:28 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0xc581b735a1688071a1746c968e0798d642ede491": {
     "simbolo": "EURT",
     "decimales": 6,
-    "precio_usd": 0.04719323,
+    "precio_usd": 0.051398,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 00:31 UTC",
+    "precio_fecha": "2026-10-03 02:24 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39": {
     "simbolo": "HEX",
     "decimales": 8,
-    "precio_usd": 0.00098622,
+    "precio_usd": 0.00098638,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 00:31 UTC",
+    "precio_fecha": "2026-10-03 02:24 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359": {
     "simbolo": "SAI",
     "decimales": 18,
-    "precio_usd": 14.0,
+    "precio_usd": 14.13,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 00:31 UTC",
+    "precio_fecha": "2026-10-03 02:25 UTC",
     "visto": "2026-09-15 18:56 UTC"
    },
    "0x8b3c55b6c02f89a80e40cbebc6363a5317255ace": {
@@ -9527,25 +9515,25 @@
    "0x514910771af9ca656af840dff83e8264ecf986ca": {
     "simbolo": "LINK",
     "decimales": 18,
-    "precio_usd": 13.91,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:23 UTC",
+    "precio_usd": 13.94,
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:25 UTC",
     "visto": "2026-09-17 12:26 UTC"
    },
    "0x455e53cbb86018ac2b8092fdcd39d8444affc3f6": {
     "simbolo": "POL",
     "decimales": 18,
-    "precio_usd": 0.105496,
-    "precio_fuente": "blockscout",
-    "precio_fecha": "2026-10-03 00:31 UTC",
+    "precio_usd": 0.108079,
+    "precio_fuente": "coingecko",
+    "precio_fecha": "2026-10-03 02:25 UTC",
     "visto": "2026-09-17 12:26 UTC"
    },
    "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce": {
     "simbolo": "SHIB",
     "decimales": 18,
     "precio_usd": 5.72e-06,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:23 UTC",
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:25 UTC",
     "visto": "2026-09-17 12:26 UTC"
    },
    "0x7810e073d4e4b1c22f8c2af1b9c4b905a39ffa4e": {
@@ -9655,9 +9643,9 @@
    "0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e": {
     "simbolo": "YFI",
     "decimales": 18,
-    "precio_usd": 2528.0,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 00:35 UTC",
+    "precio_usd": 2530.98,
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:26 UTC",
     "visto": "2026-09-17 19:20 UTC"
    },
    "0xba11d00c5f74255f56a5e366f4f77f5a186d7f55": {
@@ -9673,7 +9661,7 @@
     "decimales": 18,
     "precio_usd": 1.22,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 00:33 UTC",
+    "precio_fecha": "2026-10-03 02:26 UTC",
     "visto": "2026-09-17 19:20 UTC"
    },
    "0x4d224452801aced8b2f0aebe155379bb5d594381": {
@@ -9687,9 +9675,9 @@
    "0x163f8c2467924be0ae7b5347228cabf260318753": {
     "simbolo": "WLD",
     "decimales": 18,
-    "precio_usd": 0.561286,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 00:35 UTC",
+    "precio_usd": 0.566619,
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:28 UTC",
     "visto": "2026-09-17 19:20 UTC"
    },
    "0xff20817765cb7f73d4bde2e66e067e58d11095c2": {
@@ -9711,9 +9699,9 @@
    "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9": {
     "simbolo": "AAVE",
     "decimales": 18,
-    "precio_usd": 180.46,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:25 UTC",
+    "precio_usd": 181.22,
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:26 UTC",
     "visto": "2026-09-17 19:20 UTC"
    },
    "0x56072c95faa701256059aa122697b133aded9279": {
@@ -9767,17 +9755,17 @@
    "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2": {
     "simbolo": "SUSHI",
     "decimales": 18,
-    "precio_usd": 0.254146,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:25 UTC",
+    "precio_usd": 0.254082,
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:26 UTC",
     "visto": "2026-09-17 19:20 UTC"
    },
    "0xc00e94cb662c3520282e6f5717214004a7f26888": {
     "simbolo": "COMP",
     "decimales": 18,
-    "precio_usd": 23.9,
-    "precio_fuente": "blockscout",
-    "precio_fecha": "2026-10-02 23:20 UTC",
+    "precio_usd": 24.54,
+    "precio_fuente": "coingecko",
+    "precio_fecha": "2026-10-03 02:26 UTC",
     "visto": "2026-09-17 19:20 UTC"
    },
    "0xc944e90c64b2c07662a292be6244bdf05cda44a7": {
@@ -9791,9 +9779,9 @@
    "0xaea46a60368a7bd060eec7df8cba43b7ef41ad85": {
     "simbolo": "FET",
     "decimales": 18,
-    "precio_usd": 0.220358,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 00:33 UTC",
+    "precio_usd": 0.220737,
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:26 UTC",
     "visto": "2026-09-17 19:20 UTC"
    },
    "0x4baf33f965297ff3c16891a107c540acea1dfd54": {
@@ -11143,9 +11131,9 @@
    "0x0000000000085d4780b73119b644ae5ecd22b376": {
     "simbolo": "TUSD",
     "decimales": 18,
-    "precio_usd": 0.999712,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:24 UTC",
+    "precio_usd": 0.999753,
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:26 UTC",
     "visto": "2026-09-22 22:21 UTC"
    },
    "0x808507121b80c02388fad14726482e061b8da827": {
@@ -11175,9 +11163,9 @@
    "0xba100000625a3754423978a60c9317c58a424e3d": {
     "simbolo": "BAL",
     "decimales": 18,
-    "precio_usd": 0.131482,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 00:33 UTC",
+    "precio_usd": 0.133325,
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:26 UTC",
     "visto": "2026-09-22 22:21 UTC"
    },
    "0x07041776f5007aca2a54844f50503a18a72a8b68": {
@@ -11191,9 +11179,9 @@
    "0xbbbbca6a901c926f240b89eacb641d8aec7aeafd": {
     "simbolo": "LRC",
     "decimales": 18,
-    "precio_usd": 0.010316,
+    "precio_usd": 0.01029398,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 00:33 UTC",
+    "precio_fecha": "2026-10-03 02:26 UTC",
     "visto": "2026-09-22 22:21 UTC"
    },
    "0x8e870d67f660d95d5be530380d0ec0bd388289e1": {
@@ -11224,8 +11212,8 @@
     "simbolo": "CHKN",
     "decimales": 18,
     "precio_usd": 1.8981e-08,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:24 UTC",
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:26 UTC",
     "visto": "2026-09-22 22:21 UTC"
    },
    "0x58b6a8a3302369daec383334672404ee733ab239": {
@@ -11559,9 +11547,9 @@
    "0xe343167631d89b6ffc58b88d6b7fb0228795491d": {
     "simbolo": "USDG",
     "decimales": 6,
-    "precio_usd": 1.0,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 00:35 UTC",
+    "precio_usd": 0.999987,
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:28 UTC",
     "visto": "2026-09-23 22:23 UTC"
    },
    "0x8d0d000ee44948fc98c9b98a4fa4921476f08b0d": {
@@ -11575,9 +11563,9 @@
    "0x118b70df4f06fa5678e7d543e6066e028c8ea0c0": {
     "simbolo": "KITE",
     "decimales": 18,
-    "precio_usd": 0.149246,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 00:35 UTC",
+    "precio_usd": 0.150126,
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:28 UTC",
     "visto": "2026-09-23 22:23 UTC"
    },
    "0xe28b3b32b6c345a34ff64674606124dd5aceca30": {
@@ -11599,9 +11587,9 @@
    "0x320623b8e4ff03373931769a31fc52a4e78b5d70": {
     "simbolo": "RSR",
     "decimales": 18,
-    "precio_usd": 0.00174878,
-    "precio_fuente": "blockscout",
-    "precio_fecha": "2026-10-02 14:28 UTC",
+    "precio_usd": 0.00167718,
+    "precio_fuente": "coingecko",
+    "precio_fecha": "2026-10-03 02:28 UTC",
     "visto": "2026-09-23 22:23 UTC"
    },
    "0xfe0c30065b384f05761f15d0cc899d4f9f9cc0eb": {
@@ -11624,8 +11612,8 @@
     "simbolo": "FLUID",
     "decimales": 18,
     "precio_usd": 1.59,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:25 UTC",
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:28 UTC",
     "visto": "2026-09-23 22:23 UTC"
    },
    "0xc20059e0317de91738d13af027dfc4a50781b066": {
@@ -11663,9 +11651,9 @@
    "0x086f405146ce90135750bbec9a063a8b20a8bffb": {
     "simbolo": "BREV",
     "decimales": 18,
-    "precio_usd": 0.085272,
-    "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 00:35 UTC",
+    "precio_usd": 0.085212,
+    "precio_fuente": "blockscout",
+    "precio_fecha": "2026-10-03 02:28 UTC",
     "visto": "2026-09-23 22:23 UTC"
    },
    "0x951f086a127e280724fd93ccc543f65065afeb5e": {
@@ -11695,9 +11683,9 @@
    "0x32b4d049fe4c888d2b92eecaf729f44df6b1f36e": {
     "simbolo": "ROBO",
     "decimales": 18,
-    "precio_usd": 0.00898425,
-    "precio_fuente": "blockscout",
-    "precio_fecha": "2026-10-02 14:28 UTC",
+    "precio_usd": 0.00818955,
+    "precio_fuente": "coingecko",
+    "precio_fecha": "2026-10-03 02:28 UTC",
     "visto": "2026-09-23 22:23 UTC"
    },
    "0x3c3a81e81dc49a522a592e7622a7e711c06bf354": {
@@ -13106,65 +13094,65 @@
     "simbolo": "ETH",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 2681.62,
+    "precio_usd": 2679.94,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC"
+    "precio_fecha": "2026-10-03 02:24 UTC"
    },
    "0x570a5d26f7765ecb712c0924e4de545b89fd43df": {
     "simbolo": "SOL",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 119.52,
+    "precio_usd": 119.24,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC"
+    "precio_fecha": "2026-10-03 02:24 UTC"
    },
    "0x4338665cbb7b2485a8855a139b75d5e34ab0db94": {
     "simbolo": "LTC",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 70.87,
+    "precio_usd": 70.15,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC"
+    "precio_fecha": "2026-10-03 02:24 UTC"
    },
    "0x3ee2200efb3400fabb9aacf31297cbdd1d435d47": {
     "simbolo": "ADA",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 0.247967,
+    "precio_usd": 0.248496,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC"
+    "precio_fecha": "2026-10-03 02:24 UTC"
    },
    "0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3": {
     "simbolo": "DAI",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 1.0,
+    "precio_usd": 0.999826,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC"
+    "precio_fecha": "2026-10-03 02:24 UTC"
    },
    "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d": {
     "simbolo": "USDC",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 0.999963,
+    "precio_usd": 0.999922,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC"
+    "precio_fecha": "2026-10-03 02:24 UTC"
    },
    "0xce7de646e7208a4ef112cb6ed5038fa6cc6b12e3": {
     "simbolo": "TRX",
     "decimales": 6,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 0.334788,
+    "precio_usd": 0.334508,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC"
+    "precio_fecha": "2026-10-03 02:24 UTC"
    },
    "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c": {
     "simbolo": "BTCB",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 84677,
+    "precio_usd": 84647,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC"
+    "precio_fecha": "2026-10-03 02:24 UTC"
    },
    "0x1d2f0da169ceb9fc7b3144628db156f3f6c60dbe": {
     "simbolo": "XRP",
@@ -13172,15 +13160,15 @@
     "visto": "2026-09-15 18:55 UTC",
     "precio_usd": 1.49,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC"
+    "precio_fecha": "2026-10-03 02:24 UTC"
    },
    "0x55d398326f99059ff775485246999027b3197955": {
     "simbolo": "USDT",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 0.99991,
+    "precio_usd": 0.999887,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC"
+    "precio_fecha": "2026-10-03 02:24 UTC"
    },
    "0x7083609fce4d1d8dc0c979aab8c869ea2c873402": {
     "simbolo": "DOT",
@@ -13188,7 +13176,7 @@
     "visto": "2026-09-15 18:55 UTC",
     "precio_usd": 1.17,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC"
+    "precio_fecha": "2026-10-03 02:24 UTC"
    }
   },
   "POLYGON": {
@@ -13203,33 +13191,33 @@
    "0x3c499c542cef5e3811e1192ce70d8cc03d5c3359": {
     "simbolo": "USDC",
     "decimales": 6,
-    "precio_usd": 0.999963,
+    "precio_usd": 0.999922,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC",
+    "precio_fecha": "2026-10-03 02:24 UTC",
     "visto": "2026-09-15 18:55 UTC"
    },
    "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063": {
     "simbolo": "DAI",
     "decimales": 18,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 1.0,
+    "precio_usd": 0.999826,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC"
+    "precio_fecha": "2026-10-03 02:24 UTC"
    },
    "0x2791bca1f2de4661ed88a30c99a7a9449aa84174": {
     "simbolo": "USDC",
     "decimales": 6,
     "visto": "2026-09-15 18:55 UTC",
-    "precio_usd": 0.999963,
+    "precio_usd": 0.999922,
     "precio_fuente": "coingecko",
-    "precio_fecha": "2026-10-03 01:22 UTC"
+    "precio_fecha": "2026-10-03 02:24 UTC"
    }
   }
  },
  "descubiertas": 200,
  "descubiertas_seguidas": 18,
- "total_clp": 4567616591.878634,
- "total_usd": 4607663.372344229,
+ "total_clp": 4566103255.93457,
+ "total_usd": 4607571.489558573,
  "resumen_discord": {
   "fecha": "2026-10-02",
   "hasta": "2026-10-02 23:17 UTC"
