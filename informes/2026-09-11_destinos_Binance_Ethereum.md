@@ -58,9 +58,14 @@ formalizados. Las direcciones de destino se etiquetan por su función en cadena
    etiqueta pública "Orionx 1" (`0xafda8eba…`): 460,23 ETH a Binance 1 (2021) y
    4,95 ETH + 497.222 USDT a Binance 14 (2021-2023).
 7. **Tres destinos grandes sin etiqueta** (`0x4def7506…` 14,04 M USDT,
-   `0xad1618f3…` 9,85 M USDT, `D-24` 5,24 M USDT) reenvían a racimos de
-   direcciones con sufijo repetido: patrón propio de redes OTC de stablecoins.
-   Ahí conviene pedir trazabilidad a Tether, no solo a Binance.
+`0xad1618f3…` 9,85 M USDT, `D-24` 5,24 M USDT) reenvían a racimos de
+direcciones con sufijo repetido: patrón propio de redes OTC de stablecoins.
+Ahí conviene pedir trazabilidad a Tether, no solo a Binance.
+
+> **Nota de seguimiento (16-oct-2026):** La dirección `0xad1618f3…` fue detectada
+por el monitor OrionX el 16-oct-2026 tras un movimiento de +108,799.99 USDT,
+confirmando su actividad reciente como destino de salidas atribuido. Ver alerta:
+https://afectados-orionx.github.io/orionx-monitor/#movimientos
 8. **Hallazgos nuevos de estructura:** `0x5557e7ee…` es la billetera caliente
    anterior (2018-2021, fondeada por Kraken 4 con 2.587 ETH, entregó 497 ETH a
    `0x5528d8…`); `0x3f8f72ff…` aportó 6.750 ETH a la central; `0xb72ae936…` es un
