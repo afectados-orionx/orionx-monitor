@@ -1072,7 +1072,12 @@ def main():
         filas.append(fila); time.sleep(0.2)
     # 3. historial (sin repetir lo ya anotado), descubiertas, data.json
     hist = HERE / "historial.jsonl"
-    previos = [json.loads(l) for l in hist.read_text(encoding="utf-8").splitlines() if l.strip()] if hist.exists() else []
+    previos, malas = [], 0
+    for l in (hist.read_text(encoding="utf-8", errors="replace").splitlines() if hist.exists() else []):
+        if not l.strip(): continue
+        try: previos.append(json.loads(l))
+        except ValueError: malas += 1   # 3-oct-2026: un corte de luz en el rock dejó una línea en ceros y botaba cada corrida
+    if malas: print(f"historial.jsonl: {malas} línea(s) ilegible(s) ignorada(s)")
     clave = lambda e: (e.get("red"), e.get("direccion"), e.get("hash"), e.get("moneda")) if e.get("hash") else (e.get("red"), e.get("direccion"), e.get("saldo_antes"), e.get("saldo_despues"), e.get("detalle"))   # noqa: E731
     ya = {clave(e) for e in previos[-600:]}   # no re-anotar el mismo movimiento si una corrida anterior no llegó a hacer push
     nuevos = [e for e in eventos if clave(e) not in ya]
