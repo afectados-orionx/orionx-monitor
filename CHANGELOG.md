@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-17: dos recolectoras más, en Polygon y Tron
+
+A partir de una lista de direcciones que aportó un afectado (verificada en cadena el 17-nov) entran
+dos registros `orionx` monitoreados:
+
+- `0x0c827a96…f3d272` en **Polygon**: es la central de depósitos que ya se vigilaba en Ethereum y BSC.
+  Es una cuenta normal con 86 envíos en Polygon, o sea, la misma llave. Tiene 88.331 POL y 3.375 USDC
+  que el monitor no estaba mirando.
+- `TXGUZkEW…MNth` en **Tron**: recolector de USDT. Entre marzo y agosto de 2026 reenvió 1,74 M USDT a
+  la billetera caliente `THR3KS…`. Hoy le quedan ≈830 TRX.
+
 ## 2026-09-25: el monitor deja de seguir a los servicios de alto volumen
 
 Entre el 12 y el 25-sep el monitor emitió 469 alertas y **427 fueron de direcciones descubiertas**,
