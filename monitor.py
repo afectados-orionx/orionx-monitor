@@ -10,13 +10,14 @@ Qué vigila (desde el 15-sep-2026, versión 3):
     Blockscout una vez al día. Un token solo cuenta si tiene precio conocido por contrato (CoinGecko o Blockscout):
     así los tokens imitadores y de spam no suman ni alertan. En Tron se cuentan todos los TRC-20 con precio en Tronscan.
   * Transferencias con hash y contraparte: eventos Transfer (EVM, vía eth_getLogs en nodos que aceptan filtrar solo
-    por tema), transferencias TRC-20 y TRX (Tronscan), pagos XRP (xrpscan) y transacciones BTC/LTC (mempool.space y
-    litecoinspace). Cada movimiento queda con `hash`, `contraparte` y su etiqueta si es conocida.
+    por tema), transferencias TRC-20 y TRX (Tronscan), pagos XRP (xrpscan), transacciones BTC/LTC (mempool.space y
+    litecoinspace) y, desde el 18-nov-2026, DASH (Insight de dash.org), BCH (Haskoin) y pagos XLM en lumens (Horizon
+    de stellar.org). Cada movimiento queda con `hash`, `contraparte` y su etiqueta si es conocida.
   * Señales previas al movimiento: aprobaciones ERC-20 (`Approval`) desde una dirección vigilada y cambios de permisos
     de cuenta en Tron.
   * Congelamiento: si Tether o Circle bloquean una dirección vigilada (USDT `isBlackListed`, USDC `isBlacklisted`),
     cambia el campo `congelada` y se registra el evento.
-  * Direcciones descubiertas: destinos de salidas y, en BTC/LTC, entradas gastadas en conjunto (misma billetera) y
+  * Direcciones descubiertas: destinos de salidas y, en BTC/LTC/DASH/BCH, entradas gastadas en conjunto (misma billetera) y
     posibles vueltos. Van a descubiertas.json, no a direcciones.json: una persona decide si se promueven.
     Si la salida es grande (UMBRAL_SEGUIR_USD) y el destino no es un exchange con etiqueta pública, además quedan
     en seguir=true: el monitor las consulta y avisa de sus movimientos desde la corrida siguiente, hasta MAX_SALTOS.
@@ -77,16 +78,24 @@ CONGELABLES = {"ETH": {"USDT": ("0xdac17f958d2ee523a2206206994597c13d831ec7", "0
                        "USDC": ("0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48", "0xfe575a87")},
                "POLYGON": {"USDC": ("0x3c499c542cef5e3811e1192ce70d8cc03d5c3359", "0xfe575a87")}}
 TRON_USDT = "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
-NATIVO = {"BTC": "BTC", "XRP": "XRP", "TRX": "TRX", "LTC": "LTC", "ETH": "ETH", "BSC": "BNB", "POLYGON": "POL"}
+NATIVO = {"BTC": "BTC", "XRP": "XRP", "TRX": "TRX", "LTC": "LTC", "ETH": "ETH", "BSC": "BNB", "POLYGON": "POL", "DASH": "DASH", "BCH": "BCH", "XLM": "XLM"}
 COINGECKO = {"BTC": "bitcoin", "XRP": "ripple", "TRX": "tron", "LTC": "litecoin", "ETH": "ethereum", "BNB": "binancecoin", "POL": "polygon-ecosystem-token", "USDT": "tether", "USDC": "usd-coin",
-             "DAI": "dai", "XAUT": "tether-gold", "DOT": "polkadot", "ADA": "cardano", "SOL": "solana", "BTCB": "bitcoin"}
+             "DAI": "dai", "XAUT": "tether-gold", "DOT": "polkadot", "ADA": "cardano", "SOL": "solana", "BTCB": "bitcoin",
+             "DASH": "dash", "BCH": "bitcoin-cash", "XLM": "stellar"}
 UMBRAL_USD = float(os.environ.get("UMBRAL_USD", "1"))   # un movimiento cuenta si vale al menos esto en dólares (≈1.000 CLP)
-MIN_UNIDADES = {"BTC": 0.00001, "ETH": 0.0005, "BNB": 0.001, "LTC": 0.01, "XRP": 0.5, "TRX": 5, "POL": 5}   # respaldo si CoinGecko no responde
+MIN_UNIDADES = {"BTC": 0.00001, "ETH": 0.0005, "BNB": 0.001, "LTC": 0.01, "XRP": 0.5, "TRX": 5, "POL": 5, "DASH": 0.05, "BCH": 0.002, "XLM": 10}   # respaldo si CoinGecko no responde
 EXPLORER = {"BTC": "https://mempool.space/address/{a}", "XRP": "https://xrpscan.com/account/{a}", "TRX": "https://tronscan.org/#/address/{a}",
-            "LTC": "https://litecoinspace.org/address/{a}", "ETH": "https://etherscan.io/address/{a}", "BSC": "https://bscscan.com/address/{a}", "POLYGON": "https://polygonscan.com/address/{a}"}
+            "LTC": "https://litecoinspace.org/address/{a}", "ETH": "https://etherscan.io/address/{a}", "BSC": "https://bscscan.com/address/{a}", "POLYGON": "https://polygonscan.com/address/{a}",
+            "DASH": "https://chainz.cryptoid.info/dash/address.dws?{a}.htm", "BCH": "https://bch.loping.net/address/bitcoincash:{a}",
+            "XLM": "https://stellar.expert/explorer/public/account/{a}"}
 EXPLORER_TX = {"BTC": "https://mempool.space/tx/{h}", "XRP": "https://xrpscan.com/tx/{h}", "TRX": "https://tronscan.org/#/transaction/{h}",
-               "LTC": "https://litecoinspace.org/tx/{h}", "ETH": "https://etherscan.io/tx/{h}", "BSC": "https://bscscan.com/tx/{h}", "POLYGON": "https://polygonscan.com/tx/{h}"}
+               "LTC": "https://litecoinspace.org/tx/{h}", "ETH": "https://etherscan.io/tx/{h}", "BSC": "https://bscscan.com/tx/{h}", "POLYGON": "https://polygonscan.com/tx/{h}",
+               "DASH": "https://chainz.cryptoid.info/dash/tx.dws?{h}.htm", "BCH": "https://bch.loping.net/tx/{h}",
+               "XLM": "https://stellar.expert/explorer/public/tx/{h}"}
 UTXO_API = {"BTC": "https://mempool.space/api", "LTC": "https://litecoinspace.org/api"}
+DASH_API = "https://insight.dash.org/insight-api"     # 10 transacciones por página, la más reciente primero
+BCH_API = "https://api.haskoin.com/bch"               # direcciones con prefijo bitcoincash: (en direcciones.json van sin él)
+HORIZON = "https://horizon.stellar.org"
 MAX_DESCUBIERTAS_NUEVAS = 25    # por corrida
 MAX_DESCUBIERTAS = 200          # total en descubiertas.json (se conservan las 'misma billetera' y las que se siguen)
 MAX_SEGUIDAS = 40               # descubiertas cuyo saldo se consulta en cada corrida
@@ -451,6 +460,9 @@ def consultar(w, prev, ctx):
     out = {"saldo": None, "tokens": {}, "tx": None, "ultima": None, "cursor": dict((prev or {}).get("cursor") or {}), "eventos": [],
            "tokens_contratos": dict((prev or {}).get("tokens_contratos") or {})}
     if red in UTXO_API: consultar_utxo(w, out, prev, ctx)
+    elif red == "DASH": consultar_dash(w, out, prev, ctx)
+    elif red == "BCH": consultar_bch(w, out, prev, ctx)
+    elif red == "XLM": consultar_xlm(w, out, prev, ctx)
     elif red == "XRP": consultar_xrp(w, out, prev, ctx)
     elif red == "TRX": consultar_tron(w, out, prev, ctx)
     elif red in RPC: consultar_evm(w, out, prev, ctx)
@@ -604,7 +616,7 @@ def descubrir(ctx, red, direccion, origen, motivo, hash_, fuerte, w=None, valor_
     if vigilar_sola(ctx, red, k, salto, valor_usd, w): candidato(ctx, d, origen, valor_usd)
 
 
-# --- BTC / LTC ---------------------------------------------------------------------------------------------------------
+# --- BTC / LTC / DASH / BCH (UTXO) ---------------------------------------------------------------------------------------
 def consultar_utxo(w, out, prev, ctx):
     red, a, api = w["red"], w["direccion"], UTXO_API[w["red"]]
     j = get(f"{api}/address/{a}"); c = j["chain_stats"]
@@ -612,15 +624,58 @@ def consultar_utxo(w, out, prev, ctx):
     if j["mempool_stats"]["tx_count"]: out["tokens"]["pendiente"] = (j["mempool_stats"]["funded_txo_sum"] - j["mempool_stats"]["spent_txo_sum"]) / 1e8
     txs = get(f"{api}/address/{a}/txs")   # sin confirmar primero, luego las 25 confirmadas más recientes
     if txs: out["ultima"] = iso(txs[0]["status"].get("block_time")) or "en mempool"
+    procesar_utxo(w, out, ctx, [{"txid": t["txid"], "fecha": iso(t["status"].get("block_time")) or "sin confirmar",
+                                 "entradas": {v["prevout"]["scriptpubkey_address"] for v in t.get("vin", []) if v.get("prevout", {}).get("scriptpubkey_address")},
+                                 "salidas": [(o.get("scriptpubkey_address"), o["value"] / 1e8) for o in t.get("vout", []) if o.get("scriptpubkey_address")]}
+                                for t in txs])
+
+
+def consultar_dash(w, out, prev, ctx):
+    a = w["direccion"]
+    j = get(f"{DASH_API}/addr/{a}?noTxList=1")
+    out["saldo"] = float(j.get("balance") or 0); out["tx"] = j.get("txApperances")
+    if j.get("unconfirmedTxApperances"): out["tokens"]["pendiente"] = float(j.get("unconfirmedBalance") or 0)
+    vistos = set(out["cursor"].get("txids") or []); txs = []
+    for pagina in range(3):   # se sigue a la página siguiente solo si toda la anterior era nueva (más de 10 tx en una hora)
+        lote = get(f"{DASH_API}/txs?address={a}&pageNum={pagina}").get("txs") or []
+        txs += lote
+        if not vistos or len(lote) < 10 or any(t["txid"] in vistos for t in lote): break
+    if txs: out["ultima"] = iso(txs[0].get("blocktime")) or "en mempool"
+    procesar_utxo(w, out, ctx, [{"txid": t["txid"], "fecha": iso(t.get("blocktime")) or "sin confirmar",
+                                 "entradas": {v["addr"] for v in t.get("vin", []) if v.get("addr")},
+                                 "salidas": [(((o.get("scriptPubKey") or {}).get("addresses") or [None])[0], float(o.get("value") or 0))
+                                             for o in t.get("vout", []) if ((o.get("scriptPubKey") or {}).get("addresses") or [None])[0]]}
+                                for t in txs])
+
+
+def sin_prefijo_bch(x): return x.split(":", 1)[1] if x and ":" in x else x
+
+
+def consultar_bch(w, out, prev, ctx):
+    a = sin_prefijo_bch(w["direccion"]); base = f"{BCH_API}/address/bitcoincash:{a}"
+    j = get(f"{base}/balance")
+    out["saldo"] = j["confirmed"] / 1e8; out["tx"] = j.get("txs")
+    if j.get("unconfirmed"): out["tokens"]["pendiente"] = j["unconfirmed"] / 1e8
+    txs = [t for t in get(f"{base}/transactions/full?limit=25") if not t.get("deleted")]   # la más reciente primero
+    confirmada = lambda t: "height" in (t.get("block") or {})   # noqa: E731  (en mempool trae {"mempool": ts})
+    if txs: out["ultima"] = iso(txs[0].get("time")) if confirmada(txs[0]) else "en mempool"
+    procesar_utxo(w, out, ctx, [{"txid": t["txid"], "fecha": iso(t.get("time")) if confirmada(t) else "sin confirmar",
+                                 "entradas": {sin_prefijo_bch(i["address"]) for i in t.get("inputs", []) if i.get("address")},
+                                 "salidas": [(sin_prefijo_bch(o["address"]), o["value"] / 1e8) for o in t.get("outputs", []) if o.get("address")]}
+                                for t in txs])
+
+
+def procesar_utxo(w, out, ctx, txs):
+    """Movimientos de una red UTXO. `txs`, de la más reciente a la más antigua, ya normalizadas:
+    {"txid", "fecha", "entradas": set de direcciones, "salidas": [(direccion, monto)]}."""
+    red, a = w["red"], w["direccion"]
     if "txids" not in out["cursor"]:   # primera corrida: se memorizan las transacciones existentes sin generar movimientos
         out["cursor"]["txids"] = [t["txid"] for t in txs][:100]; return
     vistos = list(out["cursor"].get("txids") or [])
     moneda = NATIVO[red]; px = ctx["px"].get(moneda, {}).get("usd")
     for t in reversed(txs):
         if t["txid"] in vistos: continue
-        entradas = {v["prevout"]["scriptpubkey_address"] for v in t.get("vin", []) if v.get("prevout", {}).get("scriptpubkey_address")}
-        salidas = [(o.get("scriptpubkey_address"), o["value"] / 1e8) for o in t.get("vout", []) if o.get("scriptpubkey_address")]
-        fecha = iso(t["status"].get("block_time")) or "sin confirmar"
+        entradas, salidas, fecha = t["entradas"], t["salidas"], t["fecha"]
         if a in entradas:
             for dest, monto in salidas:
                 if dest in entradas: continue       # vuelto a una entrada: no salió de la billetera
@@ -640,6 +695,66 @@ def consultar_utxo(w, out, prev, ctx):
                 out["eventos"].append(evento(w, ctx, "transferencia", moneda, recibido, "entrada", t["txid"], sorted(entradas)[0] if entradas else None, fecha, valor_usd=vu))
         vistos.append(t["txid"])
     out["cursor"]["txids"] = vistos[-150:]
+
+
+# --- XLM (Stellar) -------------------------------------------------------------------------------------------------------
+def memo_limpio(m): return "".join(ch for ch in str(m) if ch.isalnum() or ch in "-_. ")[:40]
+
+
+def consultar_xlm(w, out, prev, ctx):
+    """Saldo en lumens y pagos en XLM (payment, path_payment, create_account, account_merge). Los activos que no son XLM
+    se ignoran: casi todos son spam. Las cuentas reciben polvo (0,0000001 XLM con publicidad en el memo) cada pocos
+    días; por eso `ultima` es el último pago de al menos UMBRAL_USD o la última salida, no cualquier operación."""
+    a = w["direccion"]
+    j = get(f"{HORIZON}/accounts/{a}")
+    out["saldo"] = sum(float(b.get("balance") or 0) for b in j.get("balances", []) if b.get("asset_type") == "native")
+    out["tx"] = None   # Horizon no da un contador de transacciones; el cambio de saldo y los pagos bastan
+    out["ultima"] = (prev or {}).get("ultima")
+    px = ctx["px"].get("XLM", {}).get("usd")
+    cursor = out["cursor"].get("pt")
+    if cursor is None:   # primera corrida: se fija el punto de partida sin generar movimientos
+        recs = get(f"{HORIZON}/accounts/{a}/payments?order=desc&limit=200").get("_embedded", {}).get("records") or []
+        out["cursor"]["pt"] = recs[0]["paging_token"] if recs else "0"
+        for r in recs:   # última actividad real (no polvo) entre los 200 pagos más recientes
+            m = r.get("amount") or r.get("starting_balance")
+            if r.get("from") == a or r.get("funder") == a or (m and px and float(m) * px >= UMBRAL_USD):
+                out["ultima"] = r["created_at"][:16].replace("T", " ") + " UTC"; break
+        return
+    recs = get(f"{HORIZON}/accounts/{a}/payments?order=asc&limit=200&cursor={cursor}&join=transactions").get("_embedded", {}).get("records") or []
+    for r in recs:
+        out["cursor"]["pt"] = r["paging_token"]
+        tipo, h = r.get("type"), r.get("transaction_hash")
+        fecha = (r.get("created_at") or "")[:16].replace("T", " ") + " UTC"
+        memo = (r.get("transaction") or {}).get("memo")
+        extra = f"memo {memo_limpio(memo)}" if memo not in (None, "") else ""
+        if tipo == "account_merge":
+            if r.get("account") == a:
+                out["eventos"].append(evento(w, ctx, "transferencia", "XLM", "todo el saldo", "salida", h, r.get("into"), fecha, detalle_extra="cierre de la cuenta (account_merge)"))
+                descubrir(ctx, "XLM", r.get("into"), a, "recibió el cierre de una cuenta vigilada", h, fuerte=False, w=w)
+                out["ultima"] = fecha
+            continue
+        if tipo == "create_account":
+            origen, destino, monto = r.get("funder"), r.get("account"), r.get("starting_balance")
+        elif tipo in ("payment", "path_payment_strict_send", "path_payment_strict_receive"):
+            origen, destino = r.get("from"), r.get("to")
+            if origen == a:
+                if (r.get("source_asset_type") or r.get("asset_type")) != "native": continue
+                monto = r.get("source_amount") or r.get("amount")
+            else:
+                if r.get("asset_type") != "native": continue
+                monto = r.get("amount")
+        else:
+            continue
+        monto = float(monto or 0); vu = monto * px if px else None
+        if vu is not None and vu < UMBRAL_USD: continue
+        if origen == a:
+            out["eventos"].append(evento(w, ctx, "transferencia", "XLM", monto, "salida", h, destino, fecha, detalle_extra=extra, valor_usd=vu))
+            descubrir(ctx, "XLM", destino, a, "destino de una salida", h, fuerte=False, w=w, valor_usd=vu)
+        elif destino == a:
+            out["eventos"].append(evento(w, ctx, "transferencia", "XLM", monto, "entrada", h, origen, fecha, valor_usd=vu))
+        else:
+            continue
+        out["ultima"] = fecha
 
 
 # --- XRP -----------------------------------------------------------------------------------------------------------------

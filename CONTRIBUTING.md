@@ -46,6 +46,8 @@ confirmada). Añade un objeto al array `direcciones` de `direcciones.json`:
 }
 ```
 
+- Redes aceptadas: BTC, LTC, XRP, TRX, ETH, BSC, POLYGON, DASH, BCH y XLM.
+  Las de BCH van sin el prefijo `bitcoincash:`.
 - Direcciones EVM (ETH/BSC/POLYGON): **en minúsculas**. La misma dirección en
   varias cadenas EVM = un registro por cada `red`.
 - `tipo`: `orionx` | `desvio` | `querella` | `puente` | `atribuida`.

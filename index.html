@@ -11,7 +11,7 @@
 <meta property="og:locale" content="es_CL">
 <meta property="og:site_name" content="Afectados por OrionX">
 <meta property="og:title" content="Monitor de billeteras OrionX: dónde están los fondos hoy">
-<meta property="og:description" content="42 direcciones vinculadas a OrionX vigiladas cada hora en 7 redes, con saldo, movimientos y nivel de confianza. Datos públicos, verificables por cualquiera. Mantenido por afectados.">
+<meta property="og:description" content="42 direcciones vinculadas a OrionX vigiladas cada hora en 10 redes, con saldo, movimientos y nivel de confianza. Datos públicos, verificables por cualquiera. Mantenido por afectados.">
 <meta property="og:url" content="https://afectados-orionx.github.io/orionx-monitor/">
 <meta property="og:image" content="https://afectados-orionx.github.io/orionx-monitor/og.png">
 <meta property="og:image:width" content="1200">
@@ -19,7 +19,7 @@
 <meta property="og:image:alt" content="Monitor público de billeteras vinculadas a OrionX">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Monitor de billeteras OrionX: dónde están los fondos hoy">
-<meta name="twitter:description" content="42 direcciones vigiladas cada hora en 7 redes. Datos públicos, verificables. Mantenido por afectados.">
+<meta name="twitter:description" content="42 direcciones vigiladas cada hora en 10 redes. Datos públicos, verificables. Mantenido por afectados.">
 <meta name="twitter:image" content="https://afectados-orionx.github.io/orionx-monitor/og.png">
 <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -173,7 +173,7 @@ footer{color:var(--mut);font-size:12.5px;margin-top:28px;line-height:1.6;border-
 <section id="t-movimientos" hidden>
   <div class="box warn" id="alertas-box" hidden>
     <h3 style="margin-top:0">Últimos movimientos con alerta</h3>
-    <p class="nota">Movimientos grandes para su red (0,01 BTC · 0,5 ETH · 1.000 XRP · 1.000 USDT/USDC · 5 LTC · 500 TRX · ≈US$ 500 en BSC, Polygon y cualquier otro token) y, sin ningún umbral, cualquier salida desde una dirección de desvío o atribuida que estaba en almacenamiento en frío, las aprobaciones ERC-20, los cambios de permisos de cuenta en Tron, los congelamientos del emisor y las entradas pequeñas de gas en direcciones llenas de tokens. Cada uno abre un aviso en el repositorio para que quede fechado.</p>
+    <p class="nota">Movimientos grandes para su red (0,01 BTC · 0,5 ETH · 1.000 XRP · 1.000 USDT/USDC · 5 LTC · 500 TRX · ≈US$ 500 en BSC, Polygon, Dash, Bitcoin Cash, Stellar y cualquier otro token) y, sin ningún umbral, cualquier salida desde una dirección de desvío o atribuida que estaba en almacenamiento en frío, las aprobaciones ERC-20, los cambios de permisos de cuenta en Tron, los congelamientos del emisor y las entradas pequeñas de gas en direcciones llenas de tokens. Cada uno abre un aviso en el repositorio para que quede fechado.</p>
     <div class="ev" id="alertas"></div>
   </div>
   <p class="nota">Cambios de saldo entre un chequeo y el siguiente. El más reciente primero. Se registra todo cambio de saldo que valga al menos US$ 1 (≈1.000 CLP) al precio del momento, en cualquier moneda, para detectar también retiros en microtransacciones. Los cambios menores suelen ser redondeos de la API y no se listan.</p>
@@ -194,8 +194,8 @@ const clp=n=>n==null?'—':'$'+Math.round(n).toLocaleString('es-CL');
 const pct=n=>n==null?'—':`<span class="${n<0?'neg':'pos'}">${n>0?'+':''}${fmt(n,1)} %</span>`;
 const corto=a=>a.length>22?a.slice(0,10)+'…'+a.slice(-6):a;
 const CLASE={saldo:'Movimiento',gas:'Fondeo de gas',aprobacion:'Aprobación',permisos:'Cambio de permisos',congelamiento:'Congelamiento'};
-const EXPL_TX={BTC:h=>`https://mempool.space/tx/${h}`,XRP:h=>`https://xrpscan.com/tx/${h}`,ETH:h=>`https://etherscan.io/tx/${h}`,TRX:h=>`https://tronscan.org/#/transaction/${h}`,LTC:h=>`https://litecoinspace.org/tx/${h}`,BSC:h=>`https://bscscan.com/tx/${h}`,POLYGON:h=>`https://polygonscan.com/tx/${h}`};
-const EXPL={BTC:a=>`https://mempool.space/address/${a}`,XRP:a=>`https://xrpscan.com/account/${a}`,ETH:a=>`https://etherscan.io/address/${a}`,TRX:a=>`https://tronscan.org/#/address/${a}`,LTC:a=>`https://litecoinspace.org/address/${a}`,BSC:a=>`https://bscscan.com/address/${a}`,POLYGON:a=>`https://polygonscan.com/address/${a}`};
+const EXPL_TX={BTC:h=>`https://mempool.space/tx/${h}`,XRP:h=>`https://xrpscan.com/tx/${h}`,ETH:h=>`https://etherscan.io/tx/${h}`,TRX:h=>`https://tronscan.org/#/transaction/${h}`,LTC:h=>`https://litecoinspace.org/tx/${h}`,BSC:h=>`https://bscscan.com/tx/${h}`,POLYGON:h=>`https://polygonscan.com/tx/${h}`,DASH:h=>`https://chainz.cryptoid.info/dash/tx.dws?${h}.htm`,BCH:h=>`https://bch.loping.net/tx/${h}`,XLM:h=>`https://stellar.expert/explorer/public/tx/${h}`};
+const EXPL={BTC:a=>`https://mempool.space/address/${a}`,XRP:a=>`https://xrpscan.com/account/${a}`,ETH:a=>`https://etherscan.io/address/${a}`,TRX:a=>`https://tronscan.org/#/address/${a}`,LTC:a=>`https://litecoinspace.org/address/${a}`,BSC:a=>`https://bscscan.com/address/${a}`,POLYGON:a=>`https://polygonscan.com/address/${a}`,DASH:a=>`https://chainz.cryptoid.info/dash/address.dws?${a}.htm`,BCH:a=>`https://bch.loping.net/address/bitcoincash:${a}`,XLM:a=>`https://stellar.expert/explorer/public/account/${a}`};
 const addr=(red,a,url)=>`<span class="addr" title="${esc(a)}"><a href="${esc(url||EXPL[red]?.(a)||'#')}" target="_blank" rel="noopener">${esc(corto(a))}</a><button class="copy" data-c="${esc(a)}" title="Copiar dirección completa">copiar</button></span>`;
 document.addEventListener('click',e=>{const b=e.target.closest('.copy');if(!b)return;navigator.clipboard?.writeText(b.dataset.c).then(()=>{b.textContent='copiado';setTimeout(()=>b.textContent='copiar',1200)})});
 // pestañas
@@ -273,7 +273,7 @@ fetch('precios_cierre.json?t='+Date.now()).then(r=>r.json()).then(p=>{
     ['Volumen últimas 24 h',clp(p.volumen_24h_clp),`≈ US$ ${p.volumen_24h_usd.toLocaleString('es-CL')} en ${p.mercados_con_volumen_24h} mercados`],
     ['Operaciones capturadas',p.operaciones_capturadas.toLocaleString('es-CL'),'hasta 100 por mercado, lo que devolvió la API']
   ].map(c=>`<div class="card"><div class="k">${esc(c[0])}</div><div class="v">${esc(c[1])}</div><div class="d">${esc(c[2])}</div></div>`).join('');
-  const orden=['BTC','ETH','USDT','USDC','DAI','XRP','LTC','TRX','DOT','POL','BNB','SOL'];
+  const orden=['BTC','ETH','USDT','USDC','DAI','XRP','XLM','LTC','TRX','DASH','BCH','DOT','POL','BNB','SOL'];
   const ms=[...p.mercados].sort((x,y)=>(orden.indexOf(x.moneda)+1||99)-(orden.indexOf(y.moneda)+1||99));
   document.querySelector('#tabla-px tbody').innerHTML=ms.map(m=>`<tr><td><b>${esc(m.moneda)}</b> <span class="nota">/ CLP</span></td>
     <td class="num">${m.ultimo_precio_clp!=null?'$'+fmt(m.ultimo_precio_clp,4):'—'}</td><td class="num">${m.usd_implicito!=null?fmt(m.usd_implicito,4):'—'}</td>

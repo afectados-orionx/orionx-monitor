@@ -5,8 +5,9 @@ Compara dos fotos de `data.json` (la anterior y la que acaba de escribir
 `monitor.py`) y levanta una alerta por dirección y moneda cuando:
 
   * el saldo cambia más que el umbral de esa moneda (ver UMBRALES: 0,01 BTC,
-    0,5 ETH, 1.000 XRP, 1.000 USDT/USDC, 5 LTC, 500 TRX; en BSC y Polygon lo
-    que equivalga a ≈US$ 500; para cualquier otro token, ≈US$ 500), o
+    0,5 ETH, 1.000 XRP, 1.000 USDT/USDC, 5 LTC, 500 TRX; en BSC, Polygon, Dash,
+    Bitcoin Cash y Stellar lo que equivalga a ≈US$ 500; para cualquier otro
+    token, ≈US$ 500), o
   * sale cualquier cantidad desde una dirección `desvio` o `atribuida` con rol
     de almacenamiento en frío: ahí no hay umbral, que se mueva ya es la noticia, o
   * (desde el 15-sep-2026) hay una señal previa al movimiento: una aprobación
@@ -72,10 +73,10 @@ PREFIJO = "Monitor OrionX"
 # Umbral en unidades de la propia moneda.
 UMBRALES = {"BTC": 0.01, "ETH": 0.5, "XRP": 1000.0, "USDT": 1000.0, "USDC": 1000.0, "LTC": 5.0, "TRX": 500.0}
 # BSC y Polygon: el umbral es ≈US$ 500 al precio del momento. Cualquier otro token (DAI, XAUT, DOT…): lo mismo.
-UMBRAL_USD = {"BNB": 500.0, "POL": 500.0}
+UMBRAL_USD = {"BNB": 500.0, "POL": 500.0, "DASH": 500.0, "BCH": 500.0, "XLM": 500.0}
 UMBRAL_USD_OTROS = 500.0
 # Respaldo en unidades si CoinGecko no respondió y no hay precio para convertir.
-RESPALDO_UNIDADES = {"BNB": 0.7, "POL": 5000.0}
+RESPALDO_UNIDADES = {"BNB": 0.7, "POL": 5000.0, "DASH": 15.0, "BCH": 2.5, "XLM": 4000.0}
 # Por debajo de esto no hay movimiento: son redondeos de las APIs (se vieron
 # oscilaciones de 0,000001 TRX y 0,000002 XRP sin ninguna transacción nueva).
 RUIDO = 1e-6

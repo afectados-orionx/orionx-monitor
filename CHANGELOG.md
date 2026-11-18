@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-11-18: tres redes nuevas (Dash, Bitcoin Cash y Stellar) y 8 billeteras más
+
+El 29-sep, a partir de hashes de retiro que aportó un afectado, encontramos billeteras de OrionX en tres
+redes que el monitor no cubría. Siguen quietas desde antes del cierre y suman ≈ US$ 130 mil
+(877 DASH, 23,6 BCH y 670.523 XLM al 18-nov). Desde hoy se vigilan cada hora como las demás.
+
+- `monitor.py`: `consultar_dash()` (Insight de dash.org), `consultar_bch()` (Haskoin) y `consultar_xlm()`
+  (Horizon de stellar.org). Dash y Bitcoin Cash usan la misma lógica UTXO que BTC y LTC (`procesar_utxo()`):
+  salidas con destino, misma billetera y posible vuelto. En Stellar se leen los pagos en XLM (incluye
+  `create_account` y `account_merge`) con su memo, que es lo que identifica al titular en un exchange.
+  Los activos que no son XLM se ignoran (casi todo es spam) y el polvo publicitario de 0,0000001 XLM no
+  cuenta como actividad. Exploradores: chainz.cryptoid.info (Dash), bch.loping.net (BCH) y stellar.expert.
+- `alertas.py`: umbral ≈ US$ 500 en las tres redes, como en BSC y Polygon.
+- `validate_data.py`: acepta `DASH`, `BCH` y `XLM` (las de BCH van sin el prefijo `bitcoincash:`).
+- `direcciones.json`: 8 registros nuevos.
+  - `orionx`: caliente Stellar de retiros `GBWCQ7…`, cuenta de depósitos `GAUZ7WT6…`, bóveda Stellar
+    `GBDJVW24…`, consolidación Dash `Xy8daRw1…` y bóveda Dash `Xp3D5uyh…`. Cada una con la transacción
+    que la liga a un retiro pagado por OrionX.
+  - `atribuida`: caliente Dash `XkzYPmZv…` (pagó retiros hasta tres horas antes del correo de cierre; liga
+    indirecta), consolidación BCH `qpdxnepz…` (el retiro que la ancla es de dos días después del aviso de
+    cierre provisorio de BCH de 2018) y destino BCH `qzaepcdg…` (puede ser bóveda de OrionX o de un tercero).
+
 ## 2026-11-17: dos recolectoras más, en Polygon y Tron
 
 A partir de una lista de direcciones que aportó un afectado (verificada en cadena el 17-nov) entran
