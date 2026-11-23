@@ -3,6 +3,8 @@
 
 Lee direcciones.json (las que tienen monitorear=true), consulta exploradores y nodos públicos, compara con el data.json
 anterior, registra movimientos en historial.jsonl, reescribe data.json y avisa por Discord (env DISCORD_WEBHOOK).
+historial.jsonl guarda los últimos HISTORIAL_DIAS días; lo anterior queda por mes en historial/AAAA-MM.jsonl.gz
+(`python3 monitor.py --rotar-historial [CARPETA]` hace solo ese paso).
 
 Qué vigila (desde el 15-sep-2026, versión 3):
   * Saldos del nativo y de los tokens de cada dirección. En las redes EVM (ETH, BSC, Polygon) los tokens NO son una
@@ -26,9 +28,13 @@ Regla de la primera corrida: cualquier cosa que el monitor ve por primera vez (t
 nueva) fija su punto de partida sin generar movimientos; desde la segunda corrida todo cambio ≥ UMBRAL_USD se anota.
 """
 import datetime as dt
+import gzip
 import hashlib
 import json
 import os
+import re
+import shutil
+import sys
 import time
 import urllib.parse
 import urllib.request
@@ -112,6 +118,15 @@ MAX_AUTO_POR_ORIGEN = 3         # si una dirección reparte a más destinos gran
 UMBRAL_SERVICIO_USD_24H = float(os.environ.get("UMBRAL_SERVICIO_USD_24H", "5000000"))
 UMBRAL_SERVICIO_TX_24H = int(os.environ.get("UMBRAL_SERVICIO_TX_24H", "50"))
 VENTANA_SERVICIO_DIAS = 7       # cuánto historial se mira para detectarlos
+# historial.jsonl (raíz) guarda solo lo reciente; lo anterior se archiva por mes en historial/AAAA-MM.jsonl.gz.
+# El 21-nov-2026 el archivo único llegó a 104,7 MB, GitHub rechaza archivos de más de 100 MiB y el push de cada corrida
+# fallaba: la web quedó congelada en la foto del 20-nov. Lo que leen las corridas cabe en la ventana: servicios de alto
+# volumen (VENTANA_SERVICIO_DIAS), movimientos ya anotados (últimas 600 líneas), data.json (últimos 300 eventos) y el
+# resumen diario (desde el último resumen). Ver rotar_historial().
+HISTORIAL_DIAS = VENTANA_SERVICIO_DIAS + 1
+HISTORIAL_MIN_LINEAS = 600                  # siempre quedan al menos estas en la raíz, aunque sean antiguas
+HISTORIAL_MAX_BYTES = 40 * 1024 * 1024      # tope de la raíz: GitHub advierte a los 50 MB y rechaza sobre 100 MiB
+HISTORIAL_DIR = "historial"
 UMBRAL_AVISO_DESCUBIERTA_USD = float(os.environ.get("UMBRAL_AVISO_DESCUBIERTA_USD", "50000"))   # avisos de descubiertas
 TIPOS_SEGUIR = ("orionx", "desvio", "atribuida", "querella", "puente", "descubierta")
 # Presupuesto total de consultas. El 20-sep-2026 una corrida en GitHub Actions quedó 3 h 20 min pidiendo datos a
@@ -1096,6 +1111,74 @@ def tal_vez_resumen(webhook, data, historial, d_ant, vigiladas):
     data["resumen_discord"] = {"fecha": hoy, "hasta": data["actualizado"]}
 
 
+# ------------------------------------------------------------------------------------------------ historial (rotación)
+RE_FECHA_LINEA = re.compile(rb'\{"fecha": "(\d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC)"')
+
+
+def rotar_historial(base=None, ahora=None):
+    """Deja en historial.jsonl solo lo reciente y archiva el resto, por mes, en historial/AAAA-MM.jsonl.gz.
+
+    Quedan en la raíz las líneas con fecha dentro de HISTORIAL_DIAS y, aunque sean antiguas, las HISTORIAL_MIN_LINEAS
+    más recientes; si aun así la raíz pasa de HISTORIAL_MAX_BYTES, salen también las más antiguas de esas.
+    Las líneas se copian tal cual (bytes), ordenadas por su campo `fecha` (orden estable: el historial ya viene en
+    orden y solo se desordena al unir dos corridas en scripts/publicar.sh). Ninguna se borra: o está en la raíz o en
+    su mes. Idempotente: una línea que ya está en el archivo de su mes no se vuelve a escribir (pasa tras esa unión, o
+    si un corte dejó escrito el mes y no la raíz). El mes crece agregando un miembro gzip al final (zcat y gzip.open
+    leen todos), así la versión anterior es prefijo de la nueva. Todo se escribe en un .tmp que reemplaza al archivo
+    de una vez: un corte de luz no deja nada a medias. Devuelve cuántas líneas salieron de la raíz."""
+    base = Path(base or HERE)
+    hist = base / "historial.jsonl"
+    if not hist.exists(): return 0
+    ahora = ahora or dt.datetime.now(dt.timezone.utc)
+    limite = (ahora - dt.timedelta(days=HISTORIAL_DIAS)).strftime("%Y-%m-%d %H:%M UTC").encode()
+    lineas = [l + b"\n" for l in hist.read_bytes().split(b"\n") if l.strip()]
+    fechas, previa = [], b""
+    for l in lineas:
+        m = RE_FECHA_LINEA.match(l)
+        if m: f = m.group(1)
+        else:   # otra forma de escribir la línea, o una línea dañada: hereda la fecha de la anterior
+            try: f = str(json.loads(l).get("fecha") or "").encode() or previa
+            except (ValueError, AttributeError): f = previa
+        fechas.append(f); previa = f
+    orden = sorted(range(len(lineas)), key=fechas.__getitem__)   # estable
+    lineas, fechas = [lineas[i] for i in orden], [fechas[i] for i in orden]
+    n = len(lineas)
+    queda = [f >= limite or i >= n - HISTORIAL_MIN_LINEAS for i, f in enumerate(fechas)]
+    tam = sum(len(l) for l, q in zip(lineas, queda) if q)
+    i = 0
+    while tam > HISTORIAL_MAX_BYTES and i < n - HISTORIAL_MIN_LINEAS:
+        if queda[i]: queda[i] = False; tam -= len(lineas[i])
+        i += 1
+    salen = [i for i in range(n) if not queda[i]]
+    if not salen: return 0
+    por_mes = {}
+    for i in salen:
+        mes = fechas[i][:7].decode() if re.fullmatch(rb"\d{4}-\d{2}", fechas[i][:7]) else "sin-fecha"
+        por_mes.setdefault(mes, []).append(lineas[i])
+    carpeta = base / HISTORIAL_DIR
+    carpeta.mkdir(exist_ok=True)
+    for mes, nuevas in sorted(por_mes.items()):
+        arch = carpeta / f"{mes}.jsonl.gz"
+        ya = set()
+        if arch.exists():
+            try:
+                with gzip.open(arch, "rb") as fh: ya = {l + b"\n" for l in fh.read().split(b"\n") if l.strip()}
+            except (OSError, EOFError) as e:
+                raise RuntimeError(f"{HISTORIAL_DIR}/{arch.name} no se pudo leer ({e}); revisarlo a mano antes de seguir archivando") from e
+        nuevas = [l for l in nuevas if l not in ya]
+        if not nuevas: continue
+        tmp = arch.with_name(arch.name + ".tmp")
+        if arch.exists(): shutil.copyfile(arch, tmp)
+        with open(tmp, "ab") as fh: fh.write(gzip.compress(b"".join(nuevas), compresslevel=6, mtime=0))
+        os.replace(tmp, arch)
+    tmp = hist.with_name(hist.name + ".tmp")
+    tmp.write_bytes(b"".join(l for l, q in zip(lineas, queda) if q))
+    os.replace(tmp, hist)
+    print(f"historial: {len(salen)} línea(s) pasan a {HISTORIAL_DIR}/ ({', '.join(sorted(por_mes))}); "
+          f"quedan {n - len(salen)} en historial.jsonl ({tam / 1e6:.1f} MB)")
+    return len(salen)
+
+
 # --------------------------------------------------------------------------------------------------------------- main
 def main():
     wallets = cargar_wallets()
@@ -1200,6 +1283,8 @@ def main():
         with open(hist, "a", encoding="utf-8") as fh:
             for e in nuevos: fh.write(json.dumps(e, ensure_ascii=False) + "\n")
     todos = previos + nuevos
+    try: rotar_historial()   # lo antiguo pasa a historial/AAAA-MM.jsonl.gz; esta corrida sigue usando `todos` en memoria
+    except Exception as e: errores.append(f"historial: no se pudo archivar lo antiguo: {str(e)[:200]}")
     detectar_servicios(ctx, todos)
     decidir_vigilancia(ctx)
     # los servicios se conservan aunque no se sigan: si se borraran, un destino suyo volvería a seguirse solo
@@ -1238,4 +1323,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if sys.argv[1:2] == ["--rotar-historial"]:   # scripts/publicar.sh, tras unir el historial de dos corridas
+        rotar_historial(sys.argv[2] if len(sys.argv) > 2 else None)
+    else:
+        main()

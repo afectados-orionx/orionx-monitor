@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-11-23: el historial se archiva por mes (desde el 21-nov el monitor no podía publicar)
+
+Desde el 21-nov 01:22 UTC ninguna corrida logró publicar. `historial.jsonl` llegó a 104.666.504 bytes y GitHub
+rechaza archivos de más de 100 MiB (104.857.600 bytes): el commit del 20-nov 20:10 UTC fue el último que cupo.
+`publicar.sh` descartaba el mensaje de git y lo informaba como "el remoto avanzó". Por eso la web quedó con los
+datos del 20-nov y cada corrida volvía a comparar contra esa foto vieja: las mismas alertas se comentaron una y otra
+vez (issues #326 a #336). El 98 % del historial eran transferencias de direcciones descubiertas que el 25-sep
+quedaron marcadas como servicio de alto volumen (mesas OTC o procesadores de terceros).
+
+- `monitor.py`: `rotar_historial()`. `historial.jsonl` guarda los últimos 8 días (`HISTORIAL_DIAS`; siempre al menos
+  las 600 líneas más recientes y nunca más de 40 MB). Lo anterior pasa a `historial/AAAA-MM.jsonl.gz`: son las mismas
+  líneas, tal cual y ordenadas por fecha, en gzip (`zcat historial/2026-10.jsonl.gz`). Corre al final de cada corrida,
+  también en el rock, y a mano con `python3 monitor.py --rotar-historial`. No repite una línea que ya está en el
+  archivo de su mes, y escribe con archivo temporal más reemplazo, así que un corte de luz no deja nada a medias.
+  Los lectores no cambian: lo que usan está en la raíz (servicios de alto volumen: 7 días; movimientos ya anotados:
+  600 líneas; `data.json`: 300 eventos; resumen diario: desde el último). La web nunca leyó el historial.
+- Primera rotación, en este commit: de 141.621 líneas, 13.901 quedan en la raíz (10,3 MB, desde el 15-nov) y 127.720
+  pasan a `historial/2026-09.jsonl.gz` (1,1 MB), `2026-10.jsonl.gz` (7,3 MB) y `2026-11.jsonl.gz` (4,8 MB, hasta el
+  15-nov). Comparado línea por línea con el archivo original: no falta ni sobra ninguna.
+- `scripts/publicar.sh`: publica también `historial/`. Antes del commit revisa que ningún archivo pase de 95 MiB.
+  Muestra siempre la respuesta de git. Rehace el commit sobre origin solo cuando git dice que el remoto avanzó, y
+  entonces une el historial de las dos corridas y vuelve a archivar sin repetir. Si GitHub rechazó el contenido, sale
+  con error sin reintentar. Cualquier otra falla (red) se reintenta con el mismo commit.
+- `scripts/alertas.py`: antes de avisar revisa los issues de esa dirección (abiertos o cerrados, con actividad en los
+  últimos 7 días). Si el cuerpo o un comentario ya trae las mismas líneas de saldo antes y después y las mismas
+  transacciones, la alerta no se repite: ni issue, ni comentario, ni Telegram. El caso que lo motivó es un solo
+  ingreso de +2.000 USDT a `0xad1618f3…` (20-nov 20:41 UTC), que se avisó en #326, #330 y #335 más 6 comentarios.
+
+Queda pendiente: en BSC el escaneo de transferencias avanza ≈300 bloques por corrida y el resto queda anotado como
+hueco (con bloques de ≈0,25 s, `MAX_BLOQUES_ATRAS` = 400.000 son ≈28 h). En BSC se ven los saldos, pero casi no las
+transferencias.
+
 ## 2026-11-18: tres redes nuevas (Dash, Bitcoin Cash y Stellar) y 8 billeteras más
 
 El 29-sep, a partir de hashes de retiro que aportó un afectado, encontramos billeteras de OrionX en tres

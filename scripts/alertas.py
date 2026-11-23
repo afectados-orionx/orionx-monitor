@@ -34,7 +34,9 @@ repositorio:
       pide a Wayback Machine una copia fechada del explorador (dirección y
       transacciones), abre un issue por alerta (o comenta en el que ya esté
       abierto para esa dirección en las últimas 24 h) y manda el mismo texto a
-      Telegram si están los secretos.
+      Telegram si están los secretos. Un movimiento que ya está en un issue de
+      esa dirección (mismos saldos antes/después y mismas transacciones) no se
+      vuelve a avisar: pasa cuando una corrida no logra publicar data.json.
 
 Variables de entorno (todas opcionales):
   ALERTA_UMBRALES     JSON con umbrales por moneda, p. ej. {"BTC": 0.02}
@@ -406,10 +408,54 @@ def github(metodo, ruta, payload=None):
         return json.loads(cuerpo) if cuerpo else {}
 
 
+def listar_issues(estado="open", dias=None):
+    """Issues con la etiqueta `movimiento`, el más nuevo primero. Con `dias`, solo los que tuvieron actividad en ese plazo."""
+    ruta = f"/issues?state={estado}&labels=movimiento&per_page=100&sort=created&direction=desc"
+    if dias:
+        ruta += "&since=" + (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=dias)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    return [it for it in (github("GET", ruta) or []) if "pull_request" not in it]
+
+
+# Líneas del cuerpo que describen el movimiento y no cambian de una corrida a otra (el monto en dólares, la hora de
+# detección y la copia de Wayback sí cambian). Si todas ya están en un issue, ese movimiento ya se avisó.
+LINEAS_ESTABLES = ("- Saldo antes:", "- Saldo después:", "- Tx:", "- Qué pasó:", "- Contraparte:", "- Transacción:")
+
+
+def huellas(a):
+    return [l for l in (a.get("cuerpo") or "").splitlines() if l.startswith(LINEAS_ESTABLES)]
+
+
+def ya_avisada(a, dias=7):
+    """¿Este mismo movimiento ya está en el cuerpo o en un comentario de un issue de esa dirección (abierto o cerrado,
+    con actividad en los últimos `dias`)? Pasa cuando la corrida no logra publicar data.json: la siguiente compara
+    contra la misma foto vieja y vuelve a levantar la misma alerta (del 21 al 23-nov-2026 el mismo +2.000 USDT de
+    0xad1618f3… se avisó en 3 issues y 6 comentarios). Ante cualquier duda (sin token, API caída) responde False:
+    es preferible un aviso repetido a uno perdido."""
+    firmas = huellas(a)
+    if not firmas or not (os.environ.get("GITHUB_TOKEN") and os.environ.get("GITHUB_REPOSITORY")):
+        return False
+    try:
+        for it in listar_issues("all", dias):
+            if a["direccion"] not in (it.get("body") or ""):
+                continue
+            textos = [it.get("body") or ""]
+            for pagina in range(1, 6):
+                lote = github("GET", f"/issues/{it['number']}/comments?per_page=100&page={pagina}") or []
+                textos += [c.get("body") or "" for c in lote]
+                if len(lote) < 100:
+                    break
+            texto = "\n".join(textos)
+            if all(f in texto for f in firmas):
+                return it["number"]
+    except (urllib.error.URLError, OSError, ValueError) as e:
+        print("alertas: no se pudo revisar si ya estaba avisada:", type(e).__name__, getattr(e, "code", ""))
+    return False
+
+
 def issue_abierto_reciente(direccion, horas=24):
     """Número del issue abierto de esa dirección en las últimas `horas`, si existe."""
     try:
-        issues = github("GET", "/issues?state=open&labels=movimiento&per_page=100&sort=created&direction=desc") or []
+        issues = listar_issues("open")
     except (urllib.error.URLError, OSError, ValueError) as e:
         print("alertas: no se pudo listar issues:", type(e).__name__)
         return None
@@ -473,12 +519,22 @@ def avisar(ruta):
         print("alertas: nada que avisar")
         return 0
     tope = int(os.environ.get("ALERTA_MAX_AVISOS", "10"))
-    for a in alertas[:tope]:
+    enviadas = repetidas = 0
+    for a in alertas:
+        if enviadas >= tope:
+            break
+        numero = ya_avisada(a)
+        if numero:
+            repetidas += 1
+            print(f"alertas: ya avisada en el issue #{numero}, no se repite ({a['red']} {a['abreviada']} {a.get('moneda') or ''})")
+            continue
         archivar(a)
         avisar_github(a)
         avisar_telegram(a)
-    if len(alertas) > tope:
-        print(f"alertas: {len(alertas) - tope} alerta(s) más no se avisaron (tope ALERTA_MAX_AVISOS={tope}); quedan en alertas.json")
+        enviadas += 1
+    pendientes = len(alertas) - enviadas - repetidas
+    if pendientes > 0:
+        print(f"alertas: {pendientes} alerta(s) más no se avisaron (tope ALERTA_MAX_AVISOS={tope}); quedan en alertas.json")
     return 0
 
 
