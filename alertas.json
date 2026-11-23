@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-20 20:10 UTC",
+ "actualizado": "2026-11-23 17:57 UTC",
  "umbrales": {
   "unidades": {
    "BTC": 0.01,
@@ -21,6 +21,51 @@
   "nota": "Salidas desde almacenamiento en frío (desvío o atribuida), aprobaciones, cambios de permisos, congelamientos y fondeos de gas se avisan sin umbral."
  },
  "alertas": [
+  {
+   "fecha": "2026-11-23 17:43 UTC",
+   "clase": "saldo",
+   "red": "ETH",
+   "direccion": "0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3",
+   "abreviada": "0xad1618f3…1de2d3",
+   "etiqueta": "Destino sin etiqueta: 9,85 M USDT desde la caliente",
+   "tipo": "atribuida",
+   "rol": "destino de salidas",
+   "moneda": "USDT",
+   "delta": 12000.0,
+   "saldo_antes": 48915.564392,
+   "saldo_despues": 60915.564392,
+   "valor_usd": 11991.43,
+   "motivo": "el cambio supera el umbral de aviso de la red (1.000 USDT)",
+   "frio": false,
+   "explorador": "https://etherscan.io/address/0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3",
+   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
+   "transacciones": [
+    {
+     "hash": "0x52f8dc04388ad7bca5e52fd4fa94ad15b854ac73b636836a9cc3f316dbe1f665",
+     "hash_url": "https://etherscan.io/tx/0x52f8dc04388ad7bca5e52fd4fa94ad15b854ac73b636836a9cc3f316dbe1f665",
+     "contraparte": "0xc837ee9f12f855792333d939a04d2bdc58619743",
+     "contraparte_etiqueta": null,
+     "cantidad": 10000.0,
+     "moneda": "USDT",
+     "sentido": "entrada",
+     "fecha_cadena": "2026-11-23 15:08 UTC",
+     "valor_usd": 9992.86
+    },
+    {
+     "hash": "0x43f474d2a7f10052c9b770cad0e3c00fcfdc36803d23d7c6ede1b34350b0c00c",
+     "hash_url": "https://etherscan.io/tx/0x43f474d2a7f10052c9b770cad0e3c00fcfdc36803d23d7c6ede1b34350b0c00c",
+     "contraparte": "0xf3a95c1b521cac1bbf88fbde901fea27044fa9a2",
+     "contraparte_etiqueta": null,
+     "cantidad": 2000.0,
+     "moneda": "USDT",
+     "sentido": "entrada",
+     "fecha_cadena": "2026-11-20 20:41 UTC",
+     "valor_usd": 1998.57
+    }
+   ],
+   "titulo": "Monitor OrionX · Movimiento de +12.000 USDT en billetera vigilada (ETH 0xad1618f3…1de2d3) · 2026-11-23 17:43 UTC",
+   "cuerpo": "**Destino sin etiqueta: 9,85 M USDT desde la caliente** (tipo `atribuida`, rol declarado: destino de salidas).\n\n- Red: **ETH**\n- Dirección: `0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3`\n- Cambio: **+12,000.00000000 USDT** (≈US$ 11,991.43)\n- Saldo antes: 48,915.56439200 USDT\n- Saldo después: 60,915.56439200 USDT\n- Tx: 10,000 USDT ← `0xc837ee9f12f855792333d939a04d2bdc58619743` · https://etherscan.io/tx/0x52f8dc04388ad7bca5e52fd4fa94ad15b854ac73b636836a9cc3f316dbe1f665 · 2026-11-23 15:08 UTC\n- Tx: 2,000 USDT ← `0xf3a95c1b521cac1bbf88fbde901fea27044fa9a2` · https://etherscan.io/tx/0x43f474d2a7f10052c9b770cad0e3c00fcfdc36803d23d7c6ede1b34350b0c00c · 2026-11-20 20:41 UTC\n- Detectado: 2026-11-23 17:43 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: el cambio supera el umbral de aviso de la red (1.000 USDT)\n- Explorador: https://etherscan.io/address/0xad1618f3ca51fa2030d3cdd9b16d200fa11de2d3\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades.\n\n¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
+  },
   {
    "fecha": "2026-11-20 19:59 UTC",
    "clase": "saldo",
@@ -3584,28 +3629,6 @@
    ],
    "titulo": "Monitor OrionX · Movimiento de +1.000.000,21 USDT en billetera vigilada (ETH 0x4ad1cdd7…c76160) · 2026-11-18 20:54 UTC",
    "cuerpo": "**Descubierta: destino de una salida** (tipo `descubierta`).\n\n- Red: **ETH**\n- Dirección: `0x4ad1cdd71288782f4298e314cacb406d8bc76160`\n- Cambio: **+1,000,000.21338700 USDT** (≈US$ 998,994.21)\n- Saldo antes: 3,538,213.53640300 USDT\n- Saldo después: 4,538,213.74979000 USDT\n- Tx: 1,000,000 USDT ← `0x18e296053cbdf986196903e889b7dca7a73882f6` · https://etherscan.io/tx/0x42260c422b30fea7ae02c752bdfcc36074782929aeb9fa732033e04566b790a3\n- Detectado: 2026-11-18 20:54 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: el cambio supera el umbral de aviso de la red (≈US$ 50.000, el que rige para las direcciones descubiertas sin validar)\n- Explorador: https://etherscan.io/address/0x4ad1cdd71288782f4298e314cacb406d8bc76160\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades.\n\n¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
-  },
-  {
-   "fecha": "2026-11-18 12:56 UTC",
-   "clase": "saldo",
-   "red": "ETH",
-   "direccion": "0x55903d69ad9b048ccb20098bed207b1e6369821e",
-   "abreviada": "0x55903d69…69821e",
-   "etiqueta": "Destino de 27.308 USDC desde 0xad1618 (15-sep-2026)",
-   "tipo": "desvio",
-   "rol": "destino de salida",
-   "moneda": "USDT",
-   "delta": -115500.0,
-   "saldo_antes": 115784.285536,
-   "saldo_despues": 284.285536,
-   "valor_usd": 115396.74,
-   "motivo": "el cambio supera el umbral de aviso de la red (1.000 USDT)",
-   "frio": false,
-   "explorador": "https://etherscan.io/address/0x55903d69ad9b048ccb20098bed207b1e6369821e",
-   "monitor": "https://afectados-orionx.github.io/orionx-monitor/#movimientos",
-   "transacciones": [],
-   "titulo": "Monitor OrionX · Movimiento de −115.500 USDT en billetera vigilada (ETH 0x55903d69…69821e) · 2026-11-18 12:56 UTC",
-   "cuerpo": "**Destino de 27.308 USDC desde 0xad1618 (15-sep-2026)** (tipo `desvio`, rol declarado: destino de salida).\n\n- Red: **ETH**\n- Dirección: `0x55903d69ad9b048ccb20098bed207b1e6369821e`\n- Cambio: **-115,500.00000000 USDT** (≈US$ 115,396.74)\n- Saldo antes: 115,784.28553600 USDT\n- Saldo después: 284.28553600 USDT\n- Detectado: 2026-11-18 12:56 UTC (comparando dos chequeos del monitor)\n- Por qué se avisa: el cambio supera el umbral de aviso de la red (1.000 USDT)\n- Explorador: https://etherscan.io/address/0x55903d69ad9b048ccb20098bed207b1e6369821e\n- Monitor: https://afectados-orionx.github.io/orionx-monitor/#movimientos\n\nDato en cadena; la Fiscalía debe establecer responsabilidades.\n\n¿Tenías fondos en OrionX? Grupo de afectados, plantillas para denunciar y este monitor: https://afectados-orionx.github.io/"
   }
  ]
 }
