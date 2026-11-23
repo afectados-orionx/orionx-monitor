@@ -615,7 +615,8 @@ def descubrir(ctx, red, direccion, origen, motivo, hash_, fuerte, w=None, valor_
         d["veces"] = d.get("veces", 1) + 1; d["ultima"] = ahora_txt()
         d["valor_usd_max"] = round(max(d.get("valor_usd_max") or 0, valor_usd or 0), 2)
         if fuerte and not d.get("misma_billetera"): d["misma_billetera"], d["motivo"], d["seguir"] = True, motivo, True
-        if not d.get("seguir") and vigilar_sola(ctx, red, k, d.get("salto", salto), valor_usd, w):
+        # un servicio de alto volumen no vuelve a seguirse solo (hasta el 23-nov-2026 esto lo reactivaba; ver main)
+        if not d.get("seguir") and not d.get("servicio") and vigilar_sola(ctx, red, k, d.get("salto", salto), valor_usd, w):
             candidato(ctx, d, origen, valor_usd)
         return
     if ctx["descubiertas_nuevas"] >= MAX_DESCUBIERTAS_NUEVAS: return
@@ -906,7 +907,9 @@ def consultar_evm(w, out, prev, ctx):
     tokens.actualizar_precios(red, list(contratos))
     con_precio = [(c, sym, dec, tokens.precio(red, c)) for c, (sym, dec) in contratos.items() if tokens.precio(red, c)]
     sin_precio = [sym for c, (sym, dec) in contratos.items() if not tokens.precio(red, c)]
-    reciente = (prev or {}).get("congelada_fecha", "") > (dt.datetime.now(dt.timezone.utc) - dt.timedelta(minutes=55)).strftime("%Y-%m-%d %H:%M UTC")
+    # `or ""`: tras un error la fila guarda congelada_fecha=None (BSC no la llena nunca) y comparar None > str botaba
+    # la consulta en cada corrida; así la caliente de OrionX en BSC quedó sin consultarse desde fines de sep-2026.
+    reciente = ((prev or {}).get("congelada_fecha") or "") > (dt.datetime.now(dt.timezone.utc) - dt.timedelta(minutes=55)).strftime("%Y-%m-%d %H:%M UTC")
     revisar_cong = red in CONGELABLES and not (reciente and isinstance((prev or {}).get("congelada"), dict))
     llamadas = [("eth_getBalance", [a, "latest"]), ("eth_getTransactionCount", [a, "latest"])]
     llamadas += [("eth_call", [{"to": c, "data": "0x70a08231" + pad(a)}, "latest"]) for c, _, _, _ in con_precio]
@@ -1190,6 +1193,14 @@ def main():
     px, precios_antiguos = precios(prev_px)
     ahora = ahora_txt()
     desc_doc = cargar_descubiertas(); descubiertas = desc_doc.get("direcciones", [])
+    # Un servicio de alto volumen (detectar_servicios) no se sigue. Hasta el 23-nov-2026 descubrir() lo volvía a seguir
+    # si recibía US$ 10.000 de una vigilada: cinco (0x58b704…, 0x74aa5387…, 0x8bc2ab7e…, 0x66930afa…, 0x4ad1cdd7…)
+    # volvieron a consultarse y dieron el 92 % del historial y 7 de las 8 alertas del 23-nov. Aquí se corrige el estado.
+    for d in descubiertas:
+        if d.get("servicio") and d.get("seguir") and not d.get("misma_billetera"):
+            d["seguir"] = False
+            d["seguir_motivo"] = (f"NO se sigue: servicio de alto volumen; se había vuelto a seguir por un error del monitor, corregido el "
+                                  f"{ahora_txt()} (antes: {d.get('seguir_motivo') or ''})")[:400]
     ctx = {"px": px, "tokens": Tokens(d_ant.get("tokens_conocidos"), px), "etiquetas": cargar_etiquetas(), "bloques": {}, "contratos_cache": {},
            "logs_por_direccion": {}, "descubiertas": descubiertas, "descubiertas_idx": {krd(d["red"], d["direccion"]): d for d in descubiertas},
            "descubiertas_nuevas": 0, "seguidas_nuevas": 0, "vigiladas": {krd(w["red"], w["direccion"]) for w in wallets}, "conocidas": set()}

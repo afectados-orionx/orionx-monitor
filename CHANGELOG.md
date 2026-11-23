@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-11-23: dos errores de vigilancia: servicios que volvían a seguirse y la caliente BSC sin consultar
+
+- **Servicios de alto volumen.** El 25-sep `detectar_servicios()` empezó a marcar como servicio (mesa OTC,
+  procesador o exchange) a las descubiertas que mueven US$ 5 M o 50 transferencias en 24 h, para dejar de seguirlas.
+  Pero `descubrir()` las volvía a seguir cuando recibían US$ 10.000 de otra dirección vigilada. Así, cinco volvieron a
+  consultarse en cada corrida desde fines de septiembre: `0x58b70406…925023`, `0x74aa5387…406828`,
+  `0x8bc2ab7e…041731`, `0x66930afa…901cee` y `0x4ad1cdd7…c76160`. Generaron el 92 % del historial (129.796 de 141.621
+  líneas) y 7 de las 8 alertas del 23-nov. Ahora una descubierta con `servicio: true` no vuelve a seguirse sola. Al
+  cargar `descubiertas.json`, las que estaban así quedan con `seguir: false` y el porqué en `seguir_motivo`; la
+  excepción es "misma billetera", que es prueba fuerte. Siguen en `descubiertas.json`.
+- **Caliente de OrionX en BSC (`0x5528d824…d5e2`).** Desde el 26-sep 17:17 UTC cada corrida fallaba en esa dirección
+  con `'>' not supported between instances of 'NoneType' and 'str'` y mostraba el saldo anterior. Un error de RPC del
+  26-sep dejó la fila con `congelada_fecha: null` (en BSC ese campo nunca se llena), y comparar esa fecha botaba la
+  consulta siguiente, para siempre. Corregido (`or ""`). El 23-nov se consultó con el arreglo y con RPC público:
+  6,5366 BNB, 5.008,49 USDT, 101,14 USDC, 29.747,65 DOT, 11.579,24 ADA y 108,55 SOL, los mismos saldos que mostraba la
+  web. El contador de transacciones enviadas (nonce 46.073) es el mismo del 26-sep: desde entonces no envió ninguna.
+
 ## 2026-11-23: el historial se archiva por mes (desde el 21-nov el monitor no podía publicar)
 
 Desde el 21-nov 01:22 UTC ninguna corrida logró publicar. `historial.jsonl` llegó a 104.666.504 bytes y GitHub
